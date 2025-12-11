@@ -1,0 +1,51 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 14px 5px;
+    width: 100%;
+    border-bottom: 1px solid #dfe2e1;
+    height: 100%;
+}
+
+.nav-logo {
+    cursor: pointer;
+}
+
+.search-input {
+    font-weight: 600;
+    width: 600px;
+    padding: 10px 16px;
+    border-radius: 7px;
+}
+
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.nav-center-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.select-location-btn {
+    padding: 19px;
+    font-family: "Instrument Sans", sans-serif;
+    font-weight: 600;
+    color: rgb(92 108 117 / 75%);
+}
+
+.social-icon {
+    font-size: 19px;
+    color: var(--p--color);
+    cursor: pointer;
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}

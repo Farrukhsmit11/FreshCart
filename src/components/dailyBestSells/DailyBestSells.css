@@ -1,0 +1,53 @@
+.coffee-card-image-main {
+    background-image: url("https://freshcart-next-js-template.netlify.app/images/banner/banner-deal.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 450px;
+    width: 300px;
+    border-radius: 8px;
+}
+
+.header h1 {
+    font-size: 22px;
+    margin-bottom: 14px;
+}
+
+.content {
+    padding-left: 32px;
+    padding-top: 32px;
+}
+
+.coffee-card-title {
+    color: white;
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+
+.coffee-card-subtitle {
+    margin-bottom: 16px;
+    color: white;
+}
+
+header h1 {
+    margin-bottom: 13px;
+    font-size: 19px;
+}
+
+.shop-now-btn-green {
+    background: #0aad0a;
+    color: white;
+    display: flex;
+    flex-direction: row-reverse;
+    border: none;
+    font-size: 13px;
+}
+
+.arrow-right-icon {
+    font-size: 16px;
+}
+
+.card-container {
+    display: flex;
+}

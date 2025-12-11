@@ -1,0 +1,31 @@
+.feature-main {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.card-icon {
+    color: #0aad0a;
+    width: 40px;
+    height: 40px;
+}
+
+.feature-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-card-content h3 {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.feature-card-desc {
+    color: var(--p--color);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.icon-main {
+    margin-bottom: 24px;
+}

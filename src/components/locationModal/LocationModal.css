@@ -1,0 +1,26 @@
+.select-location-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.select-location-modal .modal-content{
+    margin-bottom: 13px;
+}
+
+.select-location-main h4{
+    font-size: 15px;
+}
+
+.clear-all-btn{
+    width: 63px;
+    border-radius: 6px;
+}
+
+.select-location-modal .modal-header-title{
+    font-size: 18px;
+}
+
+.select-location-modal .ant-modal-headeR{
+    margin-bottom: 20px;
+}

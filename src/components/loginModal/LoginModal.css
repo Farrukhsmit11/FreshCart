@@ -1,0 +1,61 @@
+.login-modal .modal-title {
+    font-family: 'Instrument Sans';
+    font-weight: 600;
+    margin-bottom: 25px;
+    font-size: 27px;
+}
+
+.form-label {
+    color: var(--p--color);
+}
+
+.login-modal .ant-modal-footer {
+    padding: 15px;
+}
+
+.login-modal .ant-modal-container {
+    border-radius: 11px;
+}
+
+.form-input {
+    font-family: "Instrument Sans";
+    padding: 9px;
+    border-radius: 7px;
+    font-weight: 500;
+    border: 1px solid #dfe2e1;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+.submit-btn {
+    padding: 19px;
+    width: 125px;
+    font-family: 'Instrument Sans';
+    font-weight: 500;
+    background: #0aad0a;
+    color: white;
+}
+
+.modal-subtitle {
+    font-family: "Instrument Sans";
+    font-weight: 500;
+}
+
+.form-error {
+    color: red;
+    font-family: "Instrument Sans";
+    font-weight: 500;
+}
+
+.footer-title {
+    font-size: 15px;
+    text-align: center;
+    font-family: 'Instrument Sans';
+    font-weight: 500;
+}
+
+.footer-title a {
+    color: #0aad0a;
+    font-weight: 600;
+    font-family: 'Instrument Sans';
+}
