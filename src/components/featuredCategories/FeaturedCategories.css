@@ -8,20 +8,24 @@
     width: 100%;
 }
 
+.slider-container .mySwiper{
+    width: 100%;
+}
+
 .featured-categories-header {
     margin-bottom: 14px;
 }
 
 .mySwiper .swiper-button-prev {
-    display: none;
+    display: none !important;
 }
 
 .mySwiper .swiper-pagination {
     display: none;
-}
+}y
 
 .mySwiper .swiper-button-next {
-    display: none;
+    display: none !important;
 }
 
 .category-card {
@@ -34,7 +38,7 @@
 }
 
 .category-card:hover {
-    border: 1px solid red;
+    border: 1px solid #0aad0a;
 }
 
 .card-desc {

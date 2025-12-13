@@ -32,6 +32,7 @@
 
 .hero-description {
     color: var(--p--color);
+    margin-bottom: 16px;
 }
 
 .hero-title {
@@ -50,7 +51,6 @@
 .text-content {
     display: flex;
     flex-direction: column;
-    gap: 16px;
     max-width: 500px;
 }
 
@@ -58,6 +58,8 @@
     color: #001e2b;
     font-size: 37px;
     font-weight: 700;
+    margin-top: 16px;
+    margin-bottom: 8px;
 }
 
 .custom-badge {

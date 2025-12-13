@@ -1,5 +1,5 @@
-import PopularCards from "./cardWrapper/CardWrapper"
+import CardWrapper from "./cardWrapper/CardWrapper"
 
 export {
-    PopularCards
+    CardWrapper
 }

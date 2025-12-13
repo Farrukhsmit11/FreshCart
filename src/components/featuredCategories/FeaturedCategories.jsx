@@ -6,8 +6,11 @@ import "swiper/css/pagination";
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import category from "./category";
 import { Card } from "antd";
+import { useNavigate } from "react-router-dom";
 
 const FeaturedCategories = () => {
+
+    const navigate = useNavigate();
 
     return (
         <section className="section-padding">
@@ -18,10 +21,11 @@ const FeaturedCategories = () => {
                     </div>
                     <div className="slider-container">
                         <Swiper
-                            slidesPerView={5}
+                            slidesPerView={6}
                             navigation={true}
                             loop={true}
                             spaceBetween={30}
+
                             speed={1000}
                             autoplay={{
                                 delay: 2000,
@@ -32,12 +36,28 @@ const FeaturedCategories = () => {
                             }}
                             modules={[Pagination, Navigation, Autoplay]}
                             className="mySwiper"
-                           
+                            breakpoints={{
+                                320: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 20,
+                                },
+                                768: {
+                                    slidesPerView: 4,
+                                    spaceBetween: 40,
+                                },
+                                1024: {
+                                    slidesPerView: 5,
+                                    spaceBetween: 50,
+                                },
+                            }}
                         >
                             {category.map((product, index) => {
                                 return (
                                     <SwiperSlide key={index}>
-                                        <Card hoverable className="category-card">
+                                        <Card
+                                            onClick={() => navigate("/shop")}
+                                            hoverable
+                                            className="category-card">
                                             <div className="category-card-content">
                                                 <img src={product.imgSrc} />
                                                 <p className="card-desc">{product.title}</p>

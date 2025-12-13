@@ -7,6 +7,8 @@ import FeaturedCategories from "./featuredCategories/FeaturedCategories";
 import ShopNowCards from "../components/shopNowCards/ShopNowCards"
 import DailyBestSells from "./dailyBestSells/DailyBestSells";
 import FeatureCards from "./featureCards/FeatureCards";
+import PopularProducts from "./popularProducts/PopularProducts";
+import Footer from "./footer/Footer"
 
 export {
     PageHeader,
@@ -17,5 +19,7 @@ export {
     FeaturedCategories,
     ShopNowCards,
     DailyBestSells,
-    FeatureCards 
+    FeatureCards ,
+    PopularProducts,
+    Footer
 }

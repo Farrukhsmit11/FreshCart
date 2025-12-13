@@ -8,8 +8,18 @@
     border-radius: 8px;
 }
 
+.daily-best-sells-main {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.sell-section {
+    flex: 1;
+}
+
 .header h1 {
-    font-size: 22px;
+    font-size: 24px;
     margin-bottom: 14px;
 }
 
@@ -20,7 +30,7 @@
 
 .coffee-card-title {
     color: white;
-    font-size: 23px;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 9px;
 }
@@ -28,6 +38,7 @@
 .coffee-card-subtitle {
     margin-bottom: 16px;
     color: white;
+    font-size: 14px;
 }
 
 header h1 {
@@ -48,6 +59,6 @@ header h1 {
     font-size: 16px;
 }
 
-.card-container {
-    display: flex;
+.slider-view .add-to-cart-btn {
+    width: 100%;
 }

@@ -13,7 +13,7 @@ const ShopNowCards = () => {
 
             {shopNowData.map((card, index) => {
               return (
-                <div key={index} className="cards-main">
+                <div key={index} className="cards-main col-md-6 col-12 mb-lg-0">
                   <img className="banner-img" src={card.imgSrc} />
 
                   <div className="product-details-content">

@@ -1,12 +1,17 @@
 import { useEffect, useState } from "react"
 import "./App.css"
-import { DailyBestSells, FeatureCards, FeaturedCategories, HeroCards, Navbar, PageHeader, ShopNowCards } from "./components"
+import { Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
-import PopularCards from "./uiComponents/popularCards/PopularCards"
+import { Route, Routes } from "react-router-dom";
+import { Shop, ShopWishlist } from "./pages"
+import Home from "./pages/home/Home"
+import "./Media.css"
 
 function App() {
 
   const [loading, setLoading] = useState(true);
+
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -14,22 +19,22 @@ function App() {
     }, 2000);
   }, []);
 
-
-  if (loading) {
+    if (loading) {
     return <Loader />
   }
 
-
   return (
     <>
+
       <PageHeader />
       <Navbar />
-      <HeroCards />
-      <FeaturedCategories />
-      <ShopNowCards />
-      <PopularCards />
-      <DailyBestSells />
-      <FeatureCards />
+
+      <Routes>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/shop" element={<Shop />}></Route>
+        <Route path="/shopWishlist" element={<ShopWishlist />}></Route>
+      </Routes>
+
     </>
   )
 }

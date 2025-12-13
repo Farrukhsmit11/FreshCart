@@ -1,6 +1,7 @@
 .feature-main {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 30px;
 }
 
@@ -8,11 +9,6 @@
     color: #0aad0a;
     width: 40px;
     height: 40px;
-}
-
-.feature-card-content {
-    display: flex;
-    flex-direction: column;
 }
 
 .feature-card-content h3 {

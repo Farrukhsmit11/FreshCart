@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
-import { Button, Input, Form as AntForm } from "antd"
+import { Button, Input, Form as AntForm, Drawer } from "antd"
 import { IoLocationOutline } from "react-icons/io5"
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
@@ -14,8 +14,11 @@ import { useNavigate } from "react-router-dom"
 const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [updateLocation, setupdateLocation] = useState(false);
+    const [showCartDrawer, setShowCartDrawer] = useState(false);
 
-    const navigate = useNavigate();
+
+    const navigate = useNavigate(false);
+
 
     return (
         <div className="container">
@@ -40,10 +43,20 @@ const Navbar = () => {
                     </div>
 
                     <div className="nav-actions">
-                        <FaRegHeart className="social-icon" />
+                        <FaRegHeart onClick={() => navigate("/shopWishlist")} className="social-icon" />
                         <FiUser onClick={() => setOpen(true)} className="social-icon" />
-                        <FiShoppingBag className="social-icon" />
+                        <FiShoppingBag onClick={() => setShowCartDrawer(true)} className="social-icon" />
                     </div>
+
+                    <Drawer
+                        onClose={() => setShowCartDrawer(false)}
+                        className="cart-drawer"
+                        title={<span><h1>Shop Cart</h1>
+                            <p className="cart-drawer-desc">Location in 382480</p>
+                        </span>}
+                        open={showCartDrawer}>
+                    </Drawer>
+
                 </nav>
             </div>
 
