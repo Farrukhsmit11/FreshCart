@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import "./App.css"
-import { Navbar, PageHeader } from "./components"
+import { Footer, Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
 import { Route, Routes } from "react-router-dom";
 import { Shop, ShopWishlist } from "./pages"
@@ -11,15 +11,13 @@ function App() {
 
   const [loading, setLoading] = useState(true);
 
-
-
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
     }, 2000);
   }, []);
 
-    if (loading) {
+  if (loading) {
     return <Loader />
   }
 
@@ -35,6 +33,7 @@ function App() {
         <Route path="/shopWishlist" element={<ShopWishlist />}></Route>
       </Routes>
 
+      <Footer />
     </>
   )
 }
