@@ -1,0 +1,99 @@
+footer {
+    background: #f0f3f2;
+}
+
+.sub-footer-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.nav-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-link {
+    font-size: 14px;
+    font-weight: 500;
+    color: #21313c;
+}
+
+.nav-item {
+    margin-bottom: 8px;
+}
+
+.payment-section-main {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #dfe2e1;
+    border-bottom: 1px solid #dfe2e1;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.payment-section-left {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.footer-payment-methods {
+    display: flex;
+    gap: 10px;
+}
+
+.footer-actions-title {
+    font-size: 14px;
+    margin: 0;
+}
+
+.download-image {
+    cursor: pointer;
+    width: 140px;
+    padding: 10px;
+}
+
+.deliveries-title {
+    font-size: 14px;
+}
+
+.social-link {
+    width: 28px;
+    height: 28px;
+}
+
+.platform-links {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.platform-links p {
+    margin: 0;
+}
+
+.social-platform-links p {
+    margin: 0;
+}
+
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payment-btn {
+    width: 40px;
+    height: 40px;
+}
+
+.payment-section-right {
+    display: flex;
+    align-items: center;
+}
+
+.rights-reserved h3 {
+    font-size: 14px;
+    margin: 0;
+}

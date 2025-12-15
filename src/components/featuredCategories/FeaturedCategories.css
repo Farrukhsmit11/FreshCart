@@ -22,10 +22,10 @@
 
 .mySwiper .swiper-pagination {
     display: none;
-}y
+}
 
-.mySwiper .swiper-button-next {
-    display: none !important;
+.mySwiper .swiper-button-next{
+    display: none;
 }
 
 .category-card {

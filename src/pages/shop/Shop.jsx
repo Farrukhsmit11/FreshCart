@@ -1,54 +1,120 @@
 import { Breadcrumb, Layout, Menu } from "antd"
 import "./Shop.css"
-import Sider from "antd/es/layout/Sider"
+const { Header, Footer, Sider, Content } = Layout;
 
 const Shop = () => {
 
-    const menuItems = [
-        { key: "1", label: "Dairy, Bread & Eggs" },
-        { key: "2", label: "Snacks & Munchies" },
-        { key: "3", label: "Fruits & Vegetables" },
-        { key: "4", label: "Cold Drinks & Juices" },
-        { key: "5", label: "Breakfast & Instant Food" },
-        { key: "6", label: "Bakery & Biscuits" },
-        { key: "7", label: "Chicken, Meat & Fish" },
-    ];
-
+    // const items = [
+    //     {
+    //         key: "sub1",
+    //         label: "Dairy, Bread & Eggs",
+    //         children: [
+    //             { key: "1", label: "Milk" },
+    //             { key: "2", label: "Bread" },
+    //             { key: "3", label: "Eggs" },
+    //         ],
+    //     },
+    //     {
+    //         key: "sub2",
+    //         label: "Snacks & Munchies",
+    //         children: [
+    //             { key: "4", label: "Chips" },
+    //             { key: "5", label: "Biscuits" },
+    //         ],
+    //     },
+    //     {
+    //         key: "sub3",
+    //         label: "Fruits & Vegetables",
+    //         children: [
+    //             { key: "6", label: "Fruits" },
+    //             { key: "7", label: "Vegetables" },
+    //         ],
+    //     },
+    //     {
+    //         key: "sub4",
+    //         label: "Cold Drinks & Juices",
+    //         children: [
+    //             { key: "8", label: "Soft Drinks" },
+    //             { key: "9", label: "Juices" },
+    //         ],
+    //     },
+    //     {
+    //         key: "sub5",
+    //         label: "Breakfast & Instant Food",
+    //         children: [
+    //             { key: "10", label: "Cereals" },
+    //             { key: "11", label: "Noodles" },
+    //         ],
+    //     },
+    //     {
+    //         key: "sub6",
+    //         label: "Bakery & Biscuits",
+    //         children: [
+    //             { key: "12", label: "Cakes" },
+    //             { key: "13", label: "Cookies" },
+    //         ],
+    //     },
+    //     {
+    //         key: "sub7",
+    //         label: "Chicken, Meat & Fish",
+    //         children: [
+    //             { key: "14", label: "Chicken" },
+    //             { key: "15", label: "Fish" },
+    //         ],
+    //     },
+    // ];
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="shop-page-main">
-                    <Breadcrumb
-                        className="social-links"
-                        items={[
-                            {
-                                title: 'Home',
-                            },
 
-                            {
-                                title: <a href="">Shop Grid</a>,
-                            }
-                        ]}
-                    />
-                    <Layout>
-                        <Sider style={{ background: "#fff" }}
-                            width={260} trigger={null}>
-
-                            <h3>Categories</h3>
-
-                            <div className="demo-logo-vertical" />
-
-                            <Menu
-                                mode="inline"
-                                defaultSelectedKeys={['1']}
-                                items={menuItems}
+        <main>
+            <div className="nav-main">
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <Breadcrumb
+                                items={[
+                                    {
+                                        title: <a href="">Shop</a>,
+                                    },
+                            
+                                ]}
                             />
-                        </Sider>
-                    </Layout>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+
+
+            <div className="sidebar-main">
+                {/* <Layout>
+                   
+                    <div style={{ padding: '0 48px' }}>
+                        <Breadcrumb
+                            style={{ margin: '16px 0' }}
+                            items={[{ title: 'Home' }, { title: 'List' }, { title: 'App' }]}
+                        />
+                        <Layout
+                        >
+                            <Sider width={200}>
+                                <Menu
+                                    mode="inline"
+                                    defaultSelectedKeys={['1']}
+                                    defaultOpenKeys={['sub1']}
+                                    style={{ height: '100%' }}
+                                />
+                            </Sider>
+                            <Content style={{ padding: '0 24px', minHeight: 280 }}>Content</Content>
+                        </Layout>
+                    </div>
+
+                </Layout> */}
+            </div>
+        </main>
+
+
+
+
+
     )
 }
 

@@ -15,11 +15,7 @@ const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [updateLocation, setupdateLocation] = useState(false);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
-
-
     const navigate = useNavigate(false);
-
-
     return (
         <div className="container">
             <div className="row">

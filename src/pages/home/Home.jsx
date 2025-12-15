@@ -1,6 +1,5 @@
 import HeroCards from "../../components/heroCards/HeroCards"
 import { DailyBestSells, FeatureCards, FeaturedCategories, Footer, Navbar, ShopNowCards } from "../../components"
-import CardWrapper from "../../uiComponents/cardWrapper/CardWrapper"
 import PopularProducts from "../../components/popularProducts/PopularProducts"
 
 const Home = () => {
@@ -12,7 +11,6 @@ const Home = () => {
       <PopularProducts />
       <DailyBestSells />
       <FeatureCards />
-      <Footer />
     </div>
   )
 }

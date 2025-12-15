@@ -1,16 +1,30 @@
-import { Button, Card } from "antd"
+import { Button, Card, Rate } from "antd"
 import "./CardWrapper.css"
 import { PlusOutlined } from "@ant-design/icons"
 import { IoEyeOutline } from "react-icons/io5"
 import { MdCompareArrows } from "react-icons/md"
 import { IoMdHeartEmpty } from "react-icons/io"
+import { useState } from "react"
 
 const CardWrapper = ({ className, title = "", data = [] }) => {
+  const [value, setValue] = useState(false);
+
+  const desc = [
+    'terrible',
+    { placement: 'top', title: 'bad', trigger: 'hover' },
+    'normal',
+    'good',
+    'wonderful',
+  ];
+  function getDescTitle(value, desc) {
+    const item = desc?.[value - 1];
+    return typeof item === 'object' ? item.title : item;
+  }
 
   return (
 
     <div className="container">
-      <div className="row g-4">
+      <div className="row g-4 cols-lg-5 cols-md-3">
         <div className="card-wrapper-header">
           <h1 className="card-wrapper-title">Popular Products</h1>
         </div>
@@ -30,14 +44,15 @@ const CardWrapper = ({ className, title = "", data = [] }) => {
 
                   <h1 className="product-card-title">{item.title}</h1>
 
+                  <Rate className="product-rate" tooltips={desc} onChange={setValue} value={value} />
+                  {value ? <span>{getDescTitle(value, desc)}</span> : null}
+
 
                   <div className="card-bottom-section" >
-
                     <div className="price-wrapper">
-
                       <span>{item.price}</span>
-
                     </div>
+
 
                     <div className="button-main">
                       <Button icon={<PlusOutlined />} className="add-to-cart-btn">{item.button}</Button>

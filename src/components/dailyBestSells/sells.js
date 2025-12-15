@@ -6,6 +6,7 @@ export const sells = [
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-11.jpg",
         title: "Roast Ground Coffee",
         price: 12,
+        
     },
     {
 

@@ -10,7 +10,7 @@ const FeatureCards = () => {
                         {helper.map((item, index) => {
                             return (
                                 <div className="col-lg-3 col-md-6">
-                                    <div key={index} className="feature-card1">
+                                    <div key={index} className="feature-card1 mb-8 mb-xl-0">
 
                                         <div className="feature-card-content">
                                             <div className="icon-main">
