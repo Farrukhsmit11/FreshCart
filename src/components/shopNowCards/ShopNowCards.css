@@ -19,8 +19,9 @@
         color: var(--fc-btn-hover-bg);
     }
 
-    .banner-img {
+    .shop-now-card-img {
         width: 100%;
+        height: auto;
         border-radius: 8px;
     }
 

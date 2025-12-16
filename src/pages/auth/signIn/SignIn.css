@@ -1,0 +1,51 @@
+.form-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-title {
+    font-weight: 700;
+    font-size: 28px;
+    margin-bottom: 4px;
+    color: #21313c;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sign-up-btn {
+    width: 100%;
+    padding: 19px;
+    border-radius: 9px;
+    color: white;
+    background: #0aad0a;
+}
+
+.form-content {
+    margin-bottom: 40px;
+}
+
+.form-content p {
+    color: #5c6c75;
+    font-weight: 500;
+}
+
+.email-input,
+.password-input {
+    margin: 0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.forgot-password{
+    display: flex;
+    gap: 5px;
+}
+
+.forgot-password a{
+    color: var(--link-color);
+}

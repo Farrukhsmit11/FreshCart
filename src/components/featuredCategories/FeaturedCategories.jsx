@@ -19,7 +19,7 @@ const FeaturedCategories = () => {
                     <div className="featured-categories-header">
                         <h1 className="featured-title">Featured Categories</h1>
                     </div>
-                    <div className="slider-container">
+                    {/* <div className="slider-container"> */}
                         <Swiper
                             slidesPerView={6}
                             navigation={true}
@@ -67,7 +67,7 @@ const FeaturedCategories = () => {
                                 )
                             })}
                         </Swiper>
-                    </div>
+                    {/* </div> */}
                 </div>
             </div>
         </section >

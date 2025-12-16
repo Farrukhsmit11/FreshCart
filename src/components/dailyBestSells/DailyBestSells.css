@@ -14,10 +14,6 @@
     align-items: center;
 }
 
-.sell-section {
-    flex: 1;
-}
-
 .header h1 {
     font-size: 24px;
     margin-bottom: 14px;
@@ -61,4 +57,8 @@ header h1 {
 
 .slider-view .add-to-cart-btn {
     width: 100%;
+}
+
+.best-sell-content{
+    display: f;
 }
