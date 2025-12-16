@@ -2,6 +2,7 @@ import { Formik } from "formik"
 import { validationSchema } from "./Validations"
 import { Modal, Form as AntForm, Input, Button, message } from "antd";
 import "./LoginModal.css"
+import { useNavigate } from "react-router-dom";
 
 const LoginModal = ({ isOpenloginModal, setIsOpenloginModal }) => {
 
@@ -18,13 +19,15 @@ const LoginModal = ({ isOpenloginModal, setIsOpenloginModal }) => {
         console.log(values);
     }
 
+    const navigate = useNavigate();
+
     return (
         <Modal
             title={<span><h1 className="modal-title">Sign Up</h1></span>}
             open={isOpenloginModal}
             footer={
                 <span>
-                    <h1 className="footer-title">Already have an account? <a href="#">Sign In</a></h1>
+                    <h1 className="footer-title">Already have an account? <a onClick={() => navigate("/signIn")} href="#">Sign In</a></h1>
                 </span>
             }
             onCancel={() => setIsOpenloginModal(false)}

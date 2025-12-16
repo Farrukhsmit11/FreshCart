@@ -15,8 +15,12 @@ footer {
 
 .nav-link {
     font-size: 14px;
-    font-weight: 500;
-    color: #21313c;
+    color: #5c6c75;
+    padding: 0;
+}
+
+.nav-link:hover {
+    color: #0aad0a;
 }
 
 .nav-item {
@@ -91,6 +95,7 @@ footer {
 .payment-section-right {
     display: flex;
     align-items: center;
+    gap: 9px;
 }
 
 .rights-reserved h3 {

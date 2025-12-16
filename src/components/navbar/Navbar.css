@@ -53,17 +53,21 @@
     flex-direction: row-reverse;
 }
 
-.cart-drawer .ant-drawer-title {
-    font-size: 10px;
+.cart-drawer .drawer-title{
+    margin: 0;
+    font-size: 21px;
+    font-weight: 600;
 }
 
 .cart-drawer-desc {
     color: gray;
     font-size: 12px;
+    margin: 0;
 }
 
 .cart-drawer .ant-drawer-header {
     display: flex;
     align-items: center;
     padding: 16px;
+    border-bottom:1px solid #dfe2e1;
 }

@@ -24,7 +24,7 @@
     font-weight: 500;
     border: 1px solid #dfe2e1;
     outline: none;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .submit-btn {
@@ -58,4 +58,8 @@
     color: #0aad0a;
     font-weight: 600;
     font-family: 'Instrument Sans';
+}
+
+.signup-terms p{
+    margin: 0;
 }

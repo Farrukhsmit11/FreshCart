@@ -47,7 +47,7 @@ const Navbar = () => {
                     <Drawer
                         onClose={() => setShowCartDrawer(false)}
                         className="cart-drawer"
-                        title={<span><h1>Shop Cart</h1>
+                        title={<span><h1 className="drawer-title">Shop Cart</h1>
                             <p className="cart-drawer-desc">Location in 382480</p>
                         </span>}
                         open={showCartDrawer}>

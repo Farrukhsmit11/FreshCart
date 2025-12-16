@@ -42,7 +42,7 @@
 .slide-wrapper-left {
     position: absolute;
     bottom: 20px;
-    padding-left: 41px;
+    left: 40px;
     top: 4px;
     display: flex;
     align-items: center;

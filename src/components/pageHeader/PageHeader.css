@@ -10,6 +10,7 @@
     align-items: center;
 }
 .page-heading{
+    margin: 0;
     font-size: 14px;
     color: #808080;
 }
