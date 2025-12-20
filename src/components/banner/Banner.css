@@ -1,0 +1,9 @@
+.banner-main{
+    border-bottom: #dfe2e1;
+}
+
+.nav-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -4,7 +4,6 @@ export const products = [
         description: "Snack & Munchies",
         title: "Haldiram's Sev Bhujia",
         price: "$15",
-        button: "Add"
     },
 
     {
@@ -12,7 +11,6 @@ export const products = [
         description: "Bakery & Biscuits",
         title: "NuttriChoice Digestive",
         price: "$15",
-        button: "Add"
     },
 
     {
@@ -20,7 +18,6 @@ export const products = [
         description: "Bakery & Biscuits",
         title: "Cadbury 5 Star Chocolate",
         price: "$30",
-        button: "Add"
     },
 
     {
@@ -28,7 +25,6 @@ export const products = [
         description: "Snack & Munchies",
         title: "Onion Flavour Potato",
         price: "$40",
-        button: "Add"
     },
 
     {
@@ -36,7 +32,6 @@ export const products = [
         description: "Instant food",
         title: "Salted Instant Popcorn",
         price: "$25",
-        button: "Add"
     },
 
     {
@@ -44,7 +39,6 @@ export const products = [
         description: "Bakery & Biscuits",
         title: "Cadbury 5 Star Chocolate",
         price: "$70",
-        button: "Add"
     },
 
     {
@@ -52,7 +46,6 @@ export const products = [
         description: "Snack & Munchies",
         title: "Haldiram's Sev Bhujia",
         price: "$50",
-        button: "Add"
     },
 
     {
@@ -60,7 +53,6 @@ export const products = [
         description: "Dairy Bread & Eggs",
         title: "Blueberry Greek & Yogurt",
         price: "$300",
-        button: "Add"
     },
 
     {
@@ -68,7 +60,6 @@ export const products = [
         description: "Dairy Bread & Eggs",
         title: "Britania Cheese Slices",
         price: "$200",
-        button: "Add"
     },
 
     {
@@ -76,7 +67,6 @@ export const products = [
         description: "Instant Food",
         title: "Kellogg's Original Cereals",
         price: "$150",
-        button: "Add"
     },
 
     {
@@ -84,7 +74,6 @@ export const products = [
         description: "Bakery & Biscuits",
         title: "NutriChoice Digestive",
         price: "$80",
-        button: "Add"
     }
 ];
 

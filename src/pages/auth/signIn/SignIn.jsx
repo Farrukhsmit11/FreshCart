@@ -28,7 +28,7 @@ const SignIn = () => {
           <div className="row justify-content-center">
 
             <div className="col-lg-4 col-md-12 col-12">
-              <img className="img-fluid" src={SignInlogo} alt="Sign in illustration" />
+              <img className="" src={SignInlogo} alt="Sign in illustration" />
             </div>
 
             <div className="col-lg-4 col-md-12 col-12">

@@ -1,7 +1,162 @@
-.social-links{
+.sidebar-menu {
+    width: 100%;
+    margin-bottom: 18px;
+    border-inline-end: none !important;
+}
+
+.sidebar-menu .ant-menu-inline {
+    background: none !important;
+}
+
+.fruits-card-image {
+    border-radius: 8px;
+    height: auto;
+    width: 100%;
+}
+
+.sider-main {
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-links {
+    margin-bottom: 16px;
+}
+
+.sidebar-menu-section {
     margin-bottom: 32px;
 }
 
-.nav-main{
-    margin-top: 4px;
+.sidebar-menu .ant-menu-submenu-title {
+    width: 100%;
+    border-bottom: 1px solid #dfe2e1;
+    border-left: none;
+    background: none;
+    font-size: 14px;
+}
+
+.menu-title {
+    font-size: 17px;
+    margin-bottom: 12px;
+}
+
+.shop-title {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.shop-input {
+    width: 100%;
+    padding: 10px;
+}
+
+.price-range-slider {
+    width: 100%;
+}
+
+.price-range-slider .ant-slider-track {
+    background: #0aad0a;
+}
+
+.price-range-slider .ant-slider-track:hover {
+    background: #0aad0a;
+}
+
+.stores-section {
+    margin-bottom: 32px;
+}
+
+.price-slider {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.text-warning {
+    font-size: 13px;
+}
+
+.form-check-main {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+}
+
+.fresh-fruits-main {
+    position: relative;
+}
+
+.overlay-content {
+    position: absolute;
+    top: 5px;
+    left: 19px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
+}
+
+.overlay-content h1 {
+    font-size: 24px;
+    margin: 0;
+    font-weight: 700;
+    color: #21313c;
+}
+
+.overlay-content p {
+    color: #808080;
+    font-weight: 600;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+    background-color: #0aad0a;
+    border-color: #0aad0a;
+}
+
+.checkbox-input:hover,
+.ant-checkbox-checked:hover {
+    color: #0aad0a !important;
+}
+
+.card {
+    background: #f0f3f2;
+    margin-bottom: 16px;
+    padding: 40px;
+    border: none;
+}
+
+.card h1 {
+    color: #21313c;
+    font-size: 35px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.product-listing-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-listing-controls p {
+    margin: 0;
+}
+
+.filters {
+    display: flex;
+    gap: 13px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.form-select {
+    padding: 8px;
+    font-size: 14px;
+    display: flex;
+    color: #21313c;
+    font-weight: 500;
+    border: 1px solid #dfe2e1;
+}
+
+.form-select .anticon-down {
+    display: none !important;
 }

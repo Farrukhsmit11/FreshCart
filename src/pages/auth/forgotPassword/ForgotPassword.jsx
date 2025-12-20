@@ -12,9 +12,9 @@ const ForgotPassword = () => {
     return (
         <div className="container">
             <div className="row justify-content-center">
-
+                 
                 <div className="col-lg-4 col-md-12 col-12">
-                    <img className="img-fluid" src={forgotPasswordlogo} />
+                    <img className="" src={forgotPasswordlogo} />
                 </div>
 
                 <div className="col-lg-4 col-md-12 col-12">
@@ -26,12 +26,10 @@ const ForgotPassword = () => {
                             <p className="forget-form-subtitle">Please enter the email address associated with your account and We will email you a link to reset your password.</p>
                         </div>
 
-                        <div className="col-12">
-                            <Input
-                                className="form-input"
-                                placeholder="Email"
-                            ></Input>
-                        </div>
+                        <Input
+                            className="form-input"
+                            placeholder="Email"
+                        ></Input>
 
                         <div className="form-actions">
                             <Button htmlType="submit" className="sign-up-btn">Reset Password</Button>
