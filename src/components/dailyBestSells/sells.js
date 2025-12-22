@@ -1,4 +1,3 @@
-import { Rate } from "antd";
 
 export const sells = [
     {
@@ -20,6 +19,6 @@ export const sells = [
         description: "Fruits & Vegetables",
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-13.jpg",
         title: "Golden Pineapple",
-        price: "15"
+        price: "15",
     }
 ]

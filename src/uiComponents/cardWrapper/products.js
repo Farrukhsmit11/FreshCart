@@ -1,5 +1,6 @@
 export const products = [
     {
+        id: 1,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-1.jpg",
         description: "Snack & Munchies",
         title: "Haldiram's Sev Bhujia",
@@ -7,6 +8,7 @@ export const products = [
     },
 
     {
+        id: 2,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-2.jpg",
         description: "Bakery & Biscuits",
         title: "NuttriChoice Digestive",
@@ -14,6 +16,7 @@ export const products = [
     },
 
     {
+        id: 3,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-3.jpg",
         description: "Bakery & Biscuits",
         title: "Cadbury 5 Star Chocolate",
@@ -21,6 +24,7 @@ export const products = [
     },
 
     {
+        id: 4,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-4.jpg",
         description: "Snack & Munchies",
         title: "Onion Flavour Potato",
@@ -28,6 +32,7 @@ export const products = [
     },
 
     {
+        id: 5,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-5.jpg",
         description: "Instant food",
         title: "Salted Instant Popcorn",
@@ -35,6 +40,7 @@ export const products = [
     },
 
     {
+        id: 6,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-3.jpg",
         description: "Bakery & Biscuits",
         title: "Cadbury 5 Star Chocolate",
@@ -42,6 +48,7 @@ export const products = [
     },
 
     {
+        id: 7,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-1.jpg",
         description: "Snack & Munchies",
         title: "Haldiram's Sev Bhujia",
@@ -49,6 +56,7 @@ export const products = [
     },
 
     {
+        id: 8,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-6.jpg",
         description: "Dairy Bread & Eggs",
         title: "Blueberry Greek & Yogurt",
@@ -56,6 +64,7 @@ export const products = [
     },
 
     {
+        id: 9,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-7.jpg",
         description: "Dairy Bread & Eggs",
         title: "Britania Cheese Slices",
@@ -63,6 +72,7 @@ export const products = [
     },
 
     {
+        id: 10,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-8.jpg",
         description: "Instant Food",
         title: "Kellogg's Original Cereals",
@@ -70,6 +80,7 @@ export const products = [
     },
 
     {
+        id: 11,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/products/product-img-9.jpg",
         description: "Bakery & Biscuits",
         title: "NutriChoice Digestive",
