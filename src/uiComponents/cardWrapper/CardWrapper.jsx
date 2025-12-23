@@ -1,23 +1,25 @@
-import { Button, Card } from "antd"
+import { Button, Card, message } from "antd"
 import "./CardWrapper.css"
-import { EyeOutlined, HeartOutlined, PlusOutlined, SettingOutlined } from "@ant-design/icons"
+import { EyeOutlined, HeartOutlined, PlusOutlined } from "@ant-design/icons"
 import { IoGitCompareOutline } from "react-icons/io5"
 import QuickViewModal from "../../components/quickViewModal/QuickViewModal"
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { fetchProducts } from "../../store/productSlice/ProductSlice"
+import { addToCart } from "../../store/cartSlice/CartSlice"
 
 const CardWrapper = ({ data = [], className }) => {
 
   const [openQuickView, setopenQuickView] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(fetchProducts());
   }, [])
-  
+
+  const products = useSelector((state) => state.products.items);
+
   return (
     <>
       <div className="container">
@@ -26,27 +28,22 @@ const CardWrapper = ({ data = [], className }) => {
             <h1 className="card-wrapper-title">Popular Products</h1>
           </div>
 
-          {data.map((item) => {
+          {products.map((item, index) => {
             return (
-
-              <div className="col">
+              <div className="col" key={index}>
                 <div className="cards-container">
                   <Card
                     className="product-card" hoverable>
 
                     <div className="cards-content">
 
-                      <img className="img-fluid" src={item.imgSrc} alt="product img" />
+                      <img className="img-fluid" src={item.thumbnail} alt="product img" />
 
                       <h1 className="product-card-title">{item.title}</h1>
 
                       <div className="card-bottom-section" >
 
                         <span>{item.price}</span>
-
-                        <div className="button-main">
-                          <Button icon={<PlusOutlined />} className="add-to-cart-btn">Add</Button>
-                        </div>
                       </div>
                     </div>
 
@@ -58,12 +55,20 @@ const CardWrapper = ({ data = [], className }) => {
                       </div>
                     </div>
 
+                    <div className="button-main">
+                      <Button
+                        type="primary"
+                        onClick={() => dispatch(addToCart(item))}
+                        icon={<PlusOutlined />}
+                        className="add-to-cart-btn" >Add</Button>
+                    </div>
+
                   </Card>
+
 
                 </div>
 
               </div>
-
             )
           })}
 
@@ -71,7 +76,6 @@ const CardWrapper = ({ data = [], className }) => {
       </div>
 
       <QuickViewModal
-        item={selectedProduct}
         isOpenQuickViewModal={openQuickView}
         setIsOpenQuickViewModal={setopenQuickView}
       />
