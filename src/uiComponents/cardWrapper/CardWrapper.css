@@ -2,10 +2,6 @@
     padding: 16px;
 }
 
-.card-wrapper-header {
-    margin-bottom: 15px;
-}
-
 .card-wrapper-header h3 {
     font-size: 22px;
 }
@@ -82,10 +78,6 @@
     font-weight: 600;
 }
 
-.product-card-rating {
-    font-size: 16px;
-}
-
 .add-to-cart-btn {
     background: #0aad0a;
     padding: 10px;
@@ -95,6 +87,11 @@
     font-size: 12px;
     font-weight: 600;
     border: 1px solid #dfe2e1;
+}
+
+.add-to-cart-btn:hover {
+    background: #0aad0a !important;
+    color: white !important;
 }
 
 .card-bottom-section {
@@ -107,4 +104,14 @@
 .card-wrapper-title {
     font-size: 24px;
     margin: 0;
+}
+
+.button-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-rate {
+    font-size: 12px;
 }

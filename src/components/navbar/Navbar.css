@@ -2,10 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    padding: 14px 5px;
     width: 100%;
-    border-bottom: 1px solid #dfe2e1;
     height: 100%;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #dfe2e1;
 }
 
 .nav-logo {
@@ -17,11 +17,6 @@
     width: 600px;
     padding: 10px 16px;
     border-radius: 7px;
-}
-
-.input-group {
-    display: flex;
-    flex-wrap: wrap;
 }
 
 .nav-center-right {
@@ -48,26 +43,117 @@
     gap: 17px;
 }
 
-.cart-drawer .ant-drawer-header-title {
+.products-drawer .ant-drawer-header-title {
     display: flex;
     flex-direction: row-reverse;
 }
 
-.cart-drawer .drawer-title{
+.products-drawer .drawer-title {
     margin: 0;
     font-size: 21px;
     font-weight: 600;
 }
 
-.cart-drawer-desc {
+.products-drawer-desc {
     color: gray;
     font-size: 12px;
     margin: 0;
 }
 
-.cart-drawer .ant-drawer-header {
+.products-drawer .ant-drawer-header {
     display: flex;
     align-items: center;
     padding: 16px;
-    border-bottom:1px solid #dfe2e1;
+    border-bottom: 1px solid #dfe2e1;
+}
+
+.products-drawer .ant-drawer-body {
+    padding: 0;
+}
+
+
+.checkout-btn {
+    background: #001e2b;
+    color: white;
+    font-size: 12px;
+    padding: 8.8px 16px;
+}
+
+.checkout-btn:hover {
+    background: #001e2b !important;
+    color: white !important;
+}
+
+.shopping-btn {
+    background: #0aad0a;
+    color: white;
+    font-size: 12px;
+}
+
+.drawer-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.shopping-btn:hover {
+    background: #0aad0a !important;
+    color: white !important;
+}
+
+.list-image {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+}
+
+.list-items-main {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #dfe2e1;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.list-items-right span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.list-items-right h6{
+    font-size: 14px;
+    color: var(--fc-heading-color);
+}
+
+.shopping-btn {
+    background: #0aad0a;
+}
+
+.list-title {
+    font-size: 14px;
+    margin: 0;
+}
+
+.lists {
+    list-style: none;
+    padding: 0;
+}
+
+.text-main {
+    margin-top: 8px;
+}
+
+.text-main a {
+    text-decoration: none;
+}
+
+.buttons {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 12px;
+    font-size: 15px;
 }

@@ -27,7 +27,12 @@ const LoginModal = ({ isOpenloginModal, setIsOpenloginModal }) => {
             open={isOpenloginModal}
             footer={
                 <span>
-                    <h1 className="footer-title">Already have an account? <a onClick={() => navigate("/signIn")} href="#">Sign In</a></h1>
+                    <h1 className="footer-title">Already have an account? <a
+                        onClick={() => {
+                            navigate("/signIn")
+                            setIsOpenloginModal(false)
+                        }
+                        } href="#">Sign In</a></h1>
                 </span>
             }
             onCancel={() => setIsOpenloginModal(false)}

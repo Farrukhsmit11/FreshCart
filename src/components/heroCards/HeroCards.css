@@ -19,6 +19,11 @@
     font-size: 13px;
 }
 
+.show-now-btn:hover {
+    background-color: var(--fc-btn-bg) !important;
+    color: white !important;
+}
+
 .show-now-icon {
     font-size: 11px;
 }

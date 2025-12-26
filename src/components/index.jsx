@@ -9,6 +9,7 @@ import DailyBestSells from "./dailyBestSells/DailyBestSells";
 import FeatureCards from "./featureCards/FeatureCards";
 import PopularProducts from "./popularProducts/PopularProducts";
 import Footer from "./footer/Footer"
+import QuickViewModal from "./quickViewModal/QuickViewModal";
 
 export {
     PageHeader,
@@ -21,5 +22,6 @@ export {
     DailyBestSells,
     FeatureCards ,
     PopularProducts,
-    Footer
+    Footer,
+    QuickViewModal
 }

@@ -18,13 +18,6 @@ const DailyBestSells = () => {
                             </div>
                         </div>
                     </div>
-
-                    <div className="col">
-                        <CardWrapper
-                            className={'sells-cards'}
-                            data={sells} />
-                    </div>
-
                 </div>
             </div>
         </section>

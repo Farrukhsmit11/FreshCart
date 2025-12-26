@@ -51,6 +51,11 @@ header h1 {
     font-size: 13px;
 }
 
+.shop-now-btn-green:hover {
+    background: #0aad0a !important;
+    color: white !important;
+}
+
 .arrow-right-icon {
     font-size: 16px;
 }

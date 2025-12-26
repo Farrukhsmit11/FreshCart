@@ -3,7 +3,7 @@ import "./App.css"
 import { Footer, Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
 import { Route, Routes } from "react-router-dom";
-import { Shop, ShopWishlist, SignIn, ForgotPassword } from "./pages"
+import { Shop, ShopWishlist, SignIn, ForgotPassword, ShopCheckout } from "./pages"
 import Home from "./pages/home/Home"
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
         <Route path="/shopWishlist" element={<ShopWishlist />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
         <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
+        <Route path="/shopCheckout" element={<ShopCheckout/>}></Route>
 
       </Routes>
 

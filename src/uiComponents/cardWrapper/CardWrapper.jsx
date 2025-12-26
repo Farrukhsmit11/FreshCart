@@ -1,4 +1,4 @@
-import { Button, Card, message } from "antd"
+import { Button, Card, message, Rate } from "antd"
 import "./CardWrapper.css"
 import { EyeOutlined, HeartOutlined, PlusOutlined } from "@ant-design/icons"
 import { IoGitCompareOutline } from "react-icons/io5"
@@ -8,9 +8,11 @@ import { useDispatch, useSelector } from "react-redux"
 import { fetchProducts } from "../../store/productSlice/ProductSlice"
 import { addToCart } from "../../store/cartSlice/CartSlice"
 
-const CardWrapper = ({ data = [], className }) => {
+const CardWrapper = ({ data = [], className, title = "" }) => {
 
   const [openQuickView, setopenQuickView] = useState(false);
+
+  const [value, setValue] = useState(3);
 
   const dispatch = useDispatch();
 
@@ -41,10 +43,12 @@ const CardWrapper = ({ data = [], className }) => {
 
                       <h1 className="product-card-title">{item.title}</h1>
 
-                      <div className="card-bottom-section" >
+                      <div className="card-bottom-section">
 
-                        <span>{item.price}</span>
+                        <span><Rate className="product-rate" onChange={setValue} value={value} /> </span>
+
                       </div>
+
                     </div>
 
                     <div className="icons-overlay">
@@ -56,6 +60,7 @@ const CardWrapper = ({ data = [], className }) => {
                     </div>
 
                     <div className="button-main">
+                      {item.price}
                       <Button
                         type="primary"
                         onClick={() => dispatch(addToCart(item))}
