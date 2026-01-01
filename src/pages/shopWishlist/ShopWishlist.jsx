@@ -1,11 +1,13 @@
-import { Breadcrumb, Divider, Radio, Table } from "antd"
+import { Breadcrumb, Button, Divider, Popconfirm, Radio, Table } from "antd"
 import { useState } from "react";
 import "./ShopWishlist.css"
+import { useSelector } from "react-redux";
+import { PlusOutlined } from "@ant-design/icons";
+import { BiSolidTrashAlt } from "react-icons/bi";
 
 const ShopWishlist = () => {
 
     const [selectionType, setSelectionType] = useState('checkbox');
-
 
     const rowSelection = {
         onChange: (selectedRowKeys, selectedRows) => {
@@ -15,6 +17,15 @@ const ShopWishlist = () => {
             disabled: record.name === 'Disabled User',
             name: record.name,
         }),
+    };
+
+    const confirm = e => {
+        console.log(e);
+        messageApi.success('Click on Yes');
+    };
+    const cancel = e => {
+        console.log(e);
+        messageApi.error('Click on No');
     };
 
     const columns = [
@@ -39,42 +50,38 @@ const ShopWishlist = () => {
         {
             title: "Actions",
             dataIndex: 'actions',
-
+            render: () => (
+                <Button
+                    icon={<PlusOutlined />}
+                    className="add-to-cart-btn"
+                >Add</Button>
+            )
         },
+
+        {
+            title: "Remove",
+            dataIndex: "remove",
+            render: (_,) => [
+                <Popconfirm
+                    title="Delete the task"
+                    description="Are you sure to delete this task?"
+                    onConfirm={confirm}
+                    onCancel={cancel}
+                    okText="Yes"
+                    cancelText="No"
+                >
+                    <BiSolidTrashAlt />
+                </Popconfirm>
+            ]
+        }
     ]
 
-    const data = [
-        {
-            key: '1',
-            name: 'John Brown',
-            age: 32,
-            address: 'New York No. 1 Lake Park',
-        },
-        {
-            key: '2',
-            name: 'Jim Green',
-            age: 42,
-            address: 'London No. 1 Lake Park',
-        },
-        {
-            key: '3',
-            name: 'Joe Black',
-            age: 32,
-            address: 'Sydney No. 1 Lake Park',
-        },
-        {
-            key: '4',
-            name: 'Disabled User',
-            age: 99,
-            address: 'Sydney No. 1 Lake Park',
-        },
-    ];
-
+    const wishlist = useSelector((state) => state.wishlist.items)
 
     return (
         <div className="container">
             <div className="row">
-                <div className="shop-wishlist-main col-lg-12">
+                <div className="shop-wishlist-main">
                     <Breadcrumb
                         className="links-crumb"
                         items={[
@@ -101,12 +108,13 @@ const ShopWishlist = () => {
                         <Table
                             rowSelection={{ type: selectionType, ...rowSelection }}
                             columns={columns}
-                            dataSource={data}
-                        />
+                            dataSource={wishlist}
+                        >
+
+                        </Table>
+
+
                     </div>
-
-
-
                 </div>
             </div>
         </div>

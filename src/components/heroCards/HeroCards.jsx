@@ -10,7 +10,6 @@ const HeroCards = () => {
 
     const settings = {
         dots: true,
-        infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
@@ -22,7 +21,7 @@ const HeroCards = () => {
     return (
         <div className="container">
             <div className="row">
-                <Slider className="slider-one" {...settings} >
+                <Slider className="hero-slider" {...settings} >
                     {hero.map((item) => {
                         return (
                             <div className="slide-wrapper">

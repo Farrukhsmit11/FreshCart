@@ -1,0 +1,19 @@
+.cards-container{
+    display: flex;
+    gap: 20px;
+}
+
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+}
+
+.popular-products-header{
+    padding: 0;
+    margin-bottom: 24px;
+}
+.popular-products-header h4{
+    font-weight: 600;
+    margin-bottom: 0;
+    color: #21313c;
+}

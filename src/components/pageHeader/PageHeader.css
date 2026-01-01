@@ -1,5 +1,10 @@
 .header-wrapper-main {
     background: #F0F3F1 !important;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.header-wrapper-left{
     padding: 0;
 }
 

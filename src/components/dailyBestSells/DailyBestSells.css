@@ -3,23 +3,21 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 450px;
-    width: 300px;
+    height: 470px;
     border-radius: 8px;
+    width: 300px;
 }
 
-.daily-best-sells-main {
-    display: flex;
-    gap: 20px;
-    align-items: center;
+.daily-best-sell-header {
+    margin-bottom: 24px;
+    padding: 0;
 }
 
-.header h1 {
-    font-size: 24px;
-    margin-bottom: 14px;
+.best-sell-card-img {
+    width: 100%;
 }
 
-.content {
+.coffee-card-content {
     padding-left: 32px;
     padding-top: 32px;
 }
@@ -37,9 +35,11 @@
     font-size: 14px;
 }
 
-header h1 {
-    margin-bottom: 13px;
-    font-size: 19px;
+.card-header-title {
+    padding: 0;
+    font-size: 24.5px;
+    font-weight: 600;
+    margin-bottom: 0;
 }
 
 .shop-now-btn-green {
@@ -60,6 +60,35 @@ header h1 {
     font-size: 16px;
 }
 
-.slider-view .add-to-cart-btn {
+.product-amount-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.daily-sell-card,
+.ant-card-body {
+    padding: 16px !important;
+}
+
+.actions .add-to-cart-btn {
     width: 100%;
+    padding: 19px;
+    border-radius: 9px;
+    font-size: 14px;
+}
+
+.deals-content p {
+    color: gray;
+    margin-bottom: 4px;
+}
+
+.deals-content h2 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.countdown-section {
+    padding: 14px 5px 26px;
+    border: 1px solid #dfe2e1;
 }

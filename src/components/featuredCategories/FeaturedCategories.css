@@ -4,16 +4,17 @@
     font-weight: 600;
 }
 
-/* .slider-container {
-    width: 100%;
-} */
-
 .slider-container .mySwiper{
     width: 100%;
 }
 
+.slider-container{
+    padding: 0;
+}
+
 .featured-categories-header {
     margin-bottom: 14px;
+    padding: 0;
 }
 
 .mySwiper .swiper-button-prev {
@@ -29,12 +30,10 @@
 }
 
 .category-card {
-    width: 200px;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
 }
 
 .category-card:hover {

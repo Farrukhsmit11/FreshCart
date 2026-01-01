@@ -1,4 +1,21 @@
-    .cards-main {
+.shop-card {
+    padding: 0;
+}
+
+.shop-card img {
+    width: 100%;
+}
+
+.shop-now-btn {
+    width: 104px;
+    background-color: var(--fc-btn-bg);
+    color: var(--fc-btn-color);
+    padding: 20px;
+    font-size: 14px;
+}
+
+
+/* .cards-main {
         position: relative;
     }
 
@@ -50,4 +67,4 @@
         font-size: 26px;
         color: var(--h1--color);
         font-weight: 700;
-    }
+    } */

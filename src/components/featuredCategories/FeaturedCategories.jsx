@@ -19,7 +19,7 @@ const FeaturedCategories = () => {
                     <div className="featured-categories-header">
                         <h1 className="featured-title">Featured Categories</h1>
                     </div>
-                    {/* <div className="slider-container"> */}
+                    <div className="slider-container">
                         <Swiper
                             slidesPerView={6}
                             navigation={true}
@@ -36,20 +36,6 @@ const FeaturedCategories = () => {
                             }}
                             modules={[Pagination, Navigation, Autoplay]}
                             className="mySwiper"
-                            breakpoints={{
-                                320: {
-                                    slidesPerView: 2,
-                                    spaceBetween: 20,
-                                },
-                                768: {
-                                    slidesPerView: 4,
-                                    spaceBetween: 40,
-                                },
-                                1024: {
-                                    slidesPerView: 5,
-                                    spaceBetween: 50,
-                                },
-                            }}
                         >
                             {category.map((product, index) => {
                                 return (
@@ -63,11 +49,13 @@ const FeaturedCategories = () => {
                                                 <p className="card-desc">{product.title}</p>
                                             </div>
                                         </Card>
+
                                     </SwiperSlide>
                                 )
                             })}
                         </Swiper>
-                    {/* </div> */}
+                    </div>
+
                 </div>
             </div>
         </section >

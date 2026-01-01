@@ -5,7 +5,7 @@ import { LoadingOutlined } from "@ant-design/icons"
 const Loader = () => {
     return (
         <div className="ant-loading-page">
-            <Spin indicator={<LoadingOutlined className="loading-icon" spin />} tip= "loading please wait" size="large" />
+            <Spin />;
         </div>
     )
 }

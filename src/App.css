@@ -3,7 +3,7 @@
 
 
 :root {
-  --link-color: #0aad0a;
+  --link-color: #0aad0a00;
   --fc-btn-bg: #001e2b;
   --p--color: #5c6c75;
   --h1--color: #21313c;
@@ -12,20 +12,17 @@
   --fc-heading-color: #21313c;
 }
 
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Instrument Sans", sans-serif !important;
   font-weight: 600;
+
 }
 
 .section-padding {
   width: 100%;
   padding: 24px 0;
-}
-
-.container {
-  padding: 9px 0;
-  margin: 0 auto;
 }

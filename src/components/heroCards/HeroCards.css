@@ -1,6 +1,10 @@
-.slider-one .slick-dots {
+.hero-slider .slick-dots {
     position: absolute;
     bottom: 20px;
+}
+
+.hero-slider {
+    padding: 0;
 }
 
 .slide-wrapper {

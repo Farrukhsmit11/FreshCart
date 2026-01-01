@@ -1,38 +1,39 @@
-import { Button } from "antd"
+
+import { shop } from "./shop"
 import "./ShopNowCards.css"
-import { shopNowData } from "./shopNowData"
+import { Button } from "antd"
 
 const ShopNowCards = () => {
   return (
     <section className="section-padding">
-
-      <div className="container">
-
+      <div className="container px-0">
         <div className="row">
 
-          {shopNowData.map((card, index) => {
-
+          {/* {shop.map((items) => {
             return (
 
-              <div key={index} className="cards-main col-md-6 col-12">
+              <div className="col">
 
-                <img className="shop-now-card-img" src={card.imgSrc} />
+                <div className="shop-card">
 
-                <div className="product-details-content">
-
-                  <h4 className="">{card.title}</h4>
-
-                  <p>{card.description}</p>
-
-                  <Button className="shop-now-btn">Shop Now</Button>
+                  <img src={items.imgSrc} />
                 </div>
+
+                <div>
+                  <h3>{items.title}</h3>
+
+                  <p>{items.description}</p>
+                </div>
+
+                <Button className="shop-now-btn">Shop Now</Button>
               </div>
             )
-          })}
+          })} */}
 
         </div>
       </div>
     </section>
+
   )
 }
 

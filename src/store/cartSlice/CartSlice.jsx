@@ -18,8 +18,7 @@ export const cartSlice = createSlice({
             state.value += 1;
             message.success("Product added to cart");
 
-            localStorage.setItem("cartItems" , JSON.stringify(state.cartItems));
-        }
+        },
     }
 
 })
