@@ -1,16 +1,14 @@
 import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
-import { Button, Input, Drawer, Badge, } from "antd"
+import { Button, Input, Drawer, Badge, Row, Col, } from "antd"
 import { IoLocationOutline } from "react-icons/io5"
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
-import { useEffect, useState } from "react"
-import { FiUser } from "react-icons/fi";
+import { useState } from "react"
+import { FiShoppingCart, FiUser } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
-import { FiShoppingBag } from "react-icons/fi";
 import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
-import { LuTrash } from "react-icons/lu"
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -26,26 +24,20 @@ const Navbar = () => {
     return (
 
         <>
-            <div className="container">
-                <div className="row">
-                    <nav className="navbar">
+            <div className="section-container">
+                <nav className="navbar">
+                    <Row justify="space-between" align="middle">
 
-                        <div className="nav-header-left">
-                            <img className="nav-logo" src={logo} />
-                        </div>
+                        <img className="nav-logo" src={logo} />
 
                         <div className="nav-center-right">
-                            <div className="input-group">
-                                <Input
-                                    className="search-input"
-                                    placeholder="Search For Products"
-                                    type="search"
-                                    suffix={<SearchOutlined />}
-                                ></Input>
-                            </div>
-                            <span>
-                                <Button className="select-location-btn"><IoLocationOutline />Location</Button>
-                            </span>
+                            <Input
+                                className="search-input"
+                                placeholder="Search For Products"
+                                type="search"
+                                suffix={<SearchOutlined />}
+                            ></Input>
+                            <Button className="select-location-btn"><IoLocationOutline />Location</Button>
                         </div>
 
                         <div className="nav-actions">
@@ -61,12 +53,11 @@ const Navbar = () => {
                             <FiUser onClick={() => setOpen(true)} className="social-icon" />
 
                             <Badge count={count}>
-                                <FiShoppingBag onClick={() => setShowCartDrawer(true)} className="social-icon" />
+                                <FiShoppingCart onClick={() => setShowCartDrawer(true)} className="social-icon" />
                             </Badge>
                         </div>
 
                         <Drawer
-                            width={560}
                             onClose={() => setShowCartDrawer(false)}
                             className="products-drawer"
                             title={<span><h1 className="drawer-title">Shop Cart</h1>
@@ -76,28 +67,16 @@ const Navbar = () => {
                         >
                             {cartItems.map((item, index) => {
                                 return (
-                                    <>
-                                        <div key={index} className="list-items-main">
+                                    <div>
 
-                                            <div className="list-item-left">
-                                                <img className="list-image" src={item.thumbnail} />
-                                            </div>
-
-                                            <div className="list-items-right">
-
-                                                <h6>{item.title}</h6>
-
-                                                <span><LuTrash /> Remove</span>
-                                            </div>
-                                        </div>
-                                    </>
+                                    </div>
                                 )
                             })}
 
                         </Drawer>
+                    </Row>
+                </nav>
 
-                    </nav>
-                </div>
 
                 <LoginModal
                     isOpenloginModal={open}
@@ -107,6 +86,7 @@ const Navbar = () => {
             </div>
 
             <hr />
+
         </>
 
 

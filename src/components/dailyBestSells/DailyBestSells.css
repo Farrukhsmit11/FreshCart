@@ -9,7 +9,6 @@
 }
 
 .daily-best-sell-header {
-    margin-bottom: 24px;
     padding: 0;
 }
 
@@ -69,6 +68,10 @@
 .daily-sell-card,
 .ant-card-body {
     padding: 16px !important;
+}
+
+.daily-sell-card:hover .icons-overlay {
+    opacity: 1;
 }
 
 .actions .add-to-cart-btn {

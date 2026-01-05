@@ -1,38 +1,27 @@
 
+import { Col, Row } from "antd"
 import { shop } from "./shop"
 import "./ShopNowCards.css"
-import { Button } from "antd"
 
 const ShopNowCards = () => {
   return (
     <section className="section-padding">
-      <div className="container px-0">
-        <div className="row">
-
-          {/* {shop.map((items) => {
+      <div className="section-container">
+        <Row gutter={[16, 16]}>
+          {shop.map((items) => {
             return (
+              <Col xs={24} sm={24} md={6}>
+                <img className="shop-now-card-image" src={items.imgSrc} />
+              </Col>
 
-              <div className="col">
-
-                <div className="shop-card">
-
-                  <img src={items.imgSrc} />
-                </div>
-
-                <div>
-                  <h3>{items.title}</h3>
-
-                  <p>{items.description}</p>
-                </div>
-
-                <Button className="shop-now-btn">Shop Now</Button>
-              </div>
             )
-          })} */}
+          })}
+        </Row>
 
-        </div>
+
       </div>
     </section>
+
 
   )
 }

@@ -1,4 +1,4 @@
-import { Breadcrumb, Button, Divider, Popconfirm, Radio, Table } from "antd"
+import { Breadcrumb, Button, Divider, Popconfirm, Radio, Row, Table } from "antd"
 import { useState } from "react";
 import "./ShopWishlist.css"
 import { useSelector } from "react-redux";
@@ -79,42 +79,38 @@ const ShopWishlist = () => {
     const wishlist = useSelector((state) => state.wishlist.items)
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="shop-wishlist-main">
-                    <Breadcrumb
-                        className="links-crumb"
-                        items={[
-                            {
-                                title: 'Home',
-                            },
+        <div className="section-container">
+            <div className="shop-wishlist-main">
+                <Breadcrumb
+                    className="routes-links"
+                    items={[
+                        {
+                            title: 'Home',
+                        },
 
-                            {
-                                title: <a href="">Shop Wishlist</a>,
-                            }
+                        {
+                            title: <a href="">Shop Wishlist</a>,
+                        }
 
-                        ]}
+                    ]}
+                >
+                </Breadcrumb>
+
+                <div className="table-header">
+                    <h1> My Wishlist</h1>
+                    <p>There are 4 products in this wishlist.</p>
+                </div>
+
+                <div className="table-main">
+
+                    <Divider />
+                    <Table
+                        rowSelection={{ type: selectionType, ...rowSelection }}
+                        columns={columns}
+                        dataSource={wishlist}
                     >
-                    </Breadcrumb>
 
-                    <div className="table-header">
-                        <h1> My Wishlist</h1>
-                        <p>There are 4 products in this wishlist.</p>
-                    </div>
-
-                    <div className="table-main">
-
-                        <Divider />
-                        <Table
-                            rowSelection={{ type: selectionType, ...rowSelection }}
-                            columns={columns}
-                            dataSource={wishlist}
-                        >
-
-                        </Table>
-
-
-                    </div>
+                    </Table>
                 </div>
             </div>
         </div>

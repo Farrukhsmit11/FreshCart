@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { message } from "antd";
 
 export const wishlistSlice = createSlice({
     name: "wishlist",
@@ -12,6 +13,7 @@ export const wishlistSlice = createSlice({
         addToWishlist: (state, action) => {
          state.items.push(action.payload)
          state.value +=1
+         message.success("Product added to wishlist")
         }
     }
 })

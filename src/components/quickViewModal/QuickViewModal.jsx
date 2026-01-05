@@ -1,4 +1,4 @@
-import { Modal } from "antd"
+import { Modal, Row } from "antd"
 import "./QuickViewModal.css"
 import ImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
@@ -34,9 +34,9 @@ const QuickViewModal = ({ isOpenQuickViewModal, setIsOpenQuickViewModal }) => {
             footer={null}
             onCancel={() => setIsOpenQuickViewModal(false)}
         >
-            <div className="container">
-                <div className="row">
-                    <div className="col-lg-8">
+            <div className="section-container">
+                <Row>
+                    <div className="">
                         <ImageGallery
                             showPlayButton={false}
                             showFullscreenButton={false}
@@ -46,10 +46,9 @@ const QuickViewModal = ({ isOpenQuickViewModal, setIsOpenQuickViewModal }) => {
 
                     </div>
 
-                    <div className="col-lg-3">
-                        <h1>hello</h1>
-                    </div>
-                </div>
+                    <h1>hello</h1>
+                </Row>
+
             </div>
         </Modal>
     )

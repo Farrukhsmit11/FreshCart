@@ -1,13 +1,20 @@
-
 .nav-logo {
     cursor: pointer;
 }
 
+.navbar {
+    padding-block: 20px; 
+}
+
 .search-input {
-    font-weight: 600;
     width: 600px;
-    padding: 10px 16px;
-    border-radius: 7px;
+    padding: 8.8px 16px;
+    font-size: 14px;
+    color: #21313c;
+    border-radius: 8px;
+    font-weight: 500;
+    border: 1px solid #dfe2e1;
+
 }
 
 .nav-center-right {
@@ -17,10 +24,12 @@
 }
 
 .select-location-btn {
-    padding: 19px;
-    font-family: "Instrument Sans", sans-serif;
+    padding: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: rgb(92 108 117 / 75%);
+    height: 42px;
+    border-radius: 8px;
 }
 
 .social-icon {

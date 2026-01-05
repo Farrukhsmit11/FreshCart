@@ -19,34 +19,32 @@ const HeroCards = () => {
     };
 
     return (
-        <div className="container">
-            <div className="row">
-                <Slider className="hero-slider" {...settings} >
-                    {hero.map((item) => {
-                        return (
-                            <div className="slide-wrapper">
-                                <div className="slide-wrapper-right">
-                                    <img className="hero-img" src={item.imgSrc} />
-                                </div>
-                                <div className="slide-wrapper-left">
-                                    <div className="text-content">
-                                        <span className="custom-badge">{item.badgeText}</span>
-                                        <h1>{item.title} </h1>
-                                        <p className="text-primary">{item.text}</p>
+        <div className="section-container">
+            <Slider className="hero-slider" {...settings} >
+                {hero.map((item) => {
+                    return (
+                        <div className="slide-wrapper">
+                            <div className="slide-wrapper-right">
+                                <img className="hero-img" src={item.imgSrc} />
+                            </div>
+                            <div className="slide-wrapper-left">
+                                <div className="text-content">
+                                    <span className="custom-badge">{item.badgeText}</span>
+                                    <h1>{item.title} </h1>
+                                    <p className="text-primary">{item.text}</p>
 
-                                        <p className="hero-description">{item.description}</p>
+                                    <p className="hero-description">{item.description}</p>
 
-                                        <div className="slide-actions">
-                                            <Button icon={<FaArrowRight className="show-now-icon" />
-                                            } className="show-now-btn">Show Now</Button>
-                                        </div>
+                                    <div className="slide-actions">
+                                        <Button icon={<FaArrowRight className="show-now-icon" />
+                                        } className="show-now-btn">Show Now</Button>
                                     </div>
                                 </div>
                             </div>
-                        )
-                    })}
-                </Slider>
-            </div>
+                        </div>
+                    )
+                })}
+            </Slider>
         </div>
     )
 }

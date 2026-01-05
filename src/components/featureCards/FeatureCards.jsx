@@ -1,16 +1,17 @@
+import { Col, Row } from "antd"
 import "./FeatureCards.css"
 import helper from "./helper"
 
 const FeatureCards = () => {
     return (
         <section className="section-padding">
-            <div className="container">
-                <div className="row">
+            <div className="section-container">
+                <Row gutter={[16 , 16]}>
                     <div className="feature-main">
                         {helper.map((item, index) => {
                             return (
-                                <div className="col-lg-3 col-md-6">
-                                    <div key={index} className="feature-card1 mb-8 mb-xl-0">
+                                <Col span={6}>
+                                    <div key={index} className="feature-card1">
 
                                         <div className="feature-card-content">
                                             <div className="icon-main">
@@ -20,11 +21,11 @@ const FeatureCards = () => {
                                             <p className="feature-card-desc">{item.description}</p>
                                         </div>
                                     </div>
-                                </div>
+                                </Col>
                             )
                         })}
                     </div>
-                </div>
+                </Row>
             </div>
         </section >
     )

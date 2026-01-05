@@ -1,5 +1,5 @@
 .featured-title {
-    font-size: 23px;
+    font-size: 24px;
     color: var(--h1--color);
     font-weight: 600;
 }
@@ -29,18 +29,20 @@
     display: none;
 }
 
-.category-card {
+.featured-categories-card {
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.category-card:hover {
+.featured-categories-card:hover {
     border: 1px solid #0aad0a;
 }
+
 
 .card-desc {
     color: var(--p--color);
     text-align: center;
+    font-size: 12px;
 }

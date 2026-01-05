@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-
-
 :root {
   --link-color: #0aad0a00;
   --fc-btn-bg: #001e2b;
@@ -23,6 +21,9 @@
 }
 
 .section-padding {
-  width: 100%;
-  padding: 24px 0;
+  padding-block: 70px;
+}
+
+.section-container {
+  margin-inline: 120px;
 }

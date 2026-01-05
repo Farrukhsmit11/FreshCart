@@ -1,21 +1,27 @@
-import { Badge, Button, Card, Rate } from "antd"
+import { Button, Card, Col, Rate, Row } from "antd"
 import "./CardMainComponent.css"
 import { EyeOutlined, HeartOutlined, PlusOutlined } from "@ant-design/icons"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { addToCart } from "../../store/cartSlice/CartSlice"
 import { IoGitCompare } from "react-icons/io5"
 import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
+import QuickViewModal from "../quickViewModal/QuickViewModal"
+import { useState } from "react"
 
 const CardMainComponent = ({ data = [] }) => {
+
+    const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
 
     const dispatch = useDispatch();
 
     return (
-        <div className="container">
-            <div className="row">
-                <div className="cards-main-section">
-                    {data.map((item) => {
-                        return (
+        <div className="section-container">
+            <Row gutter={[16, 16]}>
+                {data.map((item) => {
+                    return (
+
+                        <Col xs={24} md={6} sm={12} lg={6}>
+
                             <Card
                                 hoverable
                                 className="product-card"
@@ -43,19 +49,25 @@ const CardMainComponent = ({ data = [] }) => {
 
                                 <div className="icons-overlay">
                                     <div className="icons-main">
-                                        <Button icon={<EyeOutlined />}></Button>
+                                        <Button onClick={() => setOpenQuickViewModal(true)} icon={<EyeOutlined />}></Button>
                                         <Button icon={<IoGitCompare />}></Button>
                                         <Button onClick={() => dispatch((addToWishlist(item)))} icon={<HeartOutlined />}></Button>
                                     </div>
 
                                 </div>
                             </Card>
-                        )
-                    })}
-                </div>
+                        </Col>
+                    )
+                })}
+            </Row>
 
-            </div>
+            <QuickViewModal
+                isOpenQuickViewModal={openQuickViewModal}
+                setIsOpenQuickViewModal={setOpenQuickViewModal}
+            />
         </div>
+
+
     )
 }
 

@@ -16,12 +16,10 @@ const PopularProducts = () => {
 
     return (
         <div className="container">
-            <div className="row">
-                <div className="popular-products-header">
-                    <h4>Popular Products</h4>
-                </div>
-                <CardMainComponent data={products} />
+            <div className="popular-products-header">
+                <h4>Popular Products</h4>
             </div>
+            <CardMainComponent data={products} />
         </div>
     )
 }
