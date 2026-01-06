@@ -9,6 +9,9 @@
 }
 
 .slider-container{
+    width: 100%;
+}
+.slider-container{
     padding: 0;
 }
 
@@ -39,7 +42,6 @@
 .featured-categories-card:hover {
     border: 1px solid #0aad0a;
 }
-
 
 .card-desc {
     color: var(--p--color);

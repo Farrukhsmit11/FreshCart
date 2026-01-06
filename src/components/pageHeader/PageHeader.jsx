@@ -14,6 +14,7 @@ const PageHeader = () => {
 
                     <div className="header-wrapper-right">
                         <Select
+                            bordered={false}
                             options={languages}
                             className="language-select"
                             defaultValue="en"

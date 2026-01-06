@@ -1,4 +1,4 @@
-import { Breadcrumb, Button, Card, Checkbox, Col, Input, InputNumber, Menu, Rate, Select, Slider } from "antd"
+import { Breadcrumb, Button, Card, Checkbox, Col, Input, InputNumber, Menu, Rate, Row, Select, Slider } from "antd"
 import "./Shop.css"
 import { useState } from "react";
 import fruitsImg from "../../assets/assortment-fruits-img.png"
@@ -76,8 +76,9 @@ const Shop = () => {
     return (
 
         <div className="section-container">
-            <div className="nav-main">
-                <div className="col">
+            <Row>
+
+                <Col>
                     <Breadcrumb
                         className="routes-links"
                         items={[
@@ -87,108 +88,102 @@ const Shop = () => {
                         ]}>
 
                     </Breadcrumb>
-                </div>
-            </div>
-
-            <div className="sider-main">
-                <div className="sidebar-menu-section">
-                    <h1 className="menu-title">Categories</h1>
-                    <Menu
-                        className="sidebar-menu col"
-                        mode="inline"
-                        items={items}>
-
-                    </Menu>
-                </div>
+                </Col>
 
 
-                <div className="stores-section">
+                <div className="sider-main">
+                    <div className="sidebar-menu-section">
+                        <h1 className="menu-title">Categories</h1>
+                        <Menu
+                            className="sidebar-menu col"
+                            mode="inline"
+                            items={items}>
 
-                    <h1 className="shop-title">Stores</h1>
-
-                    <Input placeholder="Search By Store" className="shop-input"></Input>
-
-                </div>
-
-                <div className="price-slider">
-
-                    <h1 className="shop-title">Price</h1>
-
-                    <Col span={12}>
-                        <Slider
-                            className="price-range-slider"
-                            min={30}
-                            max={50}
-                            onChange={onChange}
-                            value={typeof inputValue === 'number' ? inputValue : 0}
-                        />
-                    </Col>
-
-                    <Col span={4}>
-                        <InputNumber
-                            min={50}
-                            max={20}
-                            style={{ margin: '0 16px' }}
-                            value={inputValue}
-                            onChange={onChange}
-                            defaultValue={60}
-                        />
-                    </Col>
-                </div>
-
-
-                <div className="form-check-main">
-                    <h1 className="shop-title">Rating</h1>
-                    <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
-                    <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
-                    <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
-                    <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
-                </div>
-
-                <div className="fresh-fruits-main">
-                    <img className="fruits-card-image" src={fruitsImg} />
-                    <div className="overlay-content">
-                        <h1>Fresh Fruits</h1>
-                        <p>Get Upto 25% Off</p>
-                        <Button className="shop-now-btn">Shop Now</Button>
+                        </Menu>
                     </div>
-                </div>
-            </div>
 
-            <section className="product-listing-section">
-                <div className="card">
-                    <h1>Snack & Munchies</h1>
-                </div>
 
-                <div className="product-listing-controls">
-                    <p>26 Products Found</p>
+                    <div className="stores-section">
 
-                    <div className="filters">
+                        <h1 className="shop-title">Stores</h1>
 
-                        <UnorderedListOutlined />
-                        <IoGridOutline />
-                        <TfiLayoutGrid3 />
+                        <Input placeholder="Search By Store" className="shop-input"></Input>
 
-                        <Select
-                            // className="form-select"
-                            placeholder="Show:10"
-                            style={{ width: 120 }}
-                        />
+                    </div>
 
-                        <Select
-                            className="form-select"
-                            placeholder="Sort By: Featured"
+                    <div className="price-slider">
 
-                        />
+                        <h1 className="shop-title">Price</h1>
 
+                        <Col span={12}>
+                            <Slider
+                                className="price-range-slider"
+                                min={30}
+                                max={50}
+                                onChange={onChange}
+                                value={typeof inputValue === 'number' ? inputValue : 0}
+                            />
+                        </Col>
+
+                        <Col span={4}>
+                            <InputNumber
+                                min={50}
+                                max={20}
+                                style={{ margin: '0 16px' }}
+                                value={inputValue}
+                                onChange={onChange}
+                                defaultValue={60}
+                            />
+                        </Col>
+                    </div>
+
+
+                    <div className="form-check-main">
+                        <h1 className="shop-title">Rating</h1>
+                        <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
+                        <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
+                        <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
+                        <Checkbox className="checkbox-input"><Rate className="text-warning"></Rate></Checkbox>
+                    </div>
+
+                    <div className="fresh-fruits-main">
+                        <img className="fruits-card-image" src={fruitsImg} />
+                        <div className="overlay-content">
+                            <h1>Fresh Fruits</h1>
+                            <p>Get Upto 25% Off</p>
+                            <Button className="shop-now-btn">Shop Now</Button>
+                        </div>
                     </div>
                 </div>
 
+                <Col md={12} lg={9}>
+                    <div className="card">
+                        <h1>Snack & Munchies</h1>
+                    </div>
 
+                    <div className="product-listing-controls">
+                        <p>26 Products Found</p>
 
-            </section>
+                        <div className="filters">
 
+                            <UnorderedListOutlined />
+                            <IoGridOutline />
+                            <TfiLayoutGrid3 />
 
+                            <Select
+                                placeholder="Show:10"
+                                style={{ width: 120 }}
+                            />
+
+                            <Select
+                                className="form-select"
+                                placeholder="Sort By: Featured"
+                            />
+
+                        </div>
+                    </div>
+                </Col>
+            </Row>
         </div>
 
     )

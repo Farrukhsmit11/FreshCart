@@ -17,11 +17,9 @@ const CardMainComponent = ({ data = [] }) => {
     return (
         <div className="section-container">
             <Row gutter={[16, 16]}>
-                {data.map((item) => {
+                {data.slice(0 , 10).map((item) => {
                     return (
-
-                        <Col xs={24} md={6} sm={12} lg={6}>
-
+                        <Col flex={1}>
                             <Card
                                 hoverable
                                 className="product-card"
