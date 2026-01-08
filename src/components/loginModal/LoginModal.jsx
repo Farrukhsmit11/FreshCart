@@ -116,11 +116,13 @@ const LoginModal = ({ isOpenloginModal, setIsOpenloginModal }) => {
                                 onBlur={handleBlur}
                             />
 
-                            <div class="signup-terms">
-                                <p>By Signup, you agree to our <a href="#">Terms of Service &</a> <a href="#">Terms of Service</a> </p>
-                            </div>
+
 
                         </AntForm.Item>
+
+                        <div className="signup-terms">
+                            <p>By Signup, you agree to our <a href="#">Terms of Service &</a> <a href="#">Terms of Service</a> </p>
+                        </div>
 
                         <div className="form-actions">
                             <Button

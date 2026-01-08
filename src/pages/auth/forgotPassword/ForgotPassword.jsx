@@ -1,7 +1,10 @@
 import "./ForgotPassword.css"
 import forgotPasswordlogo from "../../../assets/forgot-password-logo.svg"
-import { Form as AntForm, Button, Input } from "antd"
+import { Form as AntForm, Button, Col, Input, Row } from "antd"
 import { useNavigate } from "react-router-dom"
+import { Formik } from "formik"
+import { forgotPasswordSchema } from "./ForgotPasswordSchema"
+import AuthBanner from "../../../components/authBanner/AuthBanner"
 
 const ForgotPassword = () => {
 
@@ -9,30 +12,77 @@ const ForgotPassword = () => {
 
     const [form] = AntForm.useForm();
 
+    const initialValues = {
+        email: ""
+    }
+
+    const handlesubmit = (values) => {
+        console.log(values)
+    }
+
     return (
-        <div className="section-container">
+        <>
+            <AuthBanner />
+            <div className="section-container">
+                <Row>
 
-            <img className="" src={forgotPasswordlogo} />
+                    <Col md={13} span={10}>
+                        <img className="" src={forgotPasswordlogo} />
+                    </Col>
 
-            <AntForm className="auth-form" form={form} layout="vertical">
+                    <Formik
+                        initialValues={initialValues}
+                        validationSchema={forgotPasswordSchema}
+                        onSubmit={handlesubmit}
+                    >
+                        {({
+                            handleSubmit,
+                            handleBlur,
+                            handleChange,
+                            errors,
+                            touched,
+                            values
+                        }) => (
 
-                <div className="form-content">
-                    <h1 className="forget-form-title">Forgot Your password?</h1>
-                    <p className="forget-form-subtitle">Please enter the email address associated with your account and We will email you a link to reset your password.</p>
-                </div>
+                            <Col md={12} lg={7} >
+                                <AntForm onFinish={handleSubmit} className="auth-form" form={form} layout="vertical">
 
-                <Input
-                    className="form-input"
-                    placeholder="Email"
-                ></Input>
+                                    <div className="form-content">
+                                        <h1 className="forget-form-title">Forgot Your password?</h1>
+                                        <p className="forget-form-subtitle">Please enter the email address associated with your account and We will email you a link to reset your password.</p>
+                                    </div>
 
-                <div className="form-actions">
-                    <Button htmlType="submit" className="sign-up-btn">Reset Password</Button>
-                    <Button onClick={() => navigate("/signIn")} htmlType="submit" className="back-btn">Back</Button>
-                </div>
+                                    <AntForm.Item
+                                        validateStatus={errors.email && touched.email ? "error" : ""}
+                                        help={
+                                            errors.email && touched.email ? (
+                                                <span className="reset-form-error">{errors.email}</span>
+                                            ) : null
+                                        }
+                                    >
+                                        <Input
+                                            className="form-input"
+                                            placeholder="Email"
+                                            onChange={handleChange}
+                                            onBlur={handleBlur}
+                                            value={values.email}
+                                            name="email"
 
-            </AntForm>
-        </div>
+                                        ></Input>
+                                    </AntForm.Item>
+
+                                    <div className="form-actions">
+                                        <Button htmlType="submit" className="reset-password-btn">Reset Password</Button>
+                                        <Button onClick={() => navigate("/signIn")} htmlType="submit" className="back-btn">Back</Button>
+                                    </div>
+
+                                </AntForm>
+                            </Col>
+                        )}
+                    </Formik>
+                </Row>
+            </div>
+        </>
     )
 }
 

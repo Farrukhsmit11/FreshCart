@@ -1,0 +1,31 @@
+.auth-banner-main {
+    border-bottom: 1px solid #dfe2e1;
+}
+
+.auth-nav {
+    padding: 10px 16px;
+    box-shadow: rgba(145, 158, 171, 0.14) 0px 4px 5px 0px;
+}
+
+.auth-banner-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.auth-banner-right p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #21313c;
+}
+
+.auth-banner-right a{
+    color: #000000e6;
+    font-weight: 500;
+}
+
+.auth-content {
+    display: flex;
+    justify-content: space-between;
+}

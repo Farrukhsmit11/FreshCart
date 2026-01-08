@@ -1,84 +1,135 @@
 import "./SignIn.css"
 import SignInlogo from "../../../assets/signIn-logo.svg"
 import { Form as AntForm, Button, Checkbox, Col, Input, Row } from "antd"
+import { Formik } from "formik"
+import { signInSchema } from "./Validation"
 import { useNavigate } from "react-router-dom"
+import AuthBanner from "../../../components/authBanner/AuthBanner"
 
 const SignIn = () => {
 
-  const navigate = useNavigate();
-
   const [form] = AntForm.useForm();
+
+  const initialValues = {
+    email: "",
+    password: ""
+  }
+
+  const handlesubmit = (values) => {
+    console.log(values)
+    form.resetFields();
+  }
+
+  const navigate = useNavigate()
 
   return (
     <>
+      <AuthBanner />
+      <div className="section-container">
 
-      <section className="section-padding">
-        <div className="section-container">
+        <Row gutter={[16, 16]}>
+          <Col md={13} span={10}>
+            <img className="" src={SignInlogo} alt="Sign in illustration" />
+          </Col>
 
-          <Row>
-            <Col span={13}>
-              <img className="" src={SignInlogo} alt="Sign in illustration" />
-            </Col>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={signInSchema}
+            onSubmit={handlesubmit}
+          >
 
+            {({
+              handleSubmit,
+              handleBlur,
+              handleChange,
+              errors,
+              touched,
+              values
 
+            }) => (
+              <AntForm
+                onFinish={handleSubmit}
+                className="auth-form"
+                form={form} layout="vertical">
 
-            <AntForm className="auth-form" form={form} layout="vertical">
+                <div className="form-content">
 
-              <div className="form-content">
+                  <h1 className="signup-form-title">Sign In to FreshCart</h1>
 
-                <h1 className="signup-form-title">Sign In to FreshCart</h1>
-
-                <p>Welcome back to FreshCart! Enter your email to get started.</p>
-              </div>
-
-              <AntForm.Item
-              >
-
-                <Input
-                  className="email-input"
-                  placeholder="Email"
-                  name="email"
-                ></Input>
-
-              </AntForm.Item>
-
-              <AntForm.Item
-              >
-
-                <Input.Password
-                  className="password-input"
-                  placeholder="Password"
-                  name="password"
-                ></Input.Password>
-
-              </AntForm.Item>
-
-              <div className="form-footer">
-
-                <div className="checkbox-main">
-
-                  <Checkbox>Remember me</Checkbox>
+                  <p>Welcome back to FreshCart! Enter your email to get started.</p>
                 </div>
 
-                <div className="forgot-password">
+                <AntForm.Item
+                  className="form-item"
+                  validateStatus={errors.email && touched.email ? "error" : ""}
+                  help={
+                    errors.email && touched.email ? (
+                      <span className="form-error">{errors.email}</span>
+                    ) : null
+                  }
+                >
+                  <Input
+                    className="email-input"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    placeholder="Email"
+                    value={values.email}
+                    name="email"
+                  ></Input>
 
-                  <p>Forgot Password?</p>
+                </AntForm.Item>
 
-                  <a href="#" onClick={() => navigate("/forgotPassword")}>Reset It</a>
+                <AntForm.Item
+                  validateStatus={errors.password && touched.password ? "error" : ""}
+                  help={
+                    errors.password && touched.password ? (
+                      <span className="form-error">{errors.password}</span>
+                    ) : null
+                  }
+                  className="form-item"
+                >
+                  <Input.Password
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                    className="password-input"
+                    placeholder="****"
+                    name="password"
+                  ></Input.Password>
 
+                </AntForm.Item>
+
+                <div className="auth-form-content">
+
+                  <div className="form-check">
+
+                    <Checkbox className="form-check-input">Remember me</Checkbox>
+
+                  </div>
+
+                  <div className="forgot-password-main">
+                    Forgot Password?
+                    <a href="#" onClick={() => navigate("/forgotPassword")}>Reset it</a>
+                  </div>
                 </div>
 
-              </div>
+                <div className="form-actions">
+                  <Button htmlType="submit" className="sign-in-btn">Sign Up</Button>
+                </div>
 
-              <div className="form-actions">
-                <Button htmlType="submit" className="sign-up-btn">Sign Up</Button>
-              </div>
+                <div className="auth-footer">
+                  <p>Don't have an account?</p>
+                  <a href="#">Sign Up</a>
+                </div>
 
-            </AntForm>
+              </AntForm>
+            )
 
-          </Row>
-        </div>
-      </section>
+            }
+          </Formik>
+
+        </Row>
+      </div>
     </>
 
   )

@@ -1,10 +1,13 @@
 import HeroCards from "../../components/heroCards/HeroCards"
-import { DailyBestSells, FeatureCards, FeaturedCategories, Footer, Navbar, ShopNowCards } from "../../components"
+import { DailyBestSells, FeatureCards, FeaturedCategories, Footer, Navbar, PageHeader, ShopNowCards } from "../../components"
 import PopularProducts from "../../components/popularProducts/PopularProducts"
 
 const Home = () => {
   return (
     <div>
+
+      <PageHeader />
+      <Navbar />
       <HeroCards />
       <FeaturedCategories />
       <ShopNowCards />

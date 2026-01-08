@@ -7,9 +7,11 @@ import { EyeOutlined, HeartOutlined, PlusOutlined, } from "@ant-design/icons"
 import { useDispatch } from "react-redux"
 import { IoGitCompare } from "react-icons/io5"
 import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
+import { useState } from "react"
+import QuickViewModal from "../quickViewModal/QuickViewModal"
 
 const DailyBestSells = () => {
-
+    const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
     const dispatch = useDispatch();
 
     return (
@@ -42,7 +44,7 @@ const DailyBestSells = () => {
                                 >
 
                                     <div className="daily-sell-header">
-                                        <img src={item.imgSrc} />
+                                        <img src={item.thumbnail} />
                                     </div>
 
                                     <div className="deals-content">
@@ -76,6 +78,11 @@ const DailyBestSells = () => {
                     })}
                 </Row>
             </div>
+
+            <QuickViewModal
+                isOpenQuickViewModal={openQuickViewModal}
+                setIsOpenQuickViewModal={setOpenQuickViewModal}
+            />
         </section>
     )
 }

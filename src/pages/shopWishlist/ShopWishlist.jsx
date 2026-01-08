@@ -75,8 +75,9 @@ const ShopWishlist = () => {
             ]
         }
     ]
-
+   
     const wishlist = useSelector((state) => state.wishlist.items)
+    console.log(wishlist)
 
     return (
         <div className="section-container">

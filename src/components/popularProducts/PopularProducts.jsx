@@ -15,14 +15,14 @@ const PopularProducts = () => {
     const products = useSelector((state) => state.products.items)
 
     return (
-        <>
+        <section className="section-padding">
             <div className="section-container">
                 <div className="popular-products-header">
                     <h4>Popular Products</h4>
                 </div>
             </div>
             <CardMainComponent data={products} />
-        </>
+        </section>
 
     )
 }

@@ -8,8 +8,8 @@ import { useState } from "react"
 import { FiShoppingCart, FiTrash2, FiUser } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"
-import { useSelector } from "react-redux"
-import { MdGridView } from "react-icons/md"
+import { useDispatch, useSelector } from "react-redux"
+import { removeItem } from "../../store/cartSlice/CartSlice"
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
@@ -29,9 +29,11 @@ const Navbar = () => {
         mode: 'spinner',
         min: 1,
         max: 10,
-        defaultValue: 3,
+        defaultValue: 1,
         onChange,
     };
+
+    const disptach = useDispatch()
 
     return (
         <>
@@ -82,40 +84,39 @@ const Navbar = () => {
                         open={showCartDrawer}
                     >
 
-                        {cartItems.map((item, index) => {
+                        <Alert title="You’ve got FREE delivery. Start!" className="message-alert" type="success"></Alert>
+
+                        {cartItems.map((item) => {
                             return (
 
                                 <div className="list-items-main">
                                     <Row align="middle" gutter={[16, 16]}>
-                                        <Col>
+
+                                        <Col span={4}>
                                             <img className="list-image" src={item.thumbnail} />
                                         </Col>
 
-                                        <Col md={6} lg={7}>
+                                        <Col span={10}>
                                             <h4>{item.title}</h4>
-
                                             <div className="remove-cart-main">
-                                                <FiTrash2 />
-                                                <span>
-                                                    <p className="remove-cart-title">Remove</p>
-                                                </span>
+                                                <FiTrash2 className="delete-icon" />
+                                                <Button onClick={() => disptach(removeItem(item))} className="remove-cart-btn">Remove</Button>
                                             </div>
                                         </Col>
 
-                                        <Col md={6} lg={7}>
-                                            <Flex vertical gap="middle">
-                                                <InputNumber {...sharedProps} >
-
-                                                </InputNumber>
-                                            </Flex>
+                                        <Col span={6} xs={6}>
+                                        
+                                            <InputNumber
+                                                {...sharedProps}
+                                            />
                                         </Col>
 
-                                        <Col md={6} lg={6}>
-                                            <p>{item.price}</p>
+                                        <Col span={4}>
+                                            <span>{item.price}</span>
                                         </Col>
-
                                     </Row>
                                 </div>
+
                             )
                         })}
 
@@ -124,7 +125,7 @@ const Navbar = () => {
                 </nav>
 
 
-              
+
                 <LoginModal
                     isOpenloginModal={open}
                     setIsOpenloginModal={setOpen}

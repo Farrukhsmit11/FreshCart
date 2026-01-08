@@ -23,8 +23,7 @@ function App() {
   return (
     <>
 
-      <PageHeader />
-      <Navbar />
+      
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop" element={<Shop />}></Route>
