@@ -48,11 +48,13 @@
     flex-direction: row-reverse;
     border: none;
     font-size: 13px;
+    padding: 8.8px 16px;
 }
 
 .shop-now-btn-green:hover {
-    background: #0aad0a !important;
+    background: #099309 !important;
     color: white !important;
+    border: 1px solid #099309 !important;
 }
 
 .arrow-right-icon {
@@ -79,6 +81,12 @@
     padding: 19px;
     border-radius: 9px;
     font-size: 14px;
+    border: 1px solid #099309;
+}
+
+.actions .add-to-cart-btn:hover {
+    background: #099309 !important;
+    border-color: #0aad0a !important;
 }
 
 .deals-content p {
@@ -102,6 +110,69 @@
     border-radius: 8px;
 }
 
-.actions{
+.actions {
     margin-top: 8px;
+}
+
+.countdown-cards-main {
+    display: flex;
+    margin-top: 12px;
+    gap: 13px;
+}
+
+.deals-countdown {
+    width: 100%;
+}
+
+.countdown-item {
+    border: 1px solid #dfe2e1;
+    position: relative;
+    font-weight: 400;
+    padding: 6px 5px 10px;
+    width: 100%;
+    border-radius: 6px;
+}
+
+.countdown-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.countdown-period {
+    color: #889397;
+    font-weight: 500;
+    font-size: 13px;
+    /* line-height: 1; */
+}
+
+.countdown-amount {
+    color: #001e2b;
+    font-size: 13px;
+}
+
+.ant-statistic-header {
+    padding-bottom: 0 !important;
+}
+
+.timer-countdown {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+}
+
+.ant-statistic-title {
+    font-size: 13px !important;
+    line-height: 1 !important;
+}
+
+.ant-statistic-content-value {
+    line-height: 1 !important;
+    font-size: 13px !important;
+}
+
+.ant-statistic-content {
+    line-height: 1 !important;
 }

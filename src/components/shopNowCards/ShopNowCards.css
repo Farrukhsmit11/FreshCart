@@ -1,7 +1,3 @@
-.shop-card {
-    padding: 0;
-}
-
 .shop-card img {
     width: 100%;
 }
@@ -9,14 +5,16 @@
 .shop-now-btn {
     width: 104px;
     background-color: var(--fc-btn-bg);
-    color: var(--fc-btn-color);
+    color: white;
     padding: 20px;
     font-size: 14px;
+    border-color: #001e2b !important;
+    border-radius: 8px;
 }
 
 .shop-now-btn:hover {
-    background-color: var(--fc-btn-bg) !important;
-    color: var(--fc-btn-color) !important;
+    background: #26404b !important;
+    color: white !important;
 }
 
 .shop-now-card-image {

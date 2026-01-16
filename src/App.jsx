@@ -3,8 +3,9 @@ import "./App.css"
 import { Footer, Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
 import { Route, Routes } from "react-router-dom";
-import { Shop, ShopWishlist, SignIn, ForgotPassword } from "./pages"
+import { Shop, ShopWishlist, SignIn, ForgotPassword , ProductDetail, ShopCheckout } from "./pages"
 import Home from "./pages/home/Home"
+import "./Media.css"
 
 function App() {
 
@@ -13,23 +14,26 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 2000);
+    }, 2000)
   })
 
   if (loading) {
-    return <Loader />;
+    return <Loader />
   }
 
   return (
     <>
+      <PageHeader />
+      <Navbar />
 
-      
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/shop" element={<Shop />}></Route>
+        <Route path="/shop/:shopId" element={<Shop />}></Route>
         <Route path="/shopWishlist" element={<ShopWishlist />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
         <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
+        <Route path="/productDetail/:productId" element={<ProductDetail />}></Route>
+        <Route path="/shopCheckout" element={<ShopCheckout/>}></Route>
 
       </Routes>
 

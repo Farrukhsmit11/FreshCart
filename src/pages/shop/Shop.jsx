@@ -1,33 +1,23 @@
-import { Breadcrumb, Button, Card, Checkbox, Col, Input, Menu, Pagination, Rate, Row, Select, } from "antd"
+import { Breadcrumb, Button, Card, Col, Drawer, Input, Menu, Pagination, Row, Select, } from "antd"
 import "./Shop.css"
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import fruitsImg from "../../assets/assortment-fruits-img.png"
 import { FaArrowRight } from "react-icons/fa";
 import { useSelector } from "react-redux";
-import CardMainComponent from "../../components/cardMainComponent/CardMainComponent";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { IoIosList } from "react-icons/io";
 import { BiGridAlt } from "react-icons/bi";
+import category from '../../components/featuredCategories/category'
+import { LiaFilterSolid } from "react-icons/lia";
+import { useState } from "react";
 
 const Shop = () => {
 
+    const [openFiltersDrawer, setOpenFilterDrawer] = useState(false);
+
     const navigate = useNavigate()
 
-    const [value, setValue] = useState(false);
-
-
-    const desc = [
-        'terrible',
-        { placement: 'top', title: 'bad', trigger: 'hover' },
-        'normal',
-        'good',
-        'wonderful',
-    ];
-    function getDescTitle(value, desc) {
-        const item = desc?.[value - 1];
-        return typeof item === 'object' ? item.title : item;
-    }
+    const { shopId } = useParams();
 
     const items = [
         {
@@ -98,164 +88,178 @@ const Shop = () => {
     ];
 
     const products = useSelector((state) => state.products.items);
-    console.log(products)
 
-    const sortOptions = [
-        {
-            value: "featured",
-            label: "Featured",
-        },
-        {
-            value: "price_low_high",
-            label: "Price: Low to High",
-        },
-        {
-            value: "price_high_low",
-            label: "Price: High to Low",
-        },
-        {
-            value: "release_date",
-            label: "Release Date",
-        },
-        {
-            value: "avg_rating",
-            label: "Avg. Rating",
-        },
-    ];
+    const handleSelectedProduct = category?.find(item => item.id === Number(shopId));
 
-    const quantityOptions = [
-        {
-            value: 10,
-            label: "10",
-        },
-        {
-            value: 20,
-            label: "20",
-        },
-        {
-            value: 30,
-            label: "30",
-        },
-    ];
+    const limitedProducts = products.slice(0, 8)
 
+    const options = [
+        {
+            value: "10"
+        },
+
+        {
+            value: "20"
+        },
+
+        {
+            value: "30"
+        },
+    ]
+
+    const selectOptions = [
+        {
+            value: "Price low to high"
+        },
+
+        {
+            value: "Price high to low"
+        },
+
+
+        {
+            value: "Release Date"
+        },
+
+        {
+            value: "Avg:Rating"
+        }
+    ]
 
     return (
         <>
-            <div className="main">
-                <div className="section-container">
-                    <Row gutter={[16, 18]}>
+            <div className="section-container">
+                <Row gutter={[16, 16]}>
 
-                        <Col span={24}>
-                            <Breadcrumb
-                                className="routes-links"
-                                items={[
+                    <Col span={24}>
+                        <Breadcrumb
+                            className="routes-links"
+                            items={[
 
-                                    {
-                                        title: <a href="" onClick={() => navigate("/")}>Home</a>
-                                    },
+                                {
+                                    title: <a href="" onClick={() => navigate("/")}>Home</a>
+                                },
 
-                                    {
-                                        title: <a href="" onClick={() => navigate("/shop")}>Shop</a>
-                                    },
+                                {
+                                    title: <a href="" onClick={() => navigate("/shop")}>Shop</a>
+                                },
 
-                                    {
-                                        title: "Shop Grid"
-                                    }
-                                ]}>
+                                {
+                                    title: "Shop Grid"
+                                }
+                            ]}>
 
-                            </Breadcrumb>
-                        </Col>
+                        </Breadcrumb>
+                    </Col>
 
-                        <Col xs={24} md={6}>
-                            <div className="sidebar-main">
-                                <h1 className="menu-title">Categories</h1>
-                                <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
+                    <Col xs={24} md={6}>
+                        <div className="sidebar-main">
+                            <h1 className="menu-title">Categories</h1>
+                            <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
+                        </div>
+
+                        <div className="stores-section">
+                            <h3 className="menu-title">Stores</h3>
+
+                            <div className="input-section">
+                                <Input className="search-store-input" placeholder="Serach Stores"></Input>
                             </div>
+                        </div>
 
-                            <div className="stores-section">
-                                <h3 className="menu-title">Stores</h3>
-
-                                <div className="input-section">
-                                    <Input className="search-store-input" placeholder="Serach Stores"></Input>
-                                </div>
+                        <div className="fresh-fruits-main">
+                            <div className="overlay-content">
+                                <h1>Fresh Fruits</h1>
+                                <p>Get Up to 25% off</p>
+                                <Button icon={<FaArrowRight className="show-now-icon" />
+                                } className="show-now-btn">Shop Now</Button>
                             </div>
-
                             <div>
-                                <h3 className="menu-title">Rating</h3>
-                                <div className="form-check-main">
-                                    <Checkbox>
-                                        <Rate tooltips={desc} onChange={setValue} value={value} />
-                                        {value ? <span>{getDescTitle(value, desc)}</span> : null}
-                                    </Checkbox>
-                                    <Checkbox>
-                                        <Rate tooltips={desc} onChange={setValue} value={value} />
-                                        {value ? <span>{getDescTitle(value, desc)}</span> : null}
-                                    </Checkbox>
-                                    <Checkbox>
-                                        <Rate tooltips={desc} onChange={setValue} value={value} />
-                                        {value ? <span>{getDescTitle(value, desc)}</span> : null}
-                                    </Checkbox>
-                                </div>
+                                <img className="fruits-card-image" src={fruitsImg} />
+                            </div>
+                        </div>
+                    </Col>
+
+                    <Col xs={24} md={17}>
+
+                        <Card
+                            className="shop-card"
+                            title={<h3 className="shop-card-title">{handleSelectedProduct?.title}</h3>}
+                        >
+                        </Card>
+
+                        <div className="products-main">
+                            <div className="products-header">
+                                <p>26 Products found</p>
                             </div>
 
-                            <div className="fresh-fruits-main">
-                                <div className="overlay-content">
-                                    <h1>Fresh Fruits</h1>
-                                    <p>Get Up to 25% off</p>
-                                    <Button icon={<FaArrowRight className="show-now-icon" />
-                                    } className="show-now-btn">Show Now</Button>
+                            <div className="mobile-filters-button-main">
+                                <Button
+                                    onClick={() => setOpenFilterDrawer(true)}
+                                    icon={<LiaFilterSolid />}
+                                >Filters</Button>
+
+                                <Drawer
+                                    title="Filter"
+                                    onClose={() => setOpenFilterDrawer(false)}
+                                    open={openFiltersDrawer}
+                                    className="filters-drawer"
+                                    placement="left"
+                                >
+                                    <Col xs={24} md={6}>
+                                        <div className="sidebar-main">
+                                            <h1 className="menu-title">Categories</h1>
+                                            <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
+                                        </div>
+
+                                        <div className="stores-section">
+                                            <h3 className="menu-title">Stores</h3>
+
+                                            <div className="input-section">
+                                                <Input className="search-store-input" placeholder="Serach Stores"></Input>
+                                            </div>
+                                        </div>
+
+                                        <div className="fresh-fruits-main">
+                                            <div className="overlay-content">
+                                                <h1>Fresh Fruits</h1>
+                                                <p>Get Up to 25% off</p>
+                                                <Button icon={<FaArrowRight className="show-now-icon" />
+                                                } className="show-now-btn">Show Now</Button>
+                                            </div>
+                                            <div>
+                                                <img className="fruits-card-image" src={fruitsImg} />
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Drawer>
+                            </div>
+
+                            <div className="product-listing-controls">
+                                <div className="icons-main">
+                                    <BsGrid3X3Gap className="list-icon" />
+                                    <BiGridAlt className="list-icon" />
+                                    <IoIosList className="list-icon" />
                                 </div>
-                                <div>
-                                    <img className="fruits-card-image" src={fruitsImg} />
+
+                                <div className="product-header-filters">
+                                    <Select options={options} className="form-select" defaultValue="Show Now"></Select>
+
+                                    <Select
+                                        options={selectOptions}
+                                        className="form-select"
+                                        value="Sort by: Featured"
+                                    ></Select>
                                 </div>
                             </div>
-                        </Col>
+                        </div>
 
-                        <Col xs={24} md={17}>
+                       
+                    </Col>
 
-                            <Card
-                                className="shop-card"
-                            >
-                            </Card>
-
-                            <div className="products-main">
-                                <div className="products-header">
-                                    <p>26 Products found</p>
-                                </div>
-
-                                <div className="product-listing-controls">
-                                    <div className="icons-main">
-                                        <BsGrid3X3Gap className="list-icon" />
-                                        <BiGridAlt className="list-icon" />
-                                        <IoIosList className="list-icon" />
-                                    </div>
-
-                                    <div className="filters">
-                                        <Select className="form-select" defaultValue={value} options={quantityOptions}></Select>
-                                        <Select className="form-select" defaultValue={value} options={sortOptions}></Select>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <CardMainComponent data={products} />
-
-                        </Col>
-
-
-
-
-
-                    </Row>
-
-                </div>
-
+                </Row>
 
             </div>
-
         </>
-
-
     )
 }
 

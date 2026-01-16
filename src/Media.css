@@ -1,0 +1,95 @@
+@media (min-width: 320px) and (max-width:767px) {
+
+    .navbar {
+        gap: 0px;
+    }
+
+    .nav-actions {
+        justify-content: flex-end;
+    }
+
+    .nav-header-center {
+        display: none;
+    }
+
+    .mobile-nav-section {
+        display: block;
+    }
+
+    .language-select {
+        display: none;
+    }
+
+    .section-container {
+        margin-inline: 10px;
+    }
+
+    .text-content h1 {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .mobile-drawer .ant-drawer-header-title {
+        flex-direction: row-reverse;
+    }
+
+    .mobile-drawer .ant-drawer-body {
+        padding: 16px;
+    }
+
+    .mobile-drawer .ant-drawer-header {
+        padding: 16px;
+    }
+
+    .mobile-filters-button-main {
+        display: block;
+    }
+
+    .shop-card {
+        padding: 28px;
+    }
+
+    .shop-card-title {
+        font-size: 24px;
+    }
+
+    .search-store-input {
+        width: 100%;
+    }
+
+    .payment-section-main {
+        gap: 0px;
+    }
+
+    .payment-section-left {
+        gap: 0px;
+    }
+
+    .payment-btn {
+        width: 33px;
+    }
+
+    .payment-section-right {
+        display: block;
+    }
+
+    .download-image {
+        width: 100%;
+    }
+
+    .product-detail-title {
+        font-size: 18px;
+    }
+
+    .table-main {
+        overflow-x: scroll;
+    }
+
+}

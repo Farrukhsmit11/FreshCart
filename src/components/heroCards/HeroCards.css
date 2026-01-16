@@ -1,6 +1,6 @@
 .hero-slider .slick-dots {
     position: absolute;
-    bottom: 20px;
+    bottom: 25px;
 }
 
 .hero-slider {
@@ -24,8 +24,8 @@
 }
 
 .show-now-btn:hover {
-    background-color: var(--fc-btn-bg) !important;
-    color: white !important;
+    background: #26404b !important;
+    color: #fff !important;
 }
 
 .show-now-icon {
@@ -35,8 +35,7 @@
 .hero-img {
     width: 100%;
     object-fit: cover;
-    border-radius: 16px;
-    padding: 16px 0;
+    border-radius: 8px;
 }
 
 .hero-description {
@@ -86,4 +85,8 @@
     color: rgb(10 173 10);
     font-weight: 600;
     font-size: 25px;
+}
+
+.slide-wrapper-right {
+    padding: 16px 0;
 }

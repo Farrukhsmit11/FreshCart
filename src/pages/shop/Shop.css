@@ -92,6 +92,13 @@
     padding: 8.8px 16px;
 }
 
+.shop-card .ant-card-body {
+    padding: 0 !important;
+}
+
+.shop-card .ant-card-head {
+    padding: 0;
+}
 
 .form-check-main {
     display: flex;
@@ -149,13 +156,14 @@
     padding: 40px;
     background: #f0f3f2;
     color: black;
+    margin-bottom: 16px;
 }
 
 .products-main {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-block: 16px;
+    margin-bottom: 32px;
 }
 
 .form-select {
@@ -185,4 +193,43 @@
 .filters {
     display: flex;
     gap: 8px;
+}
+
+.shop-card-title {
+    font-size: 35px;
+    margin: 0;
+    color: #21313c;
+}
+
+.mobile-filters-button-main {
+    display: none;
+}
+
+.cards-pagination .ant-pagination-item {
+    border-radius: 5px;
+    border: 1px solid #dfe2e1;
+}
+
+.ant-pagination-active-bg {
+    background: #0aad0a !important;
+}
+
+.ant-pagination-hover-bg {
+    background: #0aad0a !important;
+}
+
+.product-header-filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-select {
+    padding: 8px 12px 8.8px 11px;
+    font-size: 11px;
+    border-radius: 8px;
+}
+
+.card-main{
+    margin-bottom: 12px;
 }

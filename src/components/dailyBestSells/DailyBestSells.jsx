@@ -11,8 +11,31 @@ import { useState } from "react"
 import QuickViewModal from "../quickViewModal/QuickViewModal"
 
 const DailyBestSells = () => {
+
     const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
+
     const dispatch = useDispatch();
+
+    const { Countdown } = Statistic;
+
+    const deadline = Date.now() + 1000 * 38;
+
+    const days = [
+        {
+            label: "Days",
+            value: 998
+        },
+
+        {
+            label: "Hours",
+            value: 8
+        },
+
+        {
+            label: "Mins",
+            value: 48
+        },
+    ]
 
     return (
         <section className="section-padding">
@@ -24,16 +47,13 @@ const DailyBestSells = () => {
                         </div>
                     </Col>
 
-                    <Col span={6}>
-                        <div className="coffee-card-image-main">
-                            <div className="coffee-card-content">
-                                <h1 className="coffee-card-title">100% Organic Coffee Beans.</h1>
-                                <p className="coffee-card-subtitle">Get the best deal before close.</p>
-                                <Button icon={<IoIosArrowRoundForward className="arrow-right-icon" />} className="shop-now-btn-green">Shop Now</Button>
-                            </div>
+                    <div className="coffee-card-image-main">
+                        <div className="coffee-card-content">
+                            <h1 className="coffee-card-title">100% Organic Coffee Beans.</h1>
+                            <p className="coffee-card-subtitle">Get the best deal before close.</p>
+                            <Button icon={<IoIosArrowRoundForward className="arrow-right-icon" />} className="shop-now-btn-green">Shop Now</Button>
                         </div>
-                    </Col>
-
+                    </div>
 
                     {sells.map((item) => {
                         return (
@@ -64,15 +84,44 @@ const DailyBestSells = () => {
                                             className="add-to-cart-btn"
                                         >Add to cart</Button>
                                     </div>
-
+                                    {/* 
                                     <div className="icons-overlay">
                                         <div className="icons-main">
-                                            <Button onClick={() => setOpenQuickViewModal(true)} icon={<EyeOutlined />}></Button>
-                                            <Button icon={<IoGitCompare />}></Button>
-                                            <Button onClick={() => dispatch((addToWishlist(item)))} icon={<HeartOutlined />}></Button>
+                                            <Button className="card-hover-button" onClick={() => setOpenQuickViewModal(true)} icon={<EyeOutlined />}></Button>
+                                            <Button className="card-hover-button" icon={<IoGitCompare />}></Button>
+                                            <Button className="card-hover-button" onClick={() => dispatch((addToWishlist(item)))} icon={<HeartOutlined />}></Button>
                                         </div>
+                                    </div> */}
+
+                                    <div className="countdown-cards-main">
+                                        {days.map((day) => {
+                                            return (
+                                                <div className="countdown-item">
+                                                    <div className="countdown-content">
+                                                        <span className="countdown-amount">{day.value}</span>
+                                                        <span className="countdown-period">{day.label}</span>
+                                                    </div>
+                                                </div>
+                                            )
+                                        })}
+
+                                        <div className="countdown-item">
+                                            <Countdown
+                                                title="Sec"
+                                                format="ss"
+                                                value={deadline}
+                                                className="timer-countdown"
+                                            >
+                                                <div className="countdown-content">
+                                                    <span>Sec</span>
+                                                </div>
+
+                                            </Countdown>
+                                        </div>
+
                                     </div>
                                 </Card>
+
                             </Col>
                         )
                     })}
@@ -83,7 +132,7 @@ const DailyBestSells = () => {
                 isOpenQuickViewModal={openQuickViewModal}
                 setIsOpenQuickViewModal={setOpenQuickViewModal}
             />
-        </section>
+        </section >
     )
 }
 

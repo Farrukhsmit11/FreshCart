@@ -1,0 +1,235 @@
+.review-main {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.create-review-header {
+    margin-bottom: 20px;
+}
+
+.review-view-title {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.progress-main {
+    margin-bottom: 20px;
+}
+
+.review-btn {
+    width: 100%;
+    padding: 19px;
+    margin-top: 16px;
+    color: #c1c7c6;
+    font-weight: 600;
+    border: 1px solid #c1c7c6;
+    border-radius: 8px;
+}
+
+.create-reveiw-header {
+    margin-bottom: 48px;
+}
+
+.comments-section-header {
+    width: 100%;
+}
+
+.comments-section {
+    border-bottom: 1px solid #dfe2e1;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    padding-top: 16px;
+    display: flex;
+    gap: 20px;
+}
+
+.comments-content {
+    width: 100%;
+}
+
+.comments-title {
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+
+.product-date {
+    font-size: 12px;
+}
+
+.user-avatar {
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+}
+
+.action-links-main {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+    margin-top: 16px;
+    align-items: center;
+}
+
+.ant-progress-default-color {
+    color: #0aad0a !important;
+}
+
+.create-review-main h3 {
+    font-size: 21px;
+    margin-bottom: 20px;
+}
+
+.create-review-content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #dfe2e1;
+}
+
+.add-headline-input {
+    padding: 8.8px 16px;
+    width: 100%;
+    color: #21313c;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid #dfe2e1;
+    border-radius: 8px;
+}
+
+.review-form-section h3 {
+    font-size: 21px;
+}
+
+.create-review-title {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.submit-review-btn {
+    background: #0aad0a;
+    color: white;
+    padding: 18px;
+    border-radius: 8px;
+    border: 1px solid #0aad0a;
+}
+
+.submit-review-btn:hover {
+    background: #099309 !important;
+    color: white !important;
+    border: 1px solid #0aad0a !important;
+}
+
+.read-more-reviews-btn:hover {
+    background: #c1c7c6 !important;
+    color: #0000 !important;
+}
+
+.submit-form {
+    padding-top: 16px;
+    margin-bottom: 16px;
+    justify-content: end;
+    display: flex
+}
+
+.create-review-description {
+    margin-bottom: 16px;
+    color: #5c6c75;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.comments-btn {
+    border: none;
+    box-shadow: none !important;
+    background: none;
+    color: #5c6c75bf !important;
+}
+
+.add-headline-input:focus {
+    border-color: #85d685 !important;
+    color: #21313c;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(10, 173, 10, .25);
+}
+
+.add-headline-input:hover {
+    border: 1px solid #dfe2e1 !important;
+}
+
+.add-written-review-input:focus {
+    border-color: #85d685 !important;
+    color: #21313c;
+    background-color: #fff;
+    box-shadow: 0 0 4px rgba(10, 173, 10, .25);
+}
+
+.add-written-review-input:hover {
+    border: 1px solid #dfe2e1 !important;
+}
+
+.review-btn:hover {
+    background: #c1c7c6 !important;
+    color: #0000 !important;
+    border: 1px solid #c1c7c6;
+    border-color: #c1c7c6 !important;
+}
+
+.reviews-header-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.reviews-input {
+    border: 1px solid #dfe2e1;
+    border-radius: 8px;
+    padding: 8.8px 22px;
+}
+
+.ant-progress-line .ant-progress-track {
+    background: #ffc107;
+}
+
+.ant-progress-line.ant-progress-status-exception .ant-progress-track {
+    background: #ffc107 !important;
+}
+
+.action-link {
+    color: #5c6c75bf !important;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+    color: #5c6c75;
+    font-size: 12px;
+}
+
+.date-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 16px;
+}
+
+.date {
+    color: #0aad0a !important;
+}
+
+.rating-section-main {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px;
+    align-items: center;
+}
+
+
+.review-comment {
+    color: #5c6c75;
+}

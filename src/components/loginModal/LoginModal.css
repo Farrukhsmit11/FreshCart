@@ -1,5 +1,4 @@
 .login-modal .modal-title {
-    font-family: 'Instrument Sans';
     font-weight: 600;
     margin-bottom: 25px;
     font-size: 27px;
@@ -18,7 +17,6 @@
 }
 
 .form-input {
-    font-family: "Instrument Sans";
     padding: 9px;
     border-radius: 7px;
     font-weight: 500;
@@ -27,42 +25,46 @@
     margin-bottom: 7px;
 }
 
+.form-input:focus {
+    border-color: #85d685;
+    background: #fff;
+}
+
+.form-input:hover {
+    border: 1px solid #85d685 !important;
+}
+
 .submit-btn {
     padding: 19px;
     width: 125px;
-    font-family: 'Instrument Sans';
     font-weight: 500;
     background: #0aad0a;
     color: white;
 }
 
-.submit-btn:hover{
+.submit-btn:hover {
     background: #0aad0a !important;
     color: white !important;
 }
 
 .modal-subtitle {
-    font-family: "Instrument Sans";
     font-weight: 500;
 }
 
 .form-error {
     color: red;
-    font-family: "Instrument Sans";
     font-weight: 500;
 }
 
 .footer-title {
     font-size: 15px;
     text-align: center;
-    font-family: 'Instrument Sans';
     font-weight: 500;
 }
 
 .footer-title a {
     color: #0aad0a;
     font-weight: 600;
-    font-family: 'Instrument Sans';
 }
 
 .signup-terms p {
@@ -76,4 +78,8 @@
     font-size: 12px;
     margin-right: 1px;
     margin-left: 1px;
+}
+
+.sign-up-form .ant-form-item {
+    margin-bottom: 12px;
 }

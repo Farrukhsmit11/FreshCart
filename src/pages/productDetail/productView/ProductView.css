@@ -1,0 +1,19 @@
+.product-view-main {
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+
+.product-view-content {
+    margin-bottom: 20px;
+}
+
+.product-view-title {
+    margin-bottom: 4px;
+    font-size: 21px;
+    color: #21313c;
+}
+
+.product-view-description {
+    font-weight: 500;
+    color: #5c6c75;
+}

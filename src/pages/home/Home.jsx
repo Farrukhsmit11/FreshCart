@@ -5,9 +5,6 @@ import PopularProducts from "../../components/popularProducts/PopularProducts"
 const Home = () => {
   return (
     <div>
-
-      <PageHeader />
-      <Navbar />
       <HeroCards />
       <FeaturedCategories />
       <ShopNowCards />

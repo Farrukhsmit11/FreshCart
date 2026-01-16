@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
-import { Button, Input, Drawer, Badge, Layout, Alert, Row, Col, InputNumber, Flex } from "antd"
+import { Button, Input, Drawer, Badge, Alert, Row, Col, InputNumber, Result } from "antd"
 import { IoLocationOutline } from "react-icons/io5"
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
@@ -9,31 +9,29 @@ import { FiShoppingCart, FiTrash2, FiUser } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
-import { removeItem } from "../../store/cartSlice/CartSlice"
+import { AiOutlineMenuFold } from "react-icons/ai"
+import { addToCart, removeCart } from "../../store/cartSlice/CartSlice"
 
-const Navbar = () => {
+const Navbar = ({ item }) => {
     const [open, setOpen] = useState(false);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
+    const [opemMobileDrawer, setOpenMobileDrawer] = useState(false);
 
     const navigate = useNavigate(false);
 
     const cartItems = useSelector((state) => state.cart.cartItems);
-    const count = useSelector((state) => state.cart.value);
 
-    const wishlistCount = useSelector((state) => state.wishlist.value);
+    // const cartValue = useSelector((state) => state.cart.value);
+
+    const wishlistCount = useSelector((state) => state.wishlist.wishlistcount)
 
     const onChange = value => {
-        console.log('changed', value);
-    };
-    const sharedProps = {
-        mode: 'spinner',
-        min: 1,
-        max: 10,
-        defaultValue: 1,
-        onChange,
-    };
+        console.log('changed', value)
+    }
 
-    const disptach = useDispatch()
+    const itemCount = cartItems.length
+
+    const dispatch = useDispatch();
 
     return (
         <>
@@ -57,11 +55,11 @@ const Navbar = () => {
                         <Button className="select-location-btn btn-outline-gray-400"><IoLocationOutline />Location</Button>
                     </div>
 
-
                     <div className="nav-actions">
                         <Badge color="#0aad0a" count={wishlistCount}>
                             <FaRegHeart
-                                onClick={() => {
+                                onClick={(e) => {
+                                    e.stopPropagation()
                                     navigate("/shopWishlist")
                                 }}
                                 className="social-icon" />
@@ -69,7 +67,7 @@ const Navbar = () => {
 
                         <FiUser onClick={() => setOpen(true)} className="social-icon" />
 
-                        <Badge color="#0aad0a" count={count}>
+                        <Badge color="#0aad0a" count={itemCount}>
                             <FiShoppingCart className="social-icon" onClick={() => setShowCartDrawer(true)} />
                         </Badge>
                     </div>
@@ -86,41 +84,108 @@ const Navbar = () => {
 
                         <Alert title="You’ve got FREE delivery. Start!" className="message-alert" type="success"></Alert>
 
-                        {cartItems.map((item) => {
-                            return (
 
-                                <div className="list-items-main">
-                                    <Row align="middle" gutter={[16, 16]}>
+                        {itemCount > 0 ? (
+                            <div>
+                                {
+                                    cartItems.map((item) => {
+                                        return (
+                                            <>
+                                                <div className="list-items-main">
+                                                    <Row align="middle" gutter={[16, 16]}>
 
-                                        <Col span={4}>
-                                            <img className="list-image" src={item.thumbnail} />
-                                        </Col>
+                                                        <Col span={4}>
+                                                            <img className="list-image" src={item.thumbnail} />
+                                                        </Col>
 
-                                        <Col span={10}>
-                                            <h4>{item.title}</h4>
-                                            <div className="remove-cart-main">
-                                                <FiTrash2 className="delete-icon" />
-                                                <Button onClick={() => disptach(removeItem(item))} className="remove-cart-btn">Remove</Button>
-                                            </div>
-                                        </Col>
+                                                        <Col span={10}>
+                                                            <h4>{item.title}</h4>
+                                                            <div className="remove-cart-main">
+                                                                <FiTrash2 className="delete-icon" />
+                                                                <Button
+                                                                    onClick={() => dispatch(removeCart(item))}
+                                                                    className="remove-cart-btn">Remove</Button>
+                                                            </div>
+                                                        </Col>
 
-                                        <Col span={6} xs={6}>
-                                        
-                                            <InputNumber
-                                                {...sharedProps}
-                                            />
-                                        </Col>
 
-                                        <Col span={4}>
-                                            <span>{item.price}</span>
-                                        </Col>
-                                    </Row>
+                                                        <div className="add-quantity-buttons">
+                                                            <Button
+                                                                className="inceremet-btn">+</Button>
+                                                            <InputNumber className="number-input" min={1} max={10} defaultValue={3} onChange={onChange}>
+                                                                { }
+                                                            </InputNumber>
+                                                            <Button className="decrement-btn">-</Button>
+                                                        </div>
+
+                                                        <Col span={4}>
+                                                            <span>{item.price}</span>
+                                                        </Col>
+                                                    </Row>
+                                                </div>
+                                            </>
+                                        )
+                                    })
+                                }
+
+                                <div className="cart-drawer-buttons-main">
+                                    <Button
+                                        className="continue-shopping-btn">Continue Shopping</Button>
+
+                                    <Button
+                                        onClick={() => {
+                                            setShowCartDrawer(false)
+                                            navigate("/shopCheckout")
+                                        }
+                                        }
+
+
+                                        className="proceed-to-checkout-btn">Proceed to Checkout</Button>
                                 </div>
 
-                            )
-                        })}
+                            </div>
+
+
+                        ) : (
+                            <Result
+                                status="warning"
+                                title="Oops Your Cart is Empty"
+                                extra={
+                                    <Button
+                                        onClick={() => {
+                                            navigate("/shop")
+                                            setShowCartDrawer(false)
+                                        }}
+                                        className="cart-shop-now-btn" key="console">
+                                        Shop Now
+                                    </Button>
+                                }
+                            />
+                        )}
 
                     </Drawer>
+
+
+                    <div className="mobile-nav-section">
+                        <AiOutlineMenuFold className="mobile-menu-icon" onClick={() => setOpenMobileDrawer(true)} />
+
+                        <Drawer
+                            title={<img src={logo} />}
+                            open={opemMobileDrawer}
+                            onClose={() => setOpenMobileDrawer(false)}
+                            placement="left"
+                            className="mobile-drawer"
+                        >
+                            <Input
+                                className="search-input"
+                                placeholder="Search For Products"
+                                type="search"
+                                suffix={<SearchOutlined />}
+                            ></Input>
+
+
+                        </Drawer>
+                    </div>
 
                 </nav>
 
