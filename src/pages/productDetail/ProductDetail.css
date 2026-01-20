@@ -44,7 +44,16 @@
     border-radius: 8px;
     background-color: #00000000;
     font-size: 14px;
+    height: 41px;
+    box-shadow: none !important;
 }
+
+.weight-button:focus {
+    color: white !important;
+    background-color: #889397 !important;
+    border-color: #889397 !important;
+}
+
 
 .weight-button:hover {
     color: #889397 !important;
@@ -58,11 +67,14 @@
 .product-detail-btn {
     width: 48px;
     background: #f0f3f2;
+    border-color: #f0f3f2;
+    color: #000;
 }
 
+
 .product-detail-btn:hover {
-    background: #f0f3f2 !important;
-    border: #f0f3f2 !important;
+    background: #cccfce !important;
+    border-color: #c0c2c2 !important;
     color: black !important;
 }
 
@@ -81,6 +93,7 @@
     display: flex;
     gap: 6px;
     margin-top: 12px;
+    align-items: center;
 }
 
 .product-lists {

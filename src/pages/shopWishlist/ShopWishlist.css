@@ -1,3 +1,25 @@
-.routes-links{
+.routes-links {
     margin-bottom: 25px;
 }
+
+.delete-wishlist-icon {
+    color: #5c6c75bf;
+    cursor: pointer;
+}
+
+.table-header{
+    margin-bottom: 32px;
+}
+
+.table-header h1 {
+    margin-bottom: 4px;
+    font-size: 35px;
+}
+
+.table-header p {
+    color: #5c6c75;
+    font-size: 14px;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+

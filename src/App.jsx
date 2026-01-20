@@ -3,7 +3,7 @@ import "./App.css"
 import { Footer, Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
 import { Route, Routes } from "react-router-dom";
-import { Shop, ShopWishlist, SignIn, ForgotPassword , ProductDetail, ShopCheckout } from "./pages"
+import { Shop, ShopWishlist, SignIn, ForgotPassword, ProductDetail, ShopCheckout } from "./pages"
 import Home from "./pages/home/Home"
 import "./Media.css"
 
@@ -33,7 +33,7 @@ function App() {
         <Route path="/signIn" element={<SignIn />}></Route>
         <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
         <Route path="/productDetail/:productId" element={<ProductDetail />}></Route>
-        <Route path="/shopCheckout" element={<ShopCheckout/>}></Route>
+        <Route path="/shopCheckout" element={<ShopCheckout />}></Route>
 
       </Routes>
 

@@ -1,7 +1,6 @@
 import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
 import { Button, Input, Drawer, Badge, Alert, Row, Col, InputNumber, Result } from "antd"
-import { IoLocationOutline } from "react-icons/io5"
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
 import { useState } from "react"
@@ -10,9 +9,10 @@ import { FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { AiOutlineMenuFold } from "react-icons/ai"
-import { addToCart, removeCart } from "../../store/cartSlice/CartSlice"
+import { removeCart } from "../../store/cartSlice/CartSlice"
+import { GrLocation } from "react-icons/gr";
 
-const Navbar = ({ item }) => {
+const Navbar = () => {
     const [open, setOpen] = useState(false);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const [opemMobileDrawer, setOpenMobileDrawer] = useState(false);
@@ -21,13 +21,7 @@ const Navbar = ({ item }) => {
 
     const cartItems = useSelector((state) => state.cart.cartItems);
 
-    // const cartValue = useSelector((state) => state.cart.value);
-
-    const wishlistCount = useSelector((state) => state.wishlist.wishlistcount)
-
-    const onChange = value => {
-        console.log('changed', value)
-    }
+    const wishlistCount = useSelector((state) => state.wishlist.value)
 
     const itemCount = cartItems.length
 
@@ -46,13 +40,15 @@ const Navbar = ({ item }) => {
                         <div className="input-group">
                             <Input
                                 className="search-input"
-                                placeholder="Search For Products"
+                                placeholder="Search For products"
                                 type="search"
-                                suffix={<SearchOutlined />}
+                                suffix={<SearchOutlined className="search-icon-input" />}
                             ></Input>
                         </div>
 
-                        <Button className="select-location-btn btn-outline-gray-400"><IoLocationOutline />Location</Button>
+                        <Button
+                            icon={<GrLocation />}
+                            className="select-location-btn btn-outline-gray-400">Location</Button>
                     </div>
 
                     <div className="nav-actions">
@@ -82,9 +78,6 @@ const Navbar = ({ item }) => {
                         open={showCartDrawer}
                     >
 
-                        <Alert title="You’ve got FREE delivery. Start!" className="message-alert" type="success"></Alert>
-
-
                         {itemCount > 0 ? (
                             <div>
                                 {
@@ -108,16 +101,6 @@ const Navbar = ({ item }) => {
                                                             </div>
                                                         </Col>
 
-
-                                                        <div className="add-quantity-buttons">
-                                                            <Button
-                                                                className="inceremet-btn">+</Button>
-                                                            <InputNumber className="number-input" min={1} max={10} defaultValue={3} onChange={onChange}>
-                                                                { }
-                                                            </InputNumber>
-                                                            <Button className="decrement-btn">-</Button>
-                                                        </div>
-
                                                         <Col span={4}>
                                                             <span>{item.price}</span>
                                                         </Col>
@@ -130,6 +113,11 @@ const Navbar = ({ item }) => {
 
                                 <div className="cart-drawer-buttons-main">
                                     <Button
+                                        onClick={() => {
+                                            navigate("/shop/shopId")
+                                            setShowCartDrawer(false)
+                                        }
+                                        }
                                         className="continue-shopping-btn">Continue Shopping</Button>
 
                                     <Button
@@ -138,8 +126,6 @@ const Navbar = ({ item }) => {
                                             navigate("/shopCheckout")
                                         }
                                         }
-
-
                                         className="proceed-to-checkout-btn">Proceed to Checkout</Button>
                                 </div>
 
@@ -148,17 +134,20 @@ const Navbar = ({ item }) => {
 
                         ) : (
                             <Result
-                                status="warning"
-                                title="Oops Your Cart is Empty"
                                 extra={
-                                    <Button
-                                        onClick={() => {
-                                            navigate("/shop")
-                                            setShowCartDrawer(false)
-                                        }}
-                                        className="cart-shop-now-btn" key="console">
-                                        Shop Now
-                                    </Button>
+                                    <>
+                                        <h1 className="cart-drawer-title">Opps</h1>
+                                        <p className="cart-drawer-description">Your cart is empty</p>
+                                        <Button
+                                            onClick={() => {
+                                                navigate("/shop/:shopId")
+                                                setShowCartDrawer(false)
+                                            }}
+                                            className="cart-shop-now-btn" key="console">
+                                            Shop Now
+                                        </Button>
+                                    </>
+
                                 }
                             />
                         )}
@@ -189,16 +178,11 @@ const Navbar = ({ item }) => {
 
                 </nav>
 
-
-
                 <LoginModal
                     isOpenloginModal={open}
                     setIsOpenloginModal={setOpen}
                 />
-
-
             </div >
-
             <hr />
         </>
 

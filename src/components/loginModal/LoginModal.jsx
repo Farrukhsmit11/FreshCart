@@ -115,9 +115,6 @@ const LoginModal = ({ isOpenloginModal, setIsOpenloginModal }) => {
                                 onChange={handleChange}
                                 onBlur={handleBlur}
                             />
-
-
-
                         </AntForm.Item>
 
                         <div className="signup-terms">

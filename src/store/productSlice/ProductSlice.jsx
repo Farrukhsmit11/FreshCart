@@ -6,9 +6,10 @@ export const fetchProducts = createAsyncThunk('products', async () => {
     return jsonResp.products
 });
 
+
 const initialState = {
-    items: [],
-    status
+    items: localStorage.getItem("products") ? JSON.parse(localStorage.getItem("products")) : [],
+    status,
 }
 
 export const productSlice = createSlice({
@@ -18,6 +19,7 @@ export const productSlice = createSlice({
         builder.addCase(fetchProducts.fulfilled, (state, action) => {
             state.status = "suceeded"
             state.items = action.payload
+            localStorage.setItem("products", JSON.stringify(state.items))
         })
     }
 

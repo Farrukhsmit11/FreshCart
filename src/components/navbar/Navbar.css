@@ -1,3 +1,7 @@
+hr {
+    border: 1px solid #dfe2e1;
+}
+
 .nav-header-center {
     display: flex;
     gap: 9px;
@@ -63,14 +67,22 @@
 
 .search-input {
     width: 600px;
-    color: #21313c;
+    color: #21313c !important;
     font-size: 14px;
     border: 1px solid #dfe2e1;
+    appearance: none;
     border-radius: 8px;
-    font-weight: 500;
-    padding: 8.8px;
+    font-weight: 600;
+    padding: 8.8px 16px;
     border-color: #c1c7c6 !important;
     outline: none;
+    line-height: 1.6;
+}
+
+.search-input-icon {
+    width: 16px;
+    height: 16px;
+    color: #000;
 }
 
 .select-location-btn {
@@ -183,6 +195,7 @@
 .decrement-btn {
     padding: 10px 12px;
 }
+
 .cart-shop-now-btn {
     background: #0aad0a;
     color: white;
@@ -190,6 +203,7 @@
     border-radius: 8px;
     border-color: #0aad0a;
     border: 1px solid #0aad0a;
+    height: 40px;
 }
 
 .cart-shop-now-btn:hover {
@@ -205,6 +219,17 @@
     margin-top: 16px;
 }
 
+.cart-drawer-title {
+    margin-bottom: 8px;
+}
+
+.cart-drawer-description {
+    margin-bottom: 16px;
+    color: #5c6c75;
+    font-size: 17.5px;
+    font-weight: 500;
+}
+
 .continue-shopping-btn {
     padding: 18px 8.8px;
     border-radius: 8px;
@@ -213,6 +238,7 @@
     background: #0aad0a;
     border-color: #0aad0a;
     font-weight: 600;
+    height: 41px;
 }
 
 .continue-shopping-btn:hover {
@@ -227,11 +253,17 @@
     padding: 16px 12px;
     font-size: 12px;
     border-radius: 7px;
-    border-color: #1a3540
+    border-color: #1a3540;
+    height: 41px;
+
 }
 
 .proceed-to-checkout-btn:hover {
     background: #26404b !important;
     color: white !important;
     border-color: #1a3540 !important;
+}
+
+.ant-result .ant-result-icon>.anticon{
+    color: #0aad0a;
 }

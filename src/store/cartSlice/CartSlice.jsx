@@ -4,8 +4,8 @@ import { message } from "antd";
 // agar phele se hee zero hai toh empty array rkh do
 
 const initialState = {
-    cartItems: localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [],
-    value: localStorage.getItem("value") ? JSON.parse(localStorage.getItem("value")) : 0
+    cartItems: [],
+    value: 0,
 }
 
 // yeh jo iski value hai hus mai plus one krdega
@@ -16,25 +16,29 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart: (state, action) => {
-            state.cartItems.push(action.payload);
-            state.value += 1;
-            message.success("Product added to cart");
-            localStorage.setItem("cart", JSON.stringify(state.cartItems))
-            localStorage.setItem("value", JSON.stringify(state.value))
+            // if the item exists so increase quantity
+            const newItem = action.payload
+            const existingItem = state.cartItems.find(item => item.id === newItem.id)
+            if (existingItem) {
+                existingItem.value += 1
+            } else {
+                state.cartItems.push({ ...newItem, value: 1 });
+            }
+            message.success("Product added to cart")
         },
 
-        // is ma hum check krenge ke agar item ki id not equal to hai action.payload.id ke toh hee chale
-        // agar same milgya toh matlab woh item stored hai cart ke anadr
-        removeItem: (state, action) => {
-            const cartData = state.cartItems.filter(item => item.id != action.payload.id)
-            state.cartItems = cartData
+        removeCart: (state, action) => {
+            const itemId = action.payload.id
+            state.cartItems = state.cartItems.filter(item => item.id === itemId)
             state.value -= 1
+            message.success("Product deleted sucessfully")
+
         }
     }
 
 })
 
-export const { addToCart, removeItem } = cartSlice.actions;
+export const { addToCart, removeCart } = cartSlice.actions;
 export default cartSlice.reducer;
 
 // push method new item ko add krne k liye use hota hai array mai

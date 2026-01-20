@@ -1,13 +1,16 @@
-import { Breadcrumb, Button, Divider, Popconfirm, Radio, Row, Table } from "antd"
+import { Breadcrumb, Button, Divider, message, Popconfirm, Radio, Row, Table } from "antd"
 import { useState } from "react";
 import "./ShopWishlist.css"
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { PlusOutlined } from "@ant-design/icons";
-import { BiSolidTrashAlt } from "react-icons/bi";
+import { LuTrash2 } from "react-icons/lu";
+import { removeItem } from "../../store/wishlistSlice/WishlistSlice";
+import { addToCart } from "../../store/cartSlice/CartSlice"
 
 const ShopWishlist = () => {
 
     const [selectionType, setSelectionType] = useState('checkbox');
+    const [messageApi] = message.useMessage();
 
     const rowSelection = {
         onChange: (selectedRowKeys, selectedRows) => {
@@ -19,65 +22,66 @@ const ShopWishlist = () => {
         }),
     };
 
-    const confirm = e => {
-        console.log(e);
-        messageApi.success('Click on Yes');
-    };
+    const dispatch = useDispatch();
+
     const cancel = e => {
-        console.log(e);
         messageApi.error('Click on No');
     };
 
     const columns = [
+
         {
             title: "Product",
-            dataIndex: 'product',
-
+            dataIndex: 'title',
         },
 
         {
             title: 'Amount',
-            dataIndex: 'amount',
+            dataIndex: 'price',
 
         },
 
         {
             title: "Status",
-            dataIndex: 'status',
+            dataIndex: 'availabilityStatus',
 
         },
 
         {
             title: "Actions",
             dataIndex: 'actions',
-            render: () => (
-                <Button
-                    icon={<PlusOutlined />}
-                    className="add-to-cart-btn"
-                >Add</Button>
+            render: (_, record) => (
+                <div>
+                    <Button
+                        onClick={() => dispatch(addToCart(record.id))}
+                        icon={<PlusOutlined />}
+                        className="add-to-cart-btn"
+                    >Add</Button>
+                </div>
+
             )
         },
 
         {
             title: "Remove",
             dataIndex: "remove",
-            render: (_,) => [
+            render: (_, record) => [
                 <Popconfirm
-                    title="Delete the task"
-                    description="Are you sure to delete this task?"
-                    onConfirm={confirm}
+                    key={record.id}
+                    title="Delete the Product"
+                    description="Are you sure to delete this product?"
+                    onConfirm={() => dispatch(removeItem(record.id))}
                     onCancel={cancel}
                     okText="Yes"
                     cancelText="No"
                 >
-                    <BiSolidTrashAlt />
+                    <LuTrash2 className="delete-wishlist-icon" />
                 </Popconfirm>
             ]
         }
     ]
-   
+
     const wishlist = useSelector((state) => state.wishlist.items)
-    console.log(wishlist)
 
     return (
         <div className="section-container">
@@ -99,18 +103,17 @@ const ShopWishlist = () => {
 
                 <div className="table-header">
                     <h1> My Wishlist</h1>
-                    <p>There are 4 products in this wishlist.</p>
                 </div>
 
                 <div className="table-main">
-
                     <Divider />
+
                     <Table
                         rowSelection={{ type: selectionType, ...rowSelection }}
                         columns={columns}
                         dataSource={wishlist}
+                        rowKey="id"
                     >
-
                     </Table>
                 </div>
             </div>

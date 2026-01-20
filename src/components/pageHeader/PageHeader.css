@@ -1,5 +1,5 @@
 .header-wrapper-main {
-    background: #F0F3F1 !important;
+    background: #f0f3f2 !important;
     padding-top: 4px;
     padding-bottom: 4px;
 }
@@ -18,8 +18,9 @@
 .page-heading {
     margin: 0;
     font-size: 14px;
-    color: #808080;
+    color: #5c6c75;
     font-weight: 500;
+    line-height: 1.6;
 }
 
 .language-select {

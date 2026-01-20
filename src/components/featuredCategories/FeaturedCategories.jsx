@@ -22,14 +22,13 @@ const FeaturedCategories = () => {
                     <Swiper
                         slidesPerView={6}
                         navigation={true}
-                        // loop={true}
-                        spaceBetween={30}
-
-                        // speed={1000}
-                        // autoplay={{
-                        //     delay: 2000,
-                        //     disableOnInteraction: false,
-                        // }}
+                        loop={true}
+                        spaceBetween={20}
+                        speed={1000}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
                         pagination={{
                             clickable: true,
                         }}
@@ -42,31 +41,32 @@ const FeaturedCategories = () => {
                             768: {
                                 slidesPerView: 6,
                                 spaceBetween: 40
-
                             }
                         }}
-
                     >
-                        {category.map((product) => {
-                            return (
-                                <SwiperSlide>
-                                        <Card
-                                            onClick={() => navigate(`/shop/${product.id}`)}
-                                            hoverable
-                                            className="featured-categories-card">
-                                            <div className="category-card-content">
-                                                <img className="featured-categories-img" src={product.imgSrc} />
-                                                <p className="card-desc">{product.title}</p>
+                        <div className="main-parent">
+
+                            <Row gutter={[16, 16]}>
+                                {category.map((product) => {
+                                    return (
+                                        <SwiperSlide>
+                                            <div className="category-card-sub-parent">
+                                                <Card
+                                                    onClick={() => navigate(`/shop/${product.id}`)}
+                                                    hoverable
+                                                    className="featured-categories-card">
+                                                    <div className="category-card-content">
+                                                        <img className="featured-categories-img" src={product.imgSrc} />
+                                                        <p className="card-desc">{product.title}</p>
+                                                    </div>
+                                                </Card>
                                             </div>
-                                        </Card>
 
-
-
-                                </SwiperSlide>
-                            )
-                        })}
-
-
+                                        </SwiperSlide>
+                                    )
+                                })}
+                            </Row>
+                        </div>
                     </Swiper>
 
                 </div>

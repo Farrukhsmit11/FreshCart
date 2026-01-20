@@ -1,19 +1,14 @@
-import { Breadcrumb, Button, Card, Col, Drawer, Input, Menu, Pagination, Row, Select, } from "antd"
+import { Breadcrumb, Button, Card, Col, Input, Menu, Row, Select, } from "antd"
 import "./Shop.css"
 import { useNavigate, useParams } from "react-router-dom";
 import fruitsImg from "../../assets/assortment-fruits-img.png"
 import { FaArrowRight } from "react-icons/fa";
-import { useSelector } from "react-redux";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { IoIosList } from "react-icons/io";
 import { BiGridAlt } from "react-icons/bi";
 import category from '../../components/featuredCategories/category'
-import { LiaFilterSolid } from "react-icons/lia";
-import { useState } from "react";
 
 const Shop = () => {
-
-    const [openFiltersDrawer, setOpenFilterDrawer] = useState(false);
 
     const navigate = useNavigate()
 
@@ -87,11 +82,7 @@ const Shop = () => {
         },
     ];
 
-    const products = useSelector((state) => state.products.items);
-
     const handleSelectedProduct = category?.find(item => item.id === Number(shopId));
-
-    const limitedProducts = products.slice(0, 8)
 
     const options = [
         {
@@ -125,7 +116,6 @@ const Shop = () => {
             value: "Avg:Rating"
         }
     ]
-
     return (
         <>
             <div className="section-container">
@@ -179,7 +169,7 @@ const Shop = () => {
                         </div>
                     </Col>
 
-                    <Col xs={24} md={17}>
+                    <Col xs={24} md={16}>
 
                         <Card
                             className="shop-card"
@@ -190,48 +180,6 @@ const Shop = () => {
                         <div className="products-main">
                             <div className="products-header">
                                 <p>26 Products found</p>
-                            </div>
-
-                            <div className="mobile-filters-button-main">
-                                <Button
-                                    onClick={() => setOpenFilterDrawer(true)}
-                                    icon={<LiaFilterSolid />}
-                                >Filters</Button>
-
-                                <Drawer
-                                    title="Filter"
-                                    onClose={() => setOpenFilterDrawer(false)}
-                                    open={openFiltersDrawer}
-                                    className="filters-drawer"
-                                    placement="left"
-                                >
-                                    <Col xs={24} md={6}>
-                                        <div className="sidebar-main">
-                                            <h1 className="menu-title">Categories</h1>
-                                            <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
-                                        </div>
-
-                                        <div className="stores-section">
-                                            <h3 className="menu-title">Stores</h3>
-
-                                            <div className="input-section">
-                                                <Input className="search-store-input" placeholder="Serach Stores"></Input>
-                                            </div>
-                                        </div>
-
-                                        <div className="fresh-fruits-main">
-                                            <div className="overlay-content">
-                                                <h1>Fresh Fruits</h1>
-                                                <p>Get Up to 25% off</p>
-                                                <Button icon={<FaArrowRight className="show-now-icon" />
-                                                } className="show-now-btn">Show Now</Button>
-                                            </div>
-                                            <div>
-                                                <img className="fruits-card-image" src={fruitsImg} />
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Drawer>
                             </div>
 
                             <div className="product-listing-controls">
@@ -253,9 +201,7 @@ const Shop = () => {
                             </div>
                         </div>
 
-                       
                     </Col>
-
                 </Row>
 
             </div>

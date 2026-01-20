@@ -2,15 +2,17 @@ import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { fetchProducts } from "../../store/productSlice/ProductSlice"
 import "./PopularProducts.css"
-import { Button, Card, Col, Rate, Row } from "antd"
+import { Button, Card, Col, Rate, Row, Tag } from "antd"
 import { useNavigate } from "react-router-dom"
 import QuickViewModal from "../quickViewModal/QuickViewModal"
-import { EyeOutlined, HeartOutlined, PlusOutlined } from "@ant-design/icons"
-import { IoGitCompare } from "react-icons/io5"
+import { PlusOutlined } from "@ant-design/icons"
+import { IoEyeOutline, IoGitCompare } from "react-icons/io5"
 import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
 import { addToCart } from "../../store/cartSlice/CartSlice"
+import { BsHeart } from "react-icons/bs"
+import { IoIosGitCompare } from "react-icons/io"
 
-const PopularProducts = () => {
+const PopularProducts = ({ limit = "10" }) => {
 
     const dispatch = useDispatch();
 
@@ -32,15 +34,18 @@ const PopularProducts = () => {
                 </div>
                 <div className="card-parent">
                     <Row gutter={[16, 16]}>
-                        {products.slice(0, 10).map((item) => {
+                        {products.slice(0, limit).map((item) => {
                             return (
                                 <div className="card-sub-parent">
                                     <Col lg={6}>
+
                                         <Card
+
                                             hoverable
                                             className="product-card"
                                             onClick={() => navigate(`/productDetail/${item.id}`)}
                                             cover={
+
                                                 <img className="product-card-image" src={item.thumbnail} />
                                             }
                                         >
@@ -69,22 +74,39 @@ const PopularProducts = () => {
 
                                             <div className="icons-overlay">
                                                 <div className="icons-main">
-                                                    <Button onClick={(e) => {
-                                                        e.stopPropagation()
-                                                        setOpenQuickViewModal(true)
-                                                    }} icon={<EyeOutlined />}></Button>
+
+                                                    <Button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation()
+                                                            setOpenQuickViewModal(true)
+                                                        }}
+
+                                                        icon={<IoEyeOutline />}
+                                                        className="card-action-btn"
+                                                    >
+
+                                                    </Button>
 
                                                     <Button
                                                         onClick={(e) => {
                                                             e.stopPropagation()
                                                         }}
-                                                        icon={<IoGitCompare />}></Button>
+
+                                                        icon={<IoIosGitCompare />}
+                                                        className="card-action-btn"
+                                                    >
+
+                                                    </Button>
 
                                                     <Button onClick={(e) => {
-                                                        dispatch(addToCart(item))
                                                         dispatch(addToWishlist(item))
                                                         e.stopPropagation()
-                                                    }} icon={<HeartOutlined />}></Button>
+                                                    }}
+                                                        icon={<BsHeart />}
+                                                        className="card-action-btn"
+                                                    >
+
+                                                    </Button>
                                                 </div>
 
                                             </div>

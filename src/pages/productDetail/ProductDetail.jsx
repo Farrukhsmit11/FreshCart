@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
 import { Breadcrumb, Button, Col, Descriptions, Dropdown, InputNumber, Rate, Row, Select, Slider, Tabs } from 'antd';
@@ -8,7 +8,7 @@ import { fetchProducts } from '../../store/productSlice/ProductSlice';
 import "react-image-gallery/styles/css/image-gallery.css";
 import { LuShoppingBag } from 'react-icons/lu';
 import { IoGitCompareOutline } from 'react-icons/io5';
-import { FacebookFilled, FacebookOutlined, HeartOutlined, InstagramOutlined, TwitterCircleFilled } from '@ant-design/icons';
+import { HeartOutlined } from '@ant-design/icons';
 import InformationView from './informationView/InformationView';
 import { addToCart } from "../../store/cartSlice/CartSlice"
 import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
@@ -16,11 +16,7 @@ import ReviewView from './reviewView/ReviewView';
 import ProductView from './productView/ProductView'
 import 'react-image-gallery/styles/css/image-gallery.css';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
-// Import Swiper React components
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination, Navigation } from 'swiper/modules';
+import PopularProducts from "../../components/popularProducts/PopularProducts"
 
 
 const ProductDetail = () => {
@@ -59,6 +55,10 @@ const ProductDetail = () => {
     const handleTabs = key => {
         console.log(key);
     };
+
+    const handleSelect = value => {
+        console.log(`selected ${value}`)
+    }
 
     const tabItems = [
 
@@ -111,180 +111,149 @@ const ProductDetail = () => {
         }
     ];
 
-    // const limitedproducts = products.slice(0, 5);
-
     return (
-        <div className='section-container'>
-            <div className='route-links-main'>
-                <Breadcrumb
-                    className="routes-links"
-                    items={[
+        <>
+            <div className='section-container'>
+                <div className='route-links-main'>
+                    <Breadcrumb
+                        className="routes-links"
+                        items={[
 
-                        {
-                            title: <a href="" onClick={() => navigate("/")}>Home</a>
-                        },
+                            {
+                                title: <a href="" onClick={() => navigate("/")}>Home</a>
+                            },
 
-                        {
-                            title: <a href="" onClick={() => navigate("/shop")}>Shop</a>
-                        },
-                    ]}>
+                            {
+                                title: <a href="" onClick={() => navigate("/shop")}>Shop</a>
+                            },
+                        ]}>
 
-                </Breadcrumb>
-            </div>
+                    </Breadcrumb>
+                </div>
 
-            <div className='product-detail-main'>
-                <Row gutter={[16, 16]}>
+                <div className='product-detail-main'>
+                    <Row gutter={[16, 16]}>
 
-                    <Col md={12}>
-                        <img src={selectedProduct?.thumbnail} />
+                        <Col md={12}>
+                            <img src={selectedProduct?.thumbnail} />
+                        </Col>
 
-                        <div className="bottom-cards-slider">
-                            <Swiper
-                                slidesPerView={3}
-                                spaceBetween={30}
-                                pagination={{
-                                    clickable: true,
-                                }}
-                                modules={[Pagination, Navigation]}
-                                className="mySwiper"
-                            >
-                                
-                                {/* <SwiperSlide>
-                                    
-                                    <img src={selectedProduct?.thumbnail} />
+                        <Col md={12}>
+                            <div className="product-detail-content">
+                                <p className='product-detail-description'>{selectedProduct?.category}</p>
+                                <h1 className='product-detail-title'>{selectedProduct?.title}</h1>
 
+                                <div className='detail-info'>
+                                    <Rate className='product-detail-rate' defaultValue={3} allowClear={false} />
+                                </div>
 
-                                </SwiperSlide> */}
-
-
-
-                            </Swiper>
-                        </div>
-
-                    </Col>
-
-                    <Col md={12}>
-                        <div className="product-detail-content">
-                            <p className='product-detail-description'>{selectedProduct?.category}</p>
-                            <h1 className='product-detail-title'>{selectedProduct?.title}</h1>
-
-                            <div className='detail-info'>
-                                <Rate className='product-detail-rate' defaultValue={3} allowClear={false} />
-                            </div>
-
-                            <div>
                                 <span className='product-price'>
                                     {selectedProduct?.price}
                                 </span>
 
-                            </div>
+                                <hr className='divider' />
 
-                            <hr className='divider' />
+                                <div className='weight-buttons-main'>
+                                    {weights.map((quantity, index) => {
+                                        return (
+                                            <Button key={index} className='weight-button'>
+                                                {quantity.value}
+                                            </Button>
+                                        )
+                                    })}
 
-                            <div className='weight-buttons-main'>
-                                {weights.map((quantity, index) => {
-                                    return (
-                                        <Button key={index} className='weight-button'>
-                                            {quantity.value}
-                                        </Button>
-                                    )
-                                })}
+                                </div>
 
-                            </div>
+                                <div className="input-price-main">
+                                    <InputNumber
+                                        mode="spinner"
+                                        min="1"
+                                        max="10"
+                                        defaultValue="1"
+                                        onChange={onChange}
+                                        className='input-price-spinner'
+                                    />
+                                </div>
 
-                            <div className="input-price-main">
-                                <InputNumber
-                                    mode="spinner"
-                                    min="1"
-                                    max="10"
-                                    defaultValue="1"
-                                    onChange={onChange}
-                                    className='input-price-spinner'
-                                />
-                            </div>
+                                <div className='product-actions'>
+                                    <Button
+                                        className='add-product-btn'
+                                        onClick={() => dispatch(addToCart(selectedProduct))}
+                                        icon={<LuShoppingBag className='add-to-cart-icon' />
+                                        }>Add To cart</Button>
 
-                            <div className='product-actions'>
-                                <Button
-                                    className='add-product-btn'
-                                    onClick={() => dispatch(addToCart(selectedProduct))}
-                                    icon={<LuShoppingBag className='add-to-cart-icon' />
-                                    }>Add To cart</Button>
+                                    <Button className='product-detail-btn' icon={<IoGitCompareOutline />}></Button>
 
-                                <Button className='product-detail-btn' icon={<IoGitCompareOutline />}></Button>
+                                    <Button
+                                        onClick={() => dispatch(addToWishlist(selectedProduct))}
+                                        className='product-detail-btn'
+                                        icon={<HeartOutlined />}></Button>
 
-                                <Button
-                                    onClick={() => dispatch(addToWishlist(selectedProduct))}
-                                    className='product-detail-btn'
-                                    icon={<HeartOutlined />}></Button>
-                            </div>
+                                </div>
 
-                            <hr className='divider' />
+                                <hr className='divider' />
 
-                            <Descriptions
-                                bordered
-                                column={1}
-                                size="middle"
-                            >
-                                <Descriptions.Item
-                                    label="Product Code"
+                                <Descriptions
+                                    bordered
+                                    column={1}
+                                    size="middle"
                                 >
-                                    {selectedProduct?.sku}
+                                    <Descriptions.Item
+                                        label="Product Code"
+                                    >
+                                        {selectedProduct?.sku}
 
-                                </Descriptions.Item>
+                                    </Descriptions.Item>
 
-                                <Descriptions.Item
-                                    label="Stock"
-                                >
-                                    {selectedProduct?.availabilityStatus}
+                                    <Descriptions.Item
+                                        label="Stock"
+                                    >
+                                        {selectedProduct?.availabilityStatus}
 
-                                </Descriptions.Item>
+                                    </Descriptions.Item>
 
-                                <Descriptions.Item
-                                    label="Type"
-                                >
-                                    {selectedProduct?.category}
-                                </Descriptions.Item>
+                                    <Descriptions.Item
+                                        label="Type"
+                                    >
+                                        {selectedProduct?.category}
+                                    </Descriptions.Item>
 
-                                <Descriptions.Item
-                                    label="Shipping"
-                                >
-                                    {selectedProduct?.shippingInformation}
-                                </Descriptions.Item>
+                                    <Descriptions.Item
+                                        label="Shipping"
+                                    >
+                                        {selectedProduct?.shippingInformation}
+                                    </Descriptions.Item>
 
-                            </Descriptions>
+                                </Descriptions>
 
-                            <div className='dropdown-main'>
-                                <Select defaultValue="Share" options={dropdownItems}></Select>
+                                <div className='dropdown-main'>
+                                    <Select
+                                        onChange={handleSelect}
+                                        defaultValue="Share" options={dropdownItems}></Select>
+                                </div>
                             </div>
+                        </Col>
+                    </Row>
+                </div>
 
 
-                        </div>
-                    </Col>
-                </Row>
+                <section className='tabs-section'>
+                    <Row gutter={[16, 16]}>
+                        <Col span={24}>
+                            <Tabs
+                                className='table-tabs-view'
+                                defaultActiveKey="1"
+                                items={tabItems}
+                                onChange={handleTabs} />
+                        </Col>
+                    </Row>
+                </section>
             </div>
 
-
-            <section className='tabs-section'>
-                <Row gutter={[16, 16]}>
-                    <Col span={24}>
-                        <Tabs
-                            className='table-tabs-view'
-                            defaultActiveKey="1"
-                            items={tabItems}
-                            onChange={handleTabs} />
-                    </Col>
-
-                </Row>
-            </section>
-
-            <section className='related-items-section'>
-                <Col span={12}>
-                    <h3>Popular Products</h3>
-                </Col>
-
-               
-            </section>
-        </div>
+            <div>
+                <PopularProducts limit={5} />
+            </div>
+        </>
     )
 }
 

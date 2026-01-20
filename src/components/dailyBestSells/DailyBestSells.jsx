@@ -3,10 +3,8 @@ import "./DailyBestSells.css"
 import { IoIosArrowRoundForward } from "react-icons/io"
 import { sells } from "./sells"
 import { addToCart } from "../../store/cartSlice/CartSlice"
-import { EyeOutlined, HeartOutlined, PlusOutlined, } from "@ant-design/icons"
+import { PlusOutlined, } from "@ant-design/icons"
 import { useDispatch } from "react-redux"
-import { IoGitCompare } from "react-icons/io5"
-import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
 import { useState } from "react"
 import QuickViewModal from "../quickViewModal/QuickViewModal"
 
@@ -74,7 +72,6 @@ const DailyBestSells = () => {
 
                                     <div className="price-section">
                                         ${item.price}
-                                        <Rate className="product-deals-rating" defaultValue={5} allowClear={false} />
                                     </div>
 
                                     <div className="actions">
@@ -84,14 +81,6 @@ const DailyBestSells = () => {
                                             className="add-to-cart-btn"
                                         >Add to cart</Button>
                                     </div>
-                                    {/* 
-                                    <div className="icons-overlay">
-                                        <div className="icons-main">
-                                            <Button className="card-hover-button" onClick={() => setOpenQuickViewModal(true)} icon={<EyeOutlined />}></Button>
-                                            <Button className="card-hover-button" icon={<IoGitCompare />}></Button>
-                                            <Button className="card-hover-button" onClick={() => dispatch((addToWishlist(item)))} icon={<HeartOutlined />}></Button>
-                                        </div>
-                                    </div> */}
 
                                     <div className="countdown-cards-main">
                                         {days.map((day) => {
