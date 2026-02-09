@@ -6,6 +6,7 @@ import { message } from "antd";
 const initialState = {
     cartItems: [],
     value: 0,
+    price: ""
 }
 
 // yeh jo iski value hai hus mai plus one krdega
@@ -21,24 +22,26 @@ export const cartSlice = createSlice({
             const existingItem = state.cartItems.find(item => item.id === newItem.id)
             if (existingItem) {
                 existingItem.value += 1
+                message.success("Product updated to cart")
             } else {
                 state.cartItems.push({ ...newItem, value: 1 });
+                message.success("Product added to cart")
             }
-            message.success("Product added to cart")
+
+
+            localStorage.setItem("cart", JSON.stringify(state.cartItems))
         },
 
-        removeCart: (state, action) => {
-            const itemId = action.payload.id
-            state.cartItems = state.cartItems.filter(item => item.id === itemId)
-            state.value -= 1
-            message.success("Product deleted sucessfully")
-
+        removeItem: (state, action) => {
+            const cartData = state.cartItems.filter(item => item.id != action.payload.id)
+            state.cartItems = cartData
+            message.success("Product deleted successfully");
         }
     }
 
 })
 
-export const { addToCart, removeCart } = cartSlice.actions;
+export const { addToCart, removeItem } = cartSlice.actions;
 export default cartSlice.reducer;
 
 // push method new item ko add krne k liye use hota hai array mai
