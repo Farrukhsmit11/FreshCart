@@ -1,22 +1,22 @@
 import { Button, Card, Col, Rate, Row, Statistic } from "antd"
 import "./DailyBestSells.css"
-import { IoIosArrowRoundForward } from "react-icons/io"
+import { IoIosArrowRoundForward, IoIosGitCompare } from "react-icons/io"
 import { sells } from "./sells"
 import { addToCart } from "../../store/cartSlice/CartSlice"
 import { PlusOutlined, } from "@ant-design/icons"
 import { useDispatch } from "react-redux"
+import { BsHeart } from "react-icons/bs"
+import { IoEyeOutline } from "react-icons/io5"
+import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
 import { useState } from "react"
-import QuickViewModal from "../quickViewModal/QuickViewModal"
 
 const DailyBestSells = () => {
 
-    const [openQuickViewModal, setOpenQuickViewModal] = useState(false);
-
     const dispatch = useDispatch();
 
-    const { Countdown } = Statistic;
+    const [deadline, setDeadline] = useState(Date.now() + 1000 * 38);
 
-    const deadline = Date.now() + 1000 * 38;
+    const { Countdown } = Statistic;
 
     const days = [
         {
@@ -34,6 +34,10 @@ const DailyBestSells = () => {
             value: 48
         },
     ]
+
+    const handleFinish = () => {
+        setDeadline(Date.now() + 1000 * 38);
+    }
 
     return (
         <section className="section-padding">
@@ -61,7 +65,7 @@ const DailyBestSells = () => {
                                     className="daily-best-sell-card"
                                 >
 
-                                    <div className="daily-sell-header">
+                                    <div className="image-main">
                                         <img src={item.thumbnail} />
                                     </div>
 
@@ -72,6 +76,7 @@ const DailyBestSells = () => {
 
                                     <div className="price-section">
                                         ${item.price}
+                                        <Rate className="review" allowHalf defaultValue={2.5} />
                                     </div>
 
                                     <div className="actions">
@@ -95,17 +100,58 @@ const DailyBestSells = () => {
                                         })}
 
                                         <div className="countdown-item">
-                                            <Countdown
-                                                title="Sec"
-                                                format="ss"
-                                                value={deadline}
-                                                className="timer-countdown"
-                                            >
-                                                <div className="countdown-content">
-                                                    <span>Sec</span>
-                                                </div>
+                                            <div className="countdown-content">
+                                                <Countdown
+                                                    title="Sec"
+                                                    format="ss"
+                                                    value={deadline}
+                                                    className="timer-countdown"
+                                                    onFinish={handleFinish}
+                                                >
+                                                    <div className="countdown-content">
+                                                        <span className="countdown-period">Sec</span>
+                                                    </div>
+                                                </Countdown>
+                                            </div>
+                                        </div>
 
-                                            </Countdown>
+
+                                        <div className="icons-overlay">
+                                            <div className="icons-main">
+
+                                                <Button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation()
+                                                    }}
+
+                                                    icon={<IoEyeOutline />}
+                                                    className="card-action-btn"
+                                                >
+
+                                                </Button>
+
+                                                <Button
+                                                    onClick={(e) => {
+                                                        e.stopPropagation()
+                                                    }}
+
+                                                    icon={<IoIosGitCompare />}
+                                                    className="card-action-btn"
+                                                >
+
+                                                </Button>
+
+                                                <Button onClick={(e) => {
+                                                    dispatch(addToWishlist(item))
+                                                    e.stopPropagation()
+                                                }}
+                                                    icon={<BsHeart />}
+                                                    className="card-action-btn"
+                                                >
+
+                                                </Button>
+                                            </div>
+
                                         </div>
 
                                     </div>
@@ -116,11 +162,6 @@ const DailyBestSells = () => {
                     })}
                 </Row>
             </div>
-
-            <QuickViewModal
-                isOpenQuickViewModal={openQuickViewModal}
-                setIsOpenQuickViewModal={setOpenQuickViewModal}
-            />
         </section >
     )
 }

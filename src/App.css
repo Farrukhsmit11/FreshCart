@@ -19,11 +19,31 @@
   font-weight: 600;
 }
 
-
 .section-padding {
   padding-block: 50px;
 }
 
 .section-container {
   margin-inline: 120px;
+}
+
+.ant-message-notice-content {
+  color: #006d75;
+  font-weight: 500;
+}
+
+.ant-message-success .ant-message-notice-content {
+  background-color: #f6ffed;
+  border: 1px solid #52c41a;
+  color: #237804;
+}
+
+.page-links-main {
+  margin-bottom: 16px !important;
+}
+
+.page-links-main .ant-breadcrumb-link {
+  color: #5c6c75 !important;
+  font-weight: 500;
+  border: none;
 }

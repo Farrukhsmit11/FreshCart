@@ -11,7 +11,6 @@ import category from '../../components/featuredCategories/category'
 const Shop = () => {
 
     const navigate = useNavigate()
-
     const { shopId } = useParams();
 
     const items = [
@@ -116,95 +115,97 @@ const Shop = () => {
             value: "Avg:Rating"
         }
     ]
+
     return (
         <>
             <div className="section-container">
                 <Row gutter={[16, 16]}>
-
-                    <Col span={24}>
+                    <div className="main">
                         <Breadcrumb
-                            className="routes-links"
+                            className="page-links-main"
                             items={[
 
                                 {
-                                    title: <a href="" onClick={() => navigate("/")}>Home</a>
+                                    title: <a className="page-links" href="" onClick={() => navigate("/")}>Home</a>
                                 },
 
                                 {
-                                    title: <a href="" onClick={() => navigate("/shop")}>Shop</a>
+                                    title: <a className="page-links" href="" onClick={() => navigate("/shop")}>Shop</a>
                                 },
 
                                 {
-                                    title: "Shop Grid"
+                                    title: <a href="#" className="active-link">Shop Grid</a>
                                 }
                             ]}>
 
                         </Breadcrumb>
-                    </Col>
-
-                    <Col xs={24} md={6}>
-                        <div className="sidebar-main">
-                            <h1 className="menu-title">Categories</h1>
-                            <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
-                        </div>
-
-                        <div className="stores-section">
-                            <h3 className="menu-title">Stores</h3>
-
-                            <div className="input-section">
-                                <Input className="search-store-input" placeholder="Serach Stores"></Input>
-                            </div>
-                        </div>
-
-                        <div className="fresh-fruits-main">
-                            <div className="overlay-content">
-                                <h1>Fresh Fruits</h1>
-                                <p>Get Up to 25% off</p>
-                                <Button icon={<FaArrowRight className="show-now-icon" />
-                                } className="show-now-btn">Shop Now</Button>
-                            </div>
-                            <div>
-                                <img className="fruits-card-image" src={fruitsImg} />
-                            </div>
-                        </div>
-                    </Col>
-
-                    <Col xs={24} md={16}>
-
-                        <Card
-                            className="shop-card"
-                            title={<h3 className="shop-card-title">{handleSelectedProduct?.title}</h3>}
-                        >
-                        </Card>
-
-                        <div className="products-main">
-                            <div className="products-header">
-                                <p>26 Products found</p>
-                            </div>
-
-                            <div className="product-listing-controls">
-                                <div className="icons-main">
-                                    <BsGrid3X3Gap className="list-icon" />
-                                    <BiGridAlt className="list-icon" />
-                                    <IoIosList className="list-icon" />
-                                </div>
-
-                                <div className="product-header-filters">
-                                    <Select options={options} className="form-select" defaultValue="Show Now"></Select>
-
-                                    <Select
-                                        options={selectOptions}
-                                        className="form-select"
-                                        value="Sort by: Featured"
-                                    ></Select>
-                                </div>
-                            </div>
-                        </div>
-
-                    </Col>
+                    </div>
                 </Row>
 
+
+                <section className="category-detail-section">
+                    <Row gutter={[24, 24]}>
+                        <Col xs={24} md={6}>
+                            <div className="sidebar-main">
+                                <h1 className="menu-title">Categories</h1>
+                                <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
+                            </div>
+
+                            <div className="stores-section">
+                                <h3 className="menu-title">Stores</h3>
+
+                                <div className="input-section">
+                                    <Input className="search-store-input" placeholder="Serach Stores"></Input>
+                                </div>
+                            </div>
+
+                            <div className="fresh-fruits-main">
+                                <div className="overlay-content">
+                                    <h1>Fresh Fruits</h1>
+                                    <p>Get Up to 25% off</p>
+                                    <Button icon={<FaArrowRight className="show-now-icon" />
+                                    } className="show-now-btn">Shop Now</Button>
+                                </div>
+                                <img className="fruits-card-image" src={fruitsImg} />
+                            </div>
+                        </Col>
+
+                        <Col xs={24} md={16}>
+
+                            <Card
+                                className="shop-card"
+                                title={<h3 className="shop-card-title">{handleSelectedProduct?.title}</h3>}
+                            >
+                            </Card>
+
+                            <div className="products-main">
+                                <div className="products-header">
+                                    <p>26 Products found</p>
+                                </div>
+
+                                <div className="product-listing-controls">
+                                    <div className="icons-main">
+                                        <BsGrid3X3Gap className="list-icon" />
+                                        <BiGridAlt className="list-icon" />
+                                        <IoIosList className="list-icon" />
+                                    </div>
+
+                                    <div className="product-header-filters">
+                                        <Select options={options} className="form-select" defaultValue="Show Now"></Select>
+
+                                        <Select
+                                            options={selectOptions}
+                                            className="form-select"
+                                            value="Sort by: Featured"
+                                        ></Select>
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </section>
             </div>
+
         </>
     )
 }

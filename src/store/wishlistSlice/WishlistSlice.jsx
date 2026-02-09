@@ -21,14 +21,19 @@ export const wishlistSlice = createSlice({
             }
 
             message.success("Item Added to Wishlist")
+
+            // JSON STRINGYFY CONVERTS THE OBJECT IN TO STRING
+            // JSON PARSE CONVERT STRING IN TO OBJECT 
+
+            localStorage.setItem("wishlist", JSON.stringify(state.items))
         },
 
-        removeItem: (state, action) => {
-            const newData = action.payload.id
-            state.items = state.items.filter(item => item.id === newData)
+        removeWishlist: (state, action) => {
+            const newData = state.items.filter(item => item.id != action.payload.id)
+            state.items = newData
         }
     }
 })
 
-export const { addToWishlist, removeItem } = wishlistSlice.actions
+export const { addToWishlist, removeWishlist } = wishlistSlice.actions
 export default wishlistSlice.reducer

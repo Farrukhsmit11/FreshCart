@@ -8,6 +8,8 @@ import DailyBestSells from "./dailyBestSells/DailyBestSells";
 import FeatureCards from "./featureCards/FeatureCards";
 import PopularProducts from "./popularProducts/PopularProducts";
 import Footer from "./footer/Footer"
+import AuthBanner from "./authBanner/AuthBanner"
+import DeliveryModal from "./deliveryModal/DeliveryModal"
 import QuickViewModal from "./quickViewModal/QuickViewModal";
 
 export {
@@ -18,8 +20,10 @@ export {
     FeaturedCategories,
     ShopNowCards,
     DailyBestSells,
-    FeatureCards ,
+    FeatureCards,
     PopularProducts,
     Footer,
+    AuthBanner,
+    DeliveryModal,
     QuickViewModal
 }

@@ -7,7 +7,7 @@
     cursor: pointer;
 }
 
-.table-header{
+.table-header {
     margin-bottom: 32px;
 }
 
@@ -23,3 +23,49 @@
     font-weight: 500;
 }
 
+.wishlist-table-image {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+}
+
+.wishlist-table .ant-table-head {
+    background-color: #f0f3f2 !important;
+}
+
+.item-price {
+    color: #5c6c75;
+}
+
+.status-tag {
+    background-color: #198754 !important;
+    color: white;
+}
+
+.links-parent {
+    margin-top: 16px !important;
+}
+
+.wishlist-section {
+    margin-bottom: 80px;
+    margin-top: 32px;
+}
+
+.wishlist-empty-main {
+    width: 100%;
+    text-align: center;
+}
+
+.wishlist-empty-main h5 {
+    font-size: 21px;
+}
+
+.active-link {
+    color: #889397 !important;
+    font-weight: 500;
+}
+
+.active-link:hover {
+    color: #889397;
+    background: none !important;
+}

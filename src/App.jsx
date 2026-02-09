@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react"
 import "./App.css"
-import { Footer, Navbar, PageHeader } from "./components"
+import { AuthBanner, Footer, Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import { Shop, ShopWishlist, SignIn, ForgotPassword, ProductDetail, ShopCheckout } from "./pages"
 import Home from "./pages/home/Home"
 import "./Media.css"
+import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 
 function App() {
 
@@ -15,7 +16,10 @@ function App() {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2000)
-  })
+    return () => {
+      clearTimeout(timer)
+    }
+  }, [])
 
   if (loading) {
     return <Loader />
@@ -23,9 +27,12 @@ function App() {
 
   return (
     <>
+
       <PageHeader />
       <Navbar />
 
+
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop/:shopId" element={<Shop />}></Route>
@@ -36,7 +43,6 @@ function App() {
         <Route path="/shopCheckout" element={<ShopCheckout />}></Route>
 
       </Routes>
-
       <Footer />
     </>
   )

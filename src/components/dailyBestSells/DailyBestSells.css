@@ -12,6 +12,11 @@
     padding: 0;
 }
 
+.image-main{
+    position: relative;
+    text-align: center;
+}
+
 .best-sell-card-img {
     width: 100%;
 }
@@ -145,7 +150,6 @@
     color: #889397;
     font-weight: 500;
     font-size: 13px;
-    /* line-height: 1; */
 }
 
 .countdown-amount {
@@ -176,4 +180,9 @@
 
 .ant-statistic-content {
     line-height: 1 !important;
+}
+
+.price-section {
+    display: flex;
+    justify-content: space-between;
 }

@@ -1,3 +1,4 @@
+import bunsImg from "../../assets/fresh-baked-buns-img.png"
 export const category = [
     {
         id: 1,
@@ -41,6 +42,12 @@ export const category = [
         id: 8,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/category/category-fruits-vegetables.jpg",
         title: "Fruits & Vegetabls"
+    },
+
+    {
+        id: 9,
+        imgSrc: bunsImg,
+        title: "Freshly Baked Buns"
     }
 ]
 
