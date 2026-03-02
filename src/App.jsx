@@ -30,12 +30,17 @@ function App() {
 
   return (
     <>
-
-      <PageHeader />
-
-      {IsSignInPage ? <AuthBanner /> : <Navbar />}
+      {IsSignInPage ? (
+        <AuthBanner />
+      ) : (
+        <>
+          <PageHeader />
+          <Navbar />
+        </>
+      )}
 
       <ScrollToTop />
+
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/shop/:shopId" element={<Shop />}></Route>
