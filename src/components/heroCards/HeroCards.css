@@ -57,8 +57,7 @@
 }
 
 .text-content {
-    display: flex;
-    flex-direction: column;
+    /* line-height: 16px; */
     max-width: 500px;
 }
 

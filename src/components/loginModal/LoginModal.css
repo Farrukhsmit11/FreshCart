@@ -36,15 +36,18 @@
 
 .submit-btn {
     padding: 19px;
-    width: 125px;
+    width: 106px;
     font-weight: 500;
     background: #0aad0a;
     color: white;
+    border-radius: 6px;
+    border-color: #0aad0a;
 }
 
 .submit-btn:hover {
-    background: #0aad0a !important;
+    background: #099309 !important;
     color: white !important;
+    border-color: #088a08 !important;
 }
 
 .modal-subtitle {
@@ -57,9 +60,10 @@
 }
 
 .footer-title {
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     font-weight: 500;
+    color: #5c6c75;
 }
 
 .footer-title a {

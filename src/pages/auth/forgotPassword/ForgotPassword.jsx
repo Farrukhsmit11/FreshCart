@@ -4,7 +4,6 @@ import { Form as AntForm, Button, Col, Input, Row } from "antd"
 import { useNavigate } from "react-router-dom"
 import { Formik } from "formik"
 import { forgotPasswordSchema } from "./ForgotPasswordSchema"
-import AuthBanner from "../../../components/authBanner/AuthBanner"
 
 const ForgotPassword = () => {
 
@@ -16,17 +15,16 @@ const ForgotPassword = () => {
         email: ""
     }
 
-    const handlesubmit = (values) => {
+    const handlesubmit = (values , {resetForm}) => {
         console.log(values)
+        resetForm();
     }
 
     return (
         <>
-            <AuthBanner />
             <div className="section-container">
                 <Row>
-
-                    <Col md={13} span={10}>
+                    <Col md={18} lg={12} span={19}>
                         <img className="" src={forgotPasswordlogo} />
                     </Col>
 

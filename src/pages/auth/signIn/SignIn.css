@@ -47,13 +47,12 @@
     border-radius: 6px;
     transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     border: 1px solid #dfe2e1;
-    border-color: #85d685;
     font-weight: 600;
 }
-
+/* 
 .form-item {
     margin-bottom: 16px;
-}
+} */
 
 .forgot-password-main a {
     color: #0aad0a;
@@ -73,6 +72,11 @@
 
 .form-check {
     margin-bottom: 14px;
+}
+
+.form-check-input {
+    color: #5c6c75;
+    font-weight: 500;
 }
 
 .forgot-password {

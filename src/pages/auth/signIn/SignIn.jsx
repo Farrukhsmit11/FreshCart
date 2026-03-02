@@ -4,7 +4,6 @@ import { Form as AntForm, Button, Checkbox, Col, Input, Row } from "antd"
 import { Formik } from "formik"
 import { signInSchema } from "./Validation"
 import { useNavigate } from "react-router-dom"
-import AuthBanner from "../../../components/authBanner/AuthBanner"
 
 const SignIn = () => {
 
@@ -15,16 +14,17 @@ const SignIn = () => {
     password: ""
   }
 
-  const handlesubmit = (values) => {
-    console.log(values)
+  const handlesubmit = (values, { resetForm }) => {
+    console.log(values);
     form.resetFields();
+
+    resetForm()
   }
 
   const navigate = useNavigate()
 
   return (
     <>
-      <AuthBanner />
       <div className="section-container">
 
         <Row gutter={[16, 16]}>

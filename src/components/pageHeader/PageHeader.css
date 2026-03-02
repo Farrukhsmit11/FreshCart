@@ -4,9 +4,6 @@
     padding-bottom: 4px;
 }
 
-.header-wrapper-left {
-    padding: 0;
-}
 
 .header-container {
     display: flex;
@@ -29,12 +26,24 @@
     padding: 0;
 }
 
-.language-select .ant-select-outlined{
+.language-select .ant-select-outlined {
     border: none;
 }
 
-.lang-option{
+.lang-option {
     display: flex;
     align-items: center;
     gap: 8px;
+}
+
+.language-title {
+    color: #5c6c75;
+}
+
+.dropdown-item {
+    line-height: 26px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 17px;
+    color: #5c6c75;
 }

@@ -2,6 +2,13 @@
     width: 100%;
 }
 
+.shop-now-card-header {
+    position: relative;
+    height: 250px;
+    border-radius: 8px !important;
+    overflow: hidden;
+}
+
 .shop-now-btn {
     width: 104px;
     background-color: var(--fc-btn-bg);
@@ -19,7 +26,7 @@
 
 .shop-now-card-image {
     width: 100%;
-    height: auto;
+    position: relative;
     border-radius: 8px;
 }
 

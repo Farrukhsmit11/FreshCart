@@ -9,7 +9,6 @@ const LocationModal = ({ isOpenLocationModal, setIsOpenLocationModal }) => {
             open={isOpenLocationModal}
             onCancel={() => setIsOpenLocationModal(false)}
             footer={null}
-            centered
             className="choose-delivery-modal"
         >
             <div className="delivery-modal-header">

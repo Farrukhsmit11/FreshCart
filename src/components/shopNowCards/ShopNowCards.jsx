@@ -15,18 +15,19 @@ const ShopNowCards = () => {
           {shop.map((items, index) => {
             return (
               <>
-                <Col xs={24} sm={12} lg={10} md={24} key={index}>
-                  <img className="shop-now-card-image" src={items.imgSrc} />
+                <Col md={6} lg={12}  key={index}>
+                  <div className="shop-now-card-header">
+                    <img className="shop-now-card-image" src={items.imgSrc} />
 
-                  <div className="product-details-content">
-                    <h4>{items.title}</h4>
-                    <p>{items.description}</p>
+                    <div className="product-details-content">
+                      <h4>{items.title}</h4>
+                      <p>{items.description}</p>
 
-                    <Button
-                      onClick={() =>
-                        navigate(`shop/${items.id}`)} className="shop-now-btn">Shop Now</Button>
+                      <Button
+                        onClick={() =>
+                          navigate(`shop/${items.id}`)} className="shop-now-btn">Shop Now</Button>
+                    </div>
                   </div>
-
                 </Col>
               </>
             )
