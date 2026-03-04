@@ -14,19 +14,20 @@ import { IoIosArrowDown } from "react-icons/io"
 import { LuTrash2 } from "react-icons/lu"
 import LocationModal from "../locationModal/LocationModal"
 import { removeItem } from "../../store/cartSlice/CartSlice"
-import MegaMenu from "./MegaMenu"
 
 const Navbar = () => {
 
     const [open, setOpen] = useState(false);
 
+    const cartItems = useSelector((state) => state.cart.cartItems);
+    const [search, setSearch] = useState("");
+
     const [showCartDrawer, setShowCartDrawer] = useState(false);
 
-    const [openLocationModal, setOpenLocationModal] = useState(false)
+    const [openLocationModal, setOpenLocationModal] = useState(false);
 
     const navigate = useNavigate();
 
-    const cartItems = useSelector((state) => state.cart.cartItems);
     const wishlistCount = useSelector((state) => state.wishlist.items.length);
 
     const itemCount = cartItems.length
@@ -143,7 +144,11 @@ const Navbar = () => {
                                 className="search-input"
                                 placeholder="Search For products"
                                 type="search"
-                                suffix={<SearchOutlined className="search-icon-input" />}
+                                value={search}
+                                onChange={(e) => setSearch(e.target.value)}
+                                autoComplete="true"
+                                suffix={<SearchOutlined
+                                    className="search-icon-input" />}
                             >
                             </Input>
                         </div>
@@ -235,7 +240,7 @@ const Navbar = () => {
                                                             </Col>
 
                                                             <Col md={2} span={2}>
-                                                                <p>{item.price}</p>
+                                                                <span>{item.price}</span>
                                                             </Col>
                                                         </Row>
                                                     </div>
@@ -314,15 +319,9 @@ const Navbar = () => {
 
                                 <li>Stores</li>
 
-                                <Dropdown
-                                    dropdownRender={() => <MegaMenu />}
-                                    trigger={["hover"]}
-                                    placement="bottom"
-                                >
-                                    <li>
-                                        Mega Menu
-                                    </li>
-                                </Dropdown>
+                                <li>
+                                    Mega Menu
+                                </li>
 
                                 <Dropdown menu={{ items: pages }} trigger={["hover"]}>
                                     <li>
@@ -355,7 +354,6 @@ const Navbar = () => {
                     isOpenLocationModal={openLocationModal}
                     setIsOpenLocationModal={setOpenLocationModal}
                 />
-
             </div >
             <hr />
         </>

@@ -22,13 +22,10 @@ export const cartSlice = createSlice({
             const existingItem = state.cartItems.find(item => item.id === newItem.id)
             if (existingItem) {
                 existingItem.value += 1
-                message.success("Product updated to cart")
             } else {
                 state.cartItems.push({ ...newItem, value: 1 });
                 message.success("Product added to cart")
             }
-
-
             localStorage.setItem("cart", JSON.stringify(state.cartItems))
         },
 
@@ -36,7 +33,7 @@ export const cartSlice = createSlice({
             const cartData = state.cartItems.filter(item => item.id != action.payload.id)
             state.cartItems = cartData
             message.success("Product deleted successfully");
-        }
+        },
     }
 
 })

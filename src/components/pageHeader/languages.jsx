@@ -1,4 +1,4 @@
-const languages = [
+ export const languages = [
   {
     value: "en",
     label: (
@@ -6,7 +6,6 @@ const languages = [
         <img
           src="https://freshcart-next-js-template.netlify.app/images/icons/english.svg"
           alt="English"
-          width={20}
         />
         <span>English</span>
       </div>
@@ -19,7 +18,6 @@ const languages = [
         <img
           src="https://freshcart-next-js-template.netlify.app/images/icons/deutsch.svg"
           alt="Deutsch"
-          width={20}
         />
         <span>Deutsch</span>
       </div>

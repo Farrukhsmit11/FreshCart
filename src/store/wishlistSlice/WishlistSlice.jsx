@@ -6,7 +6,6 @@ export const wishlistSlice = createSlice({
     initialState: {
         items: [],
         value: 0,
-
     },
 
     reducers: {
@@ -16,24 +15,19 @@ export const wishlistSlice = createSlice({
 
             if (existingItem) {
                 state.value += 1
+                message.error("Product already added to wishlist")
             } else {
                 state.items.push({ ...newItem, value: 1 })
+                message.success("Product Added to Wishlist")
             }
-
-            message.success("Item Added to Wishlist")
 
             // JSON STRINGYFY CONVERTS THE OBJECT IN TO STRING
             // JSON PARSE CONVERT STRING IN TO OBJECT 
 
             localStorage.setItem("wishlist", JSON.stringify(state.items))
         },
-
-        removeWishlist: (state, action) => {
-            const newData = state.items.filter(item => item.id != action.payload.id)
-            state.items = newData
-        }
     }
 })
 
-export const { addToWishlist, removeWishlist } = wishlistSlice.actions
+export const { addToWishlist } = wishlistSlice.actions
 export default wishlistSlice.reducer

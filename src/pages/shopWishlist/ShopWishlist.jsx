@@ -6,7 +6,6 @@ import { PlusOutlined } from "@ant-design/icons";
 import { LuTrash2 } from "react-icons/lu";
 import { addToCart } from "../../store/cartSlice/CartSlice"
 import { useNavigate } from "react-router-dom";
-import { removeWishlist } from "../../store/wishlistSlice/WishlistSlice";
 
 const ShopWishlist = () => {
 
@@ -85,11 +84,11 @@ const ShopWishlist = () => {
         {
             title: "Remove",
             dataIndex: "remove",
-            render: (_, record) => (
+            render: () => (
                 <Popconfirm
                     title="Delete the Product"
                     description="Are you sure to delete this product?"
-                    onConfirm={() => dispatch(removeWishlist(record.id))}
+                    // onConfirm={}
                     onCancel={cancel}
                     okText="Yes"
                     cancelText="No"
@@ -118,7 +117,7 @@ const ShopWishlist = () => {
                             },
 
                             {
-                                title: <a href="" onClick={() => navigate("/shop")} className="page-links">Shop</a>,
+                                title: <a href="#" onClick={() => navigate("/shop")} className="page-links">Shop</a>,
                             },
 
                             {
