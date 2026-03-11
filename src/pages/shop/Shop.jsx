@@ -2,15 +2,15 @@ import { Breadcrumb, Button, Card, Col, Input, Menu, Row, Select, } from "antd"
 import "./Shop.css"
 import { useNavigate, useParams } from "react-router-dom";
 import fruitsImg from "../../assets/assortment-fruits-img.png"
-import { FaArrowRight } from "react-icons/fa";
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { IoIosList } from "react-icons/io";
 import { BiGridAlt } from "react-icons/bi";
 import category from '../../components/featuredCategories/category'
+import PopularProducts from "../../components/popularProducts/PopularProducts"
 
 const Shop = () => {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const { shopId } = useParams();
 
     const items = [
@@ -81,7 +81,7 @@ const Shop = () => {
         },
     ];
 
-    const handleSelectedProduct = category?.find(item => item.id === Number(shopId));
+    const handleSelectedCategory = category?.find(item => item.id === Number(shopId));
 
     const options = [
         {
@@ -126,25 +126,21 @@ const Shop = () => {
                             items={[
 
                                 {
-                                    title: <a className="page-links" href="" onClick={() => navigate("/")}>Home</a>
+                                    title: <a className="page-links" href="#" onClick={() => navigate("/")}>Home</a>
                                 },
 
                                 {
-                                    title: <a className="page-links" href="" onClick={() => navigate("/shop")}>Shop</a>
+                                    title: <a className="page-links" href="#" onClick={() => navigate("/shop")}>Shop</a>
                                 },
-
-                                {
-                                    title: <a href="#" className="active-link">Shop Grid</a>
-                                }
                             ]}>
-
                         </Breadcrumb>
                     </div>
                 </Row>
+            </div>
 
-
-                <section className="category-detail-section">
-                    <Row gutter={[24, 24]}>
+            <div className="category-section-main">
+                <div className="section-container">
+                    <Row gutter={[48, 48]}>
                         <Col xs={24} md={6}>
                             <div className="sidebar-main">
                                 <h1 className="menu-title">Categories</h1>
@@ -155,57 +151,65 @@ const Shop = () => {
                                 <h3 className="menu-title">Stores</h3>
 
                                 <div className="input-section">
-                                    <Input className="search-store-input" placeholder="Serach Stores"></Input>
+                                    <Input className="search-store-input" placeholder="Serach by Stores"></Input>
                                 </div>
                             </div>
 
-                            <div className="fresh-fruits-main">
-                                <div className="overlay-content">
-                                    <h1>Fresh Fruits</h1>
-                                    <p>Get Up to 25% off</p>
-                                    <Button icon={<FaArrowRight className="show-now-icon" />
-                                    } className="show-now-btn">Shop Now</Button>
+                            <div className="fruits-card-main">
+                                <div className="card-overlay">
+                                    <h3>Fresh Fruits</h3>
+                                    <p>Get up to 35% Off</p>
+                                    <Button className="fresh-fruits-btn">Shop Now</Button>
                                 </div>
-                                <img className="fruits-card-image" src={fruitsImg} />
+                                <img className="fruits-img" src={fruitsImg} alt="Fruits" />
                             </div>
                         </Col>
 
-                        <Col xs={24} md={16}>
-
+                        <Col xs={24} md={18}>
                             <Card
                                 className="shop-card"
-                                title={<h3 className="shop-card-title">{handleSelectedProduct?.title}</h3>}
+                                title={<h3>
+                                    {handleSelectedCategory ? <h3 className="selected-category-title">{handleSelectedCategory.title}</h3> : <h3 className="selected-category-title">All Categories</h3>}
+                                </h3>}
                             >
                             </Card>
 
-                            <div className="products-main">
-                                <div className="products-header">
+                            <div className="listing-controls">
+                                <div className="listing-controls-header">
                                     <p>26 Products found</p>
                                 </div>
 
-                                <div className="product-listing-controls">
-                                    <div className="icons-main">
-                                        <BsGrid3X3Gap className="list-icon" />
-                                        <BiGridAlt className="list-icon" />
-                                        <IoIosList className="list-icon" />
+                                <div className="filters-main">
+
+                                    <div className="icons">
+                                        <div>
+                                            <BsGrid3X3Gap className="list-icon" />
+                                            <BiGridAlt className="list-icon" />
+                                            <IoIosList className="list-icon" />
+                                        </div>
                                     </div>
 
-                                    <div className="product-header-filters">
-                                        <Select options={options} className="form-select" defaultValue="Show Now"></Select>
+                                    <Select
+                                        options={options}
+                                        className="form-select"
+                                        defaultValue="Show Now">
+                                    </Select>
 
-                                        <Select
-                                            options={selectOptions}
-                                            className="form-select"
-                                            value="Sort by: Featured"
-                                        ></Select>
-                                    </div>
+                                    <Select
+                                        options={selectOptions}
+                                        className="form-select"
+                                        value="Sort by Featured"
+                                    ></Select>
                                 </div>
+                            </div>
+
+                            <div>
+                                <PopularProducts limit="8" showTitle={false} />
                             </div>
                         </Col>
                     </Row>
-                </section>
+                </div>
             </div>
-
         </>
     )
 }

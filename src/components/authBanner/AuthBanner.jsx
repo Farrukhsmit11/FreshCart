@@ -15,7 +15,7 @@ const AuthBanner = () => {
 
                     <div className="auth-banner-right">
                         <p>Already have an Account?</p>
-                        <a href="#">Sign in </a>
+                        <a href="#" onClick={() => navigate("/signIn")}>Sign in </a>
                     </div>
                 </div>
 

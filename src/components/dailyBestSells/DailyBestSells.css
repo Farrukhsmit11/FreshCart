@@ -12,7 +12,7 @@
     padding: 0;
 }
 
-.image-main{
+.image-main {
     position: relative;
     text-align: center;
 }
@@ -105,21 +105,6 @@
     margin-bottom: 8px;
 }
 
-.countdown-section {
-    padding: 14px 5px 26px;
-    border: 1px solid #dfe2e1;
-}
-
-.countdown-cards {
-    width: 54px;
-    height: 54px;
-    border-radius: 8px;
-}
-
-.actions {
-    margin-top: 8px;
-}
-
 .countdown-cards-main {
     display: flex;
     margin-top: 12px;
@@ -168,18 +153,18 @@
     flex-direction: column-reverse;
 }
 
+.timer-countdown .ant-statistic-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .ant-statistic-title {
     font-size: 13px !important;
-    line-height: 1 !important;
 }
 
 .ant-statistic-content-value {
-    line-height: 1 !important;
     font-size: 13px !important;
-}
-
-.ant-statistic-content {
-    line-height: 1 !important;
 }
 
 .price-section {

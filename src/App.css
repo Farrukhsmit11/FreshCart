@@ -8,6 +8,11 @@
   --fc-btn-color: #fff;
   --fc-btn-hover-bg: #26404b;
   --fc-heading-color: #21313c;
+  --fc-accordion-color: var(--fc-gray-600);
+  --fc-accordion-bg: #fff;
+  --fc-accordion-transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, border-radius 0.15s ease;
+  --fc-accordion-border-color: var(--fc-border-color);
+  --fc-accordion-border-width: 1px;
 }
 
 

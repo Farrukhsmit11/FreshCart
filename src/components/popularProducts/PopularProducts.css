@@ -61,7 +61,7 @@
 }
 
 .product-card {
-    width: 265px;
+    width: 253px;
     border: 1px solid #dfe2e1;
     cursor: pointer;
 }
@@ -134,9 +134,11 @@
     font-size: 12.25px;
     padding-left: 6px;
     padding-top: 4px;
+    border-radius: 5px;
     padding-bottom: 4px;
     display: flex;
     justify-content: center;
+    border: none;
 }
 
 .add-to-cart-btn:hover {

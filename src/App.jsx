@@ -49,7 +49,6 @@ function App() {
         <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
         <Route path="/productDetail/:productId" element={<ProductDetail />}></Route>
         <Route path="/shopCheckout" element={<ShopCheckout />}></Route>
-
       </Routes>
       <Footer />
     </>

@@ -1,6 +1,5 @@
 import HeroCards from "../../components/heroCards/HeroCards"
-import { DailyBestSells, FeatureCards, FeaturedCategories, Footer, Navbar, PageHeader, ShopNowCards } from "../../components"
-import PopularProducts from "../../components/popularProducts/PopularProducts"
+import { DailyBestSells, FeatureCards, FeaturedCategories, Footer, Navbar, PageHeader, ShopNowCards , PopularProducts } from "../../components"
 
 const Home = () => {
   return (

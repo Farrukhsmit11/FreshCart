@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
-import { Button, Input, Drawer, Badge, Row, Col, Dropdown, Popover, Result, InputNumber } from "antd"
+import { Button, Input, Drawer, Badge, Row, Col, Popover, Result, InputNumber, Dropdown } from "antd"
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
 import { useState } from "react"
@@ -10,20 +10,16 @@ import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { GrLocation } from "react-icons/gr";
 import { RiDashboardLine } from "react-icons/ri"
-import { IoIosArrowDown } from "react-icons/io"
 import { LuTrash2 } from "react-icons/lu"
 import LocationModal from "../locationModal/LocationModal"
 import { removeItem } from "../../store/cartSlice/CartSlice"
+import { IoIosArrowDown } from "react-icons/io"
 
 const Navbar = () => {
 
     const [open, setOpen] = useState(false);
-
     const cartItems = useSelector((state) => state.cart.cartItems);
-    const [search, setSearch] = useState("");
-
     const [showCartDrawer, setShowCartDrawer] = useState(false);
-
     const [openLocationModal, setOpenLocationModal] = useState(false);
 
     const navigate = useNavigate();
@@ -31,6 +27,8 @@ const Navbar = () => {
     const wishlistCount = useSelector((state) => state.wishlist.items.length);
 
     const itemCount = cartItems.length
+
+    const dispatch = useDispatch();
 
     const homeMenu = [
         { key: "1", label: <span><a onClick={() => navigate("/")} className="bottom-nav-links" href="#">Home default</a></span> },
@@ -89,44 +87,7 @@ const Navbar = () => {
             key: "4",
             label: <a className="bottom-nav-links" target="_blank" onClick={() => navigate("/forgotPassword")}>Forgot Password</a>
         },
-        {
-            key: 5,
-            label: <a className="bottom-nav-links">My Account</a>,
-            children: [
-                {
-                    key: 1,
-                    label: <a className="bottom-nav-links" href="#">Orders</a>,
-
-                },
-
-                {
-                    key: 1,
-                    label: <a className="bottom-nav-links" href="#">Settings</a>,
-
-                },
-
-                {
-                    key: 1,
-                    label: <a className="bottom-nav-links" href="#">Address</a>,
-
-                },
-
-                {
-                    key: 1,
-                    label: <a className="bottom-nav-links" href="#">Payment Method</a>,
-
-                },
-
-
-                {
-                    key: 1,
-                    label: <a className="bottom-nav-links" href="#">Notifications</a>,
-                },
-            ]
-        }
     ]
-
-    const dispatch = useDispatch();
 
     return (
         <>
@@ -144,9 +105,6 @@ const Navbar = () => {
                                 className="search-input"
                                 placeholder="Search For products"
                                 type="search"
-                                value={search}
-                                onChange={(e) => setSearch(e.target.value)}
-                                autoComplete="true"
                                 suffix={<SearchOutlined
                                     className="search-icon-input" />}
                             >
@@ -292,74 +250,71 @@ const Navbar = () => {
                     </Drawer>
                 </nav>
 
-                <Row gutter={[16, 16]}>
-                    <nav className="bottom-nav-section">
-                        <div className="navbar-default">
-                            <Popover
-                                trigger={["hover"]}
-                            >
-                                <Button className="all-department-btn" icon={<RiDashboardLine />}>All Departments</Button>
-                            </Popover>
-                        </div>
 
-                        <div className="navbar-links-main">
-                            <ul className="dropdown-links">
+                <nav className="bottom-nav-section">
+                    <div className="navbar-default">
+                        <Popover
+                            trigger={["hover"]}
+                        >
+                            <Button className="all-department-btn" icon={<RiDashboardLine />}>All Departments</Button>
+                        </Popover>
+                    </div>
 
-                                <Dropdown className="nav-dropdown" menu={{ items: homeMenu }} trigger={["hover"]}>
-                                    <li>Home
-                                        <IoIosArrowDown />
-                                    </li>
-                                </Dropdown>
+                    <div className="navbar-links-main">
+                        <ul className="dropdown-links">
 
-                                <Dropdown menu={{ items: shopMenu }} trigger={["hover"]}>
-                                    <li>
-                                        Shop <IoIosArrowDown />
-                                    </li>
-                                </Dropdown>
-
-                                <li>Stores</li>
-
-                                <li>
-                                    Mega Menu
+                            <Dropdown className="nav-dropdown" menu={{ items: homeMenu }} trigger={["hover"]}>
+                                <li>Home
+                                    <IoIosArrowDown />
                                 </li>
+                            </Dropdown>
 
-                                <Dropdown menu={{ items: pages }} trigger={["hover"]}>
-                                    <li>
-                                        Pages <IoIosArrowDown />
-                                    </li>
-                                </Dropdown>
-
-                                <Dropdown menu={{ items: accountInfo }} trigger={["hover"]}>
-                                    <li>
-                                        Account <IoIosArrowDown />
-                                    </li>
-                                </Dropdown>
-
-                                <li className="dashboard-link">Dashboard</li>
-
+                            <Dropdown menu={{ items: shopMenu }} trigger={["hover"]}>
                                 <li>
-                                    Docs
+                                    Shop <IoIosArrowDown />
                                 </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </Row>
+                            </Dropdown>
 
-                <LoginModal
-                    isOpenloginModal={open}
-                    setIsOpenloginModal={setOpen}
-                />
+                            <li>Stores</li>
 
-                <LocationModal
-                    isOpenLocationModal={openLocationModal}
-                    setIsOpenLocationModal={setOpenLocationModal}
-                />
+                            <li>
+                                Mega Menu
+                            </li>
+
+                            <Dropdown menu={{ items: pages }} trigger={["hover"]}>
+                                <li>
+                                    Pages <IoIosArrowDown />
+                                </li>
+                            </Dropdown>
+
+                            <Dropdown menu={{ items: accountInfo }} trigger={["hover"]}>
+                                <li>
+                                    Account <IoIosArrowDown />
+                                </li>
+                            </Dropdown>
+
+                            <li className="dashboard-link">Dashboard</li>
+
+                            <li>
+                                Docs
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
             </div >
+
+            <LoginModal
+                isOpenloginModal={open}
+                setIsOpenloginModal={setOpen}
+            />
+
+            <LocationModal
+                isOpenLocationModal={openLocationModal}
+                setIsOpenLocationModal={setOpenLocationModal}
+            />
+
             <hr />
         </>
-
-
-
     )
 }
 

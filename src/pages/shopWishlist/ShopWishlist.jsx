@@ -4,7 +4,7 @@ import "./ShopWishlist.css"
 import { useDispatch, useSelector } from "react-redux";
 import { PlusOutlined } from "@ant-design/icons";
 import { LuTrash2 } from "react-icons/lu";
-import { addToCart } from "../../store/cartSlice/CartSlice"
+import { addToCart, removeItem } from "../../store/cartSlice/CartSlice"
 import { useNavigate } from "react-router-dom";
 
 const ShopWishlist = () => {
@@ -74,7 +74,7 @@ const ShopWishlist = () => {
             title: "Actions",
             render: (_, record) => (
                 <Button
-                    onClick={() => dispatch(addToCart(record.id))}
+                    onClick={() => dispatch(addToCart(record))}
                     icon={<PlusOutlined />}
                     className="add-to-cart-btn"
                 >Add</Button>
@@ -84,11 +84,10 @@ const ShopWishlist = () => {
         {
             title: "Remove",
             dataIndex: "remove",
-            render: () => (
+            render: (_, record) => (
                 <Popconfirm
                     title="Delete the Product"
                     description="Are you sure to delete this product?"
-                    // onConfirm={}
                     onCancel={cancel}
                     okText="Yes"
                     cancelText="No"
@@ -120,10 +119,6 @@ const ShopWishlist = () => {
                                 title: <a href="#" onClick={() => navigate("/shop")} className="page-links">Shop</a>,
                             },
 
-                            {
-                                title: <a href="" className="active-link" onClick={() => navigate("/shopWishlist")}>Shop Wishlist</a>,
-                            }
-
                         ]}
                     >
                     </Breadcrumb>
@@ -139,26 +134,17 @@ const ShopWishlist = () => {
                 </Col>
 
                 <div className="table-main">
-
-                    {itemCount > 0 ? (
-                        <div>
-                            <Table
-                                key="id"
-                                rowSelection={{ type: selectionType, ...rowSelection }}
-                                columns={columns}
-                                dataSource={wishlist}
-                                rowKey="id"
-                                className="wishlist-table"
-                            >
-                            </Table>
-                        </div>
-                    ) : (
-
-                        <div className="wishlist-empty-main">
-                            <h5>You have no items</h5>
-                        </div>
-                    )}
-
+                    <div>
+                        <Table
+                            key="id"
+                            rowSelection={{ type: selectionType, ...rowSelection }}
+                            columns={columns}
+                            dataSource={wishlist}
+                            rowKey="id"
+                            className="wishlist-table"
+                        >
+                        </Table>
+                    </div>
                 </div>
             </section >
 

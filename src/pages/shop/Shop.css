@@ -1,12 +1,7 @@
 .sidebar-menu {
     width: 100%;
     margin-bottom: 18px;
-    border-inline-end: none !important;
-}
-
-.shop-page-wrapper {
-    margin-bottom: 80px;
-    margin-top: 32px;
+    border: none !important;
 }
 
 .page-links-parent {
@@ -18,17 +13,17 @@
 }
 
 .sidebar-menu .ant-menu-inline {
-    background: none !important;
+    background: transparent !important;
 }
 
 .routes-links ol {
     margin-bottom: 16px;
 }
 
-.fruits-card-image {
+.fruits-img {
     border-radius: 8px;
+    max-width: 100%;
     height: auto;
-    width: 100%;
 }
 
 .nav-links {
@@ -39,25 +34,33 @@
     margin-bottom: 32px;
 }
 
+.sidebar-menu {
+    width: 100%;
+    margin-bottom: 18px;
+    border: none !important;
+}
+
+.sidebar-menu .ant-menu-item,
 .sidebar-menu .ant-menu-submenu-title {
     width: 100%;
     border-bottom: 1px solid #dfe2e1;
-    border-left: none;
-    background: none;
     font-size: 14px;
-    padding: 8px 0;
     font-weight: 500;
-    padding-left: 0 !important;
+    padding: 12px 8px !important;
+}
+
+.sidebar-menu .ant-menu-item:last-child,
+.sidebar-menu .ant-menu-submenu:last-child .ant-menu-submenu-title {
+    border-bottom: none;
 }
 
 .sidebar-menu .ant-menu-item {
     display: flex;
     justify-content: space-between;
-    padding: 12px 8px;
 }
 
 .sidebar-main .ant-menu-submenu-title:hover {
-    background-color: none !important;
+    background-color: transparent !important;
 }
 
 .menu-title {
@@ -79,26 +82,19 @@
     width: 100%;
 }
 
-.sidebar-menu {
-    border-inline-end: none !important;
-}
-
-.price-range-slider .ant-slider-track {
-    background: #0aad0a;
-}
-
-.price-range-slider .ant-slider-track:hover {
-    background: #0aad0a;
-}
 
 .stores-section {
     margin-bottom: 32px;
 }
 
 .search-store-input {
-    width: 300px;
+    width: 100%;
     border-radius: 8px;
     padding: 8.8px 16px;
+}
+
+.search-store-input:hover {
+    border: 1px solid #dfe2e1;
 }
 
 .shop-card .ant-card-body {
@@ -120,32 +116,6 @@
     margin-bottom: 16px;
 }
 
-.fresh-fruits-main {
-    position: relative;
-    margin-bottom: 32px;
-}
-
-.overlay-content {
-    position: absolute;
-    top: 5px;
-    left: 19px;
-    padding-top: 32px;
-    padding-bottom: 32px;
-}
-
-.overlay-content h1 {
-    font-size: 24px;
-    margin: 0;
-    font-weight: 700;
-    color: #21313c;
-}
-
-.overlay-content p {
-    color: #808080;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
 .ant-checkbox-checked .ant-checkbox-inner {
     background-color: #0aad0a;
     border-color: #0aad0a;
@@ -156,16 +126,13 @@
     color: #0aad0a !important;
 }
 
-.card1 {
-    padding: 40px;
-    background: #f0f3f2;
-}
 
 .shop-card {
     padding: 40px;
     background: #f0f3f2;
     color: black;
     margin-bottom: 16px;
+    width: 100%;
 }
 
 .products-main {
@@ -175,33 +142,23 @@
     margin-bottom: 32px;
 }
 
-.form-select {
-    display: flex;
-    gap: 20px;
-    border: 1px solid #dfe2e1;
-    outline: none;
-}
-
 .form-select .ant-select-content-value {
     font-weight: 500;
     color: #21313c;
 }
 
-.product-listing-controls {
+.icons {
     display: flex;
     justify-content: space-between;
+    gap: 13px;
     align-items: center;
-    gap: 4px;
 }
 
 .list-icon {
     font-size: 20px;
     color: gray;
-}
-
-.filters {
-    display: flex;
-    gap: 8px;
+    margin-right: 8px;
+    cursor: pointer;
 }
 
 .shop-card-title {
@@ -211,26 +168,10 @@
     font-weight: 600;
 }
 
-.mobile-filters-button-main {
-    display: none;
-}
-
-.cards-pagination .ant-pagination-item {
-    border-radius: 5px;
-    border: 1px solid #dfe2e1;
-}
-
-.ant-pagination-active-bg {
-    background: #0aad0a !important;
-}
-
-.ant-pagination-hover-bg {
-    background: #0aad0a !important;
-}
-
-.product-header-filters {
+.filters-main {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 10px;
 }
 
@@ -240,11 +181,69 @@
     border-radius: 8px;
 }
 
-.card-main {
-    margin-bottom: 12px;
-}
 
-.category-detail-section {
+.category-section-main {
     margin-top: 32px;
     margin-bottom: 80px;
+}
+
+.selected-category-title {
+    font-size: 34px;
+    margin: 0;
+    color: #21313c;
+}
+
+.listing-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.popular-products-main {
+    margin-top: 8px;
+}
+
+.fruits-cards-main {
+    margin-bottom: 32px;
+    position: relative;
+}
+
+.card-overlay {
+    position: absolute;
+    padding: 20px;
+    padding-bottom: 32px;
+    padding-top: 32px;
+}
+
+.card-overlay h3 {
+    font-size: 24.5px;
+    margin-bottom: 0;
+    line-height: 1.2;
+    font-weight: 600;
+    color: #21313c;
+}
+
+.card-overlay p {
+    margin-bottom: 16px;
+    line-height: 1.6;
+    color: #5c6c75;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.fresh-fruits-btn {
+    padding: 8.8px 16px;
+    background: #001e2b;
+    color: white;
+    border: 1px solid #001e2b;
+    height: 34px;
+    font-size: 12px;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+.fresh-fruits-btn:hover {
+    border: 1px solid #001e2b !important;
+    background: #001e2b !important;
+    color: white !important;
 }
