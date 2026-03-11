@@ -91,7 +91,6 @@ const Footer = () => {
                         </div>
                     </Col>
 
-
                     <Col md={6}>
                         <h3 className="sub-footer-title">Get to Know</h3>
 
@@ -145,8 +144,6 @@ const Footer = () => {
                             </div>
                         </div>
                     </Col>
-
-
 
                     <Col md={6}>
                         <h3 className="sub-footer-title">Became a Shopper</h3>

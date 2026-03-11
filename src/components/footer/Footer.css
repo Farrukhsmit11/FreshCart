@@ -7,17 +7,21 @@ footer {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 16px;
+    color: #21313c;
+    line-height: 1.2;
 }
 
 .nav-main {
     display: flex;
     flex-direction: column;
+    line-height: 1.6;
 }
 
 .nav-link {
     font-size: 14px;
     color: #5c6c75;
     padding: 0;
+    cursor: pointer;
 }
 
 .nav-link:hover {
@@ -66,6 +70,8 @@ footer {
 .social-link {
     width: 28px;
     height: 28px;
+    color: #5c6c75;
+    cursor: pointer;
 }
 
 .platform-links {
@@ -76,6 +82,7 @@ footer {
 
 .platform-links p {
     margin: 0;
+    color: #5c6c75;
 }
 
 .social-platform-links p {
@@ -91,6 +98,7 @@ footer {
 .payment-btn {
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
 .payment-section-right {
@@ -102,4 +110,9 @@ footer {
 .rights-reserved h3 {
     font-size: 14px;
     margin: 0;
+    color: #5c6c75;
+}
+
+.rights-reserved a {
+    color: #0aad0a;
 }
