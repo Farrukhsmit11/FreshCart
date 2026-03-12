@@ -89,6 +89,11 @@ const Navbar = () => {
         },
     ]
 
+    const onChange = value => {
+        console.log('changed', value);
+    };
+
+
     return (
         <>
             <div className="section-container">
@@ -190,6 +195,7 @@ const Navbar = () => {
                                                             <Col md={6} lg={9} span={19}>
                                                                 <InputNumber
                                                                     min="1"
+                                                                    value={item.value}
                                                                     max="10"
                                                                     defaultValue="1"
                                                                     mode="spinner"

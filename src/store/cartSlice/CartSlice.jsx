@@ -22,6 +22,7 @@ export const cartSlice = createSlice({
             const existingItem = state.cartItems.find(item => item.id === newItem.id);
             if (existingItem) {
                 existingItem.value += 1
+                message.success("Product Updated to Cart")
             } else {
                 state.cartItems.push({ ...newItem, value: 1 });
                 message.success("Product added to cart")
