@@ -6,7 +6,7 @@ import { BsGrid3X3Gap } from "react-icons/bs";
 import { IoIosList } from "react-icons/io";
 import { BiGridAlt } from "react-icons/bi";
 import category from '../../components/featuredCategories/category'
-import PopularProducts from "../../components/popularProducts/PopularProducts"
+import ShopProducts from "../../components/shopProducts/ShopProducts"
 
 const Shop = () => {
 
@@ -121,19 +121,21 @@ const Shop = () => {
             <div className="section-container">
                 <Row gutter={[16, 16]}>
                     <div className="main">
-                        <Breadcrumb
-                            className="page-links-main"
-                            items={[
+                        <Col span={24}>
+                            <Breadcrumb
+                                className="page-links-main"
+                                items={[
 
-                                {
-                                    title: <a className="page-links" href="#" onClick={() => navigate("/")}>Home</a>
-                                },
+                                    {
+                                        title: <a className="page-links" href="#" onClick={() => navigate("/")}>Home</a>
+                                    },
 
-                                {
-                                    title: <a className="page-links" href="#" onClick={() => navigate("/shop")}>Shop</a>
-                                },
-                            ]}>
-                        </Breadcrumb>
+                                    {
+                                        title: <a className="page-links" href="#" onClick={() => navigate("/shop")}>Shop</a>
+                                    },
+                                ]}>
+                            </Breadcrumb>
+                        </Col>
                     </div>
                 </Row>
             </div>
@@ -202,14 +204,13 @@ const Shop = () => {
                                     ></Select>
                                 </div>
                             </div>
-
-                            <div>
-                                <PopularProducts limit="8" showTitle={false} />
-                            </div>
+                            <ShopProducts limit="8" />
                         </Col>
                     </Row>
                 </div>
             </div>
+
+
         </>
     )
 }

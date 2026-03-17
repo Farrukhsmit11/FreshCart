@@ -6,6 +6,7 @@ import { PlusOutlined } from "@ant-design/icons";
 import { LuTrash2 } from "react-icons/lu";
 import { addToCart, removeItem } from "../../store/cartSlice/CartSlice"
 import { useNavigate } from "react-router-dom";
+import { removeWishlist } from "../../store/wishlistSlice/WishlistSlice";
 
 const ShopWishlist = () => {
 
@@ -89,6 +90,9 @@ const ShopWishlist = () => {
                     title="Delete the Product"
                     description="Are you sure to delete this product?"
                     onCancel={cancel}
+                    onConfirm={() => {
+                        dispatch(removeWishlist(record))
+                    }}
                     okText="Yes"
                     cancelText="No"
                 >

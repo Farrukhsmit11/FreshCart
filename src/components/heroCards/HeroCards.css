@@ -19,8 +19,8 @@
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-    padding: 19px;
     font-size: 13px;
+    height: 42px;
 }
 
 .show-now-btn:hover {

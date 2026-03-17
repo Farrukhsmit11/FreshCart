@@ -89,10 +89,6 @@ const Navbar = () => {
         },
     ]
 
-    const onChange = value => {
-        console.log('changed', value);
-    };
-
 
     return (
         <>
@@ -194,17 +190,17 @@ const Navbar = () => {
 
                                                             <Col md={6} lg={9} span={19}>
                                                                 <InputNumber
-                                                                    min="1"
-                                                                    value={item.value}
-                                                                    max="10"
-                                                                    defaultValue="1"
+                                                                    min={1}
                                                                     mode="spinner"
+                                                                    value={item.value}
                                                                     className="input-spinner"
                                                                 />
                                                             </Col>
 
                                                             <Col md={2} span={2}>
-                                                                <span>{item.price}</span>
+                                                                <span>
+                                                                    {item.price}
+                                                                </span>
                                                             </Col>
                                                         </Row>
                                                     </div>

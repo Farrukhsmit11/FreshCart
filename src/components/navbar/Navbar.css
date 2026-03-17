@@ -116,8 +116,9 @@ hr {
 .social-icon {
     width: 20px;
     height: 20px;
-    cursor: pointer;
+    cursor: pointer !important;
     color: gray;
+    position: relative;
 }
 
 /* Shop Cart */
@@ -395,6 +396,17 @@ hr {
 
 .count-badge .ant-scroll-number {
     background: #198754 !important;
+}
+
+.count-badge {
+    padding: 2px 4px;
+    border-radius: 50%;
+    font-size: 12px;
+}
+
+.ant-badge {
+    position: relative;
+    display: inline-block;
 }
 
 .document-content {

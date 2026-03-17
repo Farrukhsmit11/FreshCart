@@ -1,4 +1,7 @@
-import { Modal, Form as AntForm, Select, Input, Checkbox, Button } from 'antd'
+import { Modal, Form as AntForm, Select, Input, Checkbox, Button, Row, Col } from 'antd'
+import { Formik } from 'formik';
+import { deliverySchema } from "./Validations"
+import "./DeliveryModal.css"
 
 const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
 
@@ -38,10 +41,24 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
         }
     ]
 
+    const initialValues = {
+        firstName: "",
+        lastName: "",
+        addressline1: "",
+        addressline2: "",
+        zipCode: "",
+        businessName: "",
+        city: "",
+        state: ""
+    }
+
+    const handleSubmit = (values) => {
+        console.log(values);
+    }
+
     return (
         <Modal
             destroyOnClose
-            centered
             className="shipping-address-modal"
             title={<div className="modal-header">
 
@@ -55,71 +72,180 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
             }
             onCancel={() => setIsOpenDeliveryModal(false)}
         >
-
-            <AntForm
-                className="checkout-form"
-                form={form}
-                layout="vertical"
+            <Formik
+                validationSchema={deliverySchema}
+                initialValues={initialValues}
+                onSubmit={handleSubmit}
             >
-                <AntForm.Item>
-                    <Input className="shipping-address-input" type="text" placeholder="First Name"></Input>
-                </AntForm.Item>
+                {({
+                    handleSubmit,
+                    handleBlur,
+                    handleChange,
+                    values,
+                    errors,
+                    touched
+                }) => (
+                    <AntForm
+                        className="checkout-form"
+                        form={form}
+                        layout="vertical"
+                        onFinish={handleSubmit}
+                    >
+                        <Col span={24}>
+                            <AntForm.Item
+                                help={
+                                    errors.firstName && touched.firstName ? (
+                                        <span className='form-error'>{errors.firstName}</span>
+                                    ) : null
+                                }>
+                                <Input
+                                    name='firstName'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.firstName}
+                                    className="shipping-address-input" type="text" placeholder="First Name"></Input>
+                            </AntForm.Item>
 
-                <AntForm.Item>
-                    <Input className="shipping-address-input" type="text" placeholder="Last Name"></Input>
-                </AntForm.Item>
+                        </Col>
 
-                <AntForm.Item>
-                    <Input className="shipping-address-input" type="text" placeholder="Address Line 1"></Input>
-                </AntForm.Item>
+                        <Col span={24}>
+                            <AntForm.Item
+                                validateStatus={errors.lastName && touched.lastName ? "error" : ""}
+                                help={
+                                    errors.lastName && touched.lastName ? (
+                                        <span className='form-error'>{errors.lastName}</span>
+                                    ) : null
+                                }
+                            >
+                                <Input
+                                    className="shipping-address-input"
+                                    type="text"
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    value={values.lastName}
+                                    name='lastName'
+                                    placeholder="Last Name"
+                                ></Input>
+                            </AntForm.Item>
+                        </Col>
 
-                <AntForm.Item>
-                    <Input className="shipping-address-input" type="text" placeholder="Address Line 2"></Input>
-                </AntForm.Item>
+                        <Col span={24}>
+                            <AntForm.Item
+                                validateStatus={errors.addressline1 && touched.addressline1 ? "error" : ""}
+                                help={
+                                    errors.addressline1 && touched.addressline1 ? (
+                                        <span>{errors.addressline1}</span>
+                                    ) : null
+                                }
+                            >
+                                <Input
+                                    name='addressline1'
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    className="shipping-address-input"
+                                    type="text"
+                                    value={values.addressline1}
+                                    placeholder="Address Line 1"
+                                ></Input>
+                            </AntForm.Item>
+                        </Col>
 
-                <AntForm.Item>
-                    <Input className="shipping-address-input" type="text" placeholder="City"></Input>
-                </AntForm.Item>
+                        <Col span={24}>
+                            <AntForm.Item
+                                validateStatus={errors.addressline2 && touched.addressline1 ? "error" : ""}
+                                help={
+                                    errors.addressline2 && touched.addressline2 ? (
+                                        <span className='form-error'>{errors.addressline2}</span>
+                                    ) : null
 
-                <AntForm.Item>
-                    <Select
-                        className="shipping-address-input"
-                        defaultValue="India "
-                        options={countries}></Select>
-                </AntForm.Item>
+                                }
+                            >
+                                <Input
+                                    onChange={handleChange}
+                                    onBlur={handleBlur}
+                                    name='addressline2'
+                                    className="shipping-address-input"
+                                    type="text"
+                                    value={values.addressline2}
+                                    placeholder="Address Line 2"
+                                ></Input>
+                            </AntForm.Item>
+                        </Col>
 
-                <AntForm.Item>
-                    <Select
-                        options={places}
-                        className="shipping-address-input"
-                    ></Select>
-                </AntForm.Item>
+                        <AntForm.Item
+                            validateStatus={errors.city && touched.city ? "error" : ""}
+                            help={
+                                errors.city && touched.city ? (
+                                    <span className='form-error'>{errors.city}</span>
+                                ) : null
+                            }
+                        >
+                            <Input
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.city}
+                                name='city'
+                                className="shipping-address-input"
+                                type="text"
+                                placeholder="City"
+                            ></Input>
+                        </AntForm.Item>
 
-                <AntForm.Item>
-                    <Input
-                        placeholder="Zip Code "
-                        type="text" className="shipping-address-input"></Input>
-                </AntForm.Item>
+                        <AntForm.Item
 
-                <AntForm.Item>
-                    <Input
-                        placeholder="Business Name"
-                        type="text" className="shipping-address-input"></Input>
-                </AntForm.Item>
+                        >
+                            <Select
+                                className="shipping-address-input"
+                                defaultValue="India "
+                                options={countries}></Select>
+                        </AntForm.Item>
 
-                <AntForm.Item>
-                    <Checkbox className="set-default-checkbox">Set as Default</Checkbox>
-                </AntForm.Item>
+                        <AntForm.Item>
+                            <Select
+                                options={places}
+                                className="shipping-address-input"
+                            ></Select>
+                        </AntForm.Item>
 
-                <div className="modal-footer-main">
-                    <Button
-                        onClick={() => setIsOpenDeliveryModal(false)}
-                        className="cancel-btn">Cancel</Button>
-                    <Button
-                        htmlType="submit"
-                        className="save-address-btn">Save Address</Button>
-                </div>
-            </AntForm>
+                        <AntForm.Item>
+                            <Input
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.zipCode}
+                                name='zipCode'
+                                placeholder="Zip Code "
+                                type="text" className="shipping-address-input"
+                            ></Input>
+                        </AntForm.Item>
+
+                        <AntForm.Item>
+                            <Input
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                value={values.businessName}
+                                name='businessName'
+                                placeholder="Business Name"
+                                type="text" className="shipping-address-input"></Input>
+                        </AntForm.Item>
+
+                        <AntForm.Item>
+                            <Checkbox className="set-default-checkbox">Set as Default</Checkbox>
+                        </AntForm.Item>
+
+                        <div className="modal-footer-main">
+                            <Button
+                                onClick={() => setIsOpenDeliveryModal(false)}
+                                className="cancel-btn">Cancel</Button>
+                            <Button
+                                htmlType="submit"
+                                className="save-address-btn">Save Address</Button>
+                        </div>
+
+                    </AntForm>
+                )
+                }
+
+            </Formik>
         </Modal>
     )
 }

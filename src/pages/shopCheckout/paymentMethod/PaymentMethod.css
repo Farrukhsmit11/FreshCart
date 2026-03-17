@@ -1,0 +1,79 @@
+.payment-cards {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #dfe2e1 !important;
+}
+
+.payment-cards:hover {
+    border: 1px solid #dfe2e1 !important;
+}
+
+.payment-cards .ant-card-body {
+    padding: 16px !important;
+}
+
+.payment-cards .ant-radio-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+}
+
+.payment-card-content {
+    margin-bottom: 16px;
+}
+
+.payment-card-content h5 {
+    font-size: 14px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.payment-card-content p {
+    font-size: 12.25px;
+    color: #5c6c75;
+    margin: 0;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.checkout-input {
+    height: 40px;
+    border-radius: 6px;
+}
+
+.checkout-input:hover {
+    border: 1psx solid #dfe2e1 !important;
+}
+
+.checkout-input-label {
+    font-size: 14px;
+    color: #3d4f58;
+    font-weight: 500;
+}
+
+.payment-method-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.place-order-btn {
+    background: #0aad0a;
+    color: white;
+    margin: 0px 0px 0px 8px;
+    padding: 8.8px 16px;
+    font-size: 14px;
+    height: 44px;
+    border-radius: 8px;
+    border-color: #0aad0a;
+}
+
+.place-order-btn:hover {
+    background: #0aad0a !important;
+    border-color: #0aad0a !important;
+    color: white !important;
+}

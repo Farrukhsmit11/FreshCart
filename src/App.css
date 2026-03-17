@@ -15,7 +15,6 @@
   --fc-accordion-border-width: 1px;
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -51,4 +50,17 @@
   color: #5c6c75 !important;
   font-weight: 500;
   border: none;
+}
+
+.ant-radio-checked .ant-radio-inner {
+  background-color: #0aad0a !important;
+  border-color: #0aad0a !important;
+}
+
+.ant-radio-checked::after {
+  border-color: #0aad0a !important;
+}
+
+.ant-radio:hover .ant-radio-inner {
+  border-color: #0aad0a !important;
 }

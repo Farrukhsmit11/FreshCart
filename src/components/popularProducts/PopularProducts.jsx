@@ -41,7 +41,7 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                             {products.slice(0, limit).map((item) => {
                                 return (
                                     <div className="card-sub-parent">
-                                        <Col lg={6} key={item.id} md={12} sm={24} xs={24}>
+                                        <Col xs={24} sm={12} md={8} lg={6} key={item.id}>
 
                                             <Card
                                                 key={item.id}
@@ -49,8 +49,9 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                                                 className="product-card"
                                                 onClick={() => navigate(`/productDetail/${item.id}`)}
                                                 cover={
-
-                                                    <img className="product-card-image" src={item.thumbnail} />
+                                                    <>
+                                                        <img className="product-card-image" src={item.thumbnail} />
+                                                    </>
                                                 }
                                             >
                                                 <div className="product-card-header">

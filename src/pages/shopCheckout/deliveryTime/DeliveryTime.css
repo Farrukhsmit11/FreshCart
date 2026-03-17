@@ -1,0 +1,43 @@
+.dates-tabs .ant-tabs-nav::before {
+    border-bottom: none;
+}
+
+.dates-tabs .ant-tabs-tab {
+    border-radius: 8px;
+    margin-right: 8px;
+    padding: 8px 12px;
+    transition: 0.2s;
+    color: #21313c;
+    background-color: #ecf0ef;
+    border-radius: .5rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.dates-tabs .ant-tabs-tab:hover {
+    background: #0aad0a;
+    color: white !important;
+}
+
+.dates-tabs .ant-tabs-tab-active {
+    background: #0aad0a;
+    border-color: #0aad0a;
+    color: white !important;
+}
+
+.dates-tabs .ant-tabs-tab-active .ant-tabs-tab-btn {
+    color: #fff !important;
+}
+
+.dates-tabs .ant-tabs-ink-bar {
+    display: none;
+}
+
+.date-tabs .ant-tabs-nav-list {
+    margin-bottom: 12px;
+    margin-top: 8px;
+}
+
+.delivery-date {
+    font-size: 12.25px;
+}

@@ -26,8 +26,14 @@ export const wishlistSlice = createSlice({
 
             localStorage.setItem("wishlist", JSON.stringify(state.items))
         },
+
+        removeWishlist: (state, action) => {
+            const wishlistData = state.items.filter(item => item.id !== action.payload.id)
+            state.items = wishlistData
+            message.success("Item removed from wishlist")
+        }
     }
 })
 
-export const { addToWishlist } = wishlistSlice.actions
+export const { addToWishlist, removeWishlist } = wishlistSlice.actions
 export default wishlistSlice.reducer
