@@ -165,3 +165,10 @@
     background-color: #889397 !important;
     border-color: #889397 !important;
 }
+
+.thumb-image {
+    width: 100%;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 8px;
+}

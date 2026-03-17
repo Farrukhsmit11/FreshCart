@@ -1,11 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom'
-import { Breadcrumb, Button, Col, Descriptions, Dropdown, InputNumber, Rate, Row, Select, Slider, Tabs } from 'antd';
+import { Breadcrumb, Button, Col, Descriptions, InputNumber, Rate, Row, Select, Tabs } from 'antd';
 import "./ProductDetail.css"
-import "react-image-gallery/styles/css/image-gallery.css";
 import { fetchProducts } from '../../store/productSlice/ProductSlice';
-import "react-image-gallery/styles/css/image-gallery.css";
 import { LuShoppingBag } from 'react-icons/lu';
 import { IoGitCompareOutline } from 'react-icons/io5';
 import { HeartOutlined } from '@ant-design/icons';
@@ -14,17 +12,15 @@ import { addToCart } from "../../store/cartSlice/CartSlice"
 import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
 import ReviewView from './reviewView/ReviewView';
 import ProductView from './productView/ProductView'
-import 'react-image-gallery/styles/css/image-gallery.css';
-import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import PopularProducts from "../../components/popularProducts/PopularProducts"
-
+import { dropdownItems } from './dropdown';
 
 const ProductDetail = () => {
     const { productId } = useParams();
 
     const navigate = useNavigate();
 
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(fetchProducts())
@@ -81,60 +77,35 @@ const ProductDetail = () => {
         }
     ];
 
-    const dropdownItems = [
-        {
-            value: "Facebook",
-            label: (
-                <div className='dropdown-item'>
-                    <FaFacebook className='dropdown-icon' />
-                    Facebook
-                </div>
-            )
-        },
-        {
-            value: "Instagram",
-            label: (
-                <div className='dropdown-item'>
-                    <FaInstagram className='dropdown-icon' />
-                    Instagram
-                </div>
-            )
-        },
-        {
-            value: "Twitter",
-            label: (
-                <div className='dropdown-item'>
-                    <FaTwitter className='dropdown-icon' />
-                    Twitter
-                </div>
-            )
-        }
-    ];
 
     return (
         <>
             <div className='section-container'>
-                <div className='route-links-main'>
+                <div className='main'>
                     <Breadcrumb
-                        className="routes-links"
+                        className="page-links-main"
                         items={[
 
                             {
-                                title: <a href="" onClick={() => navigate("/")}>Home</a>
+                                title: <a className='page-links' href="" onClick={() => navigate("/")}>Home</a>
                             },
 
                             {
-                                title: <a href="" onClick={() => navigate("/shop")}>Shop</a>
+                                title: <a className='page-links' href="" onClick={() => navigate("/shop")}>Shop</a>
                             },
+
+                            {
+                                title: <a href="#">{selectedProduct?.title}</a>
+                            }
                         ]}>
 
                     </Breadcrumb>
                 </div>
 
                 <div className='product-detail-main'>
-                    <Row gutter={[16, 16]}>
+                    <Row gutter={[24, 0]}>
 
-                        <Col md={12}>
+                        <Col md={10}>
                             <img src={selectedProduct?.thumbnail} />
                         </Col>
 
@@ -236,7 +207,6 @@ const ProductDetail = () => {
                     </Row>
                 </div>
 
-
                 <section className='tabs-section'>
                     <Row gutter={[16, 16]}>
                         <Col span={24}>
@@ -248,11 +218,9 @@ const ProductDetail = () => {
                         </Col>
                     </Row>
                 </section>
-            </div>
+            </div >
 
-            <div>
-                <PopularProducts limit={5} />
-            </div>
+            <PopularProducts limit={5} />
         </>
     )
 }
