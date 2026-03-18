@@ -16,6 +16,7 @@ const DailyBestSells = () => {
     const dispatch = useDispatch();
 
     const [deadline, setDeadline] = useState(Date.now() + 1000 * 38);
+    const [selectedData, setSelectedData] = useState(null)
 
     const [openViewModal, setOpenViewModal] = useState(false)
 
@@ -124,6 +125,8 @@ const DailyBestSells = () => {
                                                         onClick={(e) => {
                                                             setOpenViewModal(true)
                                                             e.stopPropagation()
+                                                                console.log(item)   
+                                                            setSelectedData(item)
                                                         }}
 
                                                         icon={<IoEyeOutline />}
@@ -167,6 +170,7 @@ const DailyBestSells = () => {
             </section >
 
             <QuickViewModal
+                product={selectedData}
                 IsOpenViewModal={openViewModal}
                 setIsOpenViewModal={setOpenViewModal} />
         </>
