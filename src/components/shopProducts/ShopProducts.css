@@ -71,3 +71,7 @@
 .add-to-cart-btn:hover {
     background-color: #089300;
 }
+
+.shop-product-card:hover .icons-overlay {
+    opacity: 1;
+}

@@ -49,7 +49,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
         zipCode: "",
         businessName: "",
         city: "",
-        state: ""
+        places: ""
     }
 
     const handleSubmit = (values) => {
@@ -105,7 +105,6 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                                     value={values.firstName}
                                     className="shipping-address-input" type="text" placeholder="First Name"></Input>
                             </AntForm.Item>
-
                         </Col>
 
                         <Col span={24}>
@@ -134,7 +133,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                                 validateStatus={errors.addressline1 && touched.addressline1 ? "error" : ""}
                                 help={
                                     errors.addressline1 && touched.addressline1 ? (
-                                        <span>{errors.addressline1}</span>
+                                        <span className='form-error'>{errors.addressline1}</span>
                                     ) : null
                                 }
                             >
@@ -200,14 +199,29 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                                 options={countries}></Select>
                         </AntForm.Item>
 
-                        <AntForm.Item>
+                        <AntForm.Item
+                            validateStatus={errors.places && touched.places ? "error" : ""}
+                            help={
+                                errors.places && touched.places ? (
+                                    <span className='form-error'>{errors.places}</span>
+                                ) : null
+                            }
+                        >
                             <Select
                                 options={places}
+                                value={values.places}
                                 className="shipping-address-input"
                             ></Select>
                         </AntForm.Item>
 
-                        <AntForm.Item>
+                        <AntForm.Item
+                            validateStatus={errors.zipCode && touched.zipCode ? "error" : ""}
+                            help={
+                                errors.zipCode && touched.zipCode ? (
+                                    <span className='form-error'>{errors.zipCode}</span>
+                                ) : null
+                            }
+                        >
                             <Input
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -218,7 +232,14 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                             ></Input>
                         </AntForm.Item>
 
-                        <AntForm.Item>
+                        <AntForm.Item
+                            validateStatus={errors.businessName && touched.businessName ? "error" : ""}
+                            help={
+                                errors.businessName && touched.businessName ? (
+                                    <span className='form-error'>{errors.businessName}</span>
+                                ) : null
+                            }
+                        >
                             <Input
                                 onChange={handleChange}
                                 onBlur={handleBlur}

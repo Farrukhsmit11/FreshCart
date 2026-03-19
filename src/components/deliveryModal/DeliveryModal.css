@@ -1,85 +1,94 @@
-.save-address-btn {
-    padding: 16px;
-    border-radius: 8px;
-    background: #0aad0a;
-    color: white;
-    border: 1px solid #0aad0a;
-    line-height: 1.6;
-    height: 41px;
-}
+    .save-address-btn {
+        padding: 16px;
+        border-radius: 8px;
+        background: #0aad0a;
+        color: white;
+        border: 1px solid #0aad0a;
+        line-height: 1.6;
+        height: 41px;
+    }
 
-.save-address-btn span {
-    font-size: 14px;
-}
+    .save-address-btn span {
+        font-size: 14px;
+    }
 
-.save-address-btn:hover {
-    border-color: #099309 !important;
-    color: white !important;
-    background: #099309 !important;
-}
+    .save-address-btn:hover {
+        border-color: #099309 !important;
+        color: white !important;
+        background: #099309 !important;
+    }
 
-.cancel-btn {
-    padding: 8.8px 16px;
-    color: #0aad0a;
-    border-color: #0aad0a;
-    border-radius: 8px;
-    line-height: 1.6;
-    font-weight: 500;
-    font-size: 14px;
-    height: 41px;
-}
+    .cancel-btn {
+        padding: 8.8px 16px;
+        color: #0aad0a;
+        border-color: #0aad0a;
+        border-radius: 8px;
+        line-height: 1.6;
+        font-weight: 500;
+        font-size: 14px;
+        height: 41px;
+    }
 
-.set-default-checkbox {
-    font-weight: 500;
-    color: #5c6c75;
-    font-size: 14px;
-}
+    .set-default-checkbox {
+        font-weight: 500;
+        color: #5c6c75;
+        font-size: 14px;
+    }
 
 
-.modal-header-title {
-    font-size: 17px;
-    margin-bottom: 4px;
-}
+    .modal-header-title {
+        font-size: 17px;
+        margin-bottom: 4px;
+    }
 
-.modal-header {
-    margin-bottom: 20px;
-}
+    .modal-header {
+        margin-bottom: 20px;
+    }
 
-.modal-header p {
-    color: #5c6c75;
-    font-size: 12px;
-}
+    .modal-header p {
+        color: #5c6c75;
+        font-size: 12px;
+    }
 
-.shipping-address-modal .ant-modal-container {
-    padding: 24px;
-    border-radius: 12px;
-}
+    .shipping-address-modal .ant-modal-container {
+        padding: 24px;
+        border-radius: 12px;
+    }
 
-.shipping-address-input {
-    padding: 8.8px 16px;
-    border: 1px solid #dfe2e1;
-    border-radius: 8px;
-    font-size: 14px;
-    width: 100%;
-    font-weight: 500;
-    line-height: 1.6;
-    color: #21313c;
-}
+    .shipping-address-input {
+        padding: 8.8px 16px;
+        border: 1px solid #dfe2e1;
+        border-radius: 8px;
+        font-size: 14px;
+        width: 100%;
+        font-weight: 500;
+        line-height: 1.6;
+        color: #21313c;
+    }
 
-.shipping-address-input:hover {
-    border: 1px solid #dfe2e1 !important;
-}
+    .shipping-address-input:hover {
+        border: 1px solid #dfe2e1 !important;
+    }
 
-.shipping-address-input:focus {
-    border-color: #85d685;
-    color: #21313c;
-    outline: 0;
-    box-shadow: 0 0 0 4px rgba(10, 173, 10, .25);
-}
+    .shipping-address-input:focus {
+        border-color: #85d685;
+        color: #21313c;
+        outline: 0;
+        box-shadow: 0 0 0 4px rgba(10, 173, 10, .25);
+    }
 
-.modal-footer-main {
-    gap: 10px;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-}
+    .modal-footer-main {
+        gap: 10px;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .shipping-address-modal .ant-form-item-explain {
+        margin-top: 6px;
+        font-size: 12px;
+    }
+
+    .shipping-address-modal .ant-form-item {
+        margin-bottom: 18px;
+    }

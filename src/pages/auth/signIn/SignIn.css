@@ -88,14 +88,6 @@
     color: var(--link-color);
 }
 
-.form-error {
-    display: block;
-    font-weight: 500;
-    font-size: 12.25px;
-    color: #db3030;
-    width: 100%;
-}
-
 .auth-footer a {
     color: #0aad0a;
 }

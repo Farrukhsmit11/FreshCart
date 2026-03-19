@@ -1,25 +1,32 @@
-.edit-link {
-    color: #21313c;
-}
+    .edit-link {
+        color: #21313c;
+    }
 
-.delete-link{
-    color: #db3030;
-}
+    .delete-link {
+        color: #db3030;
+    }
 
-.form-check{
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 16px;
-}
+    .radio-card-check {
+        display: block;
+        min-height: 22.4px;
+        margin-bottom: 16px;
+    }
 
-.address-location {
-    margin-bottom: 24px;
-    color: #5c6c75;
-}
+    .address-location {
+        margin-bottom: 24px;
+        color: #5c6c75;
+    }
 
-.card-links {
-    color: #db3030;
-    font-size: 15px;
-    font-weight: 500;
-}
+    .card-links {
+        color: #db3030;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    .card-radio {
+        display: block;
+        width: 100%;
+        position: relative;
+    }
+
+   

@@ -89,7 +89,6 @@ const Navbar = () => {
         },
     ]
 
-
     return (
         <>
             <div className="section-container">
@@ -255,10 +254,10 @@ const Navbar = () => {
 
                 <nav className="bottom-nav-section">
                     <div className="navbar-default">
-                        <Popover
-                            trigger={["hover"]}
-                        >
-                            <Button className="all-department-btn" icon={<RiDashboardLine />}>All Departments</Button>
+                        <Popover trigger={["hover"]} placement="bottomLeft">
+                            <Button className="all-department-btn" icon={<RiDashboardLine />}>
+                                All Departments
+                            </Button>
                         </Popover>
                     </div>
 

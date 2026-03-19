@@ -55,15 +55,16 @@
 }
 
 .add-delivery-btn {
-    background: #0aad0a;
-    color: white;
+    color: #0aad0a;
     padding: 8.8px 16px;
     border-color: #0aad0a;
+    box-shadow: none !important;
 }
 
 .add-delivery-btn:hover {
     background-color: #099309 !important;
     color: white !important;
+    border-color: #0aad0a !important; 
 }
 
 .checkout-form .ant-form-item {

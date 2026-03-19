@@ -35,7 +35,7 @@ const ShopCheckout = () => {
                                 e.stopPropagation()
                                 setOpenDeliveryModal(true)
                             }}
-                        >add delivery address</Button>
+                        >Add a new Address</Button>
                     </div>
 
 

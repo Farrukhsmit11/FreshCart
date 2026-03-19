@@ -170,4 +170,9 @@
 .price-section {
     display: flex;
     justify-content: space-between;
+    margin-top: 8px;
+}
+
+.actions {
+    margin-top: 8px;
 }

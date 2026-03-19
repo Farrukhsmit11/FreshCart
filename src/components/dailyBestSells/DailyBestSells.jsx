@@ -45,7 +45,6 @@ const DailyBestSells = () => {
 
     return (
         <>
-
             <section className="section-padding">
                 <div className="section-container">
                     <Row gutter={[16, 16]}>
@@ -125,7 +124,7 @@ const DailyBestSells = () => {
                                                         onClick={(e) => {
                                                             setOpenViewModal(true)
                                                             e.stopPropagation()
-                                                                console.log(item)   
+                                                            console.log(item)
                                                             setSelectedData(item)
                                                         }}
 
@@ -175,7 +174,7 @@ const DailyBestSells = () => {
                 setIsOpenViewModal={setOpenViewModal} />
         </>
 
-    )
+    )  
 }
 
 export default DailyBestSells

@@ -26,29 +26,24 @@ Pennsylvania 18372 United States
         <div className='delivery-address-main'>
             <Radio.Group style={{ width: "100%" }}>
                 <Row gutter={[16, 16]}>
-                    {address.map((item) => {
-                        return (
-                            <Col lg={6} md={12}>
-                                <Card
-                                >
-                                    <Radio value={item.id}>
-                                        <span className='form-check'>{item.name}</span>
-                                    </Radio>
-                                    <p className='address-location'>{item.location}</p>
-                                    <span className='card-links'>Default Address</span>
+                    {address.map((item) => (
+                        <Col lg={6} md={12} key={item.id}>
+                            <Card className="address-card">
+                                <Radio value={item.id} className="card-radio" />
 
-                                    <div className='card-actions'>
-                                        <a className='edit-link'> Edit</a>
-                                        <a className='delete-link'>Delete</a>
-                                    </div>
-                                </Card>
+                                <span className='radio-card-check'>{item.name}</span>
+                                <p className='address-location'>{item.location}</p>
+                                <span className='card-links'>Default Address</span>
 
-                            </Col>
-                        )
-                    })}
+                                <div className='card-actions'>
+                                    <a className='edit-link'> Edit</a>
+                                    <a className='delete-link'>Delete</a>
+                                </div>
+                            </Card>
+                        </Col>
+                    ))}
                 </Row>
             </Radio.Group>
-
         </div >
     )
 }
