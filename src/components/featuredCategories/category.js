@@ -41,7 +41,7 @@ export const category = [
     {
         id: 8,
         imgSrc: "https://freshcart-next-js-template.netlify.app/images/category/category-fruits-vegetables.jpg",
-        title: "Fruits & Vegetabls"
+        title: "Fruits & Vegetables"
     },
 
     {

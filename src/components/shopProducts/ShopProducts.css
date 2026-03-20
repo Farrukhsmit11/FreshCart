@@ -60,18 +60,6 @@
     color: #0aad0a;
 }
 
-.add-to-cart-btn {
-    background-color: #0aad0a;
-    border: none;
-    color: white;
-    border-radius: 6px;
-    font-size: 14px;
-}
-
-.add-to-cart-btn:hover {
-    background-color: #089300;
-}
-
 .shop-product-card:hover .icons-overlay {
     opacity: 1;
 }

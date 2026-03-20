@@ -6,7 +6,7 @@ export const deliverySchema = Yup.object({
     addressline1: Yup.string().required("address line 1 is required"),
     addressline2: Yup.string().required("Address line 2 is required"),
     city: Yup.string().required("City is required"),
-    country: Yup.string().required("Please select a country"),
+    country: Yup.string().required("country is required"),
     places: Yup.string().required("Please select a place"),
     zipCode: Yup.string().required("zipCode is required"),
     businessName: Yup.string().required("businessName is required")

@@ -1,4 +1,4 @@
-import { Modal, Form as AntForm, Select, Input, Checkbox, Button, Row, Col } from 'antd'
+import { Modal, Form as AntForm, Select, Input, Checkbox, Button, Col } from 'antd'
 import { Formik } from 'formik';
 import { deliverySchema } from "./Validations"
 import "./DeliveryModal.css"
@@ -49,17 +49,19 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
         zipCode: "",
         businessName: "",
         city: "",
-        places: ""
+        places: "",
+        country: ""
     }
 
-    const handleSubmit = (values) => {
-        console.log(values);
+    const handleForm = (value) => {
+        console.log("Adress saved", value);
     }
 
     return (
         <Modal
             destroyOnClose
             className="shipping-address-modal"
+            centered
             title={<div className="modal-header">
 
                 <h1 className="modal-header-title">New Shipping Address</h1>
@@ -75,7 +77,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
             <Formik
                 validationSchema={deliverySchema}
                 initialValues={initialValues}
-                onSubmit={handleSubmit}
+                onSubmit={handleForm}
             >
                 {({
                     handleSubmit,
@@ -83,6 +85,8 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                     handleChange,
                     values,
                     errors,
+                    setFieldValue,
+                    setFieldTouched,
                     touched
                 }) => (
                     <AntForm
@@ -151,7 +155,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
 
                         <Col span={24}>
                             <AntForm.Item
-                                validateStatus={errors.addressline2 && touched.addressline1 ? "error" : ""}
+                                validateStatus={errors.addressline2 && touched.addressline2 ? "error" : ""}
                                 help={
                                     errors.addressline2 && touched.addressline2 ? (
                                         <span className='form-error'>{errors.addressline2}</span>
@@ -191,12 +195,26 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                         </AntForm.Item>
 
                         <AntForm.Item
-
+                            validateStatus={errors.country && touched.country ? "error" : ""}
+                            help={
+                                errors.country && touched.country ? (
+                                    <span className='form-error'>{errors.country}</span>
+                                ) : null
+                            }
                         >
                             <Select
                                 className="shipping-address-input"
                                 defaultValue="India "
-                                options={countries}></Select>
+                                options={countries}
+                                onChange={(value) => {
+                                    setFieldValue("country", value)
+                                }}
+                                onBlur={(value) => {
+                                    setFieldTouched("country", value)
+                                }}
+                            >
+
+                            </Select>
                         </AntForm.Item>
 
                         <AntForm.Item
@@ -210,6 +228,12 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                             <Select
                                 options={places}
                                 value={values.places}
+                                onChange={(value) => {
+                                    setFieldValue("places", value)
+                                }}
+                                onBlur={(value) => {
+                                    setFieldTouched("places", value)
+                                }}
                                 className="shipping-address-input"
                             ></Select>
                         </AntForm.Item>
@@ -259,9 +283,9 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                                 className="cancel-btn">Cancel</Button>
                             <Button
                                 htmlType="submit"
+                                type='default'
                                 className="save-address-btn">Save Address</Button>
                         </div>
-
                     </AntForm>
                 )
                 }

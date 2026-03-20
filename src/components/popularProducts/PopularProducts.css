@@ -62,6 +62,7 @@
 
 .product-card {
     width: 253px;
+    height: 100%;
     border: 1px solid #dfe2e1;
     cursor: pointer;
 }
@@ -131,14 +132,14 @@
 .add-to-cart-btn {
     background: #0aad0a;
     color: white;
-    font-size: 12.25px;
-    padding-left: 6px;
-    padding-top: 4px;
-    border-radius: 5px;
-    padding-bottom: 4px;
-    display: flex;
-    justify-content: center;
-    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12.25px !important;
+    border-color: #0aad0a;
+}
+
+.add-cart-btn span {
+    font-size: 12.25px !important;
 }
 
 .add-to-cart-btn:hover {

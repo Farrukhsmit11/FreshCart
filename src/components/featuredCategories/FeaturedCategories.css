@@ -48,6 +48,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    align-items: center;
+}
+
+.category-card-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .featured-categories-card .ant-card-body {
@@ -62,7 +70,7 @@
 .card-desc {
     color: var(--p--color);
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .custom-prev {
