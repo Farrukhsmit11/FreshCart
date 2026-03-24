@@ -16,6 +16,7 @@ import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice";
 const QuickViewModal = ({ IsOpenViewModal, setIsOpenViewModal, product }) => {
 
     const [thumbSwiper, setThumbSwiper] = useState(null);
+    const [value, setValue] = useState(1);
 
     const images = [
         {
@@ -100,7 +101,7 @@ const QuickViewModal = ({ IsOpenViewModal, setIsOpenViewModal, product }) => {
                         </a>
                         <h2 className="quick-view-modal-title">{product?.title}</h2>
                         <div className="rating-section">
-                            <Rate className="reviews" allowHalf>{product?.rating}</Rate>
+                            <Rate className="reviews" defaultValue={value} allowHalf>{product?.rating}</Rate>
                             <a className="reviews-count">(4 reviews)</a>
                         </div>
 

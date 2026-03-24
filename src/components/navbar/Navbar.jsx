@@ -4,7 +4,7 @@ import { Button, Input, Drawer, Badge, Row, Col, Popover, Result, InputNumber, D
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
 import { useState } from "react"
-import { FiShoppingCart, FiUser } from "react-icons/fi";
+import { FiGrid, FiShoppingCart, FiUser } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
@@ -14,6 +14,7 @@ import { LuTrash2 } from "react-icons/lu"
 import LocationModal from "../locationModal/LocationModal"
 import { removeItem } from "../../store/cartSlice/CartSlice"
 import { IoIosArrowDown } from "react-icons/io"
+import { MdOutlineGridView } from "react-icons/md"
 
 const Navbar = () => {
 
@@ -255,7 +256,7 @@ const Navbar = () => {
                 <nav className="bottom-nav-section">
                     <div className="navbar-default">
                         <Popover trigger={["hover"]} placement="bottomLeft">
-                            <Button className="all-department-btn" icon={<RiDashboardLine />}>
+                            <Button className="all-department-btn" icon={<FiGrid />}>
                                 All Departments
                             </Button>
                         </Popover>

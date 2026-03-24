@@ -24,7 +24,7 @@
 }
 
 .section-padding {
-  padding-block: 50px;
+  padding-block: 50px !important;
 }
 
 .section-container {
