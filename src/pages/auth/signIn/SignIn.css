@@ -12,7 +12,9 @@
     color: white;
     background: #0aad0a;
     margin-bottom: 12px;
-    border: none;
+    border: 1px solid #0aad0a;
+    height: 42px;
+    box-shadow: none !important;
 }
 
 .sign-in-btn:hover {
@@ -49,6 +51,7 @@
     border: 1px solid #dfe2e1;
     font-weight: 600;
 }
+
 /* 
 .form-item {
     margin-bottom: 16px;

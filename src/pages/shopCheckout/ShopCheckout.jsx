@@ -37,8 +37,6 @@ const ShopCheckout = () => {
                             }}
                         >Add a new Address</Button>
                     </div>
-
-
                 </>
 
             ),

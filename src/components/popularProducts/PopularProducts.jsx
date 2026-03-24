@@ -27,6 +27,12 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
     const navigate = useNavigate();
     const [openViewModal, setOpenViewModal] = useState(false);
 
+    const handleRateChange = (event) => {
+        if (event) {
+            event.stopPropagation();
+        }
+    }
+
     return (
         <>
             <section className="section-padding">
@@ -61,7 +67,11 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                                                 <h2 className="product-card-title">{item.title}</h2>
 
                                                 <div className="product-review-section">
-                                                    <Rate className="review" allowHalf defaultValue={2.5} />
+                                                    <Rate
+                                                        onChange={(value) => {
+                                                            handleRateChange(value, event)
+                                                        }}
+                                                        className="review" allowHalf defaultValue={2.5} />
                                                 </div>
 
                                                 <div className="modal-footer">

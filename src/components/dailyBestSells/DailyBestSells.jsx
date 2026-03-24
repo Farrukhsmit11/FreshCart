@@ -18,7 +18,7 @@ const DailyBestSells = () => {
     const [deadline, setDeadline] = useState(Date.now() + 1000 * 38);
     const [selectedData, setSelectedData] = useState(null)
 
-    const [openViewModal, setOpenViewModal] = useState(false)
+    const [openViewModal, setOpenViewModal] = useState(false);
 
     const { Countdown } = Statistic;
 
@@ -48,7 +48,7 @@ const DailyBestSells = () => {
             <section className="section-padding">
                 <div className="section-container">
                     <Row gutter={[16, 16]}>
-                        <Col span={24}>
+                        <Col xs={24}>
                             <div className="daily-best-sell-header">
                                 <h3 className="card-header-title">Daily Best Sells</h3>
                             </div>
@@ -88,7 +88,7 @@ const DailyBestSells = () => {
                                             <Button
                                                 onClick={() => dispatch(addToCart(item))}
                                                 icon={<PlusOutlined />}
-                                                className="add-to-cart-btn"
+                                                className="add-sell-btn"
                                             >Add to cart</Button>
                                         </div>
 
@@ -174,7 +174,7 @@ const DailyBestSells = () => {
                 setIsOpenViewModal={setOpenViewModal} />
         </>
 
-    )  
+    )
 }
 
 export default DailyBestSells

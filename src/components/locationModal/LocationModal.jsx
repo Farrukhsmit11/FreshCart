@@ -36,8 +36,6 @@ const LocationModal = ({ isOpenLocationModal, setIsOpenLocationModal }) => {
                     )}
                 />
             </div>
-
-
         </Modal >
     )
 }

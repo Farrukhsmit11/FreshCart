@@ -36,7 +36,10 @@ const ShopProducts = ({ limit = "10" }) => {
                                     <img className="product-card-image" src={item.thumbnail} alt={item.title} />
                                 }
                             >
-                                <p>{item.category}</p>
+                                <div className="product-card-header">
+                                    <p>{item.category}</p>
+                                </div>
+                                
                                 <h2 className='product-card-title'>{item.title}</h2>
 
                                 <div className="product-review-section">

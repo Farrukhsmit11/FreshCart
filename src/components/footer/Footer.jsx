@@ -227,8 +227,11 @@ const Footer = () => {
                     <Col xs={24}>
                         <div className="bottom-section">
                             <div className="rights-reserved">
-                                <h3>© 2022 - 2025 FreshCart eCommerce HTML Template. All rights reserved. Powered by</h3>
-                                <span><a href="#"></a>Codescandy.</span>
+                                <h3>© 2022 - 2025 FreshCart eCommerce HTML Template. All rights reserved. Powered by
+
+                                   <a href="#">Codescandy.</a> 
+                                </h3>
+                               
                             </div>
 
                             <div className="platform-links">

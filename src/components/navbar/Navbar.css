@@ -1,4 +1,4 @@
-hr {
+.nav-divider {
     border: 1px solid #dfe2e1;
 }
 
@@ -28,6 +28,7 @@ hr {
 .products-drawer .products-drawer-desc {
     font-size: 12.25px;
     color: #808080;
+    font-weight: 500;
 }
 
 .products-drawer .ant-drawer-header {

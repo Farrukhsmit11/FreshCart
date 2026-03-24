@@ -9,12 +9,10 @@ import { FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"
 import { useDispatch, useSelector } from "react-redux"
 import { GrLocation } from "react-icons/gr";
-import { RiDashboardLine } from "react-icons/ri"
 import { LuTrash2 } from "react-icons/lu"
 import LocationModal from "../locationModal/LocationModal"
 import { removeItem } from "../../store/cartSlice/CartSlice"
 import { IoIosArrowDown } from "react-icons/io"
-import { MdOutlineGridView } from "react-icons/md"
 
 const Navbar = () => {
 
@@ -315,7 +313,7 @@ const Navbar = () => {
                 setIsOpenLocationModal={setOpenLocationModal}
             />
 
-            <hr />
+            <hr className="nav-divider" />
         </>
     )
 }

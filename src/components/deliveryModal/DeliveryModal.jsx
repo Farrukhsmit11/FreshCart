@@ -15,7 +15,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
 
         { label: "Uk", value: "UK" },
 
-        { label: "Usa", value: "USA" },
+        { label: "USA", value: "USA" },
     ]
 
 
@@ -53,7 +53,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
         country: ""
     }
 
-    const handleForm = (value) => {
+    const handleSubmit = (value) => {
         console.log("Adress saved", value);
     }
 
@@ -77,7 +77,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
             <Formik
                 validationSchema={deliverySchema}
                 initialValues={initialValues}
-                onSubmit={handleForm}
+                onSubmit={handleSubmit}
             >
                 {({
                     handleSubmit,
@@ -228,6 +228,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                             <Select
                                 options={places}
                                 value={values.places}
+                                defaultValue={values}
                                 onChange={(value) => {
                                     setFieldValue("places", value)
                                 }}
@@ -282,10 +283,12 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                                 onClick={() => setIsOpenDeliveryModal(false)}
                                 className="cancel-btn">Cancel</Button>
                             <Button
+                                key="submit"
                                 htmlType="submit"
-                                type='default'
                                 className="save-address-btn">Save Address</Button>
                         </div>
+
+
                     </AntForm>
                 )
                 }

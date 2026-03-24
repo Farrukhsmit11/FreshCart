@@ -1,7 +1,9 @@
 .login-modal .modal-title {
     font-weight: 600;
     margin-bottom: 25px;
-    font-size: 27px;
+    font-size: 24.5px;
+    font-weight: 700;
+    padding: 16px 0;
 }
 
 .form-label {

@@ -90,7 +90,7 @@ const LoginModal = ({ isOpenloginModal, setIsOpenloginModal }) => {
                             <Input
                                 name="email"
                                 className="form-input"
-                                placeholder="Enter Your Email"
+                                placeholder="Enter Email Address"
                                 value={values.email}
                                 onChange={handleChange}
                                 onBlur={handleBlur}
@@ -110,7 +110,7 @@ const LoginModal = ({ isOpenloginModal, setIsOpenloginModal }) => {
                                 type="password"
                                 name="password"
                                 className="form-input"
-                                placeholder="Enter your Password"
+                                placeholder="Enter Password"
                                 value={values.password}
                                 onChange={handleChange}
                                 onBlur={handleBlur}

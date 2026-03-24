@@ -3,6 +3,10 @@
     bottom: 25px;
 }
 
+.hero-cards-section {
+    margin-top: 32px;
+}
+
 .hero-slider {
     padding: 0;
 }
@@ -12,7 +16,7 @@
 }
 
 .show-now-btn {
-    background-color: var(--fc-btn-bg);
+    background-color: #001e2b;
     color: var(--fc-btn-color);
     cursor: pointer;
     border: none;
@@ -21,11 +25,13 @@
     align-items: center;
     font-size: 13px;
     height: 42px;
+    margin-top: 12px;
 }
 
 .show-now-btn:hover {
     background: #26404b !important;
     color: #fff !important;
+    border-color: #001e2b !important;
 }
 
 .show-now-icon {
@@ -50,15 +56,14 @@
 
 .slide-wrapper-left {
     position: absolute;
-    bottom: 20px;
+    top: 50%;
     left: 40px;
-    top: 4px;
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
 }
 
 .text-content {
-    /* line-height: 16px; */
     max-width: 500px;
 }
 
@@ -85,8 +90,4 @@
     color: rgb(10 173 10);
     font-weight: 600;
     font-size: 25px;
-}
-
-.slide-wrapper-right {
-    padding: 16px 0;
 }

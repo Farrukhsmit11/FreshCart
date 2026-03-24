@@ -108,11 +108,15 @@ footer {
 }
 
 .rights-reserved h3 {
-    font-size: 14px;
+    font-size: 12.25px !important;
     margin: 0;
     color: #5c6c75;
+    font-weight: 500;
+    display: flex;
+    gap: 7px;
 }
 
 .rights-reserved a {
     color: #0aad0a;
+    font-weight: 500;
 }

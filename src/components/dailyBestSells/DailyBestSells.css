@@ -51,7 +51,8 @@
     color: white;
     display: flex;
     flex-direction: row-reverse;
-    border: none;
+    border: 1px solid #0aad0a;
+    height: 40px;
     font-size: 13px;
     padding: 8.8px 16px;
 }
@@ -72,31 +73,30 @@
     justify-content: space-between;
 }
 
-.daily-sell-card,
-.ant-card-body {
-    padding: 16px !important;
-}
-
 .daily-best-sell-card:hover .icons-overlay {
     opacity: 1;
 }
 
-.actions .add-to-cart-btn {
+.actions .add-sell-btn {
     width: 100%;
     padding: 19px;
     border-radius: 9px;
     font-size: 14px;
     border: 1px solid #099309;
+    background: #0aad0a;
+    color: white;
 }
 
-.actions .add-to-cart-btn:hover {
+.actions .add-sell-btn:hover {
     background: #099309 !important;
     border-color: #0aad0a !important;
+    color: white !important;
 }
 
 .deals-content p {
     color: gray;
     margin-bottom: 4px;
+    font-weight: 500;
 }
 
 .deals-content h2 {
