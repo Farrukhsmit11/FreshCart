@@ -3,7 +3,7 @@ import "./Shop.css"
 import { useNavigate, useParams } from "react-router-dom";
 import fruitsImg from "../../assets/assortment-fruits-img.png"
 import { BsGrid3X3Gap } from "react-icons/bs";
-import { IoIosList } from "react-icons/io";
+import { IoIosArrowRoundForward, IoIosList } from "react-icons/io";
 import { BiGridAlt } from "react-icons/bi";
 import category from '../../components/featuredCategories/category'
 import ShopProducts from "../../components/shopProducts/ShopProducts"
@@ -161,7 +161,7 @@ const Shop = () => {
                                 <div className="card-overlay">
                                     <h3>Fresh Fruits</h3>
                                     <p>Get up to 35% Off</p>
-                                    <Button className="fresh-fruits-btn">Shop Now</Button>
+                                    <Button className="fresh-fruits-btn" icon={<IoIosArrowRoundForward className="fruits-arrow-icon" />}>Shop Now</Button>
                                 </div>
                                 <img className="fruits-img" src={fruitsImg} alt="Fruits" />
                             </div>

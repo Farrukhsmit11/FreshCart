@@ -1,0 +1,42 @@
+.choose-button {
+    padding: 4px 8px;
+    color: #c1c7c6;
+    border-color: #c1c7c6;
+    font-size: 12.25px;
+    box-shadow: none !important;
+    border-radius: 4px;
+}
+
+.choose-button:hover {
+    background: #c1c7c6 !important;
+    color: #000 !important;
+}
+
+.status-tag {
+    background: red;
+    color: white;
+}
+
+.time-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    gap: 6px;
+}
+
+.time-next-btn {
+    background: #0aad0a;
+    color: white;
+    padding: 8.8px 16px;
+    font-size: 14px;
+    height: 44px;
+    border-radius: 8px;
+    border-color: #0aad0a;
+}
+
+.time-next-btn:hover {
+    background: #0aad0a !important;
+    border-color: #0aad0a !important;
+    color: white !important;
+}

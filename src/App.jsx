@@ -3,9 +3,10 @@ import "./App.css"
 import { AuthBanner, Footer, Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
 import { Route, Routes, useLocation } from "react-router-dom";
-import { Shop, ShopWishlist, SignIn, ForgotPassword, ProductDetail, ShopCheckout } from "./pages"
+import { Shop, ShopWishlist, SignIn, ForgotPassword, ProductDetail, ShopCheckout, SignUp } from "./pages"
 import Home from "./pages/home/Home"
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+import "./Media.css"
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ function App() {
   }
 
   const location = useLocation();
-  const IsSignInPage = location.pathname === '/signIn' || location.pathname === '/forgotPassword'
+  const IsSignInPage = location.pathname === '/signIn' || location.pathname === '/forgotPassword' || location.pathname === "/signUp"
 
   return (
     <>
@@ -45,6 +46,7 @@ function App() {
         <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
         <Route path="/productDetail/:productId" element={<ProductDetail />}></Route>
         <Route path="/shopCheckout" element={<ShopCheckout />}></Route>
+        <Route path="/signUp" element={<SignUp />}></Route>
       </Routes>
       <Footer />
     </>

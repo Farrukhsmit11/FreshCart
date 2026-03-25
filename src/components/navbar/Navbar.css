@@ -447,3 +447,7 @@
 .dashboard-link:hover {
     color: #0aad0a !important;
 }
+
+.mobile-nav-section {
+    display: none;
+}

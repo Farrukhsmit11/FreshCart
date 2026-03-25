@@ -6,10 +6,15 @@
         color: #db3030;
     }
 
+    .flex-container {
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
     .radio-card-check {
         display: block;
         min-height: 22.4px;
-        margin-bottom: 16px;
     }
 
     .address-location {
@@ -25,8 +30,5 @@
 
     .card-radio {
         display: block;
-        width: 100%;
         position: relative;
     }
-
-   

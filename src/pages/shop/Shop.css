@@ -43,7 +43,6 @@
 .sidebar-menu .ant-menu-item,
 .sidebar-menu .ant-menu-submenu-title {
     width: 100%;
-    border-bottom: 1px solid #dfe2e1;
     font-size: 14px;
     font-weight: 500;
     padding: 12px 8px !important;
@@ -125,7 +124,6 @@
 .ant-checkbox-checked:hover {
     color: #0aad0a !important;
 }
-
 
 .shop-card {
     padding: 40px;
@@ -240,10 +238,30 @@
     font-size: 12px;
     line-height: 1.6;
     cursor: pointer;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.fruits-arrow-icon{
+    width: 14px;
+    height: 14px;
 }
 
 .fresh-fruits-btn:hover {
     border: 1px solid #001e2b !important;
     background: #001e2b !important;
     color: white !important;
+}
+
+.sidebar-menu , .--ant-menu-color-item-bg-hover , .ant-menu-item-hover-bg{
+    background: none !important;
+    border-bottom: none !important;
+}
+
+.ant-menu-title-content{
+    border-bottom: none !important;
+}
+
+.ant-menu-title-content:hover{
+    color: #0aad0a !important;
 }

@@ -114,12 +114,14 @@ const SignIn = () => {
                 </div>
 
                 <div className="form-actions">
-                  <Button htmlType="submit" className="sign-in-btn">Sign Up</Button>
+                  <Button htmlType="submit" className="sign-in-btn">Sign In</Button>
                 </div>
 
                 <div className="auth-footer">
                   <p>Don't have an account?</p>
-                  <a href="#">Sign Up</a>
+                  <a href="#" onClick={() => {
+                    navigate("/signUp")
+                  }}>Sign Up</a>
                 </div>
 
               </AntForm>

@@ -29,9 +29,11 @@ Pennsylvania 18372 United States
                     {address.map((item) => (
                         <Col lg={6} md={12} key={item.id}>
                             <Card className="address-card">
-                                <Radio value={item.id} className="card-radio" />
+                                <div className="flex-container">
+                                    <Radio value={item.id} className="card-radio" />
+                                    <span className='radio-card-check'>{item.name}</span>
+                                </div>
 
-                                <span className='radio-card-check'>{item.name}</span>
                                 <p className='address-location'>{item.location}</p>
                                 <span className='card-links'>Default Address</span>
 

@@ -13,6 +13,7 @@ import { LuTrash2 } from "react-icons/lu"
 import LocationModal from "../locationModal/LocationModal"
 import { removeItem } from "../../store/cartSlice/CartSlice"
 import { IoIosArrowDown } from "react-icons/io"
+import { AiOutlineMenuFold } from "react-icons/ai"
 
 const Navbar = () => {
 
@@ -20,6 +21,8 @@ const Navbar = () => {
     const cartItems = useSelector((state) => state.cart.cartItems);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const [openLocationModal, setOpenLocationModal] = useState(false);
+    const [currentValue, setCurrentValue] = useState(1);
+    const [openMobileNav, setopenMobileNav] = useState(false);
 
     const navigate = useNavigate();
 
@@ -79,7 +82,7 @@ const Navbar = () => {
 
         {
             key: "3",
-            label: <a className="bottom-nav-links">Sign Up</a>
+            label: <a className="bottom-nav-links" onClick={() => navigate("/signUp")}>Sign Up</a>
         },
 
         {
@@ -87,6 +90,10 @@ const Navbar = () => {
             label: <a className="bottom-nav-links" target="_blank" onClick={() => navigate("/forgotPassword")}>Forgot Password</a>
         },
     ]
+
+    const handleQuantityChange = (newValue) => {
+        setCurrentValue(newValue)
+    }
 
     return (
         <>
@@ -113,6 +120,76 @@ const Navbar = () => {
                             onClick={() => setOpenLocationModal(true)}
                             icon={<GrLocation />}
                             className="select-location-btn btn-outline-gray-400">Location</Button>
+                    </div>
+
+                    <div className="mobile-nav-section">
+                        <Button
+                            onClick={() => setopenMobileNav(true)}
+                            className="menu-icon" icon={<AiOutlineMenuFold />}></Button>
+
+                        <Drawer
+                            placement="left"
+                            title={<img src={logo}></img>}
+                            closable={{ 'aria-label': 'Close Button' }}
+                            onClose={() => setopenMobileNav(false)}
+                            className="mobile-nav-drawer"
+                            open={openMobileNav}
+                        >
+                            <Input
+                                className="search-input"
+                                placeholder="Search For products"
+                                type="search"
+                                suffix={<SearchOutlined
+                                    className="search-icon-input" />}
+                            >
+                            </Input>
+
+                            <Popover trigger={["hover"]} placement="bottomLeft">
+                                <Button className="all-department-btn" icon={<FiGrid />}>
+                                    All Departments
+                                </Button>
+                            </Popover>
+                            <div className="navbar-links-main">
+                                <ul className="dropdown-links">
+
+                                    <Dropdown className="nav-dropdown" menu={{ items: homeMenu }} trigger={["hover"]}>
+                                        <li>Home
+                                            <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    <Dropdown menu={{ items: shopMenu }} trigger={["hover"]}>
+                                        <li>
+                                            Shop <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    <li>Stores</li>
+
+                                    <li>
+                                        Mega Menu
+                                    </li>
+
+                                    <Dropdown menu={{ items: pages }} trigger={["hover"]}>
+                                        <li>
+                                            Pages <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    <Dropdown menu={{ items: accountInfo }} trigger={["hover"]}>
+                                        <li>
+                                            Account <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    <li className="dashboard-link">Dashboard</li>
+
+                                    <li>
+                                        Docs
+                                    </li>
+                                </ul>
+                            </div>
+                        </Drawer>
                     </div>
 
                     <div className="nav-actions">
@@ -188,16 +265,19 @@ const Navbar = () => {
 
                                                             <Col md={6} lg={9} span={19}>
                                                                 <InputNumber
+                                                                    key={item.id}
                                                                     min={1}
                                                                     mode="spinner"
-                                                                    value={item.value}
+                                                                    max="10"
+                                                                    value={currentValue}
+                                                                    onChange={handleQuantityChange}
                                                                     className="input-spinner"
                                                                 />
                                                             </Col>
 
                                                             <Col md={2} span={2}>
                                                                 <span>
-                                                                    {item.price}
+                                                                    {currentValue * item.price}
                                                                 </span>
                                                             </Col>
                                                         </Row>

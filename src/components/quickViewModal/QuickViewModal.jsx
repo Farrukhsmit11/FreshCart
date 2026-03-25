@@ -18,6 +18,7 @@ const QuickViewModal = ({ IsOpenViewModal, setIsOpenViewModal, product }) => {
     const [thumbSwiper, setThumbSwiper] = useState(null);
     const [value, setValue] = useState(1);
 
+
     const images = [
         {
             id: 1,
@@ -38,6 +39,10 @@ const QuickViewModal = ({ IsOpenViewModal, setIsOpenViewModal, product }) => {
     ];
 
     const dispatch = useDispatch();
+
+    const handleQuantityChange = (newValue) => {
+        setValue(newValue)
+    }
 
 
     return (
@@ -106,20 +111,19 @@ const QuickViewModal = ({ IsOpenViewModal, setIsOpenViewModal, product }) => {
                         </div>
 
                         <div>
-                            <span>${product?.price}</span>
+                            <span>${product?.price * value}</span>
                         </div>
                         <hr className="divider" />
 
-                        {/* <div className="checkox-categories">
-                            <Radio.Group optionType="button" className="size-radio" >
-                                <Radio.Button>250g</Radio.Button>
-                                <Radio.Button>500g</Radio.Button>
-                                <Radio.Button>1kg</Radio.Button>
-                            </Radio.Group>
-                        </div> */}
-
                         <div className="input-spinner">
-                            <InputNumber min="1" max="10" mode="spinner" defaultValue="1" />
+                            <InputNumber
+                                min={1}
+                                mode="spinner"
+                                max="10"
+                                value={value}
+                                onChange={handleQuantityChange}
+                                className="input-spinner"
+                            />
                         </div>
 
                         <div className="modal-actions">

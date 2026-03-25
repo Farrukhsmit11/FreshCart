@@ -53,8 +53,9 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
         country: ""
     }
 
-    const handleSubmit = (value) => {
+    const handlesubmit = (value) => {
         console.log("Adress saved", value);
+        setIsOpenDeliveryModal(false)
     }
 
     return (
@@ -77,7 +78,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
             <Formik
                 validationSchema={deliverySchema}
                 initialValues={initialValues}
-                onSubmit={handleSubmit}
+                onSubmit={handlesubmit}
             >
                 {({
                     handleSubmit,
@@ -97,6 +98,7 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                     >
                         <Col span={24}>
                             <AntForm.Item
+                                validateStatus={errors.firstName && errors.firstName ? "error" : ""}
                                 help={
                                     errors.firstName && touched.firstName ? (
                                         <span className='form-error'>{errors.firstName}</span>
@@ -283,12 +285,11 @@ const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
                                 onClick={() => setIsOpenDeliveryModal(false)}
                                 className="cancel-btn">Cancel</Button>
                             <Button
-                                key="submit"
+                                type="default"
+                                className="save-address-btn"
                                 htmlType="submit"
-                                className="save-address-btn">Save Address</Button>
+                            >Save address </Button>
                         </div>
-
-
                     </AntForm>
                 )
                 }
