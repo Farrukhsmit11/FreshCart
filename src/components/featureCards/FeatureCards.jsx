@@ -10,7 +10,7 @@ const FeatureCards = () => {
                     <div className="feature-main">
                         {helper.map((item, index) => {
                             return (
-                                <Col span={6}>
+                                <Col xs={24} sm={12} md={12} lg={6}> 
                                     <div key={index} className="feature-card1">
 
                                         <div className="feature-card-content">

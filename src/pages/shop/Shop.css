@@ -265,3 +265,7 @@
 .ant-menu-title-content:hover{
     color: #0aad0a !important;
 }
+
+.filters-btn{
+    display: none;
+}

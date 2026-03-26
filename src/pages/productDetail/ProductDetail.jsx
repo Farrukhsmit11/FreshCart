@@ -19,6 +19,7 @@ import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 
 const ProductDetail = () => {
     const { productId } = useParams();
+    const [currentValue, setCurrentValue] = useState(1);
 
     const navigate = useNavigate();
 
@@ -47,9 +48,9 @@ const ProductDetail = () => {
         }
     ]
 
-    const onChange = value => {
-        console.log('changed', value);
-    };
+    const onChange = (newValue) => {
+        setCurrentValue(newValue)
+    }
 
     const handleTabs = key => {
         console.log(key);
@@ -112,23 +113,6 @@ const ProductDetail = () => {
                             <img src={selectedProduct?.thumbnail} />
                         </Col>
 
-                        <Swiper
-                            onSwiper={setThumbSwiper}
-                            loop={true}
-                            spaceBetween={10}
-                            slidesPerView={4}
-                            freeMode={true}
-                            watchSlidesProgress={true}
-                            modules={[FreeMode, Navigation, Thumbs]}
-                            className="mySwiper"
-                        >
-                            {selectedProduct.images?.map((img, index) => (
-                                <SwiperSlide key={index} className="thumb-slide">
-                                    <img src={img} alt={`Thumbnail ${index}`} />
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-
                         <Col md={12}>
                             <div className="product-detail-content">
                                 <p className='product-detail-description'>{selectedProduct?.category}</p>
@@ -139,7 +123,7 @@ const ProductDetail = () => {
                                 </div>
 
                                 <span className='product-price'>
-                                    {selectedProduct?.price}
+                                    {selectedProduct?.price * currentValue}
                                 </span>
 
                                 <hr className='divider' />
@@ -161,6 +145,7 @@ const ProductDetail = () => {
                                         min="1"
                                         max="10"
                                         defaultValue="1"
+                                        value={currentValue}
                                         onChange={onChange}
                                         className='input-price-spinner'
                                     />

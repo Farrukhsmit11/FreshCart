@@ -27,12 +27,6 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
     const navigate = useNavigate();
     const [openViewModal, setOpenViewModal] = useState(false);
 
-    const handleRateChange = (event) => {
-        if (event) {
-            event.stopPropagation();
-        }
-    }
-
     return (
         <>
             <section className="section-padding">

@@ -32,9 +32,6 @@
     align-items: center;
 }
 
-.product-detail-rate {
-    font-size: 12px;
-}
 
 .weight-button {
     color: #889397;
@@ -171,4 +168,7 @@
     cursor: pointer;
     overflow: hidden;
     border-radius: 8px;
+}
+.ant-rate{
+    font-size: 12px;
 }

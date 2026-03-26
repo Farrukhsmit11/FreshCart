@@ -321,7 +321,6 @@
     line-height: 1;
 }
 
-
 .remove-btn {
     font-size: 12.25px;
     color: #5c6c75;
@@ -450,4 +449,21 @@
 
 .mobile-nav-section {
     display: none;
+}
+
+.menu-btn {
+    border: none;
+    background: none;
+    box-shadow: none !important;
+}
+
+.menu-btn{
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.menu-icon {
+    width: 32px;
+    height: 32px;
+    color: #0aad0a !important;
 }

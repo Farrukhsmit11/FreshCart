@@ -110,6 +110,7 @@
     color: white;
     padding: 18px;
     border-radius: 8px;
+    box-shadow: none !important;
     border: 1px solid #0aad0a;
 }
 
@@ -119,9 +120,21 @@
     border: 1px solid #0aad0a !important;
 }
 
+
+.read-more-reviews-btn {
+    color: #5c6c75bf;
+    padding: 8.8px 16px;
+    box-shadow: none !important;
+    font-size: 12px;
+    line-height: 1.6;
+    height: 38px;
+    border-color: #c1c7c6;
+    border-radius: 8px;
+}
+
 .read-more-reviews-btn:hover {
     background: #c1c7c6 !important;
-    color: #0000 !important;
+    color: #c1c7c6 !important;
 }
 
 .submit-form {
@@ -154,6 +167,11 @@
 
 .add-headline-input:hover {
     border: 1px solid #dfe2e1 !important;
+}
+
+.add-written-review-input {
+    font-size: 13px;
+    padding: 8.8px 16px;
 }
 
 .add-written-review-input:focus {

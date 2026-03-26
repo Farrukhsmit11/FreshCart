@@ -105,6 +105,7 @@ const Navbar = () => {
                         </a>
                     </Col>
 
+                    {/* Dekstop */}
                     <div className="nav-header-center">
                         <div className="input-group">
                             <Input
@@ -122,11 +123,44 @@ const Navbar = () => {
                             className="select-location-btn btn-outline-gray-400">Location</Button>
                     </div>
 
+
+
+                    <div className="nav-actions">
+                        <Badge
+                            color="#0aad0a"
+                            count={wishlistCount}
+                            showZero
+                            className="count-badge"
+                        >
+                            <FaRegHeart
+                                onClick={(e) => {
+                                    e.stopPropagation()
+                                    navigate("/shopWishlist")
+                                }}
+                                className="social-icon" />
+                        </Badge>
+
+                        <FiUser onClick={() => setOpen(true)} className="social-icon" />
+
+                        <Badge
+                            color="#0aad0a"
+                            count={itemCount}
+                            showZero
+                            className="count-badge"
+                        >
+                            <FiShoppingCart className="social-icon" onClick={() => setShowCartDrawer(true)} />
+                        </Badge>
+                    </div>
+
+
+
+                    {/* Mobile */}
                     <div className="mobile-nav-section">
                         <Button
                             onClick={() => setopenMobileNav(true)}
-                            className="menu-icon" icon={<AiOutlineMenuFold />}></Button>
-
+                            icon={<AiOutlineMenuFold className="menu-icon" />}
+                            className="menu-btn"
+                        ></Button>
                         <Drawer
                             placement="left"
                             title={<img src={logo}></img>}
@@ -192,32 +226,6 @@ const Navbar = () => {
                         </Drawer>
                     </div>
 
-                    <div className="nav-actions">
-                        <Badge
-                            color="#0aad0a"
-                            count={wishlistCount}
-                            showZero
-                            className="count-badge"
-                        >
-                            <FaRegHeart
-                                onClick={(e) => {
-                                    e.stopPropagation()
-                                    navigate("/shopWishlist")
-                                }}
-                                className="social-icon" />
-                        </Badge>
-
-                        <FiUser onClick={() => setOpen(true)} className="social-icon" />
-
-                        <Badge
-                            color="#0aad0a"
-                            count={itemCount}
-                            showZero
-                            className="count-badge"
-                        >
-                            <FiShoppingCart className="social-icon" onClick={() => setShowCartDrawer(true)} />
-                        </Badge>
-                    </div>
 
                     <Drawer
                         width={560}

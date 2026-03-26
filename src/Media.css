@@ -1,0 +1,66 @@
+@media (min-width: 320px) and (max-width: 767px) {
+
+    .section-container {
+        margin-inline: 10px;
+    }
+
+    .section-padding{
+        padding-block: 20px !important;
+    }
+
+
+    .nav-header-center {
+        display: none;
+    }
+
+    .mobile-nav-section {
+        display: block;
+    }
+
+    .nav-logo {
+        display: block !important;
+    }
+
+    .bottom-nav-section {
+        display: none;
+    }
+
+    .ant-table {
+        overflow: scroll;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .filters-btn {
+        display: block;
+    }
+
+    .filters-drawer,
+    .ant-drawer-header-title {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .filters-drawer .ant-drawer-header {
+        padding: 16px !important;
+    }
+
+    .payment-section-main {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .payment-section-right {
+        margin-top: 15px;
+    }
+
+    .header-wrapper-right {
+        display: none;
+    }
+
+    .page-heading {
+        text-align: center;
+    }
+}
