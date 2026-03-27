@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
-import { Button, Input, Drawer, Badge, Row, Col, Popover, Result, InputNumber, Dropdown } from "antd"
+import { Button, Input, Drawer, Badge, Row, Col, Popover, Result, InputNumber, Dropdown, Collapse } from "antd"
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
 import { useState } from "react"
@@ -14,6 +14,7 @@ import LocationModal from "../locationModal/LocationModal"
 import { removeItem } from "../../store/cartSlice/CartSlice"
 import { IoIosArrowDown } from "react-icons/io"
 import { AiOutlineMenuFold } from "react-icons/ai"
+import Panel from "antd/es/splitter/Panel"
 
 const Navbar = () => {
 
@@ -21,7 +22,7 @@ const Navbar = () => {
     const cartItems = useSelector((state) => state.cart.cartItems);
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const [openLocationModal, setOpenLocationModal] = useState(false);
-    const [currentValue, setCurrentValue] = useState(1);
+    const [currentValue, setCurrentValue] = useState({});
     const [openMobileNav, setopenMobileNav] = useState(false);
 
     const navigate = useNavigate();
@@ -178,14 +179,40 @@ const Navbar = () => {
                             >
                             </Input>
 
-                            <Popover trigger={["hover"]} placement="bottomLeft">
+                            {/* <Popover trigger={["hover"]} placement="bottomLeft">
                                 <Button className="all-department-btn" icon={<FiGrid />}>
                                     All Departments
                                 </Button>
-                            </Popover>
+                            </Popover> */}
                             <div className="navbar-links-main">
                                 <ul className="dropdown-links">
 
+                                    <Collapse ghost className="mobile-collapse">
+                                        <Panel header="Home" key="1">
+                                            {homeMenu.map(item => <div>{item.label}</div>)}
+                                        </Panel>
+
+                                        <Panel header="Shop" key="2">
+                                            {shopMenu.map(item => <div>Home</div>)}
+                                        </Panel>
+
+                                        <Panel header="Stores" key="3">
+                                            <p>Stores Content</p>
+                                        </Panel>
+
+                                        <Panel header="Mega Menu" key="4">
+                                            <p>Mega Menu Content</p>
+                                        </Panel>
+
+                                        <Panel header="Pages" key="5">
+                                            {pages.map(item => <div>{item.label}</div>)}
+                                        </Panel>
+
+                                        <Panel header="Account" key="6">
+                                            {accountInfo.map(item => <div>{item.label}</div>)}
+                                        </Panel>
+                                    </Collapse>
+                                    {/* 
                                     <Dropdown className="nav-dropdown" menu={{ items: homeMenu }} trigger={["hover"]}>
                                         <li>Home
                                             <IoIosArrowDown />
@@ -215,12 +242,12 @@ const Navbar = () => {
                                             Account <IoIosArrowDown />
                                         </li>
                                     </Dropdown>
+ */}
+                                    {/* <li className="dashboard-link">Dashboard</li> */}
 
-                                    <li className="dashboard-link">Dashboard</li>
-
-                                    <li>
-                                        Docs
-                                    </li>
+                                    {/* <li> */}
+                                    {/* Docs */}
+                                    {/* </li> */}
                                 </ul>
                             </div>
                         </Drawer>

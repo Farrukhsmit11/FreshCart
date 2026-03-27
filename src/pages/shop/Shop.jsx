@@ -132,10 +132,6 @@ const Shop = () => {
                                     {
                                         title: <a className="page-links" href="#" onClick={() => navigate("/")}>Home</a>
                                     },
-
-                                    {
-                                        title: <a className="page-links" href="#" onClick={() => navigate("/shop")}>Shop</a>
-                                    },
                                 ]}>
                             </Breadcrumb>
                         </Col>
@@ -182,7 +178,9 @@ const Shop = () => {
                             <div className="listing-controls">
                                 <div className="listing-controls-header">
                                     <p>26 Products found</p>
+                                </div>
 
+                                <div className="filters-main">
 
                                     <div className="icons">
                                         <div>
@@ -190,50 +188,7 @@ const Shop = () => {
                                             <BiGridAlt className="list-icon" />
                                             <IoIosList className="list-icon" />
                                         </div>
-
-
-                                        {/* Mobile */}
-
-                                        <Button className="filters-btn" onClick={() => setOpenFiltersDrawer(true)}>Filters</Button>
-
-                                        <Drawer
-                                            title="Filters"
-                                            className="filters-drawer"
-                                            placement="left"
-                                            closable={{ 'aria-label': 'Close Button' }}
-                                            onClose={() => setOpenFiltersDrawer(false)}
-                                            open={openFiltersDrawer}
-                                        >
-                                            <Row gutter={[48, 48]}>
-                                                <Col xs={24} md={6}>
-                                                    <div className="sidebar-main">
-                                                        <h1 className="menu-title">Categories</h1>
-                                                        <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
-                                                    </div>
-
-                                                    <div className="stores-section">
-                                                        <h3 className="menu-title">Stores</h3>
-
-                                                        <div className="input-section">
-                                                            <Input className="search-store-input" placeholder="Serach by Stores"></Input>
-                                                        </div>
-                                                    </div>
-
-                                                    <div className="fruits-card-main">
-                                                        <div className="card-overlay">
-                                                            <h3>Fresh Fruits</h3>
-                                                            <p>Get up to 35% Off</p>
-                                                            <Button className="fresh-fruits-btn" icon={<IoIosArrowRoundForward className="fruits-arrow-icon" />}>Shop Now</Button>
-                                                        </div>
-                                                        <img className="fruits-img" src={fruitsImg} alt="Fruits" />
-                                                    </div>
-                                                </Col>
-                                            </Row>
-                                        </Drawer>
                                     </div>
-                                </div>
-
-                                <div className="filters-main">
 
                                     <Select
                                         options={options}
@@ -247,6 +202,8 @@ const Shop = () => {
                                         value="Sort by Featured"
                                     ></Select>
                                 </div>
+
+
                             </div>
                             <ShopProducts limit="8" />
                         </Col>

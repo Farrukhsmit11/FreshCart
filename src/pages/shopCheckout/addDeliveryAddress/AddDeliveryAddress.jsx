@@ -35,7 +35,7 @@ Pennsylvania 18372 United States
                                 </div>
 
                                 <p className='address-location'>{item.location}</p>
-                                <span className='card-links'>Default Address</span>
+                                <span className='card-links'>Default address</span>
 
                                 <div className='card-actions'>
                                     <a className='edit-link'> Edit</a>

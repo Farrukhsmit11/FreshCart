@@ -120,7 +120,7 @@ const ShopWishlist = () => {
                             },
 
                             {
-                                title: <a href="#" onClick={() => navigate("/shop")} className="page-links">Shop</a>,
+                                title: <a href="#" onClick={() => navigate("/shop/:shopId")} className="page-links">Shop</a>,
                             },
 
                         ]}

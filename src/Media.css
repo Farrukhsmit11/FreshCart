@@ -4,10 +4,17 @@
         margin-inline: 10px;
     }
 
-    .section-padding{
+    .section-padding {
         padding-block: 20px !important;
     }
 
+
+
+    /* Navbar Section */
+
+    .navbar {
+        /* gap: 15px; */
+    }
 
     .nav-header-center {
         display: none;
@@ -25,8 +32,16 @@
         display: none;
     }
 
+    .nav-actions {
+        width: auto;
+    }
+
+
+
+    /*  */
+
     .ant-table {
-        overflow: scroll;
+        overflow-x: auto;
     }
 
     .search-input {
@@ -63,4 +78,119 @@
     .page-heading {
         text-align: center;
     }
+
+    /* Hero Cards Section */
+
+    .text-content h1 {
+        font-size: 29.52px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-img {
+        height: 400px;
+    }
+
+    .featured-title {
+        font-size: 20px;
+    }
+
+    /* Shop Now Cards Section */
+
+    .shop-card {
+        padding: 20px;
+    }
+
+    .shop-now-card-header {
+        height: auto;
+    }
+
+    .shop-now-card-image {
+        height: 215px;
+        object-fit: cover;
+    }
+
+    .product-details-content h4 {
+        font-size: 21.53px;
+    }
+
+    /*  */
+
+    /* Popular Products */
+
+    .popular-products-header h4 {
+        font-size: 21.53px;
+    }
+
+
+    .product-card {
+        width: auto;
+    }
+
+    .product-card-image {
+        padding: 35px;
+    }
+
+    /* Daily Best Sells Section */
+
+    .card-header-title {
+        font-size: 21.53px;
+    }
+
+    .coffee-card-title {
+        font-size: 21.53px;
+    }
+
+    .coffee-card-image-main{
+        width: 100%;
+    }
+
+    /* Wishlist Page */
+    .table-header h1 {
+        font-size: 25.1px;
+    }
+
+    /* Product Detail Page */
+    .product-detail-title {
+        font-size: 25.1px;
+    }
+
+    .product-detail-description {
+        font-size: 14px;
+    }
+
+
+    /* Quick View Modal */
+
+    .quick-view-modal-title {
+        font-size: 25.1px;
+    }
+
+    .selected-product-info {
+        padding-left: 0;
+    }
+
+
+    /* shop page */
+    .selected-category-title {
+        font-size: 25.1px;
+    }
+
+    .collapse-main{
+        gap: 0;
+    }
+
+   /* Add Delivery Address */
+
+   .card-links{
+    font-size: 14px;
+   }
+
+
+
+
+
+
 }

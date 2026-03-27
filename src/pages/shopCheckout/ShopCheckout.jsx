@@ -10,12 +10,14 @@ import DeliveryTime from "./deliveryTime/DeliveryTime"
 import { LuMapPin, LuShoppingBag } from "react-icons/lu";
 import { FiClock } from "react-icons/fi";
 import { MdOutlinePayment } from "react-icons/md";
+import { useSelector } from "react-redux";
 
 const ShopCheckout = () => {
 
     const navigate = useNavigate();
 
     const [openDeliveryModal, setOpenDeliveryModal] = useState(false);
+    const cartItems = useSelector((state) => state.cart.cartItems);
 
     const items = [
         {
@@ -89,7 +91,11 @@ const ShopCheckout = () => {
                                 },
 
                                 {
-                                    title: <a className="page-links" onClick={() => navigate("shop/shopId")} href="#">Shop</a>
+                                    title: <a
+                                        onClick={() => navigate("/shop/:shopId")}
+                                        className="page-links" href="#">
+                                        Shop
+                                    </a>
                                 }
                             ]}
                         >
@@ -98,9 +104,10 @@ const ShopCheckout = () => {
                 </Row>
             </div>
 
+
             <section className="checkout-section">
                 <Row gutter={[16, 16]}>
-                    <Col span={12}>
+                    <Col span={24}>
                         <div className="checkout-heading-main">
                             <h1>Checkout</h1>
                             <p>Already have an account? Click here to Sign in.
@@ -110,7 +117,7 @@ const ShopCheckout = () => {
                     </Col>
                 </Row>
 
-                <Row gutter={[16, 16]}>
+                <Row gutter={[40, 40]}>
                     <Collapse
                         className="custom-collapse"
                         accordion
@@ -119,13 +126,47 @@ const ShopCheckout = () => {
                         items={items}
                     />
 
+                    {/* <Col xs={24} md={6} lg={7}>
+                        <div className="summary-card-parent">
+
+                            <Card
+                                title={<h5 className="summary-card-title">Order Details</h5>}
+                            >
+                                {cartItems.map((item) => {
+                                    return (
+                                        <ul className="summary-card-lists">
+                                            <li className="list-group-item">
+                                                <Row gutter={[16, 16]} align="middle">
+                                                    <Col span={4}>
+                                                        <img src={item.thumbnail} />
+                                                    </Col>
+
+                                                    <Col span={11}>
+                                                        <h4>{item.title}</h4>
+                                                    </Col>
+
+                                                    <Col span={6}>
+                                                        {item.value}
+                                                    </Col>
+
+                                                    <Col span={1}>
+                                                        ${item.price}
+                                                    </Col>
+                                                </Row>
+                                            </li>
+                                        </ul>
+                                    )
+                                })}
+                            </Card>
+                        </div>
+                    </Col> */}
                 </Row>
             </section>
 
             <DeliveryModal
                 IsOpenDeliveryModal={openDeliveryModal}
                 setIsOpenDeliveryModal={setOpenDeliveryModal} />
-        </div>
+        </div >
     )
 }
 

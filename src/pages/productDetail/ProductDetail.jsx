@@ -95,7 +95,10 @@ const ProductDetail = () => {
                             },
 
                             {
-                                title: <a className='page-links' href="" onClick={() => navigate("/shop")}>Shop</a>
+                                title: <a
+                                    className='page-links'
+                                    href="#"
+                                    onClick={() => navigate("/shop/:shopId")}>Shop</a>
                             },
 
                             {

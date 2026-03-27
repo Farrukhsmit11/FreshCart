@@ -13,6 +13,10 @@
 
 .slide-wrapper {
     position: relative;
+    background-position: center;
+    height: 400px !important;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .show-now-btn {

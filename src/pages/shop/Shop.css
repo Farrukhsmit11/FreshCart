@@ -188,7 +188,13 @@
 .selected-category-title {
     font-size: 34px;
     margin: 0;
+    white-space: normal;
+    overflow: visible;
     color: #21313c;
+}
+
+.ant-card-head-title {
+  white-space: normal !important;
 }
 
 .listing-controls {
@@ -242,7 +248,7 @@
     flex-direction: row-reverse;
 }
 
-.fruits-arrow-icon{
+.fruits-arrow-icon {
     width: 14px;
     height: 14px;
 }
@@ -253,19 +259,21 @@
     color: white !important;
 }
 
-.sidebar-menu , .--ant-menu-color-item-bg-hover , .ant-menu-item-hover-bg{
+.sidebar-menu,
+.--ant-menu-color-item-bg-hover,
+.ant-menu-item-hover-bg {
     background: none !important;
     border-bottom: none !important;
 }
 
-.ant-menu-title-content{
+.ant-menu-title-content {
     border-bottom: none !important;
 }
 
-.ant-menu-title-content:hover{
+.ant-menu-title-content:hover {
     color: #0aad0a !important;
 }
 
-.filters-btn{
+.filters-btn {
     display: none;
 }

@@ -467,3 +467,23 @@
     height: 32px;
     color: #0aad0a !important;
 }
+
+.mobile-collapse .ant-collapse-header {
+  font-size: 16px;
+  font-weight: 500;
+  padding: 12px 0;
+}
+
+.mobile-collapse .ant-collapse-content {
+  border: none;
+}
+
+.mobile-collapse .ant-collapse-item {
+  border-bottom: 1px solid #eee;
+}
+
+.drawer-link {
+  padding: 12px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #eee;
+}

@@ -27,7 +27,7 @@ const ShopProducts = ({ limit = "10" }) => {
             <div className='shop-card-parent'>
                 <Row gutter={[16, 16]} >
                     {products.slice(0, limit).map((item) => (
-                        <Col xs={24} sm={12} md={8} lg={6} key={item.id}>
+                        <Col xs={12} sm={12} md={8} lg={6} key={item.id}>
                             <Card
                                 hoverable
                                 className="shop-product-card"

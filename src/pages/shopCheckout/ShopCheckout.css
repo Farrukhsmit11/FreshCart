@@ -64,7 +64,7 @@
 .add-delivery-btn:hover {
     background-color: #099309 !important;
     color: white !important;
-    border-color: #0aad0a !important; 
+    border-color: #0aad0a !important;
 }
 
 .checkout-form .ant-form-item {
@@ -243,4 +243,46 @@
     width: 100%;
     gap: 220px;
     align-items: center;
+}
+
+/* Summary card list */
+
+.summary-card-lists {
+    list-style: none;
+}
+
+.list-group-item {
+    display: block;
+    position: relative;
+    border: 1px solid #dfe2e1;
+    background: #Ffff;
+    padding-right: 16px;
+    padding-left: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.summary-card-lists li {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-bottom-width: 0;
+}
+
+.list-group-item:first-child {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+}
+
+.summary-card-title {
+    padding-bottom: 16px;
+    padding-top: 16px;
+    padding-right: 24px;
+    font-size: 17.5px;
+    margin-bottom: 0;
+}
+
+
+.card-img {
+    max-width: 100%;
+    height: auto;
 }
