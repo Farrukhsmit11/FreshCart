@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import fruitsImg from "../../assets/assortment-fruits-img.png"
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { IoIosArrowRoundForward, IoIosList } from "react-icons/io";
-import { BiGridAlt } from "react-icons/bi";
+import { BiFilterAlt, BiGridAlt } from "react-icons/bi";
 import category from '../../components/featuredCategories/category'
 import ShopProducts from "../../components/shopProducts/ShopProducts"
 import { useState } from "react";
@@ -183,13 +183,58 @@ const Shop = () => {
                                 <div className="filters-main">
 
                                     <div className="icons">
-                                        <div>
-                                            <BsGrid3X3Gap className="list-icon" />
-                                            <BiGridAlt className="list-icon" />
-                                            <IoIosList className="list-icon" />
-                                        </div>
+                                        <BsGrid3X3Gap className="list-icon" />
+                                        <BiGridAlt className="list-icon" />
+                                        <IoIosList className="list-icon" />
+
+                                        {/* Mobile */}
+
+
                                     </div>
 
+                                    <div className="responsive-filter-main">
+                                        <Button
+                                            icon={<BiFilterAlt className="view-filters-icon" />}
+                                            className="filter-btn"
+                                            onClick={() => setOpenFiltersDrawer(true)}>Filters</Button>
+
+                                        <Drawer
+                                            title="Filters"
+                                            closable={{ 'aria-label': 'Close Button' }}
+                                            placement="left"
+                                            onClose={() => {
+                                                setOpenFiltersDrawer(false)
+                                            }}
+                                            open={openFiltersDrawer}
+                                        >
+
+                                            <div className="sidebar-main">
+                                                <h1 className="menu-title">Categories</h1>
+                                                <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
+                                            </div>
+
+                                            <div className="stores-section">
+                                                <h3 className="menu-title">Stores</h3>
+
+                                                <div className="input-section">
+                                                    <Input className="search-store-input" placeholder="Serach by Stores"></Input>
+                                                </div>
+                                            </div>
+
+                                            <div className="fruits-card-main">
+                                                <div className="card-overlay">
+                                                    <h3>Fresh Fruits</h3>
+                                                    <p>Get up to 35% Off</p>
+                                                    <Button className="fresh-fruits-btn" icon={<IoIosArrowRoundForward className="fruits-arrow-icon" />}>Shop Now</Button>
+                                                </div>
+                                                <img className="fruits-img" src={fruitsImg} alt="Fruits" />
+                                            </div>
+                                        </Drawer>
+                                    </div>
+                                </div>
+
+
+                                <div className="inputs-main">
                                     <Select
                                         options={options}
                                         className="form-select"
@@ -202,8 +247,6 @@ const Shop = () => {
                                         value="Sort by Featured"
                                     ></Select>
                                 </div>
-
-
                             </div>
                             <ShopProducts limit="8" />
                         </Col>

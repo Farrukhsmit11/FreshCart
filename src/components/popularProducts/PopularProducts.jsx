@@ -115,7 +115,6 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                                             </div>
                                         </Card>
                                     </Col>
-                                    // </div>
                                 )
                             })}
                         </Row >

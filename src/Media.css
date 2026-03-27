@@ -8,13 +8,11 @@
         padding-block: 20px !important;
     }
 
-
+    .menu-btn {
+        display: block;
+    }
 
     /* Navbar Section */
-
-    .navbar {
-        /* gap: 15px; */
-    }
 
     .nav-header-center {
         display: none;
@@ -36,9 +34,9 @@
         width: auto;
     }
 
-
-
     /*  */
+
+    /* SHop Page filters Drawer */
 
     .ant-table {
         overflow-x: auto;
@@ -94,7 +92,7 @@
     }
 
     .featured-title {
-        font-size: 20px;
+        font-size: 21.53px;
     }
 
     /* Shop Now Cards Section */
@@ -143,7 +141,7 @@
         font-size: 21.53px;
     }
 
-    .coffee-card-image-main{
+    .coffee-card-image-main {
         width: 100%;
     }
 
@@ -178,19 +176,96 @@
         font-size: 25.1px;
     }
 
-    .collapse-main{
+    .collapse-main {
         gap: 0;
     }
 
-   /* Add Delivery Address */
+    .category-section-main {
+        margin-top: 0;
+    }
 
-   .card-links{
-    font-size: 14px;
-   }
+    /* Add Delivery Address */
 
+    .card-links {
+        font-size: 14px;
+    }
 
+    .listing-controls {
+        display: block;
+    }
 
+    .inputs-main {
+        display: flex;
+        gap: 10px;
+    }
 
+    .listing-controls-header {
+        margin-bottom: 12px;
+    }
 
+    .listing-controls-header p {
+        font-size: 12px;
+    }
 
+    .filter-btn {
+        display: block !important;
+    }
+
+    .filter-btn {
+        color: #5c6c75bf;
+        box-shadow: none !important;
+        padding: 8.8px 16px;
+        font-size: 14px;
+        line-height: 1.6;
+        border-color: #c1c7c6;
+        height: 38px;
+        border-radius: 6px;
+    }
+
+    .view-filters-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .filters-main {
+        display: flex;
+        margin-bottom: 12px;
+    }
+
+    cart-drawer-title {
+        font-size: 21.53px;
+    }
+
+    .cart-drawer-description {
+        font-size: 14px;
+    }
 }
+
+/* @media (min-width: 768px) and (max-width: 991px) {
+
+    .menu-btn {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+
+    .search-input {
+        display: none;
+    }
+
+    .section-container {
+        margin-inline: 50px;
+    }
+
+    .select-location-btn {
+        display: none !important;
+    }
+
+    .bottom-nav-section {
+        display: none;
+    }
+
+    .hero-img {
+        height: 400px;
+    }
+} */

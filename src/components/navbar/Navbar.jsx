@@ -14,7 +14,6 @@ import LocationModal from "../locationModal/LocationModal"
 import { removeItem } from "../../store/cartSlice/CartSlice"
 import { IoIosArrowDown } from "react-icons/io"
 import { AiOutlineMenuFold } from "react-icons/ai"
-import Panel from "antd/es/splitter/Panel"
 
 const Navbar = () => {
 
@@ -124,8 +123,6 @@ const Navbar = () => {
                             className="select-location-btn btn-outline-gray-400">Location</Button>
                     </div>
 
-
-
                     <div className="nav-actions">
                         <Badge
                             color="#0aad0a"
@@ -152,8 +149,6 @@ const Navbar = () => {
                             <FiShoppingCart className="social-icon" onClick={() => setShowCartDrawer(true)} />
                         </Badge>
                     </div>
-
-
 
                     {/* Mobile */}
                     <div className="mobile-nav-section">
@@ -187,32 +182,6 @@ const Navbar = () => {
                             <div className="navbar-links-main">
                                 <ul className="dropdown-links">
 
-                                    <Collapse ghost className="mobile-collapse">
-                                        <Panel header="Home" key="1">
-                                            {homeMenu.map(item => <div>{item.label}</div>)}
-                                        </Panel>
-
-                                        <Panel header="Shop" key="2">
-                                            {shopMenu.map(item => <div>Home</div>)}
-                                        </Panel>
-
-                                        <Panel header="Stores" key="3">
-                                            <p>Stores Content</p>
-                                        </Panel>
-
-                                        <Panel header="Mega Menu" key="4">
-                                            <p>Mega Menu Content</p>
-                                        </Panel>
-
-                                        <Panel header="Pages" key="5">
-                                            {pages.map(item => <div>{item.label}</div>)}
-                                        </Panel>
-
-                                        <Panel header="Account" key="6">
-                                            {accountInfo.map(item => <div>{item.label}</div>)}
-                                        </Panel>
-                                    </Collapse>
-                                    {/* 
                                     <Dropdown className="nav-dropdown" menu={{ items: homeMenu }} trigger={["hover"]}>
                                         <li>Home
                                             <IoIosArrowDown />
@@ -242,12 +211,12 @@ const Navbar = () => {
                                             Account <IoIosArrowDown />
                                         </li>
                                     </Dropdown>
- */}
+
                                     {/* <li className="dashboard-link">Dashboard</li> */}
 
-                                    {/* <li> */}
-                                    {/* Docs */}
-                                    {/* </li> */}
+                                    <li>
+                                        Docs
+                                    </li>
                                 </ul>
                             </div>
                         </Drawer>
@@ -298,7 +267,7 @@ const Navbar = () => {
                                                                 </div>
                                                             </Col>
 
-                                                            <Col md={6} lg={9} span={19}>
+                                                            <Col md={6} lg={11} span={9}>
                                                                 <InputNumber
                                                                     key={item.id}
                                                                     min={1}
