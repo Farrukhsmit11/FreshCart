@@ -15,10 +15,10 @@ const SignUp = () => {
 
     const [form] = AntForm.useForm();
 
-    const onSubmit = (value) => {
+    const onSubmit = (value, { resetForm }) => {
         console.log("Signup sucessfull", value)
         form.resetFields();
-        
+        resetForm();
     }
 
     return (
