@@ -186,10 +186,6 @@ const Shop = () => {
                                         <BsGrid3X3Gap className="list-icon" />
                                         <BiGridAlt className="list-icon" />
                                         <IoIosList className="list-icon" />
-
-                                        {/* Mobile */}
-
-
                                     </div>
 
                                     <div className="responsive-filter-main">
@@ -199,7 +195,7 @@ const Shop = () => {
                                             onClick={() => setOpenFiltersDrawer(true)}>Filters</Button>
 
                                         <Drawer
-                                            title="Filters"
+                                            title="Filter"
                                             closable={{ 'aria-label': 'Close Button' }}
                                             placement="left"
                                             onClose={() => {
@@ -207,7 +203,6 @@ const Shop = () => {
                                             }}
                                             open={openFiltersDrawer}
                                         >
-
                                             <div className="sidebar-main">
                                                 <h1 className="menu-title">Categories</h1>
                                                 <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
@@ -225,7 +220,10 @@ const Shop = () => {
                                                 <div className="card-overlay">
                                                     <h3>Fresh Fruits</h3>
                                                     <p>Get up to 35% Off</p>
-                                                    <Button className="fresh-fruits-btn" icon={<IoIosArrowRoundForward className="fruits-arrow-icon" />}>Shop Now</Button>
+                                                    <Button
+                                                        className="fresh-fruits-btn"
+                                                        icon={<IoIosArrowRoundForward className="fruits-arrow-icon" />
+                                                        }>Shop Now</Button>
                                                 </div>
                                                 <img className="fruits-img" src={fruitsImg} alt="Fruits" />
                                             </div>

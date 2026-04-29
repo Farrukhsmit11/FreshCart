@@ -47,39 +47,27 @@ const FeaturedCategories = () => {
                         }}
                         modules={[Pagination, Navigation, Autoplay]}
                         className="mySwiper"
-
-                        breakpoints={{
-
-                            320: { slidesPerView: 2, spaceBetween: 10 },
-                            480: { slidesPerView: 2 },
-                            768: {
-                                slidesPerView: 2,
-                                spaceBetween: 10
-                            }
-                        }}
                     >
-                        <div className="main-parent">
-                            <Row gutter={[16, 16]}>
-                                {category.map((product) => {
-                                    return (
-                                        <SwiperSlide>
-                                            <div className="category-card-sub-parent">
-                                                <Card
-                                                    onClick={() => navigate(`/shop/${product.id}`)}
-                                                    hoverable
-                                                    className="featured-categories-card">
-                                                    <div className="category-card-content">
-                                                        <img className="featured-categories-img" src={product.imgSrc} />
-                                                        <p className="card-desc">{product.title}</p>
-                                                    </div>
-                                                </Card>
-                                            </div>
+                        <Row gutter={[16, 16]}>
+                            {category.map((product) => {
+                                return (
+                                    <SwiperSlide>
+                                        <div className="category-card-sub-parent">
+                                            <Card
+                                                onClick={() => navigate(`/shop/${product.id}`)}
+                                                hoverable
+                                                className="featured-categories-card">
+                                                <div className="category-card-content">
+                                                    <img className="featured-categories-img" src={product.imgSrc} />
+                                                    <p className="card-desc">{product.title}</p>
+                                                </div>
+                                            </Card>
+                                        </div>
 
-                                        </SwiperSlide>
-                                    )
-                                })}
-                            </Row>
-                        </div>
+                                    </SwiperSlide>
+                                )
+                            })}
+                        </Row>
                     </Swiper>
 
                 </div>

@@ -1,4 +1,4 @@
-@media (min-width: 320px) and (max-width: 767px) {
+/* @media (min-width: 320px) and (max-width: 767px) {
 
     .section-container {
         margin-inline: 10px;
@@ -14,7 +14,7 @@
 
     /* Navbar Section */
 
-    .nav-header-center {
+    /* .nav-header-center {
         display: none;
     }
 
@@ -32,12 +32,12 @@
 
     .nav-actions {
         width: auto;
-    }
+    } */
 
     /*  */
 
     /* SHop Page filters Drawer */
-
+/* 
     .ant-table {
         overflow-x: auto;
     }
@@ -75,11 +75,11 @@
 
     .page-heading {
         text-align: center;
-    }
+    } */
 
     /* Hero Cards Section */
 
-    .text-content h1 {
+    /* .text-content h1 {
         font-size: 29.52px;
     }
 
@@ -93,11 +93,11 @@
 
     .featured-title {
         font-size: 21.53px;
-    }
+    } */
 
     /* Shop Now Cards Section */
 
-    .shop-card {
+    /* .shop-card {
         padding: 20px;
     }
 
@@ -112,13 +112,13 @@
 
     .product-details-content h4 {
         font-size: 21.53px;
-    }
+    } */
 
     /*  */
 
     /* Popular Products */
 
-    .popular-products-header h4 {
+    /* .popular-products-header h4 {
         font-size: 21.53px;
     }
 
@@ -129,11 +129,11 @@
 
     .product-card-image {
         padding: 35px;
-    }
+    } */
 
     /* Daily Best Sells Section */
 
-    .card-header-title {
+    /* .card-header-title {
         font-size: 21.53px;
     }
 
@@ -143,36 +143,36 @@
 
     .coffee-card-image-main {
         width: 100%;
-    }
+    } */
 
     /* Wishlist Page */
-    .table-header h1 {
+    /* .table-header h1 {
         font-size: 25.1px;
     }
 
     /* Product Detail Page */
-    .product-detail-title {
+    /* .product-detail-title {
         font-size: 25.1px;
     }
 
     .product-detail-description {
         font-size: 14px;
-    }
+    } */
 
 
     /* Quick View Modal */
 
-    .quick-view-modal-title {
+    /* .quick-view-modal-title {
         font-size: 25.1px;
     }
 
     .selected-product-info {
         padding-left: 0;
-    }
+    }  */
 
 
     /* shop page */
-    .selected-category-title {
+    /* .selected-category-title {
         font-size: 25.1px;
     }
 
@@ -182,11 +182,11 @@
 
     .category-section-main {
         margin-top: 0;
-    }
+    } */
 
     /* Add Delivery Address */
 
-    .card-links {
+    /* .card-links {
         font-size: 14px;
     }
 
@@ -239,7 +239,11 @@
     .cart-drawer-description {
         font-size: 14px;
     }
-}
+
+    .product-view-title {
+        font-size: 20.34px;
+    } */
+/* } */
 
 /* @media (min-width: 768px) and (max-width: 991px) {
 

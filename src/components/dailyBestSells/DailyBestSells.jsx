@@ -10,6 +10,7 @@ import { IoEyeOutline } from "react-icons/io5"
 import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
 import { useState } from "react"
 import QuickViewModal from "../../components/quickViewModal/QuickViewModal"
+import { useNavigate } from "react-router-dom"
 
 const DailyBestSells = () => {
 
@@ -43,6 +44,8 @@ const DailyBestSells = () => {
         setDeadline(Date.now() + 1000 * 38);
     }
 
+    const navigate = useNavigate();
+
     return (
         <>
             <section className="section-padding">
@@ -58,7 +61,10 @@ const DailyBestSells = () => {
                             <div className="coffee-card-content">
                                 <h1 className="coffee-card-title">100% Organic Coffee Beans.</h1>
                                 <p className="coffee-card-subtitle">Get the best deal before close.</p>
-                                <Button icon={<IoIosArrowRoundForward className="arrow-right-icon" />} className="shop-now-btn-green">Shop Now</Button>
+                                <Button
+                                    onClick={() => navigate("/shop/:shopId")}
+                                    icon={<IoIosArrowRoundForward className="arrow-right-icon" />} className="shop-now-btn-green"
+                                >Shop Now</Button>
                             </div>
                         </div>
 
@@ -66,6 +72,7 @@ const DailyBestSells = () => {
                             return (
                                 <Col xs={24} md={6}>
                                     <Card
+                                        key={item.id}
                                         hoverable
                                         className="daily-best-sell-card"
                                     >

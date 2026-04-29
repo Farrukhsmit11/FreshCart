@@ -40,8 +40,7 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                         <Row gutter={[16, 16]}>
                             {products.slice(0, limit).map((item) => {
                                 return (
-                                    // <div className="card-sub-parent">
-                                    <Col xs={12} sm={12} md={12} lg={6} key={item.id}>
+                                    <Col xs={24} sm={12} md={12} lg={6} key={item.id}>
                                         <Card
                                             key={item.id}
                                             hoverable

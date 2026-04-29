@@ -91,10 +91,6 @@ const Navbar = () => {
         },
     ]
 
-    const handleQuantityChange = (newValue) => {
-        setCurrentValue(newValue)
-    }
-
     return (
         <>
             <div className="section-container">
@@ -105,7 +101,6 @@ const Navbar = () => {
                         </a>
                     </Col>
 
-                    {/* Dekstop */}
                     <div className="nav-header-center">
                         <div className="input-group">
                             <Input
@@ -149,79 +144,6 @@ const Navbar = () => {
                             <FiShoppingCart className="social-icon" onClick={() => setShowCartDrawer(true)} />
                         </Badge>
                     </div>
-
-                    {/* Mobile */}
-                    <div className="mobile-nav-section">
-                        <Button
-                            onClick={() => setopenMobileNav(true)}
-                            icon={<AiOutlineMenuFold className="menu-icon" />}
-                            className="menu-btn"
-                        ></Button>
-                        <Drawer
-                            placement="left"
-                            title={<img src={logo}></img>}
-                            closable={{ 'aria-label': 'Close Button' }}
-                            onClose={() => setopenMobileNav(false)}
-                            className="mobile-nav-drawer"
-                            open={openMobileNav}
-                        >
-                            <Input
-                                className="search-input"
-                                placeholder="Search For products"
-                                type="search"
-                                suffix={<SearchOutlined
-                                    className="search-icon-input" />}
-                            >
-                            </Input>
-
-                            {/* <Popover trigger={["hover"]} placement="bottomLeft">
-                                <Button className="all-department-btn" icon={<FiGrid />}>
-                                    All Departments
-                                </Button>
-                            </Popover> */}
-                            <div className="navbar-links-main">
-                                <ul className="dropdown-links">
-
-                                    <Dropdown className="nav-dropdown" menu={{ items: homeMenu }} trigger={["hover"]}>
-                                        <li>Home
-                                            <IoIosArrowDown />
-                                        </li>
-                                    </Dropdown>
-
-                                    <Dropdown menu={{ items: shopMenu }} trigger={["hover"]}>
-                                        <li>
-                                            Shop <IoIosArrowDown />
-                                        </li>
-                                    </Dropdown>
-
-                                    <li>Stores</li>
-
-                                    <li>
-                                        Mega Menu
-                                    </li>
-
-                                    <Dropdown menu={{ items: pages }} trigger={["hover"]}>
-                                        <li>
-                                            Pages <IoIosArrowDown />
-                                        </li>
-                                    </Dropdown>
-
-                                    <Dropdown menu={{ items: accountInfo }} trigger={["hover"]}>
-                                        <li>
-                                            Account <IoIosArrowDown />
-                                        </li>
-                                    </Dropdown>
-
-                                    {/* <li className="dashboard-link">Dashboard</li> */}
-
-                                    <li>
-                                        Docs
-                                    </li>
-                                </ul>
-                            </div>
-                        </Drawer>
-                    </div>
-
 
                     <Drawer
                         width={560}
@@ -274,16 +196,15 @@ const Navbar = () => {
                                                                     mode="spinner"
                                                                     max="10"
                                                                     value={currentValue}
-                                                                    onChange={handleQuantityChange}
                                                                     className="input-spinner"
                                                                 />
                                                             </Col>
 
-                                                            <Col md={2} span={2}>
+                                                            {/* <Col md={2} span={2}> */}
                                                                 <span>
-                                                                    {currentValue * item.price}
+                                                                    {item.price}
                                                                 </span>
-                                                            </Col>
+                                                            {/* </Col> */}
                                                         </Row>
                                                     </div>
                                                 </li>
