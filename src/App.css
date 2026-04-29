@@ -78,3 +78,35 @@
   margin-top: 80px;
   margin-bottom: 80px;
 }
+
+.custom-float-button {
+  width: auto;
+  background-color: var(--fc-btn-bg) !important;
+  color: var(--fc-btn-color) !important;
+  padding: 8.8px 16px;
+  line-height: 1.6;
+  font-weight: 600;
+  height: 46px;
+  border-radius: 8px;
+  box-shadow: none !important;
+}
+
+.custom-float-button:hover {
+  background-color: var(--fc-btn-hover-bg) !important;
+  color: var(--fc-btn-color) !important;
+}
+
+.button-description-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.float-button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.custom-description {
+  font-size: 17.5px;
+}

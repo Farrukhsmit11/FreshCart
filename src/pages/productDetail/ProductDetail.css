@@ -103,6 +103,9 @@
 
 .detail-info {
     margin-bottom: 16px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 }
 
 .related-items-section {
@@ -169,6 +172,11 @@
     overflow: hidden;
     border-radius: 8px;
 }
-.ant-rate{
+
+.ant-rate {
     font-size: 12px;
+}
+
+.reviews-length {
+    color: #0aad0a;
 }

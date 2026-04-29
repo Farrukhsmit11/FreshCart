@@ -123,6 +123,9 @@ const ProductDetail = () => {
 
                                 <div className='detail-info'>
                                     <Rate className='product-detail-rate' defaultValue={3} allowClear={false} />
+                                    <a className='reviews-length'>
+                                        ({selectedProduct?.reviews.length} Reviews)
+                                    </a>
                                 </div>
 
                                 <span className='product-price'>

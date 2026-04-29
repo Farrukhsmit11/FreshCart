@@ -349,7 +349,7 @@
     padding-bottom: 16px;
 }
 
-.all-department-btn {
+.all-departments-btn {
     background: #0aad0a;
     color: white;
     border-color: #0aad0a;
@@ -357,9 +357,11 @@
     border-radius: 8px;
     padding-right: 24px;
     padding-left: 24px;
+    box-shadow: none !important;
+
 }
 
-.all-department-btn:hover {
+.all-departments-btn:hover {
     background-color: #099309 !important;
     color: white !important;
     border-color: #0aad0a !important;
@@ -484,7 +486,28 @@
     border-bottom: 1px solid #eee;
 }
 
-.filter-btn{
+.filter-btn {
     display: none;
 }
 
+.free-delivery-alert {
+    background: #f8d6d6 !important;
+    color: #581313 !important;
+    border: 1px solid #f1acac !important;
+    margin-bottom: 16px;
+    padding: 8px;
+}
+
+.checkout-now-link {
+    color: #581313;
+    font-weight: 700;
+}
+
+.checkout-now-link:hover {
+    color: #0aad0a !important;
+}
+
+.alert-content {
+    display: flex;
+    gap: 10px;
+}

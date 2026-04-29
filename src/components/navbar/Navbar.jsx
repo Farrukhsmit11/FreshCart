@@ -1,6 +1,6 @@
 import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
-import { Button, Input, Drawer, Badge, Row, Col, Popover, Result, InputNumber, Dropdown, Collapse } from "antd"
+import { Button, Input, Drawer, Badge, Row, Col, Popover, Result, InputNumber, Dropdown, Collapse, Alert } from "antd"
 import { SearchOutlined } from "@ant-design/icons"
 import LoginModal from "../loginModal/LoginModal"
 import { useState } from "react"
@@ -156,6 +156,23 @@ const Navbar = () => {
                     >
                         {itemCount > 0 ? (
                             <div>
+                                <Alert
+                                    title={
+                                        <span className="alert-content">
+                                            You’ve got FREE delivery. Start shopping!
+                                            <a
+                                                href="#"
+                                                className="checkout-now-link"
+
+                                                onClick={() => {
+                                                    navigate("/shopCheckout")
+                                                    setShowCartDrawer(false);
+                                                }
+                                                }
+                                            >checkout now</a>
+                                        </span>
+                                    }
+                                    type="success" className="free-delivery-alert" />
                                 {cartItems.map((item) => {
                                     return (
                                         <>
@@ -163,7 +180,9 @@ const Navbar = () => {
                                                 <li className="list-item">
                                                     <div className="list-item-group-main">
                                                         <Row gutter={[16, 16]} align="middle">
-                                                            <Col lg={12} md={8} span={6}>
+                                                            <Col lg={12} md={6} span={6}>
+
+
                                                                 <div className="list-item-content">
                                                                     <img
                                                                         alt={item.title}
@@ -186,25 +205,26 @@ const Navbar = () => {
                                                                             </a>
                                                                         </div>
                                                                     </div>
+
+
+
                                                                 </div>
                                                             </Col>
 
-                                                            <Col md={6} lg={11} span={9}>
+                                                            <Col xs={24} sm={12} md={6} lg={10}>
                                                                 <InputNumber
                                                                     key={item.id}
                                                                     min={1}
                                                                     mode="spinner"
                                                                     max="10"
-                                                                    value={currentValue}
+                                                                    defaultValue="1"
                                                                     className="input-spinner"
                                                                 />
                                                             </Col>
 
-                                                            {/* <Col md={2} span={2}> */}
-                                                                <span>
-                                                                    {item.price}
-                                                                </span>
-                                                            {/* </Col> */}
+                                                            <span>
+                                                                {item.price}
+                                                            </span>
                                                         </Row>
                                                     </div>
                                                 </li>
@@ -232,7 +252,6 @@ const Navbar = () => {
                                         className="proceed-to-checkout-btn">Proceed to Checkout</Button>
                                 </div>
                             </div>
-
                         ) : (
                             <Result
                                 extra={
@@ -259,7 +278,7 @@ const Navbar = () => {
                 <nav className="bottom-nav-section">
                     <div className="navbar-default">
                         <Popover trigger={["hover"]} placement="bottomLeft">
-                            <Button className="all-department-btn" icon={<FiGrid />}>
+                            <Button className="all-departments-btn" icon={<FiGrid />}>
                                 All Departments
                             </Button>
                         </Popover>
