@@ -148,7 +148,6 @@
 .icons {
     display: flex;
     justify-content: space-between;
-    gap: 13px;
     align-items: center;
 }
 
@@ -276,4 +275,10 @@
 
 .filter-btn {
     display: none !important;
+}
+
+.listing-controls-body{
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }

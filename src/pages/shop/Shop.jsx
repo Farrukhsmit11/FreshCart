@@ -5,7 +5,7 @@ import fruitsImg from "../../assets/assortment-fruits-img.png"
 import { BsGrid3X3Gap } from "react-icons/bs";
 import { IoIosArrowRoundForward, IoIosList } from "react-icons/io";
 import { BiFilterAlt, BiGridAlt } from "react-icons/bi";
-import category from '../../components/featuredCategories/category'
+import categories from '../../components/featuredCategories/categories'
 import ShopProducts from "../../components/shopProducts/ShopProducts"
 import { useState } from "react";
 
@@ -15,6 +15,7 @@ const Shop = () => {
     const { shopId } = useParams();
 
     const [openFiltersDrawer, setOpenFiltersDrawer] = useState(false);
+    const [selectValue, setSelectValue] = useState(null);
 
     const items = [
         {
@@ -84,7 +85,7 @@ const Shop = () => {
         },
     ];
 
-    const handleSelectedCategory = category?.find(item => item.id === Number(shopId));
+    const handleSelectedCategory = categories?.find(item => item.id === Number(shopId));
 
     const options = [
         {
@@ -180,69 +181,26 @@ const Shop = () => {
                                     <p>26 Products found</p>
                                 </div>
 
-                                <div className="filters-main">
-
-                                    <div className="icons">
-                                        <BsGrid3X3Gap className="list-icon" />
-                                        <BiGridAlt className="list-icon" />
-                                        <IoIosList className="list-icon" />
+                                <div className="listing-controls-body">
+                                    <div className="filters-main">
+                                        <div className="icons">
+                                            <BsGrid3X3Gap className="list-icon" />
+                                            <BiGridAlt className="list-icon" />
+                                            <IoIosList className="list-icon" />
+                                        </div>
                                     </div>
 
-                                    <div className="responsive-filter-main">
-                                        <Button
-                                            icon={<BiFilterAlt className="view-filters-icon" />}
-                                            className="filter-btn"
-                                            onClick={() => setOpenFiltersDrawer(true)}>Filters</Button>
-
-                                        <Drawer
-                                            title="Filter"
-                                            closable={{ 'aria-label': 'Close Button' }}
-                                            placement="left"
-                                            onClose={() => {
-                                                setOpenFiltersDrawer(false)
-                                            }}
-                                            open={openFiltersDrawer}
-                                        >
-                                            <div className="sidebar-main">
-                                                <h1 className="menu-title">Categories</h1>
-                                                <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
-                                            </div>
-
-                                            <div className="stores-section">
-                                                <h3 className="menu-title">Stores</h3>
-
-                                                <div className="input-section">
-                                                    <Input className="search-store-input" placeholder="Serach by Stores"></Input>
-                                                </div>
-                                            </div>
-
-                                            <div className="fruits-card-main">
-                                                <div className="card-overlay">
-                                                    <h3>Fresh Fruits</h3>
-                                                    <p>Get up to 35% Off</p>
-                                                    <Button
-                                                        className="fresh-fruits-btn"
-                                                        icon={<IoIosArrowRoundForward className="fruits-arrow-icon" />
-                                                        }>Shop Now</Button>
-                                                </div>
-                                                <img className="fruits-img" src={fruitsImg} alt="Fruits" />
-                                            </div>
-                                        </Drawer>
-                                    </div>
-                                </div>
-
-
-                                <div className="inputs-main">
                                     <Select
                                         options={options}
                                         className="form-select"
+                                        value={selectValue}
                                         defaultValue="Show Now">
                                     </Select>
 
                                     <Select
                                         options={selectOptions}
                                         className="form-select"
-                                        value="Sort by Featured"
+                                        value={selectValue}
                                     ></Select>
                                 </div>
                             </div>
@@ -251,8 +209,6 @@ const Shop = () => {
                     </Row>
                 </div>
             </div>
-
-
         </>
     )
 }

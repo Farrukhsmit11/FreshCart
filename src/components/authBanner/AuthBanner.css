@@ -3,7 +3,7 @@
 }
 
 .auth-nav {
-    padding: 10px 5px;
+    padding: 10px 16px;
     box-shadow: rgba(145, 158, 171, 0.14) 0px 4px 5px 0px;
 }
 
@@ -21,8 +21,9 @@
 }
 
 .auth-banner-right a{
-    color: #000000e6;
+    color: #21313c;
     font-weight: 500;
+    font-size: 14px;
 }
 
 .auth-content {

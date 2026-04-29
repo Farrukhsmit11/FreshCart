@@ -1,7 +1,7 @@
 import { Button, Card, Col, Rate, Row, Statistic } from "antd"
 import "./DailyBestSells.css"
 import { IoIosArrowRoundForward, IoIosGitCompare } from "react-icons/io"
-import { sells } from "./sells"
+import { dailySellData } from "./dailySellData"
 import { addToCart } from "../../store/cartSlice/CartSlice"
 import { PlusOutlined, } from "@ant-design/icons"
 import { useDispatch } from "react-redux"
@@ -68,7 +68,7 @@ const DailyBestSells = () => {
                             </div>
                         </div>
 
-                        {sells.map((item) => {
+                        {dailySellData.map((item) => {
                             return (
                                 <Col xs={24} md={6}>
                                     <Card

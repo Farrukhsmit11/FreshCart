@@ -6,6 +6,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Shop, ShopWishlist, SignIn, ForgotPassword, ProductDetail, ShopCheckout, SignUp } from "./pages"
 import Home from "./pages/home/Home"
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
+// import "./Media.css"
 function App() {
 
   const [loading, setLoading] = useState(true);

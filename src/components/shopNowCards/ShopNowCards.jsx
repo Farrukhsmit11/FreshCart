@@ -1,6 +1,6 @@
 
 import { Button, Col, Row } from "antd"
-import { shop } from "./shop"
+import { data } from "./data"
 import "./ShopNowCards.css"
 import { useNavigate } from "react-router-dom"
 
@@ -12,17 +12,16 @@ const ShopNowCards = () => {
     <section className="section-padding">
       <div className="section-container">
         <Row gutter={[16, 16]}>
-          {shop.map((items, index) => {
+          {data.map((items, index) => {
             return (
               <>
-                <Col md={6} lg={12}  key={index}>
+                <Col md={6} lg={12} key={index}>
                   <div className="shop-now-card-header">
                     <img className="shop-now-card-image" src={items.imgSrc} />
 
                     <div className="product-details-content">
                       <h4>{items.title}</h4>
                       <p>{items.description}</p>
-
                       <Button
                         onClick={() =>
                           navigate(`shop/${items.id}`)} className="shop-now-btn">Shop Now</Button>

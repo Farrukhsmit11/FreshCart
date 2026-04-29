@@ -22,7 +22,7 @@ const SignUp = () => {
     }
 
     return (
-        <section className="sign-up-section">
+        <section className="auth-section">
             <div className="section-container">
                 <Row justify="space-between" align="middle">
                     <Col lg={10} md={6} span={12} order={2}>
@@ -134,7 +134,7 @@ const SignUp = () => {
                                                         className="password-input"
                                                         name="password"
                                                         value={values.password}
-                                                        placeholder="***"
+                                                        placeholder="*****"
                                                     ></Input.Password>
                                                 </AntForm.Item>
                                             </Col>
@@ -150,7 +150,6 @@ const SignUp = () => {
                                             <span className="ampersand"> & </span>
                                             <a href="#" className="agree-to-terms">Privacy Policy</a>
                                         </p>
-
                                     </AntForm>
 
                                 </>

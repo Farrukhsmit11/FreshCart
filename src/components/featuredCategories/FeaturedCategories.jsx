@@ -4,7 +4,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
-import category from "./category";
+import categories from "./categories";
 import { Card, Col, Row } from "antd";
 import { useNavigate } from "react-router-dom";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
@@ -16,7 +16,7 @@ const FeaturedCategories = () => {
     return (
         <section className="section-padding">
             <div className="section-container">
-                <Row align="middle">
+                <Row>
                     <Col span={24}>
                         <div className="featured-categories-header">
                             <h1 className="featured-title">Featured Categories</h1>
@@ -49,7 +49,7 @@ const FeaturedCategories = () => {
                         className="mySwiper"
                     >
                         <Row gutter={[16, 16]}>
-                            {category.map((product) => {
+                            {categories.map((product) => {
                                 return (
                                     <SwiperSlide>
                                         <div className="category-card-sub-parent">
@@ -63,7 +63,6 @@ const FeaturedCategories = () => {
                                                 </div>
                                             </Card>
                                         </div>
-
                                     </SwiperSlide>
                                 )
                             })}

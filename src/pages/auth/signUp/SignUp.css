@@ -10,6 +10,9 @@
 .sign-up-header h1 {
     margin-bottom: 4px;
     line-height: 1.2;
+    color: #21313c;
+    font-weight: 700;
+    font-size: 28px;
 }
 
 .sign-up-header p {
@@ -64,4 +67,13 @@
 .agree-to-terms {
     color: #0aad0a !important;
     font-weight: 500;
+}
+
+.ant-input::placeholder {
+    font-weight: bold;
+    opacity: 1;
+}
+
+.ant-select-selection-placeholder {
+    font-weight: bold !important;
 }

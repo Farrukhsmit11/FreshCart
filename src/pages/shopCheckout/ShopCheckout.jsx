@@ -125,41 +125,6 @@ const ShopCheckout = () => {
                         ghost
                         items={items}
                     />
-
-                    {/* <Col xs={24} md={6} lg={7}>
-                        <div className="summary-card-parent">
-
-                            <Card
-                                title={<h5 className="summary-card-title">Order Details</h5>}
-                            >
-                                {cartItems.map((item) => {
-                                    return (
-                                        <ul className="summary-card-lists">
-                                            <li className="list-group-item">
-                                                <Row gutter={[16, 16]} align="middle">
-                                                    <Col span={4}>
-                                                        <img src={item.thumbnail} />
-                                                    </Col>
-
-                                                    <Col span={11}>
-                                                        <h4>{item.title}</h4>
-                                                    </Col>
-
-                                                    <Col span={6}>
-                                                        {item.value}
-                                                    </Col>
-
-                                                    <Col span={1}>
-                                                        ${item.price}
-                                                    </Col>
-                                                </Row>
-                                            </li>
-                                        </ul>
-                                    )
-                                })}
-                            </Card>
-                        </div>
-                    </Col> */}
                 </Row>
             </section>
 

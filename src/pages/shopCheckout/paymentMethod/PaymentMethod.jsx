@@ -13,7 +13,6 @@ const PaymentMethod = () => {
         >
 
             <div className="payment-card-main">
-
                 <Card className="payment-cards">
                     <Radio value={1}>
                         <div className="payment-card-content">
