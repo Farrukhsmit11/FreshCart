@@ -158,6 +158,17 @@
     cursor: pointer;
 }
 
+.list-menu-icon {
+    color: #0aad0a;
+    margin-right: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.list-menu-icon:hover {
+    color: #0aad0a;
+}
+
 .shop-card-title {
     font-size: 35px;
     margin: 0;
@@ -175,7 +186,20 @@
 .form-select {
     padding: 8px 12px 8.8px 11px;
     font-size: 11px;
+    border: 1px solid 1px solid #dfe2e1;
     border-radius: 8px;
+}
+
+.form-select:hover {
+    border: 1px solid #dfe2e1 !important;
+}
+
+.list-menu-icon {
+    color: #0aad0a;
+}
+
+.list-menu-icon:hover {
+    color: #0aad0a;
 }
 
 
@@ -277,8 +301,14 @@
     display: none !important;
 }
 
-.listing-controls-body{
+.listing-controls-body {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 7px;
+}
+
+.form-select-placeholder {
+    color: #21313c !important;
+    font-weight: 600;
+    font-size: 14px;
 }

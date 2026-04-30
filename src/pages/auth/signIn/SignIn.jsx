@@ -26,9 +26,9 @@ const SignIn = () => {
     <>
       <section className="auth-section">
         <div className="section-container">
-          <Row gutter={[16, 16]} align="middle">
+          <div className="auth-wrapper">
             <Col lg={11}>
-              <img className="" src={SignInlogo} alt="Sign in illustration" />
+              <img className="auth-form-logo" src={SignInlogo} alt="Sign in illustration" />
             </Col>
 
             <Formik
@@ -55,7 +55,7 @@ const SignIn = () => {
 
                     <div className="form-content">
 
-                      <h1 className="signup-form-title">Sign In to FreshCart</h1>
+                      <h1 className="auth-title">Sign In to FreshCart</h1>
 
                       <p>Welcome back to FreshCart! Enter your email to get started.</p>
                     </div>
@@ -131,7 +131,7 @@ const SignIn = () => {
 
               }
             </Formik>
-          </Row>
+          </div>
         </div>
       </section >
 

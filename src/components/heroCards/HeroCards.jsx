@@ -35,7 +35,7 @@ const HeroCards = () => {
                                 <div className="slide-wrapper-left">
                                     <div className="text-content">
                                         <span className="custom-badge">{item.badgeText}</span>
-                                        <h1>{item.title} </h1>
+                                        <h1 className="hero-cards-title">{item.title} </h1>
                                         <p className="text-primary">{item.text}</p>
 
                                         <p className="hero-description">{item.description}</p>

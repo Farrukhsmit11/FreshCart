@@ -61,6 +61,7 @@
 }
 
 .product-card {
+    width: 254px;
     border: 1px solid #dfe2e1;
     cursor: pointer;
 }

@@ -145,6 +145,81 @@ const Navbar = () => {
                         </Badge>
                     </div>
 
+
+                    {/* Mobile  */}
+
+
+                    <div className="mobile-nav-section">
+                        <Button
+                            onClick={() => setopenMobileNav(true)}
+                            icon={<AiOutlineMenuFold className="menu-icon" />}
+                            className="menu-btn"
+                        ></Button>
+                        <Drawer
+                            placement="left"
+                            title={<img src={logo}></img>}
+                            closable={{ 'aria-label': 'Close Button' }}
+                            onClose={() => setopenMobileNav(false)}
+                            className="mobile-nav-drawer"
+                            open={openMobileNav}
+                        >
+                            <Input
+                                className="search-input"
+                                placeholder="Search For products"
+                                type="search"
+                                suffix={<SearchOutlined
+                                    className="search-icon-input" />}
+                            >
+                            </Input>
+
+                            {/* <Popover trigger={["hover"]} placement="bottomLeft">
+                                <Button className="all-department-btn" icon={<FiGrid />}>
+                                    All Departments
+                                </Button>
+                            </Popover> */}
+                            <div className="navbar-links-main">
+                                <ul className="dropdown-links">
+
+                                    <Dropdown className="nav-dropdown" menu={{ items: homeMenu }} trigger={["hover"]}>
+                                        <li>Home
+                                            <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    <Dropdown menu={{ items: shopMenu }} trigger={["hover"]}>
+                                        <li>
+                                            Shop <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    <li>Stores</li>
+
+                                    <li>
+                                        Mega Menu
+                                    </li>
+
+                                    <Dropdown menu={{ items: pages }} trigger={["hover"]}>
+                                        <li>
+                                            Pages <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    <Dropdown menu={{ items: accountInfo }} trigger={["hover"]}>
+                                        <li>
+                                            Account <IoIosArrowDown />
+                                        </li>
+                                    </Dropdown>
+
+                                    {/* <li className="dashboard-link">Dashboard</li> */}
+
+                                    <li>
+                                        Docs
+                                    </li>
+                                </ul>
+                            </div>
+                        </Drawer>
+                    </div>
+
                     <Drawer
                         width={560}
                         onClose={() => setShowCartDrawer(false)}
@@ -206,7 +281,7 @@ const Navbar = () => {
                                                                 </div>
                                                             </Col>
 
-                                                            <Col xs={24} sm={12} md={6} lg={10}>
+                                                            <Col xs={12} sm={12} md={6} lg={10}>
                                                                 <InputNumber
                                                                     key={item.id}
                                                                     min={1}

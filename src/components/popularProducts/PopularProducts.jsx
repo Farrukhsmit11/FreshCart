@@ -40,82 +40,85 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                         <Row gutter={[16, 16]}>
                             {products.slice(0, limit).map((item) => {
                                 return (
-                                    <Col xs={24} sm={12} md={12} lg={6} key={item.id}>
-                                        <Card
-                                            key={item.id}
-                                            hoverable
-                                            className="product-card"
-                                            onClick={() => navigate(`/productDetail/${item.id}`)}
-                                            cover={
-                                                <>
-                                                    <img className="product-card-image" src={item.thumbnail} />
-                                                </>
-                                            }
-                                        >
-                                            <div className="product-card-header">
-                                                <p>{item.category}</p>
-                                            </div>
+                                    <div>
+                                        <Col xs={24} sm={12} md={12} lg={6} key={item.id}>
+                                            <Card
+                                                key={item.id}
+                                                hoverable
+                                                className="product-card"
+                                                onClick={() => navigate(`/productDetail/${item.id}`)}
+                                                cover={
+                                                    <>
+                                                        <img className="product-card-image" src={item.thumbnail} />
+                                                    </>
+                                                }
+                                            >
+                                                <div className="product-card-header">
+                                                    <p>{item.category}</p>
+                                                </div>
 
-                                            <h2 className="product-card-title">{item.title}</h2>
+                                                <h2 className="product-card-title">{item.title}</h2>
 
-                                            <div className="product-review-section">
-                                                <Rate
-                                                    onChange={(value) => {
-                                                        handleRateChange(value, event)
-                                                    }}
-                                                    className="review" allowHalf defaultValue={2.5} />
-                                            </div>
-
-                                            <div className="modal-footer">
-                                                <p>${item.price}</p>
-                                                <Button
-                                                    className="add-to-cart-btn"
-                                                    onClick={(e) => {
-                                                        dispatch(addToCart(item))
-                                                        e.stopPropagation()
-                                                    }}
-                                                ><PlusOutlined className="add-cart-icon" /> Add</Button>
-                                            </div>
-
-                                            <div className="icons-overlay">
-                                                <div className="icons-main">
-
-                                                    <Button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation()
-                                                            setOpenViewModal(true)
-                                                            setSelectedProduct(item)
+                                                <div className="product-review-section">
+                                                    <Rate
+                                                        onChange={(value) => {
+                                                            handleRateChange(value, event)
                                                         }}
+                                                        className="review" allowHalf defaultValue={2.5} />
+                                                </div>
 
-                                                        icon={<IoEyeOutline />}
-                                                        className="card-action-btn"
-                                                    >
-                                                    </Button>
+                                                <div className="modal-footer">
+                                                    <p>${item.price}</p>
+                                                    <Button
+                                                        className="add-to-cart-btn"
+                                                        onClick={(e) => {
+                                                            dispatch(addToCart(item))
+                                                            e.stopPropagation()
+                                                        }}
+                                                    ><PlusOutlined className="add-cart-icon" /> Add</Button>
+                                                </div>
 
-                                                    <a href="#">
+                                                <div className="icons-overlay">
+                                                    <div className="icons-main">
+
                                                         <Button
                                                             onClick={(e) => {
                                                                 e.stopPropagation()
+                                                                setOpenViewModal(true)
+                                                                setSelectedProduct(item)
                                                             }}
 
-                                                            icon={<IoIosGitCompare />}
+                                                            icon={<IoEyeOutline />}
                                                             className="card-action-btn"
                                                         >
                                                         </Button>
-                                                    </a>
 
-                                                    <Button onClick={(e) => {
-                                                        dispatch(addToWishlist(item))
-                                                        e.stopPropagation()
-                                                    }}
-                                                        icon={<BsHeart />}
-                                                        className="card-action-btn"
-                                                    >
-                                                    </Button>
+                                                        <a href="#">
+                                                            <Button
+                                                                onClick={(e) => {
+                                                                    e.stopPropagation()
+                                                                }}
+
+                                                                icon={<IoIosGitCompare />}
+                                                                className="card-action-btn"
+                                                            >
+                                                            </Button>
+                                                        </a>
+
+                                                        <Button onClick={(e) => {
+                                                            dispatch(addToWishlist(item))
+                                                            e.stopPropagation()
+                                                        }}
+                                                            icon={<BsHeart />}
+                                                            className="card-action-btn"
+                                                        >
+                                                        </Button>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </Card>
-                                    </Col>
+                                            </Card>
+
+                                        </Col>
+                                    </div>
                                 )
                             })}
                         </Row >

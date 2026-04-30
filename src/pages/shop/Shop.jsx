@@ -184,9 +184,9 @@ const Shop = () => {
                                 <div className="listing-controls-body">
                                     <div className="filters-main">
                                         <div className="icons">
-                                            <BsGrid3X3Gap className="list-icon" />
+                                            <IoIosList className="list-menu-icon" />
                                             <BiGridAlt className="list-icon" />
-                                            <IoIosList className="list-icon" />
+                                            <BsGrid3X3Gap className="list-icon" />
                                         </div>
                                     </div>
 
@@ -194,6 +194,9 @@ const Shop = () => {
                                         options={options}
                                         className="form-select"
                                         value={selectValue}
+                                        placeholder={
+                                            <span className="form-select-placeholder">Show: 12</span>
+                                        }
                                         defaultValue="Show Now">
                                     </Select>
 
@@ -201,6 +204,9 @@ const Shop = () => {
                                         options={selectOptions}
                                         className="form-select"
                                         value={selectValue}
+                                        placeholder={
+                                            <span className="form-select-placeholder">Sort By: Featured</span>
+                                        }
                                     ></Select>
                                 </div>
                             </div>

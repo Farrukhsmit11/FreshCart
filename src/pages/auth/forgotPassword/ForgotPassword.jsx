@@ -24,9 +24,9 @@ const ForgotPassword = () => {
         <>
             <section className="auth-section">
                 <div className="section-container">
-                    <Row>
+                    <div className="auth-wrapper">
                         <Col md={18} lg={12} span={19}>
-                            <img className="" src={forgotPasswordlogo} />
+                            <img className="auth-form-logo" src={forgotPasswordlogo} />
                         </Col>
 
                         <Formik
@@ -47,7 +47,7 @@ const ForgotPassword = () => {
                                     <AntForm onFinish={handleSubmit} className="auth-form" form={form} layout="vertical">
 
                                         <div className="form-content">
-                                            <h1 className="forget-form-title">Forgot Your password?</h1>
+                                            <h1 className="auth-title">Forgot Your password?</h1>
                                             <p className="forget-form-subtitle">Please enter the email address associated with your account and We will email you a link to reset your password.</p>
                                         </div>
 
@@ -77,9 +77,11 @@ const ForgotPassword = () => {
 
                                     </AntForm>
                                 </Col>
+
                             )}
+
                         </Formik>
-                    </Row>
+                    </div>
                 </div>
             </section>
         </>

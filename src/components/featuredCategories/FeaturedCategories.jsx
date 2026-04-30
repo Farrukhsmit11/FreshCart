@@ -47,6 +47,19 @@ const FeaturedCategories = () => {
                         }}
                         modules={[Pagination, Navigation, Autoplay]}
                         className="mySwiper"
+                        breakpoints={
+                            {
+                                320: {
+                                    slidesPerView: 2,
+                                    spaceBetween: 10
+                                },
+
+                                1024: {
+                                    slidesPerView: 6,
+                                    spaceBetween: 20
+                                }
+                            }
+                        }
                     >
                         <Row gutter={[16, 16]}>
                             {categories.map((product) => {

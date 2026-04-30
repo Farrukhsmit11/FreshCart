@@ -138,17 +138,15 @@ const ShopWishlist = () => {
                 </Col>
 
                 <div className="table-main">
-                    <div>
-                        <Table
-                            key="id"
-                            rowSelection={{ type: selectionType, ...rowSelection }}
-                            columns={columns}
-                            dataSource={wishlist}
-                            rowKey="id"
-                            className="wishlist-table"
-                        >
-                        </Table>
-                    </div>
+                    <Table
+                        key="id"
+                        rowSelection={{ type: selectionType, ...rowSelection }}
+                        columns={columns}
+                        dataSource={wishlist}
+                        rowKey="id"
+                        className="wishlist-table"
+                    >
+                    </Table>
                 </div>
             </section >
 

@@ -110,3 +110,8 @@
 .custom-description {
   font-size: 17.5px;
 }
+
+.auth-form-logo {
+  max-width: 100%;
+  height: auto;
+}

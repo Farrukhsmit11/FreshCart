@@ -10,6 +10,7 @@ import { FloatButton } from "antd";
 import { CustomerServiceOutlined } from "@ant-design/icons";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { TbShoppingCartShare } from "react-icons/tb";
+import "./Media.css"
 
 function App() {
 
