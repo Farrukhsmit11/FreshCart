@@ -24,12 +24,12 @@ const SignUp = () => {
     return (
         <section className="auth-section">
             <div className="section-container">
-                <Row justify="space-between" align="middle">
-                    <Col lg={10} md={6} span={12} order={2}>
-                        <img src={signUpImg} />
+                <div className="auth-wrapper">
+                    <Col lg={10} md={6}>
+                        <img src={signUpImg} className="auth-form-logo" />
                     </Col>
 
-                    <Col lg={13} md={12} span={12} order={2}>
+                    <Col lg={13} md={12}>
 
                         <Formik
                             validationSchema={signUpSchema}
@@ -51,112 +51,112 @@ const SignUp = () => {
                                         <h1>Get Start Shopping</h1>
                                         <p>Welcome to FreshCart! Enter your email to get started.</p>
                                     </div>
+                                    <Col lg={8} md={24} sm={24} order={2}>
+                                        <AntForm
+                                            layout="vertical"
+                                            form={form}
+                                            onFinish={handleSubmit}
+                                        >
+                                            <Row gutter={[10]}>
 
-                                    <AntForm
-                                        layout="vertical"
-                                        form={form}
-                                        onFinish={handleSubmit}
-                                    >
-                                        <Row gutter={[10]}>
+                                                <Col span={7}>
+                                                    <AntForm.Item
+                                                        validateStatus={errors.firstName && touched.firstName ? "error" : ""}
+                                                        help={
+                                                            errors.firstName && touched.firstName ? (
+                                                                <span className="form-error">{errors.firstName}</span>
+                                                            ) : null
+                                                        }
+                                                    >
+                                                        <Input
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className="name-input"
+                                                            name="firstName"
+                                                            value={values.firstName}
+                                                            placeholder="First Name"
+                                                        ></Input>
+                                                    </AntForm.Item>
+                                                </Col>
 
-                                            <Col span={7}>
-                                                <AntForm.Item
-                                                    validateStatus={errors.firstName && touched.firstName ? "error" : ""}
-                                                    help={
-                                                        errors.firstName && touched.firstName ? (
-                                                            <span className="form-error">{errors.firstName}</span>
-                                                        ) : null
-                                                    }
-                                                >
-                                                    <Input
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        className="name-input"
-                                                        name="firstName"
-                                                        value={values.firstName}
-                                                        placeholder="First Name"
-                                                    ></Input>
-                                                </AntForm.Item>
+                                                <Col span={7}>
+                                                    <AntForm.Item
+                                                        validateStatus={errors.lastName && touched.lastName ? "error" : ""}
+                                                        help={
+                                                            errors.lastName && touched.lastName ? (
+                                                                <span className="form-error">{errors.lastName}</span>
+                                                            ) : null
+                                                        }
+                                                    >
+                                                        <Input
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className="name-input"
+                                                            name="lastName"
+                                                            value={values.lastName}
+                                                            placeholder="Last Name"
+                                                        ></Input>
+                                                    </AntForm.Item>
+                                                </Col>
+
+                                                <Col xs={12} sm={12} span={14}>
+                                                    <AntForm.Item
+                                                        validateStatus={errors.email && touched.email ? "error" : ""}
+                                                        help={
+                                                            errors.email && touched.email ? (
+                                                                <span className="form-error">{errors.email}</span>
+                                                            ) : null
+                                                        }
+                                                    >
+                                                        <Input
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className="email-input"
+                                                            name="email"
+                                                            value={values.email}
+                                                            placeholder="Email Address"
+                                                        ></Input>
+                                                    </AntForm.Item>
+                                                </Col>
+
+                                                <Col span={14}>
+                                                    <AntForm.Item
+                                                        validateStatus={errors.password && touched.password ? "error" : ""}
+                                                        help={
+                                                            errors.password && touched.password ? (
+                                                                <span className="form-error">{errors.password}</span>
+                                                            ) : null
+                                                        }
+                                                    >
+                                                        <Input.Password
+                                                            onChange={handleChange}
+                                                            onBlur={handleBlur}
+                                                            className="password-input"
+                                                            name="password"
+                                                            value={values.password}
+                                                            placeholder="*****"
+                                                        ></Input.Password>
+                                                    </AntForm.Item>
+                                                </Col>
+                                            </Row>
+
+                                            <Col span={14} className="sign-up-actions">
+                                                <Button className="register-btn" htmlType="submit">Register</Button>
                                             </Col>
 
-                                            <Col span={7}>
-                                                <AntForm.Item
-                                                    validateStatus={errors.lastName && touched.lastName ? "error" : ""}
-                                                    help={
-                                                        errors.lastName && touched.lastName ? (
-                                                            <span className="form-error">{errors.lastName}</span>
-                                                        ) : null
-                                                    }
-                                                >
-                                                    <Input
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        className="name-input"
-                                                        name="lastName"
-                                                        value={values.lastName}
-                                                        placeholder="Last Name"
-                                                    ></Input>
-                                                </AntForm.Item>
-                                            </Col>
-
-                                            <Col span={14}>
-                                                <AntForm.Item
-                                                    validateStatus={errors.email && touched.email ? "error" : ""}
-                                                    help={
-                                                        errors.email && touched.email ? (
-                                                            <span className="form-error">{errors.email}</span>
-                                                        ) : null
-                                                    }
-                                                >
-                                                    <Input
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        className="email-input"
-                                                        name="email"
-                                                        value={values.email}
-                                                        placeholder="Email Address"
-                                                    ></Input>
-                                                </AntForm.Item>
-                                            </Col>
-
-                                            <Col span={14}>
-                                                <AntForm.Item
-                                                    validateStatus={errors.password && touched.password ? "error" : ""}
-                                                    help={
-                                                        errors.password && touched.password ? (
-                                                            <span className="form-error">{errors.password}</span>
-                                                        ) : null
-                                                    }
-                                                >
-                                                    <Input.Password
-                                                        onChange={handleChange}
-                                                        onBlur={handleBlur}
-                                                        className="password-input"
-                                                        name="password"
-                                                        value={values.password}
-                                                        placeholder="*****"
-                                                    ></Input.Password>
-                                                </AntForm.Item>
-                                            </Col>
-                                        </Row>
-
-                                        <Col span={14} className="sign-up-actions">
-                                            <Button className="register-btn" htmlType="submit">Register</Button>
-                                        </Col>
-
-                                        <p className="form-description">
-                                            By continuing, you agree to our{" "}
-                                            <a href="#" className="agree-to-terms">Terms of Service</a>
-                                            <span className="ampersand"> & </span>
-                                            <a href="#" className="agree-to-terms">Privacy Policy</a>
-                                        </p>
-                                    </AntForm>
-
+                                            <p className="form-description">
+                                                By continuing, you agree to our{" "}
+                                                <a href="#" className="agree-to-terms">Terms of Service</a>
+                                                <span className="ampersand"> & </span>
+                                                <a href="#" className="agree-to-terms">Privacy Policy</a>
+                                            </p>
+                                        </AntForm>
+                                    </Col>
                                 </>
                             )}
                         </Formik>
                     </Col>
-                </Row>
+                </div>
             </div>
         </section >
     )
