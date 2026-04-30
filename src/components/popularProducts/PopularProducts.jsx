@@ -92,15 +92,17 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                                                     >
                                                     </Button>
 
-                                                    <Button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation()
-                                                        }}
+                                                    <a href="#">
+                                                        <Button
+                                                            onClick={(e) => {
+                                                                e.stopPropagation()
+                                                            }}
 
-                                                        icon={<IoIosGitCompare />}
-                                                        className="card-action-btn"
-                                                    >
-                                                    </Button>
+                                                            icon={<IoIosGitCompare />}
+                                                            className="card-action-btn"
+                                                        >
+                                                        </Button>
+                                                    </a>
 
                                                     <Button onClick={(e) => {
                                                         dispatch(addToWishlist(item))

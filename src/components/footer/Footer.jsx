@@ -8,8 +8,13 @@ import googleplayLogo from "../../assets/googleplay-btn.svg"
 import applestoreLogo from "../../assets/appstore-btn.svg"
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
 import { Col, Row } from "antd"
+import { useNavigate } from "react-router-dom"
 
 const Footer = () => {
+
+    const navigate = useNavigate();
+
+
     return (
 
         <footer className="footer">
@@ -139,7 +144,10 @@ const Footer = () => {
                             </div>
 
                             <div className="nav-item">
-                                <a className="nav-link" href="#">Shop Checkout</a>
+                                <a
+                                    className="nav-link"
+                                    onClick={() => navigate("/shopCheckout")}
+                                    href="#">Shop Checkout</a>
 
                             </div>
                         </div>
@@ -229,9 +237,9 @@ const Footer = () => {
                             <div className="rights-reserved">
                                 <h3>© 2022 - 2025 FreshCart eCommerce HTML Template. All rights reserved. Powered by
 
-                                   <a href="#">Codescandy.</a> 
+                                    <a href="https://codescandy.com/" target="_blank">Codescandy.</a>
                                 </h3>
-                               
+
                             </div>
 
                             <div className="platform-links">

@@ -181,8 +181,6 @@ const Navbar = () => {
                                                     <div className="list-item-group-main">
                                                         <Row gutter={[16, 16]} align="middle">
                                                             <Col lg={12} md={6} span={6}>
-
-
                                                                 <div className="list-item-content">
                                                                     <img
                                                                         alt={item.title}
@@ -205,9 +203,6 @@ const Navbar = () => {
                                                                             </a>
                                                                         </div>
                                                                     </div>
-
-
-
                                                                 </div>
                                                             </Col>
 
