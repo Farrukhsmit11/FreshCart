@@ -81,8 +81,8 @@
          font-size: 28px;
      }
 
-     .hero-cards-title{
-        font-size: 20px;
+     .hero-cards-title {
+         font-size: 20px;
      }
 
      .hero-description {
@@ -148,11 +148,11 @@
          width: 100%;
      }
 
-     Wishlist Page */ .table-header h1 {
+     .table-header h1 {
          font-size: 25.1px;
      }
 
-     Product Detail Page */ .product-detail-title {
+     .product-detail-title {
          font-size: 25.1px;
      }
 
@@ -277,32 +277,3 @@
          margin-bottom: 18px;
      }
  }
-
- /* @media (min-width: 768px) and (max-width: 991px) {
-
-    .menu-btn {
-        display: block !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-    }
-
-    .search-input {
-        display: none;
-    }
-
-    .section-container {
-        margin-inline: 50px;
-    }
-
-    .select-location-btn {
-        display: none !important;
-    }
-
-    .bottom-nav-section {
-        display: none;
-    }
-
-    .hero-img {
-        height: 400px;
-    }
-} 
