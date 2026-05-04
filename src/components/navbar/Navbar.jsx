@@ -91,6 +91,10 @@ const Navbar = () => {
         },
     ]
 
+    const handleQuantity = (value) => {
+        setCurrentValue(value)
+    }
+
     return (
         <>
             <div className="section-container">
@@ -147,8 +151,6 @@ const Navbar = () => {
 
 
                     {/* Mobile  */}
-
-
                     <div className="mobile-nav-section">
                         <Button
                             onClick={() => setopenMobileNav(true)}
@@ -209,9 +211,6 @@ const Navbar = () => {
                                             Account <IoIosArrowDown />
                                         </li>
                                     </Dropdown>
-
-                                    {/* <li className="dashboard-link">Dashboard</li> */}
-
                                     <li>
                                         Docs
                                     </li>
@@ -286,8 +285,9 @@ const Navbar = () => {
                                                                     key={item.id}
                                                                     min={1}
                                                                     mode="spinner"
-                                                                    max="10"
                                                                     defaultValue="1"
+                                                                    max="10"
+                                                                    onChange={handleQuantity}
                                                                     className="input-spinner"
                                                                 />
                                                             </Col>
