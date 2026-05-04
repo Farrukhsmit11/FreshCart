@@ -145,6 +145,7 @@
      }
 
      .product-card-image {
+        width: 100%;
          padding: 35px;
      }
 
