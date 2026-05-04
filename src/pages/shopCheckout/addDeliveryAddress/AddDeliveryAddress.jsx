@@ -1,9 +1,9 @@
 import { Card, Col, Radio, Row } from 'antd'
 import "./AddDeliveryAddress.css"
 
-const AddDeliveryAddress = () => {
+const AddDeliveryAddress = ({ address }) => {
 
-    const address = [
+    const data = [
         {
             id: 1,
             name: "Home",
@@ -26,24 +26,31 @@ Pennsylvania 18372 United States
         <div className='delivery-address-main'>
             <Radio.Group style={{ width: "100%" }}>
                 <Row gutter={[16, 16]}>
-                    {address.map((item) => (
-                        <Col lg={6} md={12} key={item.id}>
-                            <Card className="address-card">
-                                <div className="flex-container">
-                                    <Radio value={item.id} className="card-radio" />
-                                    <span className='radio-card-check'>{item.name}</span>
-                                </div>
+                    {/* {data.map((item) => ( */}
+                    <Col lg={6} md={12} key={item.id}>
+                        <Card className="address-card"
 
-                                <p className='address-location'>{item.location}</p>
-                                <span className='card-links'>Default address</span>
+                        >
+                            {address.map((item) => {
+                                return (
+                                    <div>{item.name}</div>
+                                )
+                            })}
+                            <div className="flex-container">
+                                <Radio value={item.id} className="card-radio" />
+                                <span className='radio-card-check'>{item.name}</span>
+                            </div>
 
-                                <div className='card-actions'>
-                                    <a className='edit-link'> Edit</a>
-                                    <a className='delete-link'>Delete</a>
-                                </div>
-                            </Card>
-                        </Col>
-                    ))}
+                            <p className='address-location'>{item.location}</p>
+                            <span className='card-links'>Default address</span>
+
+                            <div className='card-actions'>
+                                <a className='edit-link'> Edit</a>
+                                <a className='delete-link'>Delete</a>
+                            </div>
+                        </Card>
+                    </Col>
+                    {/* ))} */}
                 </Row>
             </Radio.Group>
         </div >

@@ -19,12 +19,12 @@
 }
 
 .form-input {
+    width: 100%;
     padding: 9px;
     border-radius: 7px;
     font-weight: 500;
     border: 1px solid #dfe2e1;
     outline: none;
-    margin-bottom: 7px;
 }
 
 .form-input:focus {

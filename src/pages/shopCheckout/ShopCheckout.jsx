@@ -18,6 +18,11 @@ const ShopCheckout = () => {
 
     const [openDeliveryModal, setOpenDeliveryModal] = useState(false);
     const cartItems = useSelector((state) => state.cart.cartItems);
+    const [address, setAddress] = useState(null);
+
+    const handleAddress = (value) => {
+        setAddress(value);
+    };
 
     const items = [
         {
@@ -42,7 +47,7 @@ const ShopCheckout = () => {
                 </>
 
             ),
-            children: <AddDeliveryAddress />,
+            children: <AddDeliveryAddress address={address}  />,
         },
 
         {
@@ -129,8 +134,9 @@ const ShopCheckout = () => {
             </section>
 
             <DeliveryModal
+                onSubmit={handleAddress}
                 IsOpenDeliveryModal={openDeliveryModal}
-                setIsOpenDeliveryModal={setOpenDeliveryModal} />
+                setOpenDeliveryModal={setOpenDeliveryModal} />
         </div >
     )
 }

@@ -3,7 +3,7 @@ import { Formik } from 'formik';
 import { deliverySchema } from "./Validations"
 import "./DeliveryModal.css"
 
-const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal }) => {
+const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal, onSubmit }) => {
 
     const [form] = AntForm.useForm();
 
