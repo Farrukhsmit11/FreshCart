@@ -46,7 +46,7 @@ const ShopProducts = ({ limit = "10" }) => {
                                     <Rate allowHalf defaultValue={item.rating || 3} className='product-rating' />
                                 </div>
 
-                                <div className="modal-footer">
+                                <div className="product-card-footer">
                                     <p>${item.price}</p>
 
                                     <Button

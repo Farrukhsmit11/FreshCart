@@ -67,7 +67,7 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                                                         className="review" allowHalf defaultValue={2.5} />
                                                 </div>
 
-                                                <div className="modal-footer">
+                                                <div className="product-card-footer">
                                                     <p>${item.price}</p>
                                                     <Button
                                                         className="add-to-cart-btn"
@@ -116,7 +116,6 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
                                                     </div>
                                                 </div>
                                             </Card>
-
                                         </Col>
                                     </div>
                                 )

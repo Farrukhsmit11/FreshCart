@@ -93,7 +93,7 @@
     margin: 0;
 }
 
-.modal-footer {
+.product-card-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;

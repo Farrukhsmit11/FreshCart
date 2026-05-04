@@ -115,3 +115,15 @@
   max-width: 100%;
   height: auto;
 }
+
+.--ant-radio-button-solid-checked-hover-bg {
+  color: #0aad0a !important;
+}
+
+.--ant-radio-button-solid-checked-active-bg {
+  color: #0aad0a !important;
+}
+
+.--ant-radio-radio-bg-color {
+  color: #0aad0a;
+}

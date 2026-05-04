@@ -45,6 +45,10 @@
          margin-bottom: 10px;
      }
 
+     .hero-cards-section {
+         margin-top: 10px;
+     }
+
      .filters-btn {
          display: block;
      }
@@ -57,7 +61,7 @@
 
 
      .mobile-nav-drawer .ant-drawer-body {
-        padding: 16px !important;
+         padding: 16px !important;
      }
 
      .mobile-nav-drawer .ant-drawer-header {
@@ -76,6 +80,11 @@
 
      .payment-section-left {
          display: block;
+         margin-top: 10px;
+     }
+
+     .social-link {
+         width: 21px;
      }
 
      .rights-reserved h3 {
@@ -146,6 +155,10 @@
          font-size: 21.53px;
      }
 
+     .product-card-footer{
+        margin-top: 0;
+     }
+
      .product-card {
          width: auto;
      }
@@ -205,6 +218,8 @@
      .category-section-main {
          margin-top: 0;
      }
+
+     
 
      /* Add Delivery Address */
 
