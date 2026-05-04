@@ -174,11 +174,10 @@ const Navbar = () => {
                             >
                             </Input>
 
-                            {/* <Popover trigger={["hover"]} placement="bottomLeft">
-                                <Button className="all-department-btn" icon={<FiGrid />}>
-                                    All Departments
-                                </Button>
-                            </Popover> */}
+                            <Button className="all-departments-btn" icon={<FiGrid />}>
+                                All Departments
+                            </Button>
+
                             <div className="navbar-links-main">
                                 <ul className="dropdown-links">
 
@@ -211,6 +210,10 @@ const Navbar = () => {
                                             Account <IoIosArrowDown />
                                         </li>
                                     </Dropdown>
+
+                                    <li>Dashboard</li>
+
+
                                     <li>
                                         Docs
                                     </li>
