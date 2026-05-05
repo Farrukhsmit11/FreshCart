@@ -165,11 +165,6 @@ const Navbar = () => {
                 setIsOpenLocationModal={setOpenLocationModal}
             />
 
-            <MobileDrawer
-                isOpenMobileDrawer={openMobileNav}
-                setOpenMobileDrawer={setopenMobileNav}
-            />
-
             <hr className="nav-divider" />
         </>
     )
