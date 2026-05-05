@@ -16,7 +16,6 @@ import { IoIosArrowDown } from "react-icons/io"
 import { AiOutlineMenuFold } from "react-icons/ai"
 import { homeMenu, shopMenu, storesData, pages, content, accountInfo } from "./helper"
 import CartDrawer from "../cartDrawer/CartDrawer"
-import MobileDrawer from "../mobileDrawer/MobileDrawer"
 
 const Navbar = () => {
 
