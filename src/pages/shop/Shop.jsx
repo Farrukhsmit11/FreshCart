@@ -8,6 +8,7 @@ import { BiFilterAlt, BiGridAlt } from "react-icons/bi";
 import categories from '../../components/featuredCategories/categories'
 import ShopProducts from "../../components/shopProducts/ShopProducts"
 import { useState } from "react";
+import { items, options, selectOptions } from "./data";
 
 const Shop = () => {
 
@@ -17,108 +18,7 @@ const Shop = () => {
     const [openFiltersDrawer, setOpenFiltersDrawer] = useState(false);
     const [selectValue, setSelectValue] = useState(null);
 
-    const items = [
-        {
-            key: "sub1",
-            label: "Dairy, Bread & Eggs",
-            children: [
-                { key: "1", label: "Milk" },
-                { key: "2", label: "Bread" },
-                { key: "3", label: "Eggs" },
-                { key: "4", label: "Bread" },
-                { key: "5", label: "Buns & Bakery " },
-                { key: "6", label: "Butter & More" },
-                { key: "7", label: "Cheese" },
-                { key: "8", label: "Panner & Tofu" },
-                { key: "9", label: "Cream & Whitener" },
-                { key: "10", label: "Condensed Milk" },
-                { key: "17", label: "Vegan Drinks" },
-            ],
-        },
-        {
-            key: "sub2",
-            label: "Snacks & Munchies",
-            children: [
-                { key: "4", label: "Chips" },
-                { key: "5", label: "Biscuits" },
-            ],
-        },
-        {
-            key: "sub3",
-            label: "Fruits & Vegetables",
-            children: [
-                { key: "6", label: "Fruits" },
-                { key: "7", label: "Vegetables" },
-            ],
-        },
-        {
-            key: "sub4",
-            label: "Cold Drinks & Juices",
-            children: [
-                { key: "8", label: "Soft Drinks" },
-                { key: "9", label: "Juices" },
-            ],
-        },
-        {
-            key: "sub5",
-            label: "Breakfast & Instant Food",
-            children: [
-                { key: "10", label: "Cereals" },
-                { key: "11", label: "Noodles" },
-            ],
-        },
-        {
-            key: "sub6",
-            label: "Bakery & Biscuits",
-            children: [
-                { key: "12", label: "Cakes" },
-                { key: "13", label: "Cookies" },
-            ],
-        },
-        {
-            key: "sub7",
-            label: "Chicken, Meat & Fish",
-            children: [
-                { key: "14", label: "Chicken" },
-                { key: "15", label: "Fish" },
-            ],
-        },
-    ];
-
     const handleSelectedCategory = categories?.find(item => item.id === Number(shopId));
-
-    const options = [
-        {
-            value: "10"
-        },
-
-        {
-            value: "20"
-        },
-
-        {
-            value: "30"
-        },
-    ]
-
-    const selectOptions = [
-        {
-            value: "Price low to high"
-        },
-
-        {
-            value: "Price high to low"
-        },
-
-
-        {
-            value: "Release Date"
-        },
-
-        {
-            value: "Avg:Rating"
-        }
-    ]
 
     return (
         <>
@@ -209,46 +109,6 @@ const Shop = () => {
                                         }
                                     ></Select>
                                 </div>
-
-
-                                {/* Mobile filters Drawer */}
-                                {/* <div className="mobile-filters-section">
-                                    <Button
-                                        className="filters-btn"
-                                        onClick={() => setOpenFiltersDrawer(true)}
-                                    >Filters</Button>
-
-                                    <Drawer
-                                        title="Filter"
-                                        closable={{ 'aria-label': 'Close Button' }}
-                                        onClose={() => setOpenFiltersDrawer(false)}
-                                        open={openFiltersDrawer}
-                                        placement="left"
-                                    >
-                                        <Col xs={0} md={6}>
-                                            <div className="sidebar-main">
-                                                <h1 className="menu-title">Categories</h1>
-                                                <Menu className="sidebar-menu" mode="inline" items={items}></Menu>
-                                            </div>
-
-                                            <div className="stores-section">
-                                                <h3 className="menu-title">Stores</h3>
-
-                                                <div className="input-section">
-                                                    <Input className="search-store-input" placeholder="Serach by Stores"></Input>
-                                                </div>
-                                            </div>
-                                            <div className="fruits-card-main">
-                                                <div className="card-overlay">
-                                                    <h3>Fresh Fruits</h3>
-                                                    <p>Get up to 35% Off</p>
-                                                    <Button className="fresh-fruits-btn" icon={<IoIosArrowRoundForward className="fruits-arrow-icon" />}>Shop Now</Button>
-                                                </div>
-                                                <img className="fruits-img" src={fruitsImg} alt="Fruits" />
-                                            </div>
-                                        </Col>
-                                    </Drawer>
-                                </div> */}
                             </div>
                             <ShopProducts limit="8" />
                         </Col>

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LuTrash2 } from "react-icons/lu";
+import { removeItem } from "../../store/cartSlice/CartSlice";
 
 const CartDrawer = ({ isOpenCartDrawer, setIsOpenCartDrawer }) => {
 
@@ -32,7 +33,12 @@ const CartDrawer = ({ isOpenCartDrawer, setIsOpenCartDrawer }) => {
         // })
         // console.info('cartTemp', cartTemp)
 
-        const data = localStorage.getItem('quantity');
+        const existingItem = quantity.find((item => item.id === id))
+        if (existingItem) {
+            existingItem.quantity += 1
+        }
+
+        const data = JSON.parse().localStorage.getItem('quantity');
         const pre = data.find(item => item.id === id).quantity
         const setData = { id: id, quantity: data ? data + 1 : 1 }
         localStorage.setItem('quantity', data)
@@ -115,8 +121,7 @@ const CartDrawer = ({ isOpenCartDrawer, setIsOpenCartDrawer }) => {
                                                         mode="spinner"
                                                         max="10"
                                                         defaultValue="1"
-                                                        value={() => findQuantityById(item.id)}
-                                                        // onChange={(value) => manageQuantity(item.id, value)}
+                                                        value={() => manageQuantity(item.id)}
                                                         className="input-spinner"
                                                     />
                                                 </Col>
