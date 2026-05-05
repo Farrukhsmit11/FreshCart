@@ -23,7 +23,6 @@ const PopularProducts = ({ limit = "10", data = [], showTitle = true }) => {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     const products = useSelector((state) => state.products.items);
-
     const navigate = useNavigate();
     const [openViewModal, setOpenViewModal] = useState(false);
 

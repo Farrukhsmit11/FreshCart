@@ -224,3 +224,7 @@
     color: #6b7280;
     margin-bottom: 17px;
 }
+
+.ant-btn.ant-btn-icon-only {
+    width: auto;
+}

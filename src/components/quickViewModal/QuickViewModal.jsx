@@ -111,7 +111,7 @@ const QuickViewModal = ({ IsOpenViewModal, setIsOpenViewModal, product }) => {
                         </div>
 
                         <div>
-                            <span>${product?.price * value}</span>
+                            <span>${(product?.price * value).toFixed(2)}</span>
                         </div>
                         <hr className="divider" />
 
