@@ -2,44 +2,11 @@ import { Modal, Form as AntForm, Select, Input, Checkbox, Button, Col } from 'an
 import { Formik } from 'formik';
 import { deliverySchema } from "./Validations"
 import "./DeliveryModal.css"
+import { countries, places } from './helper';
 
 const DeliveryModal = ({ IsOpenDeliveryModal, setIsOpenDeliveryModal, onSubmit }) => {
 
     const [form] = AntForm.useForm();
-
-    const countries = [
-
-        { label: "India", value: "India" },
-
-        { value: "UAE" },
-
-        { label: "Uk", value: "UK" },
-
-        { label: "USA", value: "USA" },
-    ]
-
-
-    const places = [
-        {
-            label: "Northern Ireland",
-            value: "northern-ireland"
-        },
-
-        {
-            label: "Gujrat",
-            value: "Gujrat"
-        },
-
-        {
-            label: "Alaska",
-            value: "Alaska"
-        },
-
-        {
-            label: "Abu dhabi",
-            value: "abu-dhabi"
-        }
-    ]
 
     const initialValues = {
         firstName: "",

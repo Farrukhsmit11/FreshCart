@@ -16,12 +16,13 @@ import { IoIosArrowDown } from "react-icons/io"
 import { AiOutlineMenuFold } from "react-icons/ai"
 import { homeMenu, shopMenu, storesData, pages, content, accountInfo } from "./helper"
 import CartDrawer from "../cartDrawer/CartDrawer"
+import MobileDrawer from "../../components/mobileDrawer/MobileDrawer"
 
 const Navbar = () => {
 
     const [open, setOpen] = useState(false);
     const [openLocationModal, setOpenLocationModal] = useState(false);
-    const [openMobileNav, setopenMobileNav] = useState(false);
+    const [openMobileNav, setOpenMobileNav] = useState(false);
     const [openCartDrawer, setOpenCartDrawer] = useState(false);
     const wishlistCount = useSelector((state) => state.wishlist.items.length);
 
@@ -89,6 +90,14 @@ const Navbar = () => {
                                     onClick={() => setOpenCartDrawer(true)} />
                             </Badge>
                         </div>
+
+                        <Button
+                            onClick={() => setOpenMobileNav(true)}
+                            icon={<AiOutlineMenuFold className="menu-icon" />}
+                            className="menu-btn"
+                        ></Button>
+
+                        <MobileDrawer />
                     </nav>
                 </Row>
             </div>
@@ -158,6 +167,11 @@ const Navbar = () => {
             <CartDrawer
                 isOpenCartDrawer={openCartDrawer}
                 setIsOpenCartDrawer={setOpenCartDrawer}
+            />
+
+            <MobileDrawer
+                isOpenMobileDrawer={openMobileNav}
+                setOpenMobileDrawer={setOpenMobileNav}
             />
 
             <LocationModal
