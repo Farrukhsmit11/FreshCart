@@ -4,7 +4,7 @@ import "./Loader.css"
 const Loader = () => {
     return (
         <div className="ant-loading-page">
-            <Spin size="medium" />
+            <Spin size="large" />;
         </div>
     )
 }
