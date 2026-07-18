@@ -30,22 +30,12 @@ function App() {
     return <Loader />
   }
 
-  const location = useLocation();
-  const IsSignInPage = location.pathname === '/signIn' || location.pathname === '/forgotPassword' || location.pathname === "/signUp"
-
   return (
     <>
-      {IsSignInPage ? (
-        <AuthBanner />
-      ) : (
-        <>
-          <PageHeader />
-          <Navbar />
-        </>
-      )}
-      <ScrollToTop />
+
       <Routes>
-        <Route path="/" element={<Home />}></Route>
+        <Route path="/" element={<SignUp />}></Route>
+        <Route path="/home" element={<Home />}></Route>
         <Route path="/shop/:shopId" element={<Shop />}></Route>
         <Route path="/shopWishlist" element={<ShopWishlist />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
@@ -54,22 +44,6 @@ function App() {
         <Route path="/signUp" element={<SignUp />}></Route>
       </Routes>
 
-      <FloatButton
-        shape="square"
-        type="secondary"
-        href="https://codescandy.com/"
-        target="_blank"
-        className="custom-float-button"
-        style={{ insetInlineEnd: 24 }}
-        description={
-          <div className="button-description-main">
-            <TbShoppingCartShare className="float-button-icon" />
-            <span className="custom-description">Buy Now</span>
-          </div>
-        }
-      />
-
-      <Footer />
     </>
   )
 }
