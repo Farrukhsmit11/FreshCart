@@ -1,42 +1,38 @@
-import { Formik } from "formik"
-import "./SignUp.css"
+import React from 'react'
 import { Form as AntForm, Button, Input, message } from "antd";
 import axios from "axios"
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Formik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 
-const SignUp = () => {
 
-    const [name, setName] = useState("");
+const Login = () => {
+
+    const [form] = AntForm.useForm()
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
 
-    const initialValues = {
-        name: "",
-        email: "",
-        password: ""
-    }
-
-    const [form] = AntForm.useForm();
-
-    const navigate = useNavigate()
 
     const BASE_URL = "http://localhost:5002"
 
-    const handleSignup = async () => {
+    const navigate = useNavigate()
+
+
+    const handleLogin = async () => {
         try {
-            const res = await axios.post(`${BASE_URL}/signup`, {
-                name,
+            const data = await axios.post(`${BASE_URL}/login`, {
                 email,
                 password
             })
-            const data = res?.data.data
-            message.success("SignUp Sucessfull")
+            const res = data?.data.data
+            message.success("Login Sucessfull")
+            navigate("/home")
         } catch (error) {
             if (error.response) {
                 message.error(error.response.data.message)
             }
-            console.error("Error Signing Up", error)
+            console.error("Error Logging In", error)
         }
     }
 
@@ -45,11 +41,10 @@ const SignUp = () => {
         <div className="auth-container">
             <div className="auth-card">
                 <div className="auth-header">
-                    <h1 className="auth-title">Sign Up</h1>
+                    <h1 className="auth-title">Login </h1>
                 </div>
 
                 <Formik
-                    initialValues={initialValues}
                 >
                     {({
                         handleSubmit,
@@ -61,15 +56,6 @@ const SignUp = () => {
 
                     }) => (
                         <AntForm form={form} layout="vertical">
-                            <AntForm.Item label="Name">
-                                <Input
-                                    onChange={(e) => setName(e.target.value)}
-                                    value={name}
-                                    placeholder="Enter Name"
-                                    name="name"
-                                    className="form-input"></Input>
-                            </AntForm.Item>
-
                             <AntForm.Item label="Email">
                                 <Input
                                     value={email}
@@ -94,16 +80,18 @@ const SignUp = () => {
                             </AntForm.Item>
 
                             <div className="auth-footer">
-                                <Button className="submit-btn" onClick={() => handleSignup()} htmlType="submit">Sign Up</Button>
-                                <Button className="submit-btn-black" onClick={() => navigate("/login")}>Login</Button>
+                                <Button className="submit-btn" onClick={() => handleLogin()}>Login</Button>
+
+                                <span className='signup-link'>
+                                    Don,t have an account <a href='#'>Sign Up</a>
+                                </span>
                             </div>
                         </AntForm>
                     )}
                 </Formik>
-
             </div>
         </div>
     )
 }
 
-export default SignUp
+export default Login

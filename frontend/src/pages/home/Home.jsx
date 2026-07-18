@@ -1,8 +1,10 @@
-import { HeroCards, DailyBestSells, FeatureCards, FeaturedCategories, ShopNowCards, PopularProducts } from "../../components"
+import { HeroCards, DailyBestSells, FeatureCards, FeaturedCategories, ShopNowCards, PopularProducts, Navbar, PageHeader } from "../../components"
 
 const Home = () => {
   return (
     <div>
+      <PageHeader />
+      <Navbar />
       <HeroCards />
       <FeaturedCategories />
       <ShopNowCards />

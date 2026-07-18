@@ -6,7 +6,7 @@ export const signupUser = async (req, res) => {
         const { name, email, password } = req.body
 
         if (!req.body.name || !req.body.email || !req.body.password) {
-            res.send(400).send({ message: "Complete All Details" })
+            res.status(400).send({ message: "Complete Your Details" })
             return
         }
 
@@ -31,4 +31,32 @@ export const signupUser = async (req, res) => {
     }
 }
 
-export default { signupUser }
+export const login = async (req, res) => {
+    try {
+        const { email, password } = req.body
+
+        if (!req.body.email || !req.body.password) {
+            res.status(400).send({ message: "Complete your details" })
+            return
+        }
+
+        const user = await User.findOne({ email })
+        if (!user) {
+            res.status(400).send({ message: "user not found" })
+            return
+        }
+
+        const isValid = await bcrypt.compare(req.body.password, user.password)
+        if (!isValid) {
+            res.status(400).send({ message: "Password does not match" })
+            return
+        }
+
+        res.status(200).json({ message: "Login sucessfull", user })
+
+    } catch (error) {
+        console.error("Error logging in", error)
+    }
+}
+
+export default { signupUser, login }
