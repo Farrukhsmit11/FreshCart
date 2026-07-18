@@ -8,10 +8,7 @@ import 'swiper/css/thumbs';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Navigation, Thumbs } from 'swiper/modules';
 import { LuShoppingBag } from "react-icons/lu";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../store/cartSlice/CartSlice";
 import { IoIosGitCompare, IoMdHeartEmpty } from "react-icons/io";
-import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice";
 
 const QuickViewModal = ({ IsOpenViewModal, setIsOpenViewModal, product }) => {
 

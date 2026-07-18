@@ -10,7 +10,6 @@ import DeliveryTime from "./deliveryTime/DeliveryTime"
 import { LuMapPin, LuShoppingBag } from "react-icons/lu";
 import { FiClock } from "react-icons/fi";
 import { MdOutlinePayment } from "react-icons/md";
-import { useSelector } from "react-redux";
 
 const ShopCheckout = () => {
 

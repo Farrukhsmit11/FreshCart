@@ -1,12 +1,9 @@
 import { Breadcrumb, Button, Col, Divider, message, Popconfirm, Table, Tag } from "antd"
 import { useState } from "react";
 import "./ShopWishlist.css"
-import { useDispatch, useSelector } from "react-redux";
 import { PlusOutlined } from "@ant-design/icons";
 import { LuTrash2 } from "react-icons/lu";
-import { addToCart, removeItem } from "../../store/cartSlice/CartSlice"
 import { useNavigate } from "react-router-dom";
-import { removeWishlist } from "../../store/wishlistSlice/WishlistSlice";
 
 const ShopWishlist = () => {
 

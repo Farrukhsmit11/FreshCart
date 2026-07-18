@@ -2,16 +2,13 @@ import "./Navbar.css"
 import logo from "../../assets/freshcart-logo.svg"
 import { Button, Input, Drawer, Badge, Row, Col, Popover, Result, InputNumber, Dropdown, Collapse, Alert } from "antd"
 import { SearchOutlined } from "@ant-design/icons"
-import LoginModal from "../loginModal/LoginModal"
 import { useState } from "react"
 import { FiGrid, FiShoppingCart, FiUser } from "react-icons/fi";
 import { FaRegHeart } from "react-icons/fa";
 import { useNavigate } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
 import { GrLocation } from "react-icons/gr";
 import { LuTrash2 } from "react-icons/lu"
 import LocationModal from "../locationModal/LocationModal"
-import { removeItem } from "../../store/cartSlice/CartSlice"
 import { IoIosArrowDown } from "react-icons/io"
 import { AiOutlineMenuFold } from "react-icons/ai"
 import { homeMenu, shopMenu, storesData, pages, content, accountInfo } from "./helper"
@@ -24,11 +21,8 @@ const Navbar = () => {
     const [openLocationModal, setOpenLocationModal] = useState(false);
     const [openMobileNav, setOpenMobileNav] = useState(false);
     const [openCartDrawer, setOpenCartDrawer] = useState(false);
-    const wishlistCount = useSelector((state) => state.wishlist.items.length);
 
-    const cartItems = useSelector((state) => state.cart.cartItems);
 
-    const itemCount = cartItems.length
     const navigate = useNavigate();
 
     return (
@@ -65,7 +59,6 @@ const Navbar = () => {
                         <div className="nav-actions">
                             <Badge
                                 color="#0aad0a"
-                                count={wishlistCount}
                                 showZero
                                 className="count-badge"
                             >
@@ -81,7 +74,6 @@ const Navbar = () => {
 
                             <Badge
                                 color="#0aad0a"
-                                count={itemCount}
                                 showZero
                                 className="count-badge"
                             >
@@ -159,10 +151,7 @@ const Navbar = () => {
                 </nav>
             </div>
 
-            <LoginModal
-                isOpenloginModal={open}
-                setIsOpenloginModal={setOpen}
-            />
+    
 
             <CartDrawer
                 isOpenCartDrawer={openCartDrawer}

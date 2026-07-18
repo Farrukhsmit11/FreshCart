@@ -1,7 +1,5 @@
 import { Button, Card, Col, Rate, Row } from 'antd'
-import { addToCart } from '../../store/cartSlice/CartSlice'
 import { PlusOutlined } from '@ant-design/icons'
-import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import "./ShopProducts.css"
 import { IoEyeOutline } from 'react-icons/io5'
@@ -9,7 +7,6 @@ import { BsHeart } from 'react-icons/bs'
 import { IoIosGitCompare } from 'react-icons/io'
 import { useState } from 'react'
 import QuickViewModal from '../quickViewModal/QuickViewModal'
-import { addToWishlist } from '../../store/wishlistSlice/WishlistSlice'
 
 const ShopProducts = ({ limit = "10" }) => {
 

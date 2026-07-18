@@ -3,7 +3,7 @@ import "./App.css"
 import { AuthBanner, Footer, Navbar, PageHeader } from "./components"
 import Loader from "./components/loader/Loader";
 import { Route, Routes, useLocation, useNavigate } from "react-router-dom";
-import { Shop, ShopWishlist, SignIn, ForgotPassword, ProductDetail, ShopCheckout, SignUp } from "./pages"
+import { Shop, ShopWishlist, SignIn, ForgotPassword, ShopCheckout, SignUp } from "./pages"
 import Home from "./pages/home/Home"
 import ScrollToTop from "./components/scrollToTop/ScrollToTop";
 import { FloatButton } from "antd";
@@ -50,7 +50,6 @@ function App() {
         <Route path="/shopWishlist" element={<ShopWishlist />}></Route>
         <Route path="/signIn" element={<SignIn />}></Route>
         <Route path="/forgotPassword" element={<ForgotPassword />}></Route>
-        <Route path="/productDetail/:productId" element={<ProductDetail />}></Route>
         <Route path="/shopCheckout" element={<ShopCheckout />}></Route>
         <Route path="/signUp" element={<SignUp />}></Route>
       </Routes>

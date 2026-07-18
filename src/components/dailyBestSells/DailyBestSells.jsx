@@ -1,48 +1,15 @@
 import { Button, Card, Col, Rate, Row, Statistic } from "antd"
 import "./DailyBestSells.css"
 import { IoIosArrowRoundForward, IoIosGitCompare } from "react-icons/io"
-import { dailySellData } from "./dailySellData"
-import { addToCart } from "../../store/cartSlice/CartSlice"
 import { PlusOutlined, } from "@ant-design/icons"
-import { useDispatch } from "react-redux"
 import { BsHeart } from "react-icons/bs"
 import { IoEyeOutline } from "react-icons/io5"
-import { addToWishlist } from "../../store/wishlistSlice/WishlistSlice"
 import { useState } from "react"
-import QuickViewModal from "../../components/quickViewModal/QuickViewModal"
 import { useNavigate } from "react-router-dom"
 
 const DailyBestSells = () => {
 
-    const dispatch = useDispatch();
-
     const [deadline, setDeadline] = useState(Date.now() + 1000 * 38);
-    const [selectedData, setSelectedData] = useState(null)
-
-    const [openViewModal, setOpenViewModal] = useState(false);
-
-    const { Countdown } = Statistic;
-
-    const days = [
-        {
-            label: "Days",
-            value: 998
-        },
-
-        {
-            label: "Hours",
-            value: 8
-        },
-
-        {
-            label: "Mins",
-            value: 48
-        },
-    ]
-
-    const handleFinish = () => {
-        setDeadline(Date.now() + 1000 * 38);
-    }
 
     const navigate = useNavigate();
 
@@ -68,117 +35,103 @@ const DailyBestSells = () => {
                             </div>
                         </div>
 
-                        {dailySellData.map((item) => {
-                            return (
-                                <Col xs={24} md={6}>
-                                    <Card
-                                        key={item.id}
-                                        hoverable
-                                        className="daily-best-sell-card"
-                                    >
+                        return (
+                        <Col xs={24} md={6}>
+                            <Card
+                                hoverable
+                                className="daily-best-sell-card"
+                            >
 
-                                        <div className="image-main">
-                                            <img src={item.thumbnail} />
-                                        </div>
+                                <div className="image-main">
+                                    {/* <img src={item.thumbnail} /> */}
+                                </div>
 
-                                        <div className="deals-content">
-                                            <p>{item.category}</p>
-                                            <h2>{item.title}</h2>
-                                        </div>
+                                <div className="deals-content">
+                                    {/* <p>{item.category}</p> */}
+                                    {/* <h2>{item.title}</h2> */}
+                                </div>
 
-                                        <div className="price-section">
-                                            ${item.price}
-                                            <Rate className="review" allowHalf defaultValue={2.5} />
-                                        </div>
+                                <div className="price-section">
+                                    {/* ${item.price} */}
+                                    <Rate className="review" allowHalf defaultValue={2.5} />
+                                </div>
 
-                                        <div className="actions">
-                                            <Button
-                                                onClick={() => dispatch(addToCart(item))}
-                                                icon={<PlusOutlined />}
-                                                className="add-sell-btn"
-                                            >Add to cart</Button>
-                                        </div>
+                                <div className="actions">
+                                    <Button
+                                        // onClick={() => dispatch(addToCart(item))}
+                                        icon={<PlusOutlined />}
+                                        className="add-sell-btn"
+                                    >Add to cart</Button>
+                                </div>
 
-                                        <div className="countdown-cards-main">
-                                            {days.map((day) => {
-                                                return (
-                                                    <div className="countdown-item">
-                                                        <div className="countdown-content">
-                                                            <span className="countdown-amount">{day.value}</span>
-                                                            <span className="countdown-period">{day.label}</span>
-                                                        </div>
-                                                    </div>
-                                                )
-                                            })}
-
+                                <div className="countdown-cards-main">
+                                    {/* {days.map((day) => { */}
+                                        {/* return ( */}
                                             <div className="countdown-item">
                                                 <div className="countdown-content">
-                                                    <Countdown
-                                                        format="ss"
-                                                        value={deadline}
-                                                        className="timer-countdown"
-                                                        onFinish={handleFinish}
-                                                    />
-                                                    <span className="countdown-period">Sec</span>
+                                                    {/* <span className="countdown-amount">{day.value}</span> */}
+                                                    {/* <span className="countdown-period">{day.label}</span> */}
                                                 </div>
                                             </div>
+                                        {/* ) */}
+                                    {/* })} */}
 
-
-                                            <div className="icons-overlay">
-                                                <div className="icons-main">
-
-                                                    <Button
-                                                        onClick={(e) => {
-                                                            setOpenViewModal(true)
-                                                            e.stopPropagation()
-                                                            console.log(item)
-                                                            setSelectedData(item)
-                                                        }}
-
-                                                        icon={<IoEyeOutline />}
-                                                        className="card-action-btn"
-                                                    >
-
-                                                    </Button>
-
-                                                    <Button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation()
-                                                        }}
-
-                                                        icon={<IoIosGitCompare />}
-                                                        className="card-action-btn"
-                                                    >
-
-                                                    </Button>
-
-                                                    <Button onClick={(e) => {
-                                                        dispatch(addToWishlist(item))
-                                                        e.stopPropagation()
-                                                    }}
-                                                        icon={<BsHeart />}
-                                                        className="card-action-btn"
-                                                    >
-
-                                                    </Button>
-                                                </div>
-
-                                            </div>
-
+                                    <div className="countdown-item">
+                                        <div className="countdown-content">
+                                          
+                                            <span className="countdown-period">Sec</span>
                                         </div>
-                                    </Card>
+                                    </div>
 
-                                </Col>
-                            )
-                        })}
+
+                                    <div className="icons-overlay">
+                                        <div className="icons-main">
+
+                                            <Button
+                                                onClick={(e) => {
+                                                    setOpenViewModal(true)
+                                                    e.stopPropagation()
+                                                    console.log(item)
+                                                    setSelectedData(item)
+                                                }}
+
+                                                icon={<IoEyeOutline />}
+                                                className="card-action-btn"
+                                            >
+
+                                            </Button>
+
+                                            <Button
+                                                onClick={(e) => {
+                                                    e.stopPropagation()
+                                                }}
+
+                                                icon={<IoIosGitCompare />}
+                                                className="card-action-btn"
+                                            >
+
+                                            </Button>
+
+                                            <Button onClick={(e) => {
+                                                dispatch(addToWishlist(item))
+                                                e.stopPropagation()
+                                            }}
+                                                icon={<BsHeart />}
+                                                className="card-action-btn"
+                                            >
+
+                                            </Button>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </Card>
+
+                        </Col>
                     </Row>
                 </div>
             </section >
-
-            <QuickViewModal
-                product={selectedData}
-                IsOpenViewModal={openViewModal}
-                setIsOpenViewModal={setOpenViewModal} />
         </>
 
     )
