@@ -6,10 +6,10 @@ const Home = () => {
       <PageHeader />
       <Navbar />
       <HeroCards />
-      <FeaturedCategories />
-      <ShopNowCards />
+      {/* <FeaturedCategories /> */}
+      {/* <ShopNowCards /> */}
       <PopularProducts />
-      <DailyBestSells />
+      {/* <DailyBestSells /> */}
       <FeatureCards />
     </div>
   )

@@ -1,16 +1,24 @@
-import { useEffect, useState } from "react"
 import "./PopularProducts.css"
-import { Button, Card, Col, Rate, Row, Tag } from "antd"
-import { useNavigate } from "react-router-dom"
+import { Button, Card, Col, Row } from "antd"
 import { PlusOutlined } from "@ant-design/icons"
-import { IoEyeOutline, IoGitCompare } from "react-icons/io5"
-import { BsHeart } from "react-icons/bs"
-import { IoIosGitCompare } from "react-icons/io"
-import QuickViewModal from "../quickViewModal/QuickViewModal"
+import { useEffect } from "react"
+import { useDispatch } from "react-redux"
+import { getProducts } from "../../store/products/productThunk"
 
 const PopularProducts = () => {
 
-    const [openViewModal, setOpenViewModal] = useState(false);
+    const dispatch = useDispatch()
+
+    const fetchProducts = async () => {
+        try {
+            await dispatch(getProducts())
+        } catch (error) {
+        }
+    }
+
+    useEffect(() => {
+        fetchProducts()
+    }, [])
 
     return (
         <>
@@ -21,59 +29,21 @@ const PopularProducts = () => {
                     </div>
                     <div className="card-parent">
                         <Row gutter={[16, 16]}>
-
-                            <div>
-                                <Col xs={24} sm={12} md={12} lg={6}>
-                                    <Card
-                                        hoverable
-                                        className="product-card"
-                                    >
-                                        <div className="product-card-header">
-                                        </div>
-
-                                        <div className="product-review-section">
-                                            <Rate
-                                                className="review" allowHalf defaultValue={2.5} />
-                                        </div>
-
-                                        <div className="product-card-footer">
-                                            <Button
-                                                className="add-to-cart-btn"
-                                                onClick={(e) => {
-                                                    e.stopPropagation()
-                                                }}
-                                            ><PlusOutlined className="add-cart-icon" /> Add</Button>
-                                        </div>
-
-                                        <div className="icons-overlay">
-                                            <div className="icons-main">
-
-                                                <Button
-                                                    onClick={(e) => {
-                                                        e.stopPropagation()
-                                                    }}
-
-                                                    icon={<IoEyeOutline />}
-                                                    className="card-action-btn"
-                                                >
-                                                </Button>
-
-                                                <a href="#">
-                                                    <Button
-                                                        onClick={(e) => {
-                                                            e.stopPropagation()
-                                                        }}
-
-                                                        icon={<IoIosGitCompare />}
-                                                        className="card-action-btn"
-                                                    >
-                                                    </Button>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </Card>
-                                </Col>
-                            </div>
+                            <Col xs={24} sm={12} md={12} lg={6}>
+                                <Card
+                                    hoverable
+                                    className="product-card"
+                                >
+                                    <div className="product-card-footer">
+                                        <Button
+                                            className="add-to-cart-btn"
+                                            onClick={(e) => {
+                                                e.stopPropagation()
+                                            }}
+                                        ><PlusOutlined className="add-cart-icon" /> Add Product</Button>
+                                    </div>
+                                </Card>
+                            </Col>
                         </Row >
                     </div>
                 </div>

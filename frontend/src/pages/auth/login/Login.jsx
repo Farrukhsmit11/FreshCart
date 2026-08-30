@@ -1,10 +1,9 @@
-import React from 'react'
-import { Form as AntForm, Button, Input, message } from "antd";
-import axios from "axios"
+import { Form as AntForm, Button, Input } from "antd";
 import { useState } from "react";
 import { Formik } from 'formik';
 import { useNavigate } from 'react-router-dom';
-
+import { useDispatch, useSelector } from "react-redux"
+import { handleLogin } from '../../../store/auth/authThunk';
 
 const Login = () => {
 
@@ -13,29 +12,29 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("")
 
-
-    const BASE_URL = "http://localhost:5002"
+    const dispatch = useDispatch()
 
     const navigate = useNavigate()
 
+    const reducer = useSelector((auth) => ({
+        loading: auth?.loginLoading
+    }))
 
-    const handleLogin = async () => {
+    const { loading } = reducer
+
+    const onSubmit = async () => {
         try {
-            const data = await axios.post(`${BASE_URL}/login`, {
+            const result = await dispatch(handleLogin({
                 email,
                 password
-            })
-            const res = data?.data.data
-            message.success("Login Sucessfull")
+            })).unwrap()
+
+            console.log("LOGIN SUCCESS:", result)
             navigate("/home")
         } catch (error) {
-            if (error.response) {
-                message.error(error.response.data.message)
-            }
-            console.error("Error Logging In", error)
+            console.error("error logging in", error)
         }
     }
-
 
     return (
         <div className="auth-container">
@@ -47,7 +46,6 @@ const Login = () => {
                 <Formik
                 >
                     {({
-                        handleSubmit,
                         handleChange,
                         handleBlur,
                         errors,
@@ -72,7 +70,7 @@ const Login = () => {
                                 <Input.Password
                                     onChange={(e) => setPassword(e.target.value)}
                                     value={password}
-                                    placeholder="Enter Email"
+                                    placeholder="Enter Password"
                                     type="password"
                                     name="password"
                                     className="form-input"
@@ -80,10 +78,12 @@ const Login = () => {
                             </AntForm.Item>
 
                             <div className="auth-footer">
-                                <Button className="submit-btn" onClick={() => handleLogin()}>Login</Button>
+                                <Button className="submit-btn"
+                                    loading={loading}
+                                    onClick={() => onSubmit()}>Login</Button>
 
                                 <span className='signup-link'>
-                                    Don,t have an account <a href='#'>Sign Up</a>
+                                    Don,t have an account <a href='#' onClick={() => navigate("/")}>Sign Up</a>
                                 </span>
                             </div>
                         </AntForm>

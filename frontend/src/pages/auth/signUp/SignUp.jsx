@@ -1,9 +1,9 @@
 import { Formik } from "formik"
 import "./SignUp.css"
 import { Form as AntForm, Button, Input, message } from "antd";
-import axios from "axios"
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux"
 
 const SignUp = () => {
 
@@ -21,17 +21,15 @@ const SignUp = () => {
 
     const navigate = useNavigate()
 
-    const BASE_URL = "http://localhost:5002"
+    const dispatch = useDispatch()
 
-    const handleSignup = async () => {
+    const registerUser = async () => {
         try {
-            const res = await axios.post(`${BASE_URL}/signup`, {
+            await dispatch(handleSignup({
                 name,
                 email,
                 password
-            })
-            const data = res?.data.data
-            message.success("SignUp Sucessfull")
+            })).unwrap()
         } catch (error) {
             if (error.response) {
                 message.error(error.response.data.message)
@@ -51,56 +49,45 @@ const SignUp = () => {
                 <Formik
                     initialValues={initialValues}
                 >
-                    {({
-                        handleSubmit,
-                        handleChange,
-                        handleBlur,
-                        errors,
-                        touched,
-                        values
+                    <AntForm form={form} layout="vertical">
+                        <AntForm.Item label="Name">
+                            <Input
+                                onChange={(e) => setName(e.target.value)}
+                                value={name}
+                                placeholder="Enter Name"
+                                name="name"
+                                className="form-input"></Input>
+                        </AntForm.Item>
 
-                    }) => (
-                        <AntForm form={form} layout="vertical">
-                            <AntForm.Item label="Name">
-                                <Input
-                                    onChange={(e) => setName(e.target.value)}
-                                    value={name}
-                                    placeholder="Enter Name"
-                                    name="name"
-                                    className="form-input"></Input>
-                            </AntForm.Item>
-
-                            <AntForm.Item label="Email">
-                                <Input
-                                    value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
-                                    placeholder="Enter Email"
-                                    type="email"
-                                    name="email"
-                                    className="form-input"
-                                ></Input>
-                            </AntForm.Item>
+                        <AntForm.Item label="Email">
+                            <Input
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Enter Email"
+                                type="email"
+                                name="email"
+                                className="form-input"
+                            ></Input>
+                        </AntForm.Item>
 
 
-                            <AntForm.Item label="Password">
-                                <Input.Password
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    value={password}
-                                    placeholder="Enter Email"
-                                    type="password"
-                                    name="password"
-                                    className="form-input"
-                                ></Input.Password>
-                            </AntForm.Item>
+                        <AntForm.Item label="Password">
+                            <Input.Password
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
+                                placeholder="Enter Password"
+                                type="password"
+                                name="password"
+                                className="form-input"
+                            ></Input.Password>
+                        </AntForm.Item>
 
-                            <div className="auth-footer">
-                                <Button className="submit-btn" onClick={() => handleSignup()} htmlType="submit">Sign Up</Button>
-                                <Button className="submit-btn-black" onClick={() => navigate("/login")}>Login</Button>
-                            </div>
-                        </AntForm>
-                    )}
+                        <div className="auth-footer">
+                            <Button className="submit-btn" onClick={() => handleSignup()} htmlType="submit">Sign Up</Button>
+                            <Button className="submit-btn-black" onClick={() => navigate("/login")}>Login</Button>
+                        </div>
+                    </AntForm>
                 </Formik>
-
             </div>
         </div>
     )

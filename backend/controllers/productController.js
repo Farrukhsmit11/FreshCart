@@ -29,7 +29,8 @@ export const addProducts = async (req, res) => {
             name: req.body.name,
             category: req.body.category,
             price: req.body.price,
-            description: req.body.description
+            description: req.body.description,
+            imgUrl: req.body.imgUrl
         })
 
         res.status(200).send({ message: "Product added sucessfully", products })
